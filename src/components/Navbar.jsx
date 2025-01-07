@@ -1,33 +1,48 @@
 import React, { useState } from 'react';
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
+import '/node_modules/flag-icons/css/flag-icons.min.css';
 
 import Logo from '../assets/icons/Logo.jsx';
+import { useTranslation } from 'react-i18next';
 
 const Navbar = () => {
-  // State to manage the navbar's visibility
+  const {
+    t,
+    i18n: { changeLanguage, language },
+  } = useTranslation();
+
+  const [currentLanguage, setCurrentLanguage] = useState(language);
+
+  const handleChangeLanguage = (newLanguage) => {
+    if (newLanguage !== currentLanguage) {
+      changeLanguage(newLanguage);
+      setCurrentLanguage(newLanguage);
+    }
+  };
+
   const [nav, setNav] = useState(false);
 
-  // Toggle function to handle the navbar's display
   const handleNav = () => {
     setNav(!nav);
   };
 
   // Array containing navigation items
   const navItems = [
-    { id: 1, text: 'Home' },
-    { id: 2, text: 'Company' },
-    { id: 3, text: 'Resources' },
-    { id: 4, text: 'About' },
-    { id: 5, text: 'Contact' },
+    { id: 1, text: t('navbar.home') },
+    { id: 2, text: t('navbar.company') },
+    { id: 3, text: t('navbar.resources') },
+    { id: 4, text: t('navbar.about') },
+    { id: 5, text: t('navbar.contact') },
   ];
 
   return (
     <div className='bg-black flex justify-between items-center h-24 mx-auto px-4 text-white'>
       <Logo width='80px' className='ml-6' />
+
       <h1 className='w-full text-3xl font-bold text-purple-primary'></h1>
 
       {/* Desktop Navigation */}
-      <ul className='hidden md:flex'>
+      <ul className='hidden md:flex items-center'>
         {navItems.map((item) => (
           <li
             key={item.id}
@@ -36,6 +51,14 @@ const Navbar = () => {
             {item.text}
           </li>
         ))}
+        <button
+          onClick={() => handleChangeLanguage('pt')}
+          className='fi fi-br h-[32px] cursor-pointer'
+        ></button>
+        <button
+          onClick={() => handleChangeLanguage('en')}
+          className='fi fi-us h-[32px] ml-4 cursor-pointer'
+        ></button>
       </ul>
 
       {/* Mobile Navigation Icon */}

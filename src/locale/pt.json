@@ -1,0 +1,11 @@
+{
+  "translation": {
+    "navbar": {
+      "home": "Inicio",
+      "company": "Compania",
+      "resources": "Recursos",
+      "about": "Sobre",
+      "contact": "Contato"
+    }
+  }
+}
