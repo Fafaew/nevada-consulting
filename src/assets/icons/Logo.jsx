@@ -1,14 +1,12 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 
-const Logo = ({ className, width, height }) => {
+const Logo = ({ className }) => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
       viewBox='0 0 1234 968.31'
       className={className}
-      width={width}
-      height={height}
       style={{
         shapeRendering: 'geometricPrecision',
         textRendering: 'geometricPrecision',
