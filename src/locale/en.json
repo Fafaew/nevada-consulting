@@ -2,10 +2,17 @@
   "translation": {
     "navbar": {
       "home": "Home",
-      "company": "Company",
-      "resources": "Resources",
+      "services": "Company",
+      "clients": "Resources",
       "about": "About",
       "contact": "Contact"
+    },
+    "revealText": {
+      "Recruitment": "Recruitment",
+      "talent": "Talent Attraction",
+      "career": "Career Acceleration",
+      "development": "Professional Growth",
+      "connecting": "Connecting Talents and Organizations"
     }
   }
 }
