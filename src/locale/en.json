@@ -5,7 +5,8 @@
       "services": "Company",
       "clients": "Resources",
       "about": "About",
-      "contact": "Contact"
+      "contact": "Contact",
+      "language": "Language"
     },
     "revealText": {
       "Recruitment": "Recruitment",
