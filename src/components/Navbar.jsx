@@ -4,21 +4,11 @@ import '/node_modules/flag-icons/css/flag-icons.min.css';
 
 import Logo from '../assets/icons/Logo.jsx';
 import { useTranslation } from 'react-i18next';
+import { useLanguage } from '../lib/LanguageContext.jsx';
 
 const Navbar = () => {
-  const {
-    t,
-    i18n: { changeLanguage, language },
-  } = useTranslation();
-
-  const [currentLanguage, setCurrentLanguage] = useState(language);
-
-  const handleChangeLanguage = (newLanguage) => {
-    if (newLanguage !== currentLanguage) {
-      changeLanguage(newLanguage);
-      setCurrentLanguage(newLanguage);
-    }
-  };
+  const { t } = useTranslation();
+  const { changeLanguage } = useLanguage();
 
   const [nav, setNav] = useState(false);
 
@@ -29,15 +19,15 @@ const Navbar = () => {
   // Array containing navigation items
   const navItems = [
     { id: 1, text: t('navbar.home') },
-    { id: 2, text: t('navbar.company') },
-    { id: 3, text: t('navbar.resources') },
+    { id: 2, text: t('navbar.services') },
+    { id: 3, text: t('navbar.clients') },
     { id: 4, text: t('navbar.about') },
     { id: 5, text: t('navbar.contact') },
   ];
 
   return (
     <div className='bg-black flex justify-between items-center h-24 mx-auto px-4 text-white'>
-      <Logo width='80px' className='ml-6' />
+      <Logo width='120px' className='ml-12' />
 
       <h1 className='w-full text-3xl font-bold text-purple-primary'></h1>
 
@@ -52,12 +42,12 @@ const Navbar = () => {
           </li>
         ))}
         <button
-          onClick={() => handleChangeLanguage('pt')}
-          className='fi fi-br h-[32px] cursor-pointer'
+          onClick={() => changeLanguage('pt')}
+          className='fi fi-br h-[32px] cursor-pointer ml-8'
         ></button>
         <button
-          onClick={() => handleChangeLanguage('en')}
-          className='fi fi-us h-[32px] ml-4 cursor-pointer'
+          onClick={() => changeLanguage('en')}
+          className='fi fi-us h-[32px] ml-4 mr-4 cursor-pointer'
         ></button>
       </ul>
 
