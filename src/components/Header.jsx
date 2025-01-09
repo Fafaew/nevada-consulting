@@ -56,7 +56,7 @@ const Header = () => {
           </div>
           <div className='group relative w-fit transition-transform duration-300 active:scale-95 mt-14'>
             <button className='relative z-10 rounded-lg bg-gradient-to-br from-indigo-500 to-fuchsia-500 p-0.5 duration-300 group-hover:scale-110 w-60'>
-              <span className='flex items-center justify-center rounded-md bg-slate-950 px-4 py-2 font-semibold text-slate-100 duration-300 group-hover:bg-slate-950/50 group-hover:text-slate-50 group-active:bg-slate-950/80 h-12'>
+              <span className='flex items-center justify-center rounded-md bg-slate-950 px-4 py-2 font-semibold text-slate-100 duration-300  h-12'>
                 {t('navbar.contact')}
               </span>
             </button>
