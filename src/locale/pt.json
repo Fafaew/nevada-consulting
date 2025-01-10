@@ -14,6 +14,45 @@
       "talent": "Atração de Talentos",
       "development": "Desenvolvimento",
       "connecting": "Conexão entre Talentos e Negócios"
+    },
+    "services": {
+      "title": "Serviços",
+      "first": {
+        "subtitle": "Modelagem da identidade corporativa",
+        "description": "Sintonizadas com os princípios essenciais e a perspectiva de longo prazo da organização"
+      },
+      "second": {
+        "subtitle": "Recrutamento e seleção de talentos",
+        "description": "Assegurando a seleção e integração de colaboradores que melhor se alinham à filosofia e aspirações da sua companhia"
+      },
+      "third": {
+        "subtitle": "Capacitação e evolução profissional",
+        "description": "Visando potencializar as aptidões e expertises dos funcionários, em consonância com os objetivos corporativos"
+      },
+      "fourth": {
+        "subtitle": "Estruturação e reformulação de times",
+        "description": "Otimizando a sinergia e a produtividade operacional"
+      },
+      "fifth": {
+        "subtitle": "Elaboração de plano de carreira e remuneração",
+        "description": "Para estimular o aprimoramento e a ascensão na carreira"
+      },
+      "sixth": {
+        "subtitle": "Metodologia de análise de performance",
+        "description": "Oferecendo uma perspectiva do desempenho individual dos funcionários, guiando o aperfeiçoamento constante"
+      },
+      "seventh": {
+        "subtitle": "Employer branding",
+        "description": "Objetivando consolidar a reputação da sua empresa como empregadora, evidenciando suas particularidades e princípios para atrair e manter profissionais de excelência"
+      },
+      "eigthth": {
+        "subtitle": "Programas de mentoria",
+        "description": "Arquitetados para impulsionar o crescimento na carreira e facilitar a disseminação de expertise dentro da empresa"
+      },
+      "nineth": {
+        "subtitle": "Análise de curriculo e Linkedin",
+        "description": "Perfil no LinkedIn estrategicamente elaborado e altamente profissional, para capturar o interesse de recrutadores e empregadores"
+      }
     }
   }
 }
