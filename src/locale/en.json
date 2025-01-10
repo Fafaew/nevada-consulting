@@ -2,8 +2,8 @@
   "translation": {
     "navbar": {
       "home": "Home",
-      "services": "Company",
-      "clients": "Resources",
+      "services": "Services",
+      "clients": "Clients",
       "about": "About",
       "contact": "Contact",
       "language": "Language"
@@ -14,6 +14,45 @@
       "career": "Career Acceleration",
       "development": "Professional Growth",
       "connecting": "Connecting Talents and Organizations"
+    },
+    "services": {
+      "title": "Services",
+      "first": {
+        "subtitle": "Modeling and renewal of corporate identity",
+        "description": "Attuned to the essential principles and long-term perspective of the organization"
+      },
+      "second": {
+        "subtitle": "Prospecting and attracting talents",
+        "description": "Ensuring the selection and integration of collaborators who best align with your company's philosophy and aspirations"
+      },
+      "third": {
+        "subtitle": "Professional training and development",
+        "description": "Aimed at enhancing employees' skills and expertise, in line with corporate objectives"
+      },
+      "fourth": {
+        "subtitle": "Team formation and restructuring",
+        "description": "Optimizing synergy and operational productivity"
+      },
+      "fifth": {
+        "subtitle": "Career path and personal development",
+        "description": "To stimulate improvement and career advancement"
+      },
+      "sixth": {
+        "subtitle": "Performance analysis methodology",
+        "description": "Offering a perspective on individual employee performance, guiding constant improvement"
+      },
+      "seventh": {
+        "subtitle": "Employer brand building",
+        "description": "Aiming to consolidate your company's reputation as an employer, highlighting its particularities and principles to attract and retain professionals of excellence"
+      },
+      "eigthth": {
+        "subtitle": "Professional guidance programs",
+        "description": "Designed to boost career growth and facilitate the dissemination of expertise within the company"
+      },
+      "nineth": {
+        "subtitle": "Resume and LinkedIn Analysis",
+        "description": "Strategically crafted and highly professional LinkedIn profile, designed to capture the interest of recruiters and employers"
+      }
     }
   }
 }

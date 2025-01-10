@@ -9,7 +9,7 @@ const Header = () => {
   const { t } = useTranslation();
 
   return (
-    <div className='relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32 h-[80vh] lg:h-auto'>
+    <div className='relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32 h-[75vh] lg:h-auto'>
       <img
         alt=''
         src='https://images.pexels.com/photos/2422294/pexels-photo-2422294.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
