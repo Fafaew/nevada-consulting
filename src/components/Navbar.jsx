@@ -21,8 +21,8 @@ const Navbar = () => {
   ];
 
   return (
-    <div className='bg-black flex justify-between items-center h-24 mx-auto px-4 text-white'>
-      <Logo className='ml-4 lg:ml-12 w-16 lg:w-32' />
+    <div className='bg-black flex justify-between items-center h-16 lg:h-24 mx-auto px-4 text-white'>
+      <Logo className='ml-4 lg:ml-12 w-12 lg:w-32' />
 
       <h1 className='w-full text-3xl font-bold text-purple-primary'></h1>
 
@@ -53,7 +53,7 @@ const Navbar = () => {
 
       {/* Mobile Navigation Menu */}
       <ul
-        className={`fixed md:hidden top-24 left-0 w-full h-auto border-r border-r-gray-900 bg-[#000300] z-10 transition-opacity duration-500 ${
+        className={`fixed md:hidden top-16 left-0 w-full h-auto border-r border-r-gray-900 bg-[#000300] z-10 transition-opacity duration-500 ${
           nav ? 'opacity-100 visible' : 'opacity-0 invisible'
         }`}
       >
