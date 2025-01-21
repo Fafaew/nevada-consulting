@@ -53,6 +53,21 @@
         "subtitle": "Resume and LinkedIn Analysis",
         "description": "Strategically crafted and highly professional LinkedIn profile, designed to capture the interest of recruiters and employers"
       }
+    },
+    "about": {
+      "title": "about",
+      "subtitle": "Brand story",
+      "history": {
+        "first": "Nevada Consulting began its operations in 2020, responding to the need of companies seeking an impartial and specialized perspective in Human Resources.",
+        "second": "The unique satisfaction of providing support to organizations, bringing a valuable external perspective, was the catalyst for the start of our journey.",
+        "third": "As we delivered positive results, the demand for our services progressively increased. This brought us new challenges and motivated us to expand our scope of action, ranging from cultural transformations to the development of leadership and teams.",
+        "fourth": "The core of our mission is to help companies maximize the potential of their most valuable resource: human capital. It was based on this philosophy that Nevada Consulting was established, grounded in the belief that people are fundamental to the success of any organization."
+      },
+      "description": {
+        "first": "With over 6 years of experience in Human Resources, Juliana has carved out a remarkable career path, progressing from Analyst to Head of HR in both national and multinational companies across various sectors.",
+        "second": "Inspired by this journey, she founded Nevada Consulting with the purpose of applying her knowledge to empower organizations and entrepreneurs in Brazil and worldwide to value their greatest asset: their people.",
+        "third": "Dedication, competence, and transparency are the pillars that have guided the team led by Juliana for 5 years. Her commitment to providing excellence in the field of Human Resources continues to positively influence the business landscape, turning challenges into opportunities for growth."
+      }
     }
   }
 }
