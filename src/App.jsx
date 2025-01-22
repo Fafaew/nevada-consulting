@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Services from './components/Services';
 import About from './components/About';
 import { LanguageProvider } from './lib/LanguageContext';
+import Contact from './components/Contact';
 
 const app = () => {
   return (
@@ -13,6 +14,7 @@ const app = () => {
         <Header />
         <Services />
         <About />
+        <Contact />
       </LanguageProvider>
     </div>
   );
