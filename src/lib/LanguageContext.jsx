@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import React, { createContext, useState, useContext } from 'react';
+import React, { createContext, useState, useContext, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
 const LanguageContext = createContext();
@@ -7,6 +7,19 @@ const LanguageContext = createContext();
 export const LanguageProvider = ({ children }) => {
   const { i18n } = useTranslation();
   const [currentLanguage, setCurrentLanguage] = useState(i18n.language);
+
+  useEffect(() => {
+    const pathParts = window.location.pathname.split('/').filter(Boolean);
+    const urlLanguage = pathParts[1];
+    if (['pt', 'en'].includes(urlLanguage)) {
+      i18n.changeLanguage(urlLanguage);
+      setCurrentLanguage(urlLanguage);
+    } else {
+      const defaultLanguage = 'pt';
+      i18n.changeLanguage(defaultLanguage);
+      setCurrentLanguage(defaultLanguage);
+    }
+  }, [i18n]);
 
   const changeLanguage = (newLanguage) => {
     if (newLanguage !== currentLanguage) {
