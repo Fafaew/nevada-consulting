@@ -53,6 +53,21 @@
         "subtitle": "Análise de curriculo e Linkedin",
         "description": "Perfil no LinkedIn estrategicamente elaborado e altamente profissional, para capturar o interesse de recrutadores e empregadores"
       }
+    },
+    "about": {
+      "title": "Sobre",
+      "subtitle": "Como a Nevada Consulting surgiu",
+      "history": {
+        "first": "A Nevada Consulting iniciou suas atividades em 2020, respondendo à necessidade de empresas que buscavam uma visão neutra e especializada em Recursos Humanos.",
+        "second": "O prazer único de oferecer suporte às organizações, trazendo uma perspectiva externa de grande valor, foi o catalisador para o início de nossa trajetória.",
+        "third": "Conforme entregávamos resultados positivos, a demanda por nossos serviços aumentou progressivamente. Isso nos trouxe novos desafios e nos motivou a expandir nosso escopo de atuação, abrangendo desde transformações culturais até o desenvolvimento de lideranças e equipes.",
+        "fourth": "O cerne de nossa missão está em auxiliar as empresas a maximizar o potencial de seu recurso mais valioso: o capital humano. Foi com base nessa filosofia que a Nevada Consulting foi estabelecida, fundamentada na crença de que as pessoas são fundamentais para o êxito de qualquer organização."
+      },
+      "description": {
+        "first": "Juliana, uma profissional experiente na área de Gestão de Pessoas, construiu uma carreira sólida ao longo de mais de uma década. Sua trajetória impressionante a levou de posições analíticas a cargos de liderança em RH, tanto em companhias brasileiras quanto internacionais, abrangendo uma variedade de indústrias.",
+        "second": "Motivada por sua rica experiência, Juliana deu vida à Nevada Consulting. O objetivo principal desta empreitada é utilizar sua vasta expertise para auxiliar empresas e empreendedores, no Brasil e além-fronteiras, a reconhecerem e potencializarem seu recurso mais valioso: o capital humano. Há cinco anos, ela lidera uma equipe que se pauta por três valores fundamentais: comprometimento, profissionalismo e clareza.",
+        "third": "O empenho de Juliana em oferecer serviços de RH de alto padrão continua a exercer uma influência positiva no mundo corporativo, transformando obstáculos em possibilidades de desenvolvimento e evolução."
+      }
     }
   }
 }
