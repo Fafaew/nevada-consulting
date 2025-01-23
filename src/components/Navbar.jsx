@@ -5,12 +5,19 @@ import Logo from '../assets/icons/Logo.jsx';
 import { useTranslation } from 'react-i18next';
 import { useLanguage } from '../lib/LanguageContext.jsx';
 import { AnimatedHamburgerButton } from '../utils/HamburgerButton';
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
   const { t } = useTranslation();
   const { changeLanguage } = useLanguage();
+  const navigate = useNavigate();
 
   const [nav, setNav] = useState(false);
+
+  const handleLanguageChange = (lang) => {
+    changeLanguage(lang);
+    navigate(`/nevada-consulting/${lang}`);
+  };
 
   const navItems = [
     { id: 1, text: t('navbar.home') },
@@ -37,11 +44,11 @@ const Navbar = () => {
           </li>
         ))}
         <button
-          onClick={() => changeLanguage('pt')}
+          onClick={() => handleLanguageChange('pt')}
           className='fi fi-br h-[32px] cursor-pointer ml-8'
         ></button>
         <button
-          onClick={() => changeLanguage('en')}
+          onClick={() => handleLanguageChange('en')}
           className='fi fi-us h-[32px] ml-4 mr-4 cursor-pointer'
         ></button>
       </ul>
@@ -69,12 +76,12 @@ const Navbar = () => {
         <div className='p-4 pl-8 border-b rounded-xl hover:bg-purple-primary duration-300 hover:text-black cursor-pointer border-gray-600 flex items-center'>
           <p>{t('navbar.language')}</p>
           <button
-            onClick={() => changeLanguage('pt')}
+            onClick={() => handleLanguageChange('pt')}
             className='fi fi-br h-[32px] cursor-pointer ml-5 lg:ml-8'
             style={{ width: '28px' }}
           ></button>
           <button
-            onClick={() => changeLanguage('en')}
+            onClick={() => handleLanguageChange('en')}
             className='fi fi-us h-[32px] ml-5 lg:ml-4 mr-4 cursor-pointer'
             style={{ width: '28px' }}
           ></button>
