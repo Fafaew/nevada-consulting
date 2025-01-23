@@ -9,12 +9,12 @@ const About = () => {
 
   return (
     <section>
-      <div className='w-full px-8 py-12 grid grid-cols-1 md:grid-cols-2 items-center gap-8 mx-auto'>
+      <h2 className='flex justify-center text-4xl font-bold my-12 text-purple-secondary'>
+        {t('about.title')}
+      </h2>
+      <div className='w-full px-8 pb-12 grid grid-cols-1 md:grid-cols-2 items-center gap-8 mx-auto'>
         <div>
-          <h2 className='flex justify-center text-4xl font-bold my-12 text-purple-secondary'>
-            {t('about.title')}
-          </h2>
-          <h3 className='text-4xl md:text-6xl font-semibold'>
+          <h3 className='text-4xl md:text-3xl font-semibold'>
             {t('about.subtitle')}
           </h3>
           <p className='text-base md:text-lg text-slate-700 my-4 md:my-6'>
@@ -40,12 +40,12 @@ const About = () => {
             alt=''
           />
         </div>
-        <div className='col-start-2 p-6 overflow-y-auto max-h-full'>
+        <div className='absolute top-0 col-start-2 p-6 pl-0 mr-14 mt-6'>
           <h2 className='text-4xl	font-bold'>Juliana Carvalho</h2>
-          <h3 className='font-medium text-xl'>CEO - Nevada Consulting</h3>
-          <p>{t('about.description.first')}</p>
-          <p>{t('about.description.second')}</p>
-          <p>{t('about.description.third')}</p>
+          <h3 className='font-medium text-xl mt-1'>CEO - Nevada Consulting</h3>
+          <p className='mt-6'>{t('about.description.first')}</p>
+          <p className='mt-4'>{t('about.description.second')}</p>
+          <p className='mt-4'>{t('about.description.third')}</p>
         </div>
       </div>
     </section>
