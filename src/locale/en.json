@@ -68,6 +68,14 @@
         "second": "Inspired by this journey, she founded Nevada Consulting with the purpose of applying her knowledge to empower organizations and entrepreneurs in Brazil and worldwide to value their greatest asset: their people.",
         "third": "Dedication, competence, and transparency are the pillars that have guided the team led by Juliana for 5 years. Her commitment to providing excellence in the field of Human Resources continues to positively influence the business landscape, turning challenges into opportunities for growth."
       }
+    },
+    "contact": {
+      "title": "Contact",
+      "name": "Name",
+      "email": "Email",
+      "message": "Message...",
+      "send": "Send",
+      "social": "Social links"
     }
   }
 }
