@@ -75,10 +75,7 @@ const Services = () => {
 
   return (
     <>
-      <div
-        name=''
-        className='bg-gradient-to-b from-black to-gray-800 w-full text-white text-center pb-6'
-      >
+      <div className='bg-gradient-to-b from-black to-gray-800 w-full text-white text-center pb-6'>
         <div className='max-w-full mx-auto flex flex-col w-full h-full'>
           <h2 className='flex justify-center text-4xl font-bold my-12 text-[antiquewhite]'>
             {t('services.title')}

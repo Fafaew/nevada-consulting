@@ -68,6 +68,14 @@
         "second": "Motivada por sua rica experiência, Juliana deu vida à Nevada Consulting. O objetivo principal desta empreitada é utilizar sua vasta expertise para auxiliar empresas e empreendedores, no Brasil e além-fronteiras, a reconhecerem e potencializarem seu recurso mais valioso: o capital humano. Há cinco anos, ela lidera uma equipe que se pauta por três valores fundamentais: comprometimento, profissionalismo e clareza.",
         "third": "O empenho de Juliana em oferecer serviços de RH de alto padrão continua a exercer uma influência positiva no mundo corporativo, transformando obstáculos em possibilidades de desenvolvimento e evolução."
       }
+    },
+    "contact": {
+      "title": "Contato",
+      "name": "Nome",
+      "email": "Email",
+      "message": "Mensagem...",
+      "send": "Enviar",
+      "social": "Redes Sociais"
     }
   }
 }
