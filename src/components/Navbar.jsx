@@ -6,6 +6,7 @@ import { useTranslation } from 'react-i18next';
 import { useLanguage } from '../lib/LanguageContext.jsx';
 import { AnimatedHamburgerButton } from '../utils/HamburgerButton';
 import { useNavigate } from 'react-router-dom';
+import { useScrollDirection } from '../hooks/useScrollDirection.js';
 
 const Navbar = () => {
   const { t } = useTranslation();
@@ -13,6 +14,7 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   const [nav, setNav] = useState(false);
+  const scrollDirection = useScrollDirection();
 
   const handleLanguageChange = (lang) => {
     changeLanguage(lang);
@@ -28,7 +30,11 @@ const Navbar = () => {
   ];
 
   return (
-    <div className='bg-black flex justify-between items-center h-16 lg:h-24 mx-auto px-4 text-white'>
+    <div
+      className={`bg-black flex justify-between items-center h-16 lg:h-24 w-screen mx-auto px-4 text-white fixed w-full z-50 transition-all duration-300 ${
+        scrollDirection === 'down' ? '-top-24' : 'top-0'
+      }`}
+    >
       <Logo className='ml-4 lg:ml-12 w-12 lg:w-32' />
 
       <h1 className='w-full text-3xl font-bold text-purple-primary'></h1>

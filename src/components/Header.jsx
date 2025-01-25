@@ -45,7 +45,7 @@ const Header = () => {
         />
       </div>
       <div className=' relative mx-auto max-w-7xl px-6 lg:px-8 flex justify-center bottom-8 lg:bottom-20'>
-        <div className='mx-auto max-w-2xl lg:mx-0 flex flex-col items-center'>
+        <div className='mx-auto lg:mx-0 flex flex-col items-center'>
           <img
             src={logo}
             alt='Descrição da imagem'
@@ -54,7 +54,7 @@ const Header = () => {
           <h1 className='text-5xl font-semibold tracking-tight text-white sm:text-7xl text-center'>
             Nevada Consulting
           </h1>
-          <p className='text-5xl font-semibold tracking-tight text-white sm:text-2xl text-center mt-2'>
+          <p className='text-base font-semibold tracking-tight text-white sm:text-2xl text-center mt-2'>
             {t('header.subtitle')}
           </p>
           <div className='mt-8 lg:mt-14 text-3xl text-center h-12 lg:h-auto'>

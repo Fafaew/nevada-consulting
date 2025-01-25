@@ -11,6 +11,7 @@ import Services from './components/Services';
 import About from './components/About';
 import Contact from './components/Contact';
 import { LanguageProvider } from './lib/LanguageContext';
+import Footer from './components/Footer';
 
 const App = () => {
   return (
@@ -38,6 +39,7 @@ const HomePage = () => (
     <Services id='services' />
     <About id='about' />
     <Contact id='contact' />
+    <Footer />
   </>
 );
 
