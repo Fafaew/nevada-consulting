@@ -8,50 +8,42 @@
       "contact": "Contact",
       "language": "Language"
     },
+    "header": {
+      "subtitle": "B2B and B2C consulting"
+    },
     "revealText": {
-      "Recruitment": "Recruitment",
-      "talent": "Talent Attraction",
-      "career": "Career Acceleration",
-      "development": "Professional Growth",
-      "connecting": "Connecting Talents and Organizations"
+      "recruitment": "Talent Recruitment and Selection",
+      "coaching": "Mentoring and Coaching for Leadership",
+      "training": "Recruitment and Selection Training",
+      "assessment": "Behavioral Profile Assessment",
+      "analisys": "Analysis and Enhancement of Resume, LinkedIn, and Portfolio",
+      "mentoring": "Mentoring and Interview Preparation"
     },
     "services": {
       "title": "Services",
       "first": {
-        "subtitle": "Modeling and renewal of corporate identity",
-        "description": "Attuned to the essential principles and long-term perspective of the organization"
+        "subtitle": "Talent Recruitment and Selection",
+        "description": "Identify and hire the best professionals for all sectors and levels, from operational to executive positions. Rely on a strategic and personalized process to ensure assertive hires aligned with your business culture and objectives"
       },
       "second": {
-        "subtitle": "Prospecting and attracting talents",
-        "description": "Ensuring the selection and integration of collaborators who best align with your company's philosophy and aspirations"
+        "subtitle": "Mentoring and Coaching for Leadership",
+        "description": "Develop leaders prepared to make strategic decisions, engage teams, and drive results with humanized and effective management"
       },
       "third": {
-        "subtitle": "Professional training and development",
-        "description": "Aimed at enhancing employees' skills and expertise, in line with corporate objectives"
+        "subtitle": "Recruitment and Selection Training",
+        "description": "Empower your team with advanced techniques in attraction, screening, and interviewing, making the selection process more agile and efficient"
       },
       "fourth": {
-        "subtitle": "Team formation and restructuring",
-        "description": "Optimizing synergy and operational productivity"
+        "subtitle": "Behavioral Profile Assessment",
+        "description": "Make more assertive decisions with in-depth behavioral analyses of skills, development potential, and better fit for your company"
       },
       "fifth": {
-        "subtitle": "Career path and personal development",
-        "description": "To stimulate improvement and career advancement"
+        "subtitle": "Analysis and Enhancement of Resume, LinkedIn, and Portfolio",
+        "description": "Stand out in the market with a professional profile that highlights your skills and competitive advantages. Be strategically noticed by recruiters"
       },
       "sixth": {
-        "subtitle": "Performance analysis methodology",
-        "description": "Offering a perspective on individual employee performance, guiding constant improvement"
-      },
-      "seventh": {
-        "subtitle": "Employer brand building",
-        "description": "Aiming to consolidate your company's reputation as an employer, highlighting its particularities and principles to attract and retain professionals of excellence"
-      },
-      "eigthth": {
-        "subtitle": "Professional guidance programs",
-        "description": "Designed to boost career growth and facilitate the dissemination of expertise within the company"
-      },
-      "nineth": {
-        "subtitle": "Resume and LinkedIn Analysis",
-        "description": "Strategically crafted and highly professional LinkedIn profile, designed to capture the interest of recruiters and employers"
+        "subtitle": "Mentoring and Interview Preparation",
+        "description": "Face selection processes with confidence, mastering techniques that increase your chances of securing the ideal position"
       }
     },
     "about": {
@@ -64,9 +56,10 @@
         "fourth": "The core of our mission is to help companies maximize the potential of their most valuable resource: human capital. It was based on this philosophy that Nevada Consulting was established, grounded in the belief that people are fundamental to the success of any organization."
       },
       "description": {
-        "first": "With over 6 years of experience in Human Resources, Juliana has carved out a remarkable career path, progressing from Analyst to Head of HR in both national and multinational companies across various sectors.",
-        "second": "Inspired by this journey, she founded Nevada Consulting with the purpose of applying her knowledge to empower organizations and entrepreneurs in Brazil and worldwide to value their greatest asset: their people.",
-        "third": "Dedication, competence, and transparency are the pillars that have guided the team led by Juliana for 5 years. Her commitment to providing excellence in the field of Human Resources continues to positively influence the business landscape, turning challenges into opportunities for growth."
+        "first": "I AM A PEOPLE AND CULTURE CONSULTANT, SPECIALIZED IN FORMING EFFICIENT TEAMS.",
+        "second": "Graduated in Psychology from the Federal University of Minas Gerais, with an MBA in Business Management from USP, I am interested in human behavior in organizational dynamics and strategies.",
+        "third": "Acting as a leader in attraction, selection, and onboarding, I conduct the complete journey in forming high-performance teams, ensuring an excellent experience for candidates and hiring managers. I also lead initiatives focused on engagement, diversity and inclusion, as well as organizational development, collaborating closely with business areas to boost their growth and performance.",
+        "fourth": "I am curious and study self-management, agility, and metrics, and my purpose is to help organizations evolve and expand their awareness, becoming more strategic, transparent, and fair."
       }
     },
     "contact": {

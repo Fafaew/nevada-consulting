@@ -1,5 +1,6 @@
 import { React, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import emailjs from '@emailjs/browser';
 
 import { SiWhatsapp } from 'react-icons/si';
 import { FaLinkedin } from 'react-icons/fa';
@@ -15,13 +16,40 @@ const Contact = () => {
     e.preventDefault();
 
     if (name === '' || email === '' || message === '') {
-      alert('preencha todos os campos');
       return;
     }
+
+    const templateParams = {
+      from_name: name,
+      message: message,
+      email: email,
+    };
+
+    emailjs
+      .send(
+        'service_jtmtc9o',
+        'template_smovfcs',
+        templateParams,
+        'ylu3SO7qR-i-z9E09',
+      )
+      .then(
+        (res) => {
+          console.log('Email Enviado', res.status, res.text);
+          setName('');
+          setEmail('');
+          setMessage('');
+        },
+        (err) => {
+          console.log('error', err);
+        },
+      );
   }
 
   return (
-    <div className='flex items-center flex-col bg-[#121212] text-white pt-12'>
+    <div
+      id='contact'
+      className='flex items-center flex-col bg-[#121212] text-white pt-12'
+    >
       <h2 className='flex justify-center text-4xl font-bold my-6 text-[antiquewhite]'>
         {t('contact.title')}
       </h2>

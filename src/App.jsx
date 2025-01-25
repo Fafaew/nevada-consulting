@@ -34,10 +34,10 @@ const App = () => {
 
 const HomePage = () => (
   <>
-    <Header />
-    <Services />
-    <About />
-    <Contact />
+    <Header id='home' />
+    <Services id='services' />
+    <About id='about' />
+    <Contact id='contact' />
   </>
 );
 
