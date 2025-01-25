@@ -31,7 +31,7 @@ const Navbar = () => {
 
   return (
     <div
-      className={`bg-black flex justify-between items-center h-16 lg:h-24 mx-auto px-4 text-white fixed w-full z-50 transition-all duration-300 ${
+      className={`bg-black flex justify-between items-center h-16 lg:h-24 w-screen mx-auto px-4 text-white fixed w-full z-50 transition-all duration-300 ${
         scrollDirection === 'down' ? '-top-24' : 'top-0'
       }`}
     >
