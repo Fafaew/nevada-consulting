@@ -69,6 +69,9 @@
       "message": "Mensagem...",
       "send": "Enviar",
       "social": "Redes Sociais"
+    },
+    "footer": {
+      "tel": "(11) 9 9460-7649"
     }
   }
 }
