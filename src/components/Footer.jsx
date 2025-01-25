@@ -49,7 +49,7 @@ const Footer = () => {
         </div>
       </div>
       <p className='flex justify-center text-center mt-12 pb-8 px-6'>
-        COPYRIGHT ©2025 Nevada Consulting Todos os direitos reservados
+        {t('footer.copyright')}
       </p>
     </div>
   );
