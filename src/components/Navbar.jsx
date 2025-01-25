@@ -18,7 +18,7 @@ const Navbar = () => {
 
   const handleLanguageChange = (lang) => {
     changeLanguage(lang);
-    navigate(`/nevada-consulting/${lang}`);
+    navigate(`/${lang}`);
   };
 
   const navItems = [
