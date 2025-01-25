@@ -19,13 +19,13 @@ export const RevealText = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentPhraseIndex((prevIndex) => (prevIndex + 1) % phrases.length);
-    }, 3000); // Muda a frase a cada 4 segundos
+    }, 3000);
 
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className='App text-[antiquewhite]'>
+    <div className='App text-[antiquewhite] text-xl sm:text-3xl'>
       <AnimatePresence mode='wait'>
         <motion.div
           key={currentPhraseIndex}
