@@ -45,7 +45,7 @@ const Contact = () => {
   return (
     <div
       id='contact'
-      className='flex items-center flex-col bg-[#121212] text-white pt-12'
+      className='flex items-center flex-col bg-[#121212] text-white pt-4 lg:pt-12 px-8'
     >
       <h2 className='flex justify-center text-4xl font-bold my-6 text-[antiquewhite]'>
         {t('contact.title')}
