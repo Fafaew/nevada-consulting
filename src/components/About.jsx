@@ -8,7 +8,7 @@ const About = () => {
   const { t } = useTranslation();
 
   return (
-    <section>
+    <section id='about'>
       <h2 className='flex justify-center text-4xl font-bold my-12 text-purple-secondary'>
         {t('about.title')}
       </h2>
@@ -46,6 +46,7 @@ const About = () => {
           <p className='mt-6'>{t('about.description.first')}</p>
           <p className='mt-4'>{t('about.description.second')}</p>
           <p className='mt-4'>{t('about.description.third')}</p>
+          <p className='mt-4'>{t('about.description.fourth')}</p>
         </div>
       </div>
     </section>

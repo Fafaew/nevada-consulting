@@ -8,10 +8,8 @@ import {
 } from 'react-icons/pi';
 import { FaChartLine } from 'react-icons/fa';
 import { RiTeamLine } from 'react-icons/ri';
-import { LiaChalkboardTeacherSolid } from 'react-icons/lia';
-import { IoReaderOutline } from 'react-icons/io5';
 
-import { FaUsersViewfinder, FaPeopleRoof } from 'react-icons/fa6';
+import { FaUsersViewfinder } from 'react-icons/fa6';
 
 const Services = () => {
   const { t } = useTranslation();
@@ -53,29 +51,14 @@ const Services = () => {
       subtitle: t('services.sixth.subtitle'),
       description: t('services.sixth.description'),
     },
-    {
-      id: 7,
-      icon: <FaPeopleRoof />,
-      subtitle: t('services.seventh.subtitle'),
-      description: t('services.seventh.description'),
-    },
-    {
-      id: 8,
-      icon: <LiaChalkboardTeacherSolid />,
-      subtitle: t('services.eigthth.subtitle'),
-      description: t('services.eigthth.description'),
-    },
-    {
-      id: 9,
-      icon: <IoReaderOutline />,
-      subtitle: t('services.nineth.subtitle'),
-      description: t('services.nineth.description'),
-    },
   ];
 
   return (
     <>
-      <div className='bg-gradient-to-b from-black to-gray-800 w-full text-white text-center pb-6'>
+      <div
+        id='services'
+        className='bg-gradient-to-b from-black to-gray-800 w-full text-white text-center pb-6'
+      >
         <div className='max-w-full mx-auto flex flex-col w-full h-full'>
           <h2 className='flex justify-center text-4xl font-bold my-12 text-[antiquewhite]'>
             {t('services.title')}

@@ -6,11 +6,12 @@ export const RevealText = () => {
   const { t } = useTranslation();
 
   const phrases = [
-    t('revealText.Recruitment'),
-    t('revealText.career'),
-    t('revealText.talent'),
-    t('revealText.development'),
-    t('revealText.connecting'),
+    t('revealText.recruitment'),
+    t('revealText.coaching'),
+    t('revealText.training'),
+    t('revealText.assessment'),
+    t('revealText.analisys'),
+    t('revealText.mentoring'),
   ];
 
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
