@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '/node_modules/flag-icons/css/flag-icons.min.css';
-
+import { Link } from 'react-scroll';
 import Logo from '../assets/icons/Logo.jsx';
 import { useTranslation } from 'react-i18next';
 import { useLanguage } from '../lib/LanguageContext.jsx';
@@ -20,11 +20,11 @@ const Navbar = () => {
   };
 
   const navItems = [
-    { id: 1, text: t('navbar.home') },
-    { id: 2, text: t('navbar.services') },
-    { id: 3, text: t('navbar.clients') },
-    { id: 4, text: t('navbar.about') },
-    { id: 5, text: t('navbar.contact') },
+    { id: 1, text: t('navbar.home'), to: 'home' },
+    { id: 2, text: t('navbar.services'), to: 'services' },
+    { id: 3, text: t('navbar.clients'), to: 'clients' },
+    { id: 4, text: t('navbar.about'), to: 'about' },
+    { id: 5, text: t('navbar.contact'), to: 'contact' },
   ];
 
   return (
@@ -36,11 +36,15 @@ const Navbar = () => {
       {/* Desktop Navigation */}
       <ul className='hidden md:flex items-center'>
         {navItems.map((item) => (
-          <li
-            key={item.id}
-            className='p-4 hover:bg-purple-primary rounded-xl m-2 cursor-pointer duration-300 hover:text-black'
-          >
-            {item.text}
+          <li key={item.id}>
+            <Link
+              to={item.to}
+              smooth={true}
+              duration={500}
+              className='p-4 hover:bg-purple-primary rounded-xl m-2 cursor-pointer duration-300 hover:text-black'
+            >
+              {item.text}
+            </Link>
           </li>
         ))}
         <button
@@ -66,11 +70,16 @@ const Navbar = () => {
       >
         {/* Mobile Navigation Items */}
         {navItems.map((item) => (
-          <li
-            key={item.id}
-            className='p-4 pl-8 border-b rounded-xl hover:bg-purple-primary duration-300 hover:text-black cursor-pointer border-gray-600'
-          >
-            {item.text}
+          <li key={item.id}>
+            <Link
+              to={item.to}
+              smooth={true}
+              duration={500}
+              className='block p-4 pl-8 border-b rounded-xl hover:bg-purple-primary duration-300 hover:text-black cursor-pointer border-gray-600'
+              onClick={() => setNav(false)}
+            >
+              {item.text}
+            </Link>
           </li>
         ))}
         <div className='p-4 pl-8 border-b rounded-xl hover:bg-purple-primary duration-300 hover:text-black cursor-pointer border-gray-600 flex items-center'>

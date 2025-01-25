@@ -8,50 +8,42 @@
       "contact": "Contato",
       "language": "Idioma"
     },
+    "header": {
+      "subtitle": "Consultoria B2B e B2C"
+    },
     "revealText": {
-      "Recruitment": "Recrutamento",
-      "career": "Impulsionar Carreiras",
-      "talent": "Atração de Talentos",
-      "development": "Desenvolvimento",
-      "connecting": "Conexão entre Talentos e Negócios"
+      "recruitment": "Recrutamento e Seleção de Talentos",
+      "coaching": "Mentoring e Coaching para Lideranças",
+      "training": "Treinamento de Recrutamento e Seleção",
+      "assessment": "Assessment de Perfil Comportamental",
+      "analisys": "Análise e Evolução de Currículo, Linkedin e Porfólio",
+      "mentoring": "Mentoria e Preparação para Entrevistas"
     },
     "services": {
       "title": "Serviços",
       "first": {
-        "subtitle": "Modelagem da identidade corporativa",
-        "description": "Sintonizadas com os princípios essenciais e a perspectiva de longo prazo da organização"
+        "subtitle": "Recrutamento e seleção de talentos",
+        "description": "Identifique e contrate os melhores profissionais para todos os setores e níveis, de operacionais a posições executivas. Conte com um processo estratégico e personalizado para garantir contratações assertivas e alinhas a cultura e aos objetivos do seu negócio"
       },
       "second": {
-        "subtitle": "Recrutamento e seleção de talentos",
-        "description": "Assegurando a seleção e integração de colaboradores que melhor se alinham à filosofia e aspirações da sua companhia"
+        "subtitle": "Mentoring e Coaching para Lideranças",
+        "description": "Desenvolva lideranças preparadas para tomar decisões estratégicas, engajar equipes e impulsionar resultados com uma gestão humanizada e eficaz"
       },
       "third": {
-        "subtitle": "Capacitação e evolução profissional",
-        "description": "Visando potencializar as aptidões e expertises dos funcionários, em consonância com os objetivos corporativos"
+        "subtitle": "Treinamento de Recrutamento e Seleção",
+        "description": "Capacite sua equipe com técnicas avanças de atração, triagem e entrevista, tornando o processo seletivo mais ágil e eficiente"
       },
       "fourth": {
-        "subtitle": "Estruturação e reformulação de times",
-        "description": "Otimizando a sinergia e a produtividade operacional"
+        "subtitle": "Assessment de Perfil Comportamental",
+        "description": "Tome decisões mais assertivas com análises comportamentais profundas de habilidades, potencial de desenvolvimento e com melhor fit para sua empresa"
       },
       "fifth": {
-        "subtitle": "Elaboração de plano de carreira e remuneração",
-        "description": "Para estimular o aprimoramento e a ascensão na carreira"
+        "subtitle": "Análise e Evolução de currículo, Linkedin e Portfólio",
+        "description": "Destaque-se no mercado com um perfil profissional que valoriza suas habilidades e diferenciais competitivos. Seja notado de maneira estratégica por recrutadoras(es)"
       },
       "sixth": {
-        "subtitle": "Metodologia de análise de performance",
-        "description": "Oferecendo uma perspectiva do desempenho individual dos funcionários, guiando o aperfeiçoamento constante"
-      },
-      "seventh": {
-        "subtitle": "Employer branding",
-        "description": "Objetivando consolidar a reputação da sua empresa como empregadora, evidenciando suas particularidades e princípios para atrair e manter profissionais de excelência"
-      },
-      "eigthth": {
-        "subtitle": "Programas de mentoria",
-        "description": "Arquitetados para impulsionar o crescimento na carreira e facilitar a disseminação de expertise dentro da empresa"
-      },
-      "nineth": {
-        "subtitle": "Análise de curriculo e Linkedin",
-        "description": "Perfil no LinkedIn estrategicamente elaborado e altamente profissional, para capturar o interesse de recrutadores e empregadores"
+        "subtitle": "Mentoria e Preparação para Entrevistas",
+        "description": "Encare processos seletivos com confiança, dominando suas técnicas que aumentam suas chances de conquistar a vaga ideal"
       }
     },
     "about": {
@@ -64,10 +56,19 @@
         "fourth": "O cerne de nossa missão está em auxiliar as empresas a maximizar o potencial de seu recurso mais valioso: o capital humano. Foi com base nessa filosofia que a Nevada Consulting foi estabelecida, fundamentada na crença de que as pessoas são fundamentais para o êxito de qualquer organização."
       },
       "description": {
-        "first": "Juliana, uma profissional experiente na área de Gestão de Pessoas, construiu uma carreira sólida ao longo de mais de uma década. Sua trajetória impressionante a levou de posições analíticas a cargos de liderança em RH, tanto em companhias brasileiras quanto internacionais, abrangendo uma variedade de indústrias.",
-        "second": "Motivada por sua rica experiência, Juliana deu vida à Nevada Consulting. O objetivo principal desta empreitada é utilizar sua vasta expertise para auxiliar empresas e empreendedores, no Brasil e além-fronteiras, a reconhecerem e potencializarem seu recurso mais valioso: o capital humano. Há cinco anos, ela lidera uma equipe que se pauta por três valores fundamentais: comprometimento, profissionalismo e clareza.",
-        "third": "O empenho de Juliana em oferecer serviços de RH de alto padrão continua a exercer uma influência positiva no mundo corporativo, transformando obstáculos em possibilidades de desenvolvimento e evolução."
+        "first": "SOU CONSULTORA DE PESSOAS E CULTURA, ESPECIALISTA NA FORMAÇÃO DE TIMES EFICIENTES.",
+        "second": "Formada  em Psicologia pela Universidade Federal de Minas Gerais, MBA em Gestão de Negócios pela USP, me interesso pelo comportamento humano nas dinâmicas e estratégias organizacionais.",
+        "third": "Atuando como líder de atração, seleção e onboarding, conduzo a jornada completa na formação de times de alta performance, garantindo uma excelente experiência aos candidatos e hiring managers. Lidero também  iniciativas voltadas para engajamento, diversidade e inclusão, bem como desenvolvimento organizacional, colaborando estreitamente com as áreas de negócio para impulsionar seu crescimento e desempenho.",
+        "fourth": "Sou curiosa e estudo sobre  autogestão, agilidade e métricas, e meu propósito é auxiliar organizações a evoluírem e ampliarem sua consciência, tornando-se mais estratégicas transparentes e justas."
       }
+    },
+    "contact": {
+      "title": "Contato",
+      "name": "Nome",
+      "email": "Email",
+      "message": "Mensagem...",
+      "send": "Enviar",
+      "social": "Redes Sociais"
     }
   }
 }

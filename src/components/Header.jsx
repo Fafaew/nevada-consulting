@@ -9,7 +9,10 @@ const Header = () => {
   const { t } = useTranslation();
 
   return (
-    <div className='relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32 h-[75vh] lg:h-auto'>
+    <div
+      id='header'
+      className='relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32 h-[75vh] lg:h-auto'
+    >
       <img
         alt=''
         src='https://images.pexels.com/photos/2422294/pexels-photo-2422294.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
@@ -51,10 +54,13 @@ const Header = () => {
           <h1 className='text-5xl font-semibold tracking-tight text-white sm:text-7xl text-center'>
             Nevada Consulting
           </h1>
-          <div className='mt-8 lg:mt-6 text-3xl text-center h-12 lg:h-auto'>
+          <p className='text-5xl font-semibold tracking-tight text-white sm:text-2xl text-center mt-2'>
+            {t('header.subtitle')}
+          </p>
+          <div className='mt-8 lg:mt-14 text-3xl text-center h-12 lg:h-auto'>
             <RevealText />
           </div>
-          <div className='group relative w-fit transition-transform duration-300 active:scale-95 mt-14'>
+          <div className='group relative w-fit transition-transform duration-300 active:scale-95 mt-9'>
             <button className='relative z-10 rounded-lg bg-gradient-to-br from-indigo-500 to-fuchsia-500 p-0.5 duration-300 group-hover:scale-110 w-60'>
               <span className='flex items-center justify-center rounded-md bg-slate-950 px-4 py-2 font-semibold text-slate-100 duration-300  h-12'>
                 {t('navbar.contact')}
