@@ -46,6 +46,9 @@
         "description": "Face selection processes with confidence, mastering techniques that increase your chances of securing the ideal position"
       }
     },
+    "clients": {
+      "title": "Our Clients"
+    },
     "about": {
       "title": "About",
       "subtitle": "Brand story",
@@ -71,7 +74,8 @@
       "social": "Social links"
     },
     "footer": {
-      "tel": "+55 11 9 9460-7649"
+      "tel": "+55 11 9 9460-7649",
+      "copyright": "COPYRIGHT ©2025 Nevada Consulting All rights reserved"
     }
   }
 }

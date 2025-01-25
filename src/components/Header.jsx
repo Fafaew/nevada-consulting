@@ -45,7 +45,7 @@ const Header = () => {
         />
       </div>
       <div className=' relative mx-auto max-w-7xl px-6 lg:px-8 flex justify-center bottom-8 lg:bottom-20'>
-        <div className='mx-auto lg:mx-0 flex flex-col items-center'>
+        <div className='mx-auto lg:mx-0 flex flex-col items-center mt-16 lg:mt-24'>
           <img
             src={logo}
             alt='Descrição da imagem'

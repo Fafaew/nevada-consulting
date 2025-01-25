@@ -10,7 +10,7 @@ const Footer = () => {
 
   return (
     <div className='items-center flex-col bg-[#121212] text-white pt-12'>
-      <div className='grid grid-cols-2'>
+      <div className='grid grid-rows-2 lg:grid-rows-none lg:grid-cols-2'>
         <div>
           <div>
             <img
@@ -18,7 +18,7 @@ const Footer = () => {
               alt='Descrição da imagem'
               className='h-12 lg:h-12 mb-2 m-auto'
             />
-            <p className='text-5xl font-semibold tracking-tight text-white sm:text-2xl text-center'>
+            <p className='text-base lg:text-2xl font-semibold tracking-tight text-white text-center'>
               Nevada Consulting
             </p>
           </div>
@@ -48,8 +48,8 @@ const Footer = () => {
           <p className='mt-4'>{t('footer.tel')}</p>
         </div>
       </div>
-      <p className='flex justify-center mt-12 pb-8'>
-        COPYRIGHT ©2025 Nevada Consulting Todos os direitos reservados
+      <p className='flex justify-center text-center mt-12 pb-8 px-6'>
+        {t('footer.copyright')}
       </p>
     </div>
   );

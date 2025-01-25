@@ -9,7 +9,7 @@ const About = () => {
 
   return (
     <section id='about'>
-      <h2 className='flex justify-center text-4xl font-bold my-12 text-purple-secondary'>
+      <h2 className='flex justify-center text-4xl font-bold mt-12 mb-6 sm:mb-12 text-purple-secondary'>
         {t('about.title')}
       </h2>
       <div className='w-full px-8 pb-12 grid grid-cols-1 md:grid-cols-2 items-center gap-8 mx-auto'>
@@ -32,18 +32,28 @@ const About = () => {
         </div>
         <ShuffleGrid />
       </div>
-      <div className='w-full h-[468px] bg-purple-secondary grid grid-cols-[38%_62%] relative items-center'>
-        <div className='col-start-1 -top-8 relative ml-16'>
+      <div className='w-full bg-purple-secondary grid grid-cols-1 md:grid-cols-[35%_65%] relative items-center overflow-visible'>
+        <div className='col-span-1 md:col-start-1 relative mx-auto md:mx-0 md:mt-0 md:absolute md:left-28 mt-0 md:-top-4 md:-bottom-4 md:w-[60%]'>
+          <h2 className='text-center text-4xl font-bold mt-7 lg:hidden'>
+            Juliana Carvalho
+          </h2>
+          <h3 className='text-center font-medium text-xl mt-1 mb-6 lg:hidden'>
+            CEO - Nevada Consulting
+          </h3>
           <img
-            className='rounded-3xl aspect-[3/4] max-h-[544px] object-cover'
+            className='w-full h-full object-cover rounded-none lg:rounded-3xl'
             src={juProfile}
-            alt=''
+            alt='Juliana Carvalho'
           />
         </div>
-        <div className='absolute top-0 col-start-2 p-6 pl-0 mr-14 mt-6'>
-          <h2 className='text-4xl	font-bold'>Juliana Carvalho</h2>
-          <h3 className='font-medium text-xl mt-1'>CEO - Nevada Consulting</h3>
-          <p className='mt-6'>{t('about.description.first')}</p>
+        <div className='col-span-1 md:col-start-2 p-6 md:pl-0 mx-4 md:mr-14 mt-0 lg:mt-6'>
+          <h2 className='text-4xl font-bold hidden lg:block'>
+            Juliana Carvalho
+          </h2>
+          <h3 className='font-medium text-xl mt-1 hidden lg:block'>
+            CEO - Nevada Consulting
+          </h3>
+          <p className='mt-0 lg:mt-6'>{t('about.description.first')}</p>
           <p className='mt-4'>{t('about.description.second')}</p>
           <p className='mt-4'>{t('about.description.third')}</p>
           <p className='mt-4'>{t('about.description.fourth')}</p>
@@ -108,6 +118,7 @@ const generateSquares = () => {
         backgroundImage: `url(${sq.src})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
+        willChange: 'transform',
       }}
     ></motion.div>
   ));
