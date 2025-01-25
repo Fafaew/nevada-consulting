@@ -1,10 +1,5 @@
 import React from 'react';
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Navigate,
-} from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Header from './components/Header';
 import Services from './components/Services';
@@ -28,14 +23,9 @@ const App = () => {
       <LanguageProvider>
         <Navbar />
         <Routes>
-          {/* Redireciona a rota base para o idioma padrão */}
-          <Route
-            path='/'
-            element={<Navigate to='/nevada-consulting/pt' replace />}
-          />
-          <Route path='/nevada-consulting/' element={<HomePage />} />
-          <Route path='/nevada-consulting/pt' element={<HomePage />} />
-          <Route path='/nevada-consulting/en' element={<HomePage />} />
+          <Route path='/' element={<HomePage />} />
+          <Route path='/pt' element={<HomePage />} />
+          <Route path='/en' element={<HomePage />} />
         </Routes>
       </LanguageProvider>
     </Router>

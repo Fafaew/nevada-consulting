@@ -10,7 +10,7 @@ export const LanguageProvider = ({ children }) => {
 
   useEffect(() => {
     const pathParts = window.location.pathname.split('/').filter(Boolean);
-    const urlLanguage = pathParts[1];
+    const urlLanguage = pathParts[0];
     if (['pt', 'en'].includes(urlLanguage)) {
       i18n.changeLanguage(urlLanguage);
       setCurrentLanguage(urlLanguage);
