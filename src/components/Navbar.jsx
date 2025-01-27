@@ -31,22 +31,29 @@ const Navbar = () => {
 
   return (
     <div
-      className={`bg-black flex justify-between items-center h-16 lg:h-24 w-screen mx-auto px-4 text-white fixed w-full z-50 transition-all duration-300 ${
+      className={`bg-black flex justify-between items-center h-16 lg:h-24 w-screen mx-auto px-4 text-white fixed z-50 transition-all duration-300 ${
         scrollDirection === 'down' ? '-top-24' : 'top-0'
       }`}
     >
-      <Logo className='ml-4 lg:ml-12 w-12 lg:w-32' />
-
-      <h1 className='w-full text-3xl font-bold text-purple-primary'></h1>
+      <Link
+        to='home'
+        smooth={true}
+        duration={800}
+        easing='easeInOutQuart'
+        onClick={() => setNav(false)}
+      >
+        <Logo className='ml-4 lg:ml-12 w-10 mb-2 lg:mb-0 lg:w-14 cursor-pointer' />
+      </Link>
 
       {/* Desktop Navigation */}
-      <ul className='hidden md:flex items-center'>
+      <ul className='hidden md:flex items-center lg:mr-8'>
         {navItems.map((item) => (
           <li key={item.id}>
             <Link
               to={item.to}
               smooth={true}
-              duration={500}
+              duration={800}
+              easing='easeInOutQuart'
               className='p-4 hover:bg-purple-primary rounded-xl m-2 cursor-pointer duration-300 hover:text-black'
             >
               {item.text}
@@ -55,7 +62,7 @@ const Navbar = () => {
         ))}
         <button
           onClick={() => handleLanguageChange('pt')}
-          className='fi fi-br h-[32px] cursor-pointer ml-8'
+          className='fi fi-br h-[32px] cursor-pointer ml-8 lg:mr-2'
         ></button>
         <button
           onClick={() => handleLanguageChange('en')}
@@ -70,7 +77,7 @@ const Navbar = () => {
 
       {/* Mobile Navigation Menu */}
       <ul
-        className={`fixed md:hidden top-16 left-0 w-full h-auto border-r border-r-gray-900 bg-[#000300] z-10 transition-opacity duration-500 ${
+        className={`fixed md:hidden top-16 left-0 w-full h-auto border-r border-r-gray-900 bg-[#000300] z-10 transition-opacity duration-800 ${
           nav ? 'opacity-100 visible' : 'opacity-0 invisible'
         }`}
       >
@@ -80,7 +87,8 @@ const Navbar = () => {
             <Link
               to={item.to}
               smooth={true}
-              duration={500}
+              duration={800}
+              easing='easeInOutQuart'
               className='block p-4 pl-8 border-b rounded-xl hover:bg-purple-primary duration-300 hover:text-black cursor-pointer border-gray-600'
               onClick={() => setNav(false)}
             >
