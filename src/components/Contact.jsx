@@ -4,10 +4,11 @@ import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const { t } = useTranslation();
-
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+  const [showSnackbar, setShowSnackbar] = useState(false);
+  const [showForm, setShowForm] = useState(true);
 
   function sendEmail(e) {
     e.preventDefault();
@@ -35,6 +36,12 @@ const Contact = () => {
           setName('');
           setEmail('');
           setMessage('');
+          setShowForm(false); // Oculta o formulário
+          setShowSnackbar(true); // Mostra a snackbar
+          setTimeout(() => {
+            setShowSnackbar(false); // Esconde a snackbar
+            setShowForm(true); // Mostra o formulário novamente
+          }, 5000);
         },
         (err) => {
           console.log('error', err);
@@ -52,7 +59,9 @@ const Contact = () => {
       </h2>
 
       <form
-        className='max-w-[600px] w-full flex flex-col text-black'
+        className={`max-w-[600px] w-full flex flex-col text-black transition-all duration-300 ${
+          showForm ? 'opacity-100' : 'opacity-0 pointer-events-none'
+        }`}
         onSubmit={sendEmail}
       >
         <input
@@ -89,6 +98,11 @@ const Contact = () => {
           <span className='pointer-events-none absolute -inset-4 z-0 transform-gpu rounded-2xl bg-gradient-to-br from-indigo-500 to-fuchsia-500 opacity-30 blur-xl transition-all duration-300 group-hover:opacity-90 group-active:opacity-50'></span>
         </div>
       </form>
+      {showSnackbar && (
+        <div className='fixed top-[35%] sm:top-[60%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-green-500 text-white px-4 py-2 rounded-md shadow-lg animate-fade-in text-center max-w-[90%] sm:max-w-md w-full'>
+          {t('contact.thankYouMessage')}
+        </div>
+      )}
     </div>
   );
 };

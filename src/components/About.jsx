@@ -38,7 +38,7 @@ const About = () => {
             Juliana Carvalho
           </h2>
           <h3 className='text-center font-medium text-xl mt-1 mb-6 lg:hidden'>
-            CEO - Nevada Consulting
+            {t('about.description.subtitle')}
           </h3>
           <img
             className='w-full h-full object-cover rounded-none lg:rounded-3xl'
@@ -51,7 +51,7 @@ const About = () => {
             Juliana Carvalho
           </h2>
           <h3 className='font-medium text-xl mt-1 hidden lg:block'>
-            CEO - Nevada Consulting
+            {t('about.description.subtitle')}
           </h3>
           <p className='mt-0 lg:mt-6'>{t('about.description.first')}</p>
           <p className='mt-4'>{t('about.description.second')}</p>

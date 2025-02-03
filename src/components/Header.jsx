@@ -11,7 +11,7 @@ const Header = () => {
   return (
     <div
       id='home'
-      className='relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32 h-[75vh] lg:h-auto'
+      className='relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32 h-[85vh] lg:h-auto'
     >
       <img
         alt=''
