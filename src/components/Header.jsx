@@ -1,4 +1,5 @@
-import React from 'react';
+import { React, useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 import { RevealText } from '../utils/RevealText';
 import { useTranslation } from 'react-i18next';
@@ -7,6 +8,21 @@ import logo from '../assets/imgs/logo.webp';
 
 const Header = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash === '#contact') {
+      const element = document.getElementById('contact');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [location]);
+
+  const handleContactClick = () => {
+    navigate('/#contact');
+  };
 
   return (
     <div
@@ -61,7 +77,10 @@ const Header = () => {
             <RevealText />
           </div>
           <div className='group relative w-fit transition-transform duration-300 active:scale-95 mt-9'>
-            <button className='relative z-10 rounded-lg bg-gradient-to-br from-indigo-500 to-fuchsia-500 p-0.5 duration-300 group-hover:scale-110 w-60'>
+            <button
+              onClick={handleContactClick}
+              className='relative z-10 rounded-lg bg-gradient-to-br from-indigo-500 to-fuchsia-500 p-0.5 duration-300 group-hover:scale-110 w-60'
+            >
               <span className='flex items-center justify-center rounded-md bg-slate-950 px-4 py-2 font-semibold text-slate-100 duration-300  h-12'>
                 {t('navbar.contact')}
               </span>
