@@ -9,10 +9,10 @@
       "language": "Idioma"
     },
     "header": {
-      "subtitle": "Consultoria B2B e B2C"
+      "subtitle": "Consultoria Global B2B e B2C"
     },
     "revealText": {
-      "recruitment": "Recrutamento e Seleção de Talentos",
+      "recruitment": "Recrutamento e Seleção de Talentos por Equipe de Alto desempenho",
       "coaching": "Mentoring e Coaching para Lideranças",
       "training": "Treinamento de Recrutamento e Seleção",
       "assessment": "Assessment de Perfil Comportamental",
@@ -22,7 +22,7 @@
     "services": {
       "title": "Serviços",
       "first": {
-        "subtitle": "Recrutamento e seleção de talentos",
+        "subtitle": "Recrutamento e Seleção de Talentos por Equipe de Alto desempenho",
         "description": "Identifique e contrate os melhores profissionais para todos os setores e níveis, de operacionais a posições executivas. Conte com um processo estratégico e personalizado para garantir contratações assertivas e alinhas a cultura e aos objetivos do seu negócio"
       },
       "second": {
@@ -59,6 +59,7 @@
         "fourth": "O cerne de nossa missão está em auxiliar as empresas a maximizar o potencial de seu recurso mais valioso: o capital humano. Foi com base nessa filosofia que a Nevada Consulting foi estabelecida, fundamentada na crença de que as pessoas são fundamentais para o êxito de qualquer organização."
       },
       "description": {
+        "subtitle": "Consultora Sênior",
         "first": "SOU CONSULTORA DE PESSOAS E CULTURA, ESPECIALISTA NA FORMAÇÃO DE TIMES EFICIENTES.",
         "second": "Formada  em Psicologia pela Universidade Federal de Minas Gerais, MBA em Gestão de Negócios pela USP, me interesso pelo comportamento humano nas dinâmicas e estratégias organizacionais.",
         "third": "Atuando como líder de atração, seleção e onboarding, conduzo a jornada completa na formação de times de alta performance, garantindo uma excelente experiência aos candidatos e hiring managers. Lidero também  iniciativas voltadas para engajamento, diversidade e inclusão, bem como desenvolvimento organizacional, colaborando estreitamente com as áreas de negócio para impulsionar seu crescimento e desempenho.",
@@ -71,7 +72,8 @@
       "email": "Email",
       "message": "Mensagem...",
       "send": "Enviar",
-      "social": "Redes Sociais"
+      "social": "Redes Sociais",
+      "thankYouMessage": "Mensagem enviada com sucesso! Entraremos em contato em breve"
     },
     "footer": {
       "tel": "(11) 9 9460-7649",
