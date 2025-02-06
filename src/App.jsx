@@ -15,8 +15,9 @@ import okto from '../src/assets/imgs/okto.webp';
 import quive from '../src/assets/imgs/quive.webp';
 import rv from '../src/assets/imgs/rv.webp';
 import edvisor from '../src/assets/imgs/edvisor.webp';
+import moveo from '../src/assets/imgs/moveo.webp';
 
-const clientLogos = [blip, komuh, okto, quive, rv, edvisor];
+const clientLogos = [blip, komuh, okto, quive, rv, edvisor, moveo];
 
 const App = () => {
   return (
