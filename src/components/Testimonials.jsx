@@ -87,12 +87,12 @@ const Testimonials = () => {
   ];
 
   return (
-    <div className='py-10 '>
+    <div className='pt-0 pb-16 '>
       <h2 className='flex justify-center text-4xl font-bold mt-12 mb-6 sm:mb-12 text-purple-secondary'>
         {' '}
         {t('testimonials.title')}
       </h2>
-      <div className='w-3/4 m-auto'>
+      <div className='w-[70%] sm:w-1/2 m-auto'>
         <div className='mt-10 relative'>
           <Slider {...settings}>
             {data.map((item, index) => (
@@ -100,7 +100,7 @@ const Testimonials = () => {
                 <div className='h-20 rounded-t-xl bg-indigo-500 flex justify-center items-center'>
                   <p className='font-bold'>{item.subtitle}</p>
                 </div>
-                <div className='flex flex-col justify-center items-center gap-4 p-4 rounded-b-lg border border-solid border-black border-t-transparent '>
+                <div className='flex flex-col justify-center items-left gap-4 py-4 px-4 sm:px-8 rounded-b-lg border border-solid border-black border-t-transparent '>
                   <p>{item.review}</p>
                   <p>{item.review2}</p>
                   <p>{item.review3}</p>
