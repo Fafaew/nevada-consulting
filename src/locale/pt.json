@@ -1,12 +1,12 @@
 {
   "translation": {
     "navbar": {
-      "home": "Inicio",
-      "services": "Serviços",
-      "clients": "Clientes",
-      "about": "Sobre",
-      "contact": "Contato",
-      "language": "Idioma"
+      "home": "inicio",
+      "services": "serviços",
+      "clients": "clientes",
+      "about": "sobre",
+      "contact": "contato",
+      "language": "idioma"
     },
     "header": {
       "subtitle": "Consultoria Global B2B e B2C"
@@ -60,8 +60,8 @@
       },
       "description": {
         "subtitle": "Consultora Sênior",
-        "first": "SOU CONSULTORA DE PESSOAS E CULTURA, ESPECIALISTA NA FORMAÇÃO DE TIMES EFICIENTES.",
-        "second": "Formada  em Psicologia pela Universidade Federal de Minas Gerais, MBA em Gestão de Negócios pela USP, me interesso pelo comportamento humano nas dinâmicas e estratégias organizacionais.",
+        "first": "Sou consultora de pessoas e cultura, especialista na formação de times eficientes.",
+        "second": "Formada  em psicologia pela Universidade Federal de Minas Gerais, MBA em gestão de negócios pela USP, me interesso pelo comportamento humano nas dinâmicas e estratégias organizacionais.",
         "third": "Atuando como líder de atração, seleção e onboarding, conduzo a jornada completa na formação de times de alta performance, garantindo uma excelente experiência aos candidatos e hiring managers. Lidero também  iniciativas voltadas para engajamento, diversidade e inclusão, bem como desenvolvimento organizacional, colaborando estreitamente com as áreas de negócio para impulsionar seu crescimento e desempenho.",
         "fourth": "Sou curiosa e estudo sobre  autogestão, agilidade e métricas, e meu propósito é auxiliar organizações a evoluírem e ampliarem sua consciência, tornando-se mais estratégicas transparentes e justas."
       }

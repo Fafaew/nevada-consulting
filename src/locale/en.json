@@ -1,12 +1,12 @@
 {
   "translation": {
     "navbar": {
-      "home": "Home",
-      "services": "Services",
-      "clients": "Clients",
-      "about": "About",
-      "contact": "Contact",
-      "language": "Language"
+      "home": "home",
+      "services": "services",
+      "clients": "clients",
+      "about": "about",
+      "contact": "contact",
+      "language": "language"
     },
     "header": {
       "subtitle": "B2B and B2C Global Consulting"
@@ -60,8 +60,8 @@
       },
       "description": {
         "subtitle": "Senior Consultant",
-        "first": "PEOPLE AND CULTURE CONSULTANT, SPECIALIZED IN FORMING EFFICIENT TEAMS.",
-        "second": "Graduated in Psychology from the Federal University of Minas Gerais, with an MBA in Business Management from USP, interested in human behavior in organizational dynamics and strategies.",
+        "first": "People and culture consultant, specialized in forming efficient teams.",
+        "second": "Graduated in psychology from the Federal University of Minas Gerais, with an MBA in business management from USP, interested in human behavior in organizational dynamics and strategies.",
         "third": "Acting as a leader in attraction, selection, and onboarding, I conduct the complete journey in forming high-performance teams, ensuring an excellent experience for candidates and hiring managers. I also lead initiatives focused on engagement, diversity and inclusion, as well as organizational development, collaborating closely with business areas to boost their growth and performance.",
         "fourth": "I am curious and study self-management, agility, and metrics, and my purpose is to help organizations evolve and expand their awareness, becoming more strategic, transparent, and fair."
       }
