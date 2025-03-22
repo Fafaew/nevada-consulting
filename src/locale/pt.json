@@ -1,12 +1,12 @@
 {
   "translation": {
     "navbar": {
-      "home": "Inicio",
-      "services": "Serviços",
-      "clients": "Clientes",
-      "about": "Sobre",
-      "contact": "Contato",
-      "language": "Idioma"
+      "home": "inicio",
+      "services": "serviços",
+      "clients": "clientes",
+      "about": "sobre",
+      "contact": "contato",
+      "language": "idioma"
     },
     "header": {
       "subtitle": "Consultoria Global B2B e B2C"
@@ -22,28 +22,28 @@
     "services": {
       "title": "Serviços",
       "first": {
-        "subtitle": "Recrutamento e Seleção de Talentos por Equipe de Alto desempenho",
-        "description": "Identifique e contrate os melhores profissionais para todos os setores e níveis, de operacionais a posições executivas. Conte com um processo estratégico e personalizado para garantir contratações assertivas e alinhas a cultura e aos objetivos do seu negócio"
+        "subtitle": "Contrate uma equipe de alto desempenho",
+        "description": "Contrate profissionais de alto nível para sua equipe. Identificamos e recrutamos os melhores profissionais em todos os setores e níveis — desde funções operacionais até cargos executivos. Conte com um processo estratégico e personalizado para garantir contratações precisas alinhadas com a cultura e os objetivos do seu negócio."
       },
       "second": {
         "subtitle": "Mentoring e Coaching para Lideranças",
-        "description": "Desenvolva lideranças preparadas para tomar decisões estratégicas, engajar equipes e impulsionar resultados com uma gestão humanizada e eficaz"
+        "description": "Desenvolva lideranças preparadas para tomar decisões estratégicas, engajar equipes e impulsionar resultados com uma gestão humanizada e eficaz."
       },
       "third": {
-        "subtitle": "Treinamento de Recrutamento e Seleção",
-        "description": "Capacite sua equipe com técnicas avanças de atração, triagem e entrevista, tornando o processo seletivo mais ágil e eficiente"
+        "subtitle": "Recrutando profissionais de alto desempenho: um programa de treinamento para gestores de contratação",
+        "description": "Capacite sua equipe com técnicas avanças de atração, triagem e entrevista, tornando o processo seletivo mais ágil e eficiente."
       },
       "fourth": {
         "subtitle": "Assessment de Perfil Comportamental",
-        "description": "Tome decisões mais assertivas com análises comportamentais profundas de habilidades, potencial de desenvolvimento e com melhor fit para sua empresa"
+        "description": "Tome decisões mais assertivas com análises comportamentais profundas de habilidades, potencial de desenvolvimento e com melhor fit para sua empresa."
       },
       "fifth": {
         "subtitle": "Análise e Evolução de currículo, Linkedin e Portfólio",
-        "description": "Destaque-se no mercado com um perfil profissional que valoriza suas habilidades e diferenciais competitivos. Seja notado de maneira estratégica por recrutadoras(es)"
+        "description": "Destaque-se no mercado com um perfil profissional que valoriza suas habilidades e diferenciais competitivos. Seja notado de maneira estratégica por recrutadoras(es)."
       },
       "sixth": {
         "subtitle": "Mentoria e Preparação para Entrevistas",
-        "description": "Encare processos seletivos com confiança, dominando suas técnicas que aumentam suas chances de conquistar a vaga ideal"
+        "description": "Encare processos seletivos com confiança, dominando suas técnicas que aumentam suas chances de conquistar a vaga ideal."
       }
     },
     "clients": {
@@ -60,23 +60,26 @@
       },
       "description": {
         "subtitle": "Consultora Sênior",
-        "first": "SOU CONSULTORA DE PESSOAS E CULTURA, ESPECIALISTA NA FORMAÇÃO DE TIMES EFICIENTES.",
-        "second": "Formada  em Psicologia pela Universidade Federal de Minas Gerais, MBA em Gestão de Negócios pela USP, me interesso pelo comportamento humano nas dinâmicas e estratégias organizacionais.",
+        "first": "Sou consultora de pessoas e cultura, especialista na formação de times eficientes.",
+        "second": "Formada  em psicologia pela Universidade Federal de Minas Gerais, MBA em gestão de negócios pela USP, me interesso pelo comportamento humano nas dinâmicas e estratégias organizacionais.",
         "third": "Atuando como líder de atração, seleção e onboarding, conduzo a jornada completa na formação de times de alta performance, garantindo uma excelente experiência aos candidatos e hiring managers. Lidero também  iniciativas voltadas para engajamento, diversidade e inclusão, bem como desenvolvimento organizacional, colaborando estreitamente com as áreas de negócio para impulsionar seu crescimento e desempenho.",
         "fourth": "Sou curiosa e estudo sobre  autogestão, agilidade e métricas, e meu propósito é auxiliar organizações a evoluírem e ampliarem sua consciência, tornando-se mais estratégicas transparentes e justas."
       }
     },
     "testimonials": {
-      "title": "Depoimentos",
-      "first.subtitle": "Head de People - Red Ventures",
+      "title": "O que nossos clientes dizem",
+      "firstJobPosition": "Head de People",
+      "firstCompany": "Red Ventures e OKTO payments",
       "firstReview1": "Tive a oportunidade de trabalhar com Juliana Carvalho na Red Ventures Brasil e na Okto Brasil, e sempre obtive excelentes resultados em seus recrutamentos.",
       "firstReview2": "Juliana é uma profissional altamente qualificada, com grande capacidade de absorver rapidamente os requisitos de cada vaga. Além disso, sua habilidade em compreender os aspectos culturais das empresas permite que ela entregue profissionais não apenas alinhados tecnicamente, mas também aderentes à cultura organizacional.",
       "firstReview3": "Sua assertividade e precisão na condução dos processos seletivos fazem dela uma excelente parceira para qualquer empresa que busca talentos de alto nível.",
-      "second.subtitle": "Depoimento de cliente",
-      "secondReview1": "O melhor investimento para impulsionar minha carreira. Juliana estruturou LinkedIn, CV (PT/EN) e PDA de forma excelente. Mesmo atuando em R&S, fiquei travada ao fazer meu material. Sua experiência garantiu assertividade - antes estava estagnada em contatos e sem retornos positivos.",
-      "secondReview2": "Juliana entendeu perfeitamente meu perfil profissional e objetivos. Com ajustes estratégicos no CV/LinkedIn, recebi mais de cinco contatos de recrutadores em 1 mês - algo inédito pra mim. Além disso, mesmo após a consultoria prestada, ela continua disponível para orientações e dúvidas!",
-      "secondReview3": "Profissional excelente, competente e preocupada em entender o que de fato você quer pra ser assertiva na entrega! Recomendo 100%",
-      "third.subtitle": "Líder de Cultura - Komuh",
+      "secondJobPosition": "Depoimento",
+      "secondCompany": "Cliente/Consultoria",
+      "secondReview1": "O melhor investimento que eu fiz para dar o ponta pé inicial de cuidar da minha carreira!",
+      "secondReview2": "E a Ju foi excelente em conduzir conversas comigo, me entender como profissional e também o que exatamente eu queria conseguir e transmitir com o meu CV/Linkedin! Ficou extremamente mais estratégico, passando exatamente o que eu queria e em 1 mês com o perfil ajustado eu recebi mais de 5 contatos de recrutadores interessados em bater um papo.",
+      "secondReview3": "Além de fazer tudo isso ela ainda esteve (e está) sempre disponível no whatsapp pra me orientar e tirar dúvidas! Profissional excelente, competente e preocupada em entender o que de fato você quer pra ser assertiva na entrega! Recomendo 100%.",
+      "thirdJobPosition": "Líder de Cultura",
+      "thirdCompany": "Komuh",
       "thirdReview1": "A Juliana realizou um trabalho excepcional na consultoria de recrutamento para a Komuh, sua abordagem estratégica foi fundamental para otimizar todo nosso processo seletivo",
       "thirdReview2": "Desde o início, esteve totalmente alinhada com a nossa cultura e necessidades, sendo inclusive uma preocupação dela desde o início do processo, garantindo que cada pessoa candidata apresentada tivesse não só as habilidades técnicas, mas também o fit certo com o time e agência.",
       "thirdReview3": "A qualidade dos profissionais selecionados e a agilidade no preenchimento das vagas impactaram positivamente nossa operação. Os resultados superaram todas as nossas expectativas!"

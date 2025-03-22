@@ -1,12 +1,12 @@
 {
   "translation": {
     "navbar": {
-      "home": "Home",
-      "services": "Services",
-      "clients": "Clients",
-      "about": "About",
-      "contact": "Contact",
-      "language": "Language"
+      "home": "home",
+      "services": "services",
+      "clients": "clients",
+      "about": "about",
+      "contact": "contact",
+      "language": "language"
     },
     "header": {
       "subtitle": "B2B and B2C Global Consulting"
@@ -22,28 +22,28 @@
     "services": {
       "title": "Services",
       "first": {
-        "subtitle": "Talent Recruitment and Selection By High Performance Team",
-        "description": "Identify and hire the best professionals for all sectors and levels, from operational to executive positions. Rely on a strategic and personalized process to ensure assertive hires aligned with your business culture and objectives"
+        "subtitle": "Hire a high-performance team",
+        "description": "Hire A-players for your team. We identify and recruit top professionals across all sectors and levels — from operational to executive roles. Count on a strategic and personalized process to ensure precise hires aligned with your business culture and objectives."
       },
       "second": {
         "subtitle": "Mentoring and Coaching for Leadership",
-        "description": "Develop leaders prepared to make strategic decisions, engage teams, and drive results with humanized and effective management"
+        "description": "Develop leaders prepared to make strategic decisions, engage teams, and drive results with humanized and effective management."
       },
       "third": {
-        "subtitle": "Recruitment and Selection Training",
-        "description": "Empower your team with advanced techniques in attraction, screening, and interviewing, making the selection process more agile and efficient"
+        "subtitle": "Recruiting high performers: a training program for hiring managers",
+        "description": "Empower your team with advanced techniques in attraction, screening, and interviewing, making the selection process more agile and efficient."
       },
       "fourth": {
         "subtitle": "Behavioral Profile Assessment",
-        "description": "Make more assertive decisions with in-depth behavioral analyses of skills, development potential, and better fit for your company"
+        "description": "Make more assertive decisions with in-depth behavioral analyses of skills, development potential, and better fit for your company."
       },
       "fifth": {
         "subtitle": "Analysis and Enhancement of Resume, LinkedIn, and Portfolio",
-        "description": "Stand out in the market with a professional profile that highlights your skills and competitive advantages. Be strategically noticed by recruiters"
+        "description": "Stand out in the market with a professional profile that highlights your skills and competitive advantages. Be strategically noticed by recruiters."
       },
       "sixth": {
         "subtitle": "Mentoring and Interview Preparation",
-        "description": "Face selection processes with confidence, mastering techniques that increase your chances of securing the ideal position"
+        "description": "Face selection processes with confidence, mastering techniques that increase your chances of securing the ideal position."
       }
     },
     "clients": {
@@ -60,26 +60,29 @@
       },
       "description": {
         "subtitle": "Senior Consultant",
-        "first": "PEOPLE AND CULTURE CONSULTANT, SPECIALIZED IN FORMING EFFICIENT TEAMS.",
-        "second": "Graduated in Psychology from the Federal University of Minas Gerais, with an MBA in Business Management from USP, interested in human behavior in organizational dynamics and strategies.",
-        "third": "Acting as a leader in attraction, selection, and onboarding, I conduct the complete journey in forming high-performance teams, ensuring an excellent experience for candidates and hiring managers. I also lead initiatives focused on engagement, diversity and inclusion, as well as organizational development, collaborating closely with business areas to boost their growth and performance.",
-        "fourth": "I am curious and study self-management, agility, and metrics, and my purpose is to help organizations evolve and expand their awareness, becoming more strategic, transparent, and fair."
+        "first": "People and culture consultant, specialized in forming efficient teams.",
+        "second": "Graduated in Psychology from the Federal University of Minas Gerais, with an MBA in Business Management from USP. I have a strong interest in human behavior within organizational dynamics and strategy.",
+        "third": "As a leader in talent attraction, selection, and onboarding, I manage the end-to-end journey of building high-performance teams, ensuring an exceptional experience for both candidates and hiring managers. I also lead initiatives focused on engagement, diversity and inclusion, and organizational development, working closely with business units to drive growth and performance.",
+        "fourth": "Driven by curiosity, I explore self-management, agility, and metrics to support organizations in evolving and expanding their awareness — enabling them to become more strategic, transparent, and equitable."
       }
     },
     "testimonials": {
-      "title": "Testimonials",
-      "first.subtitle": "Head of People - Red Ventures",
-      "firstReview1": "I had the opportunity to work with Juliana Carvalho at Red Ventures Brazil and Okto Brazil, and always obtained excellent results in her recruitments.",
-      "firstReview2": "Juliana is a highly qualified professional, with a great ability to quickly absorb the requirements of each position. Moreover, her skill in understanding the cultural aspects of companies allows her to deliver professionals who are not only technically aligned but also adherent to the organizational culture.",
+      "title": "What our clients say",
+      "firstJobPosition": "Head of People",
+      "firstCompany": "Red Ventures and OKTO payments",
+      "firstReview1": "I had the opportunity to work with Juliana Carvalho at Red Ventures Brazil and Okto Brazil, and I always achieved excellent results in her recruitments.",
+      "firstReview2": "Juliana is a highly qualified professional, with a great ability to quickly absorb the requirements of each position. Additionally, her ability to understand the cultural aspects of companies allows her to deliver professionals who are not only technically aligned but also adherent to the organizational culture.",
       "firstReview3": "Her assertiveness and precision in conducting selection processes make her an excellent partner for any company seeking high-level talent.",
-      "second.subtitle": "Client Testimonial",
-      "secondReview1": "The best investment to boost my career. Juliana expertly structured my LinkedIn, CV (PT/EN), and career development plan. Even working in Recruitment & Selection, I struggled with my own materials. Her experience ensured precision – previously, I saw stagnant connections and no positive responses.",
-      "secondReview2": "Juliana perfectly understood my professional profile and goals. With strategic CV/LinkedIn adjustments, I received 5+ recruiter contacts in 1 month – unprecedented for me. She remains available for guidance even after our consultation!",
-      "secondReview3": "Outstanding professional – highly competent and dedicated to understanding your true needs to deliver targeted solutions. 100% recommended!",
-      "third.subtitle": "Culture Leader - Komuh",
-      "thirdReview1": "Juliana delivered exceptional work in recruitment consulting for Komuh. Her strategic approach proved fundamental in optimizing our entire hiring process, demonstrating both technical expertise and deep market understanding.",
-      "thirdReview2": "From day one, she maintained complete alignment with our culture and needs, a priority she established early in the process. Every presented candidate met not just technical requirements but demonstrated ideal team and agency cultural fit.",
-      "thirdReview3": "The caliber of selected professionals and rapid filling of critical roles directly enhanced our operational efficiency. Final outcomes surpassed all expectations, delivering measurable business impacts!"
+      "secondJobPosition": "Testimonial",
+      "secondCompany": "Client/Consultancy",
+      "secondReview1": "The best investment I made to get a head start on taking care of my career!",
+      "secondReview2": "And Ju was excellent in conducting conversations with me, understanding me as a professional and exactly what I wanted to achieve and convey with my CV/LinkedIn! It became extremely strategic, conveying exactly what I wanted, and with the profile adjusted, I received more than 5 contacts from interested recruiters within a month.",
+      "secondReview3": "In addition to doing all this, she was (and is) always available on WhatsApp to guide me and answer questions! Excellent professional, competent, and concerned with understanding what you really want to be assertive in delivery! I recommend 100%.",
+      "thirdJobPosition": "Culture Leader",
+      "thirdCompany": "Komuh",
+      "thirdReview1": "Juliana did exceptional work in recruitment consulting for Komuh, her strategic approach was fundamental in optimizing our entire selection process",
+      "thirdReview2": "From the beginning, she was fully aligned with our culture and needs, and it was a concern of hers from the start of the process, ensuring that each candidate presented not only had the technical skills but also the right fit with the team and agency.",
+      "thirdReview3": "The quality of the selected professionals and the speed in filling the positions positively impacted our operation. The results exceeded all our expectations!"
     },
     "contact": {
       "title": "Contact",
