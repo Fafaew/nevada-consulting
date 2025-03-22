@@ -6,8 +6,8 @@ import { useTranslation } from 'react-i18next';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-import redVentures from '../assets/imgs/rv-short.webp';
-import Komuh from '../assets/imgs/komuh.webp';
+import redVentures from '../assets/imgs/testimonialsRV.png';
+import Komuh from '../assets/imgs/testimonialsKomuh.png';
 import woman_talking from '../assets/imgs/woman_talking_table.webp';
 
 const CustomPrevArrow = ({ onClick }) => (
@@ -115,7 +115,7 @@ const Testimonials = () => {
               <div className='w-full h-24 overflow-hidden flex justify-center'>
                 <img
                   src={item.image}
-                  className='w-1/2 h-full rounded-full object-cover'
+                  className='w-24 h-24 rounded-full object-cover object-center'
                 />
               </div>
               {/* Texto */}
