@@ -9,15 +9,15 @@
       "language": "idioma"
     },
     "header": {
-      "subtitle": "Consultoria Global B2B e B2C"
+      "subtitle": "Consultoria global B2B e B2C"
     },
     "revealText": {
-      "recruitment": "Recrutamento e Seleção de Talentos",
-      "coaching": "Mentoring e Coaching para Lideranças",
-      "training": "Treinamento de Recrutamento e Seleção",
-      "assessment": "Assessment de Perfil Comportamental",
-      "analisys": "Análise e Evolução de Currículo, Linkedin e Porfólio",
-      "mentoring": "Mentoria e Preparação para Entrevistas"
+      "recruitment": "Recrutamento e seleção de talentos",
+      "coaching": "Mentoring e coaching para lideranças",
+      "training": "Treinamento de recrutamento e seleção",
+      "assessment": "Assessment de perfil comportamental",
+      "analisys": "Análise e evolução de currículo, linkedin e porfólio",
+      "mentoring": "Mentoria e preparação para entrevistas"
     },
     "services": {
       "title": "Serviços",
@@ -26,7 +26,7 @@
         "description": "Contrate profissionais de alto nível para sua equipe. Identificamos e recrutamos os melhores profissionais em todos os setores e níveis — desde funções operacionais até cargos executivos. Conte com um processo estratégico e personalizado para garantir contratações precisas alinhadas com a cultura e os objetivos do seu negócio."
       },
       "second": {
-        "subtitle": "Mentoring e Coaching para Lideranças",
+        "subtitle": "Mentoring e coaching para lideranças",
         "description": "Desenvolva lideranças preparadas para tomar decisões estratégicas, engajar equipes e impulsionar resultados com uma gestão humanizada e eficaz."
       },
       "third": {
@@ -34,15 +34,15 @@
         "description": "Capacite sua equipe com técnicas avanças de atração, triagem e entrevista, tornando o processo seletivo mais ágil e eficiente."
       },
       "fourth": {
-        "subtitle": "Assessment de Perfil Comportamental",
+        "subtitle": "Assessment de perfil comportamental",
         "description": "Tome decisões mais assertivas com análises comportamentais profundas de habilidades, potencial de desenvolvimento e com melhor fit para sua empresa."
       },
       "fifth": {
-        "subtitle": "Análise e Evolução de currículo, Linkedin e Portfólio",
+        "subtitle": "Análise e evolução de currículo, linkedin e portfólio",
         "description": "Destaque-se no mercado com um perfil profissional que valoriza suas habilidades e diferenciais competitivos. Seja notado de maneira estratégica por recrutadoras(es)."
       },
       "sixth": {
-        "subtitle": "Mentoria e Preparação para Entrevistas",
+        "subtitle": "Mentoria e preparação para entrevistas",
         "description": "Encare processos seletivos com confiança, dominando suas técnicas que aumentam suas chances de conquistar a vaga ideal."
       }
     },
