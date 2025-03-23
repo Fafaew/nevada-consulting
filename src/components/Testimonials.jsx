@@ -10,23 +10,23 @@ import redVentures from '../assets/imgs/testimonialsRV.png';
 import Komuh from '../assets/imgs/testimonialsKomuh.png';
 import woman_talking from '../assets/imgs/woman_talking_table.webp';
 
-const CustomPrevArrow = ({ onClick }) => (
-  <div
-    className='absolute top-[45%] left-36 transform -translate-y-1/2 z-10 cursor-pointer text-white bg-purple-secondary p-3 rounded-full hover:bg-indigo-400 transition'
-    onClick={onClick}
-  >
-    ❮
-  </div>
-);
+// const CustomPrevArrow = ({ onClick }) => (
+//   <div
+//     className='absolute top-[45%] left-36 transform -translate-y-1/2 z-10 cursor-pointer text-white bg-purple-secondary p-3 rounded-full hover:bg-indigo-400 transition'
+//     onClick={onClick}
+//   >
+//     ❮
+//   </div>
+// );
 
-const CustomNextArrow = ({ onClick }) => (
-  <div
-    className='absolute top-[45%] right-44 transform -translate-y-1/2 z-10 cursor-pointer text-white bg-purple-secondary p-3 rounded-full hover:bg-indigo-400 transition'
-    onClick={onClick}
-  >
-    ❯
-  </div>
-);
+// const CustomNextArrow = ({ onClick }) => (
+//   <div
+//     className='absolute top-[45%] right-44 transform -translate-y-1/2 z-10 cursor-pointer text-white bg-purple-secondary p-3 rounded-full hover:bg-indigo-400 transition'
+//     onClick={onClick}
+//   >
+//     ❯
+//   </div>
+// );
 
 // Configuração do slider
 const settings = {
@@ -38,6 +38,7 @@ const settings = {
   slidesToScroll: 1,
   autoplay: true,
   autoplaySpeed: 10000,
+  pauseOnHover: false,
   // nextArrow: <CustomNextArrow />,
   // prevArrow: <CustomPrevArrow />,
   responsive: [

@@ -9,15 +9,15 @@
       "language": "language"
     },
     "header": {
-      "subtitle": "B2B and B2C Global Consulting"
+      "subtitle": "B2B and B2C global consulting"
     },
     "revealText": {
-      "recruitment": "Talent Recruitment and Selection By High Performance Team",
-      "coaching": "Mentoring and Coaching for Leadership",
-      "training": "Recruitment and Selection Training",
-      "assessment": "Behavioral Profile Assessment",
-      "analisys": "Analysis and Enhancement of Resume, LinkedIn, and Portfolio",
-      "mentoring": "Mentoring and Interview Preparation"
+      "recruitment": "Talent recruitment and selection by high performance team",
+      "coaching": "Mentoring and coaching for leadership",
+      "training": "Recruitment and selection training",
+      "assessment": "Behavioral profile assessment",
+      "analisys": "Analysis and enhancement of resume, linkedIn, and portfolio",
+      "mentoring": "Mentoring and interview preparation"
     },
     "services": {
       "title": "Services",
@@ -26,7 +26,7 @@
         "description": "Hire A-players for your team. We identify and recruit top professionals across all sectors and levels — from operational to executive roles. Count on a strategic and personalized process to ensure precise hires aligned with your business culture and objectives."
       },
       "second": {
-        "subtitle": "Mentoring and Coaching for Leadership",
+        "subtitle": "Mentoring and coaching for leadership",
         "description": "Develop leaders prepared to make strategic decisions, engage teams, and drive results with humanized and effective management."
       },
       "third": {
@@ -34,15 +34,15 @@
         "description": "Empower your team with advanced techniques in attraction, screening, and interviewing, making the selection process more agile and efficient."
       },
       "fourth": {
-        "subtitle": "Behavioral Profile Assessment",
+        "subtitle": "Behavioral profile assessment",
         "description": "Make more assertive decisions with in-depth behavioral analyses of skills, development potential, and better fit for your company."
       },
       "fifth": {
-        "subtitle": "Analysis and Enhancement of Resume, LinkedIn, and Portfolio",
+        "subtitle": "Analysis and enhancement of resume, linkedIn, and portfolio",
         "description": "Stand out in the market with a professional profile that highlights your skills and competitive advantages. Be strategically noticed by recruiters."
       },
       "sixth": {
-        "subtitle": "Mentoring and Interview Preparation",
+        "subtitle": "Mentoring and interview preparation",
         "description": "Face selection processes with confidence, mastering techniques that increase your chances of securing the ideal position."
       }
     },
