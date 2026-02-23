@@ -1,24 +1,26 @@
+'use client';
+
 import React, { useState } from 'react';
-import '/node_modules/flag-icons/css/flag-icons.min.css';
+import 'flag-icons/css/flag-icons.min.css';
 import { Link } from 'react-scroll';
 import Logo from '../assets/icons/Logo.jsx';
 import { useTranslation } from 'react-i18next';
 import { useLanguage } from '../lib/LanguageContext.jsx';
 import { AnimatedHamburgerButton } from '../utils/HamburgerButton';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/navigation';
 import { useScrollDirection } from '../hooks/useScrollDirection.js';
 
 const Navbar = () => {
   const { t } = useTranslation();
   const { changeLanguage } = useLanguage();
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const [nav, setNav] = useState(false);
   const scrollDirection = useScrollDirection();
 
   const handleLanguageChange = (lang) => {
     changeLanguage(lang);
-    navigate(`/${lang}`);
+    router.push(`/${lang}`);
   };
 
   const navItems = [

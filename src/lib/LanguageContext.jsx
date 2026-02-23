@@ -1,15 +1,19 @@
+'use client';
+
 /* eslint-disable react/prop-types */
 import React, { createContext, useState, useContext, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { usePathname } from 'next/navigation';
 
 const LanguageContext = createContext();
 
 export const LanguageProvider = ({ children }) => {
   const { i18n } = useTranslation();
   const [currentLanguage, setCurrentLanguage] = useState(i18n.language);
+  const pathname = usePathname();
 
   useEffect(() => {
-    const pathParts = window.location.pathname.split('/').filter(Boolean);
+    const pathParts = pathname.split('/').filter(Boolean);
     const urlLanguage = pathParts[0];
     if (['pt', 'en'].includes(urlLanguage)) {
       i18n.changeLanguage(urlLanguage);
@@ -19,7 +23,7 @@ export const LanguageProvider = ({ children }) => {
       i18n.changeLanguage(defaultLanguage);
       setCurrentLanguage(defaultLanguage);
     }
-  }, [i18n]);
+  }, [pathname, i18n]);
 
   const changeLanguage = (newLanguage) => {
     if (newLanguage !== currentLanguage) {

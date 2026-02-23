@@ -1,5 +1,7 @@
-import { React, useEffect } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+'use client';
+
+import { React } from 'react';
+import { scroller } from 'react-scroll';
 
 import { RevealText } from '../utils/RevealText';
 import { useTranslation } from 'react-i18next';
@@ -8,20 +10,13 @@ import logo from '../assets/imgs/logo.webp';
 
 const Header = () => {
   const { t } = useTranslation();
-  const navigate = useNavigate();
-  const location = useLocation();
-
-  useEffect(() => {
-    if (location.hash === '#contact') {
-      const element = document.getElementById('contact');
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-  }, [location]);
 
   const handleContactClick = () => {
-    navigate('/#contact');
+    scroller.scrollTo('contact', {
+      smooth: true,
+      duration: 800,
+      easing: 'easeInOutQuart',
+    });
   };
 
   return (

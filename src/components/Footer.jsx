@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import logo from '../assets/imgs/logo.webp';
 
