@@ -1,9 +1,11 @@
+'use client';
+
 import { motion } from 'framer-motion';
 import { React, useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import Testimonials from '../components/Testimonials';
+import Testimonials from './Testimonials';
 
-import juProfile from '../assets/imgs/juProfile.webp';
+import juProfile from '../../assets/imgs/juProfile.webp';
 
 const About = () => {
   const { t } = useTranslation();
