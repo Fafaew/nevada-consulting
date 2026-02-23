@@ -1,5 +1,5 @@
 import { redirect } from 'next/navigation';
-import HomePage from '../../components/HomePage';
+import HomePage from '../../components/client/HomePage';
 import { use } from 'react';
 
 export function generateStaticParams() {

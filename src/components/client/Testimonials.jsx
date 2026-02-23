@@ -8,9 +8,9 @@ import { useTranslation } from 'react-i18next';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-import redVentures from '../assets/imgs/testimonialsRV.png';
-import Komuh from '../assets/imgs/testimonialsKomuh.png';
-import woman_talking from '../assets/imgs/woman_talking_table.webp';
+import redVentures from '../../assets/imgs/testimonialsRV.png';
+import Komuh from '../../assets/imgs/testimonialsKomuh.png';
+import woman_talking from '../../assets/imgs/woman_talking_table.webp';
 
 const CustomArrow = ({ direction, onClick }) => {
   const arrowIcon = direction === 'prev' ? '❮' : '❯';
@@ -20,11 +20,11 @@ const CustomArrow = ({ direction, onClick }) => {
       className={`
         hidden
         md:block
-        text-white 
-        bg-purple-secondary 
-        p-3 
-        rounded-full 
-        hover:bg-indigo-400 
+        text-white
+        bg-purple-secondary
+        p-3
+        rounded-full
+        hover:bg-indigo-400
         transition
         focus:outline-none
       `}

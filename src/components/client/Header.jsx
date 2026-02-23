@@ -3,10 +3,10 @@
 import { React } from 'react';
 import { scroller } from 'react-scroll';
 
-import { RevealText } from '../utils/RevealText';
+import { RevealText } from './RevealText';
 import { useTranslation } from 'react-i18next';
 
-import logo from '../assets/imgs/logo.webp';
+import logo from '../../assets/imgs/logo.webp';
 
 const Header = () => {
   const { t } = useTranslation();

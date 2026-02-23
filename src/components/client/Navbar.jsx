@@ -3,12 +3,12 @@
 import React, { useState } from 'react';
 import 'flag-icons/css/flag-icons.min.css';
 import { Link } from 'react-scroll';
-import Logo from '../assets/icons/Logo.jsx';
+import Logo from '../../assets/icons/Logo.jsx';
 import { useTranslation } from 'react-i18next';
-import { useLanguage } from '../lib/LanguageContext.jsx';
-import { AnimatedHamburgerButton } from '../utils/HamburgerButton';
+import { useLanguage } from '../../providers/LanguageContext.jsx';
+import { AnimatedHamburgerButton } from './HamburgerButton';
 import { useRouter } from 'next/navigation';
-import { useScrollDirection } from '../hooks/useScrollDirection.js';
+import { useScrollDirection } from '../../hooks/useScrollDirection.js';
 
 const Navbar = () => {
   const { t } = useTranslation();

@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import logo from '../assets/imgs/logo.webp';
+import logo from '../../assets/imgs/logo.webp';
 
 import { useTranslation } from 'react-i18next';
 import { SiWhatsapp } from 'react-icons/si';
