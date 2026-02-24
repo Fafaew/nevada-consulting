@@ -6,6 +6,8 @@
       "clients": "clients",
       "about": "about",
       "contact": "contact",
+      "login": "Login",
+      "logout": "Sign out",
       "language": "language"
     },
     "header": {
@@ -92,6 +94,17 @@
       "send": "Send",
       "social": "Social links",
       "thankYouMessage": "Message sent successfully! We'll get back to you soon"
+    },
+    "login": {
+      "title": "Sign in to your account",
+      "email": "Email",
+      "password": "Password",
+      "signIn": "Sign in",
+      "loading": "Signing in...",
+      "invalidCredentials": "Invalid email or password",
+      "or": "or",
+      "google": "Continue with Google",
+      "facebook": "Continue with Facebook"
     },
     "footer": {
       "tel": "+55 11 9 9460-7649",

@@ -6,6 +6,8 @@
       "clients": "clientes",
       "about": "sobre",
       "contact": "contato",
+      "login": "Login",
+      "logout": "Desconectar",
       "language": "idioma"
     },
     "header": {
@@ -92,6 +94,17 @@
       "send": "Enviar",
       "social": "Redes Sociais",
       "thankYouMessage": "Mensagem enviada com sucesso! Entraremos em contato em breve"
+    },
+    "login": {
+      "title": "Entrar na sua conta",
+      "email": "Email",
+      "password": "Senha",
+      "signIn": "Entrar",
+      "loading": "Entrando...",
+      "invalidCredentials": "Email ou senha inválidos",
+      "or": "ou",
+      "google": "Continuar com Google",
+      "facebook": "Continuar com Facebook"
     },
     "footer": {
       "tel": "(11) 9 9460-7649",
