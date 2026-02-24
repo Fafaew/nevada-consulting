@@ -6,6 +6,7 @@ import { scroller } from 'react-scroll';
 import { RevealText } from './RevealText';
 import { useTranslation } from 'react-i18next';
 
+import Image from 'next/image';
 import logo from '../../assets/imgs/logo.webp';
 
 const Header = () => {
@@ -57,10 +58,10 @@ const Header = () => {
       </div>
       <div className=' relative mx-auto max-w-7xl px-6 lg:px-8 flex justify-center bottom-8 lg:bottom-20'>
         <div className='mx-auto lg:mx-0 flex flex-col items-center mt-16 lg:mt-24'>
-          <img
+          <Image
             src={logo}
             alt='Descrição da imagem'
-            className='h-24 lg:h-48 mb-4'
+            className='h-24 lg:h-48 mb-4 w-auto'
           />
           <h1 className='text-5xl font-semibold tracking-tight text-white sm:text-7xl text-center'>
             Nevada Consulting

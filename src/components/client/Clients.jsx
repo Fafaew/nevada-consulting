@@ -2,7 +2,10 @@
 
 /* eslint-disable react/prop-types */
 import React, { useEffect } from 'react';
+import Image from 'next/image';
 import { motion, useAnimationControls } from 'framer-motion';
+
+const MotionImage = motion(Image);
 import { useTranslation } from 'react-i18next';
 
 const Clients = ({ logos }) => {
@@ -43,10 +46,12 @@ const Clients = ({ logos }) => {
                 key={index}
                 className='flex items-center justify-center min-w-[200px] h-full px-4'
               >
-                <motion.img
+                <MotionImage
                   src={logo}
                   alt={`Cliente ${index + 1}`}
-                  className='w-32 h-20 object-contain'
+                  width={128}
+                  height={80}
+                  className='object-contain'
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}

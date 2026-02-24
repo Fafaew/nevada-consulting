@@ -5,6 +5,7 @@ import { React, useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import Testimonials from './Testimonials';
 
+import Image from 'next/image';
 import juProfile from '../../assets/imgs/juProfile.webp';
 
 const About = () => {
@@ -43,10 +44,11 @@ const About = () => {
           <h3 className='text-center font-medium text-xl mt-1 mb-6 lg:hidden'>
             {t('about.description.subtitle')}
           </h3>
-          <img
+          <Image
             className='w-full h-full object-cover rounded-none lg:rounded-3xl'
             src={juProfile}
             alt='Juliana Carvalho'
+            fill
           />
         </div>
         <div className='col-span-1 md:col-start-2 p-6 md:pl-0 mx-4 md:mr-14 mt-0 lg:mt-6'>

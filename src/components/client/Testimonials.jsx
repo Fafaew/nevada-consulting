@@ -3,6 +3,7 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/jsx-key */
 import { React, useRef } from 'react';
+import Image from 'next/image';
 import Slider from 'react-slick';
 import { useTranslation } from 'react-i18next';
 import 'slick-carousel/slick/slick.css';
@@ -137,10 +138,12 @@ const Testimonials = () => {
             <div className='pt-0 pb-16' key={index}>
               <div className='flex flex-col md:flex-row items-center bg-white shadow-lg rounded-lg p-6 md:p-8 max-w-4xl mx-auto'>
                 <div className='w-full h-24 overflow-hidden flex justify-center'>
-                  <img
+                  <Image
                     src={item.image}
                     alt={item.company}
-                    className='w-24 h-24 rounded-full object-cover object-center'
+                    width={96}
+                    height={96}
+                    className='rounded-full object-cover object-center'
                   />
                 </div>
                 <div className='mt-6 md:mt-0 md:ml-8 text-center md:text-left'>
