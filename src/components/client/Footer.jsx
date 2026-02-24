@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import logo from '../../assets/imgs/logo.webp';
 
 import { useTranslation } from 'react-i18next';
@@ -15,10 +16,10 @@ const Footer = () => {
       <div className='grid grid-rows-2 lg:grid-rows-none lg:grid-cols-2'>
         <div>
           <div>
-            <img
+            <Image
               src={logo}
               alt='Descrição da imagem'
-              className='h-12 lg:h-12 mb-2 m-auto'
+              className='h-12 mb-2 mx-auto w-auto'
             />
             <p className='text-base lg:text-2xl font-semibold tracking-tight text-white text-center'>
               Nevada Consulting
