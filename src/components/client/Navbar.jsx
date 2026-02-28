@@ -9,13 +9,17 @@ import { useLanguage } from '../../providers/LanguageContext.jsx';
 import { AnimatedHamburgerButton } from './HamburgerButton';
 import { useRouter } from 'next/navigation';
 import { useScrollDirection } from '../../hooks/useScrollDirection.js';
+import LoginModal from './LoginModal.jsx';
+import { useSession, signOut } from 'next-auth/react';
 
 const Navbar = () => {
   const { t } = useTranslation();
   const { changeLanguage } = useLanguage();
   const router = useRouter();
 
+  const { data: session } = useSession();
   const [nav, setNav] = useState(false);
+  const [loginOpen, setLoginOpen] = useState(false);
   const scrollDirection = useScrollDirection();
 
   const handleLanguageChange = (lang) => {
@@ -70,6 +74,21 @@ const Navbar = () => {
           onClick={() => handleLanguageChange('en')}
           className='fi fi-us h-[32px] ml-4 mr-4 cursor-pointer'
         ></button>
+        {session ? (
+          <button
+            onClick={() => signOut()}
+            className='ml-4 px-4 py-2 border border-red-500 text-red-500 hover:bg-red-500 hover:text-white rounded-lg transition-colors duration-300 cursor-pointer font-medium'
+          >
+            {t('navbar.logout')}
+          </button>
+        ) : (
+          <button
+            onClick={() => setLoginOpen(true)}
+            className='ml-4 px-4 py-2 border border-purple-primary text-purple-primary hover:bg-purple-primary hover:text-white rounded-lg transition-colors duration-300 cursor-pointer font-medium'
+          >
+            {t('navbar.login')}
+          </button>
+        )}
       </ul>
 
       {/* Mobile Navigation Icon */}
@@ -98,6 +117,29 @@ const Navbar = () => {
             </Link>
           </li>
         ))}
+        <li>
+          {session ? (
+            <button
+              onClick={() => {
+                signOut();
+                setNav(false);
+              }}
+              className='block w-full text-left p-4 pl-8 border-b rounded-xl hover:bg-red-500 duration-300 hover:text-white cursor-pointer border-gray-600'
+            >
+              {t('navbar.logout')}
+            </button>
+          ) : (
+            <button
+              onClick={() => {
+                setLoginOpen(true);
+                setNav(false);
+              }}
+              className='block w-full text-left p-4 pl-8 border-b rounded-xl hover:bg-purple-primary duration-300 hover:text-black cursor-pointer border-gray-600'
+            >
+              {t('navbar.login')}
+            </button>
+          )}
+        </li>
         <div className='p-4 pl-8 border-b rounded-xl hover:bg-purple-primary duration-300 hover:text-black cursor-pointer border-gray-600 flex items-center'>
           <p>{t('navbar.language')}</p>
           <button
@@ -112,6 +154,7 @@ const Navbar = () => {
           ></button>
         </div>
       </ul>
+      <LoginModal isOpen={loginOpen} onClose={() => setLoginOpen(false)} />
     </div>
   );
 };

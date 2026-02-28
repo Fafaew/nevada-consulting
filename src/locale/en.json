@@ -6,6 +6,8 @@
       "clients": "clients",
       "about": "about",
       "contact": "contact",
+      "login": "Login",
+      "logout": "Sign out",
       "language": "language"
     },
     "header": {
@@ -92,6 +94,30 @@
       "send": "Send",
       "social": "Social links",
       "thankYouMessage": "Message sent successfully! We'll get back to you soon"
+    },
+    "login": {
+      "title": "Sign in to your account",
+      "registerTitle": "Create an account",
+      "email": "Email",
+      "password": "Password",
+      "confirmPassword": "Confirm password",
+      "name": "Full name",
+      "signIn": "Sign in",
+      "registerButton": "Create account",
+      "loading": "Please wait...",
+      "invalidCredentials": "Invalid email or password",
+      "passwordMismatch": "Passwords do not match",
+      "registerSuccess": "Account created! Check your email.",
+      "checkEmailTitle": "Check your email",
+      "checkEmailBody": "We sent a confirmation link to",
+      "checkEmailSpam": "Can't find it? Check your spam folder.",
+      "noAccount": "Don't have an account?",
+      "hasAccount": "Already have an account?",
+      "register": "Sign up",
+      "backToLogin": "Sign in",
+      "or": "or",
+      "google": "Continue with Google",
+      "facebook": "Continue with Facebook"
     },
     "footer": {
       "tel": "+55 11 9 9460-7649",
