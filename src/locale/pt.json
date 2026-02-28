@@ -48,7 +48,17 @@
       "sixth": {
         "subtitle": "Mentoria e preparação para entrevistas",
         "description": "Encare processos seletivos com confiança, dominando suas técnicas que aumentam suas chances de conquistar a vaga ideal."
-      }
+      },
+      "hire": "Contratar",
+      "bookSession": "Agendar consulta",
+      "loginToBook": "Faça login para agendar",
+      "backToServices": "Voltar aos serviços",
+      "notFound": "Serviço não encontrado",
+      "ctaTitle": "Pronto para transformar sua empresa?",
+      "ctaSubtitle": "Fale com um especialista e descubra qual serviço é ideal para você.",
+      "ctaButton": "Contratar um serviço",
+      "selectService": "Selecione um serviço",
+      "viewDetails": "Ver detalhes"
     },
     "clients": {
       "title": "Nossos Clientes"
