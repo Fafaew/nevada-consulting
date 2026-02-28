@@ -113,26 +113,9 @@ const squareData = [
   },
 ];
 
-const generateSquares = () => {
-  return shuffle(squareData).map((sq) => (
-    <motion.div
-      key={sq.id}
-      layout
-      transition={{ duration: 1.5, type: 'tween' }}
-      className='w-full h-full'
-      style={{
-        backgroundImage: `url(${sq.src})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        willChange: 'transform',
-      }}
-    ></motion.div>
-  ));
-};
-
 const ShuffleGrid = () => {
   const timeoutRef = useRef(null);
-  const [squares, setSquares] = useState(generateSquares());
+  const [squares, setSquares] = useState(squareData);
 
   useEffect(() => {
     shuffleSquares();
@@ -141,14 +124,27 @@ const ShuffleGrid = () => {
   }, []);
 
   const shuffleSquares = () => {
-    setSquares(generateSquares());
+    setSquares(shuffle([...squareData]));
 
     timeoutRef.current = setTimeout(shuffleSquares, 3000);
   };
 
   return (
     <div className='grid grid-cols-3 grid-rows-2 h-[450px] gap-1'>
-      {squares.map((sq) => sq)}
+      {squares.map((sq) => (
+        <motion.div
+          key={sq.id}
+          layout
+          transition={{ duration: 1.5, type: 'tween' }}
+          className='w-full h-full'
+          style={{
+            backgroundImage: `url(${sq.src})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            willChange: 'transform',
+          }}
+        />
+      ))}
     </div>
   );
 };
