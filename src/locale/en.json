@@ -48,7 +48,17 @@
       "sixth": {
         "subtitle": "Mentoring and interview preparation",
         "description": "Face selection processes with confidence, mastering techniques that increase your chances of securing the ideal position."
-      }
+      },
+      "hire": "Hire",
+      "bookSession": "Book a session",
+      "loginToBook": "Sign in to book",
+      "backToServices": "Back to services",
+      "notFound": "Service not found",
+      "ctaTitle": "Ready to transform your company?",
+      "ctaSubtitle": "Talk to a specialist and find out which service is right for you.",
+      "ctaButton": "Hire a service",
+      "selectService": "Select a service",
+      "viewDetails": "View details"
     },
     "clients": {
       "title": "Our Clients"
