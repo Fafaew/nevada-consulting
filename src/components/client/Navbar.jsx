@@ -12,7 +12,7 @@ import { useScrollDirection } from '../../hooks/useScrollDirection.js';
 import LoginModal from './LoginModal.jsx';
 import { useSession, signOut } from 'next-auth/react';
 
-const Navbar = () => {
+const Navbar = ({ hideNav = false }) => {
   const { t } = useTranslation();
   const { changeLanguage, currentLanguage } = useLanguage();
   const router = useRouter();
@@ -24,7 +24,7 @@ const Navbar = () => {
 
   const handleLanguageChange = (lang) => {
     changeLanguage(lang);
-    router.push(`/${lang}`);
+    router.push(`/${lang}${hideNav ? '/account' : ''}`);
   };
 
   const navItems = [
@@ -35,37 +35,46 @@ const Navbar = () => {
     { id: 5, text: t('navbar.contact'), to: 'contact' },
   ];
 
+  const logoEl = hideNav ? (
+    <button onClick={() => router.push(`/${currentLanguage}`)}>
+      <Logo className='ml-4 lg:ml-12 w-10 mb-2 lg:mb-0 lg:w-14 cursor-pointer' />
+    </button>
+  ) : (
+    <Link
+      to='home'
+      smooth={true}
+      duration={800}
+      easing='easeInOutQuart'
+      onClick={() => setNav(false)}
+    >
+      <Logo className='ml-4 lg:ml-12 w-10 mb-2 lg:mb-0 lg:w-14 cursor-pointer' />
+    </Link>
+  );
+
   return (
     <div
       className={`bg-black flex justify-between items-center h-16 lg:h-24 w-screen mx-auto px-4 text-white fixed z-50 transition-all duration-300 ${
         scrollDirection === 'down' ? '-top-24' : 'top-0'
       }`}
     >
-      <Link
-        to='home'
-        smooth={true}
-        duration={800}
-        easing='easeInOutQuart'
-        onClick={() => setNav(false)}
-      >
-        <Logo className='ml-4 lg:ml-12 w-10 mb-2 lg:mb-0 lg:w-14 cursor-pointer' />
-      </Link>
+      {logoEl}
 
       {/* Desktop Navigation */}
       <ul className='hidden md:flex items-center lg:mr-8'>
-        {navItems.map((item) => (
-          <li key={item.id}>
-            <Link
-              to={item.to}
-              smooth={true}
-              duration={800}
-              easing='easeInOutQuart'
-              className='p-4 hover:bg-purple-primary rounded-xl m-2 cursor-pointer duration-300 hover:text-black'
-            >
-              {item.text}
-            </Link>
-          </li>
-        ))}
+        {!hideNav &&
+          navItems.map((item) => (
+            <li key={item.id}>
+              <Link
+                to={item.to}
+                smooth={true}
+                duration={800}
+                easing='easeInOutQuart'
+                className='p-4 hover:bg-purple-primary rounded-xl m-2 cursor-pointer duration-300 hover:text-black'
+              >
+                {item.text}
+              </Link>
+            </li>
+          ))}
         <button
           onClick={() => handleLanguageChange('pt')}
           className='fi fi-br h-[32px] cursor-pointer ml-8 lg:mr-2'
@@ -77,10 +86,14 @@ const Navbar = () => {
         {session ? (
           <>
             <button
-              onClick={() => router.push(`/${currentLanguage}/account`)}
+              onClick={() =>
+                hideNav
+                  ? router.push(`/${currentLanguage}`)
+                  : router.push(`/${currentLanguage}/account`)
+              }
               className='ml-4 px-4 py-2 border border-purple-primary text-purple-primary hover:bg-purple-primary hover:text-white rounded-lg transition-colors duration-300 cursor-pointer font-medium'
             >
-              {t('navbar.myAccount')}
+              {hideNav ? t('navbar.homePage') : t('navbar.myAccount')}
             </button>
             <button
               onClick={() => signOut()}
@@ -111,31 +124,34 @@ const Navbar = () => {
         }`}
       >
         {/* Mobile Navigation Items */}
-        {navItems.map((item) => (
-          <li key={item.id}>
-            <Link
-              to={item.to}
-              smooth={true}
-              duration={800}
-              easing='easeInOutQuart'
-              className='block p-4 pl-8 border-b rounded-xl hover:bg-purple-primary duration-300 hover:text-black cursor-pointer border-gray-600'
-              onClick={() => setNav(false)}
-            >
-              {item.text}
-            </Link>
-          </li>
-        ))}
+        {!hideNav &&
+          navItems.map((item) => (
+            <li key={item.id}>
+              <Link
+                to={item.to}
+                smooth={true}
+                duration={800}
+                easing='easeInOutQuart'
+                className='block p-4 pl-8 border-b rounded-xl hover:bg-purple-primary duration-300 hover:text-black cursor-pointer border-gray-600'
+                onClick={() => setNav(false)}
+              >
+                {item.text}
+              </Link>
+            </li>
+          ))}
         {session ? (
           <>
             <li>
               <button
                 onClick={() => {
-                  router.push(`/${currentLanguage}/account`);
+                  hideNav
+                    ? router.push(`/${currentLanguage}`)
+                    : router.push(`/${currentLanguage}/account`);
                   setNav(false);
                 }}
                 className='block w-full text-left p-4 pl-8 border-b rounded-xl hover:bg-purple-primary duration-300 hover:text-black cursor-pointer border-gray-600'
               >
-                {t('navbar.myAccount')}
+                {hideNav ? t('navbar.homePage') : t('navbar.myAccount')}
               </button>
             </li>
             <li>

@@ -17,7 +17,7 @@ export default async function DashboardPage({ params }) {
 
   return (
     <>
-      <Navbar />
+      <Navbar hideNav />
       <main className='min-h-screen bg-[#0e0e0e] text-white flex items-center justify-center px-6'>
         <div className='max-w-2xl w-full'>
           <p className='text-purple-primary text-sm font-semibold uppercase tracking-widest mb-3'>
