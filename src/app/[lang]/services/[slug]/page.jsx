@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Navbar from '../../../../components/client/Navbar';
 import BookServiceButton from '../../../../components/client/BookServiceButton';
-import { slugToKey } from '../../../../lib/servicesConfig';
+import { slugToKey, serviceItems } from '../../../../lib/servicesConfig';
 import ptTranslations from '../../../../locale/pt.json';
 import enTranslations from '../../../../locale/en.json';
 
@@ -60,7 +60,7 @@ export default async function ServicePage({ params }) {
             {service.description}
           </p>
 
-          <BookServiceButton />
+          <BookServiceButton slug={slug} serviceName={service.subtitle} />
         </div>
       </main>
     </>
