@@ -4,18 +4,20 @@ import { useState } from 'react';
 import { useSession } from 'next-auth/react';
 import { useTranslation } from 'react-i18next';
 import LoginModal from './LoginModal.jsx';
+import SchedulingModal from './SchedulingModal.jsx';
 
-export default function BookServiceButton() {
+export default function BookServiceButton({ slug, serviceName }) {
   const { data: session } = useSession();
   const { t } = useTranslation();
   const [loginOpen, setLoginOpen] = useState(false);
+  const [schedulingOpen, setSchedulingOpen] = useState(false);
 
   const handleClick = () => {
     if (!session) {
       setLoginOpen(true);
       return;
     }
-    // TODO: navigate to scheduling + Stripe payment flow
+    setSchedulingOpen(true);
   };
 
   return (
@@ -28,6 +30,12 @@ export default function BookServiceButton() {
         {session ? t('services.bookSession') : t('services.loginToBook')}
       </button>
       <LoginModal isOpen={loginOpen} onClose={() => setLoginOpen(false)} />
+      <SchedulingModal
+        isOpen={schedulingOpen}
+        onClose={() => setSchedulingOpen(false)}
+        slug={slug}
+        serviceName={serviceName}
+      />
     </>
   );
 }

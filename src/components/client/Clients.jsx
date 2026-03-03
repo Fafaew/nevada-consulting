@@ -1,11 +1,11 @@
 'use client';
 
 /* eslint-disable react/prop-types */
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import Image from 'next/image';
 import { motion, useAnimationControls } from 'framer-motion';
 
-const MotionImage = motion(Image);
+const MotionImage = motion.create(Image);
 import { useTranslation } from 'react-i18next';
 
 const Clients = ({ logos }) => {
