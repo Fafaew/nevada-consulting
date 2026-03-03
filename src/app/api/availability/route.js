@@ -62,7 +62,7 @@ export async function GET(request) {
         slots.push(cursor.toISOString());
       }
 
-      cursor = new Date(cursor.getTime() + duration * 60 * 1000);
+      cursor = new Date(cursor.getTime() + 60 * 60 * 1000);
     }
 
     return Response.json({ slots });

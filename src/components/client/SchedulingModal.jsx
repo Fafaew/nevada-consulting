@@ -2,19 +2,8 @@
 
 import { useState, useEffect } from 'react';
 import { useSession } from 'next-auth/react';
-import { IoClose } from 'react-icons/io5';
+import { IoClose, IoChevronBack, IoChevronForward } from 'react-icons/io5';
 import { useLanguage } from '../../providers/LanguageContext.jsx';
-
-const getAvailableDates = () => {
-  const dates = [];
-  const today = new Date();
-  for (let i = 1; dates.length < 30; i++) {
-    const d = new Date(today);
-    d.setDate(today.getDate() + i);
-    if (d.getDay() !== 0 && d.getDay() !== 6) dates.push(d);
-  }
-  return dates;
-};
 
 const toDateString = (date) => {
   const y = date.getFullYear();
@@ -22,6 +11,11 @@ const toDateString = (date) => {
   const d = String(date.getDate()).padStart(2, '0');
   return `${y}-${m}-${d}`;
 };
+
+const isSameDay = (a, b) =>
+  a.getFullYear() === b.getFullYear() &&
+  a.getMonth() === b.getMonth() &&
+  a.getDate() === b.getDate();
 
 const formatDateLabel = (date, lang) =>
   date.toLocaleDateString(lang === 'pt' ? 'pt-BR' : 'en-US', {
@@ -36,6 +30,16 @@ const formatTimeSlot = (isoString, lang) =>
     minute: '2-digit',
     timeZone: 'America/Sao_Paulo',
   });
+
+const MONTH_NAMES = {
+  pt: ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'],
+  en: ['January','February','March','April','May','June','July','August','September','October','November','December'],
+};
+
+const DAY_NAMES = {
+  pt: ['Dom','Seg','Ter','Qua','Qui','Sex','Sáb'],
+  en: ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],
+};
 
 const i18n = {
   pt: {
@@ -73,20 +77,27 @@ export default function SchedulingModal({ isOpen, onClose, slug, serviceName }) 
   const { currentLanguage: lang } = useLanguage();
   const t = i18n[lang] ?? i18n.pt;
 
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
   const [step, setStep] = useState(1);
   const [selectedDate, setSelectedDate] = useState(null);
+  const [calYear, setCalYear] = useState(today.getFullYear());
+  const [calMonth, setCalMonth] = useState(today.getMonth());
   const [slots, setSlots] = useState([]);
   const [slotsLoading, setSlotsLoading] = useState(false);
   const [selectedSlot, setSelectedSlot] = useState(null);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState('');
 
-  const availableDates = getAvailableDates();
-
   useEffect(() => {
     if (isOpen) {
+      const now = new Date();
+      now.setHours(0, 0, 0, 0);
       setStep(1);
       setSelectedDate(null);
+      setCalYear(now.getFullYear());
+      setCalMonth(now.getMonth());
       setSlots([]);
       setSelectedSlot(null);
       setError('');
@@ -129,6 +140,39 @@ export default function SchedulingModal({ isOpen, onClose, slug, serviceName }) 
     }
   };
 
+  // Calendar helpers
+  const daysInMonth = new Date(calYear, calMonth + 1, 0).getDate();
+  const firstDayOfMonth = new Date(calYear, calMonth, 1).getDay();
+  const currentMonthStart = new Date(today.getFullYear(), today.getMonth(), 1);
+  const calMonthStart = new Date(calYear, calMonth, 1);
+
+  const canGoPrev = calMonthStart > currentMonthStart;
+  const canGoNext = true;
+
+  const handlePrevMonth = () => {
+    if (!canGoPrev) return;
+    if (calMonth === 0) { setCalYear(calYear - 1); setCalMonth(11); }
+    else setCalMonth(calMonth - 1);
+  };
+
+  const handleNextMonth = () => {
+    if (!canGoNext) return;
+    if (calMonth === 11) { setCalYear(calYear + 1); setCalMonth(0); }
+    else setCalMonth(calMonth + 1);
+  };
+
+  const handleDayClick = (day) => {
+    const date = new Date(calYear, calMonth, day);
+    const dow = date.getDay();
+    if (date <= today || dow === 0 || dow === 6) return;
+    setSelectedDate(date);
+    setStep(2);
+  };
+
+  const calendarDays = [];
+  for (let i = 0; i < firstDayOfMonth; i++) calendarDays.push(null);
+  for (let d = 1; d <= daysInMonth; d++) calendarDays.push(d);
+
   if (!isOpen) return null;
 
   return (
@@ -157,23 +201,78 @@ export default function SchedulingModal({ isOpen, onClose, slug, serviceName }) 
           </div>
         )}
 
-        {/* Step 1 — Date picker */}
+        {/* Step 1 — Calendar picker */}
         {step === 1 && (
           <>
             <h2 className='text-white text-xl font-bold mb-1'>{t.chooseDate}</h2>
             <p className='text-gray-400 text-sm mb-6'>{serviceName}</p>
-            <div className='grid grid-cols-3 gap-2'>
-              {availableDates.map((date) => (
-                <button
-                  key={toDateString(date)}
-                  onClick={() => { setSelectedDate(date); setStep(2); }}
-                  className='px-3 py-3 rounded-xl border border-gray-700 text-gray-300 text-sm
-                    hover:border-purple-primary hover:text-white hover:bg-purple-primary/10
-                    transition-colors duration-200 cursor-pointer text-center capitalize'
-                >
-                  {formatDateLabel(date, lang)}
-                </button>
+
+            {/* Month navigation */}
+            <div className='flex items-center justify-between mb-4'>
+              <button
+                onClick={handlePrevMonth}
+                disabled={!canGoPrev}
+                className='p-1.5 rounded-lg text-gray-400 hover:text-white hover:bg-gray-800
+                  disabled:opacity-30 disabled:cursor-not-allowed transition-colors cursor-pointer'
+              >
+                <IoChevronBack size={18} />
+              </button>
+
+              <span className='text-white font-semibold text-sm'>
+                {MONTH_NAMES[lang]?.[calMonth] ?? MONTH_NAMES.pt[calMonth]} {calYear}
+              </span>
+
+              <button
+                onClick={handleNextMonth}
+                disabled={!canGoNext}
+                className='p-1.5 rounded-lg text-gray-400 hover:text-white hover:bg-gray-800
+                  disabled:opacity-30 disabled:cursor-not-allowed transition-colors cursor-pointer'
+              >
+                <IoChevronForward size={18} />
+              </button>
+            </div>
+
+            {/* Day-of-week headers */}
+            <div className='grid grid-cols-7 mb-1'>
+              {(DAY_NAMES[lang] ?? DAY_NAMES.pt).map((name) => (
+                <div key={name} className='text-center text-gray-500 text-xs font-medium py-1'>
+                  {name}
+                </div>
               ))}
+            </div>
+
+            {/* Calendar grid */}
+            <div className='grid grid-cols-7 gap-y-1'>
+              {calendarDays.map((day, idx) => {
+                if (!day) return <div key={`empty-${idx}`} />;
+
+                const date = new Date(calYear, calMonth, day);
+                const dow = date.getDay();
+                const isWeekend = dow === 0 || dow === 6;
+                const isPast = date <= today;
+                const isDisabled = isWeekend || isPast;
+                const isSelected = selectedDate && isSameDay(date, selectedDate);
+
+                return (
+                  <button
+                    key={day}
+                    onClick={() => handleDayClick(day)}
+                    disabled={isDisabled}
+                    className={`
+                      aspect-square flex items-center justify-center rounded-lg text-sm font-medium
+                      transition-colors duration-200
+                      ${isDisabled
+                        ? 'text-gray-600 cursor-not-allowed'
+                        : isSelected
+                          ? 'bg-purple-primary text-white'
+                          : 'text-gray-300 hover:bg-purple-primary/20 hover:text-white cursor-pointer'
+                      }
+                    `}
+                  >
+                    {day}
+                  </button>
+                );
+              })}
             </div>
           </>
         )}
