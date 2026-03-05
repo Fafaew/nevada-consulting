@@ -34,6 +34,21 @@ export async function POST(request) {
   const currency = isBRL ? 'brl' : 'usd';
   const unit_amount = isBRL ? service.priceBRL : service.priceUSD;
 
+  const locale = lang === 'pt' ? 'pt-BR' : 'en-US';
+  const TZ = 'America/Sao_Paulo';
+  const formattedDate = new Date(startTime).toLocaleString(locale, {
+    timeZone: TZ,
+    weekday: 'long',
+    day: '2-digit',
+    month: 'long',
+    year: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+  });
+  const description = isBRL
+    ? `Agendamento: ${formattedDate}`
+    : `Appointment: ${formattedDate}`;
+
   const checkoutSession = await stripe.checkout.sessions.create({
     mode: 'payment',
     line_items: [
@@ -42,7 +57,7 @@ export async function POST(request) {
         price_data: {
           currency,
           unit_amount,
-          product_data: { name: serviceName },
+          product_data: { name: serviceName, description },
         },
       },
     ],
