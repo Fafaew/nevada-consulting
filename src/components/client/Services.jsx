@@ -13,7 +13,6 @@ import {
 } from 'react-icons/pi';
 import { FaChartLine } from 'react-icons/fa';
 import { RiTeamLine } from 'react-icons/ri';
-import { FaUsersViewfinder } from 'react-icons/fa6';
 
 const Services = () => {
   const { t } = useTranslation();
@@ -27,13 +26,6 @@ const Services = () => {
       icon: <PiBuildingOfficeThin />,
       subtitle: t('services.first.subtitle'),
       description: t('services.first.description'),
-    },
-    {
-      id: 2,
-      slug: 'leadership-coaching',
-      icon: <FaUsersViewfinder />,
-      subtitle: t('services.second.subtitle'),
-      description: t('services.second.description'),
     },
     {
       id: 3,
@@ -76,21 +68,47 @@ const Services = () => {
             {t('services.title')}
           </h2>
 
-          <div className='grid sm:grid-cols-2 md:grid-cols-3 gap-8 sm:px-5'>
-            {items.map(({ id, slug, icon, subtitle, description }) => (
+          {/* B2C — cards em destaque */}
+          <div className='grid grid-cols-1 sm:grid-cols-3 gap-8 sm:px-5'>
+            {items.slice(2).map(({ id, slug, icon, subtitle, description }) => (
               <Link
                 key={id}
                 href={`/${currentLanguage}/services/${slug}`}
-                className='mx-6 lg:mx-0 px-8 pt-4 pb-6 shadow-md shadow-purple-secondary
-                  rounded-lg overflow-hidden duration-200 hover:scale-105 hover:shadow-purple-primary'
+                className='mx-6 sm:mx-0 px-8 pt-6 pb-8 rounded-xl border border-purple-primary/25
+                  bg-purple-primary/5 shadow-md shadow-purple-secondary duration-200
+                  hover:scale-105 hover:shadow-purple-primary hover:border-purple-primary/60'
               >
                 <div className='text-purple-primary'>
-                  {React.cloneElement(icon, { className: 'w-10 h-10 m-auto' })}
+                  {React.cloneElement(icon, { className: 'w-12 h-12 m-auto' })}
                 </div>
-                <div className='font-bold text-center mt-2'>{subtitle}</div>
-                <div className='flex text-center my-6'>{description}</div>
+                <div className='font-bold text-center mt-3'>{subtitle}</div>
+                <div className='text-center text-gray-300 text-sm mt-4'>{description}</div>
               </Link>
             ))}
+          </div>
+
+          {/* B2B — seção "Serviços para empresas" */}
+          <div className='mt-14 sm:px-5'>
+            <p className='text-xs font-semibold uppercase tracking-widest text-purple-primary/70 mb-4 px-6 sm:px-0'>
+              {t('services.b2bLabel')}
+            </p>
+            <div className='flex flex-wrap justify-center gap-8'>
+              {items.slice(0, 2).map(({ id, slug, icon, subtitle, description }) => (
+                <Link
+                  key={id}
+                  href={`/${currentLanguage}/services/${slug}`}
+                  className='w-[25rem] mx-6 sm:mx-0 px-8 pt-6 pb-8 rounded-xl border border-purple-primary/25
+                    bg-purple-primary/5 shadow-md shadow-purple-secondary duration-200
+                    hover:scale-105 hover:shadow-purple-primary hover:border-purple-primary/60'
+                >
+                  <div className='text-purple-primary'>
+                    {React.cloneElement(icon, { className: 'w-12 h-12 m-auto' })}
+                  </div>
+                  <div className='font-bold text-center mt-3'>{subtitle}</div>
+                  <div className='text-center text-gray-300 text-sm mt-4'>{description}</div>
+                </Link>
+              ))}
+            </div>
           </div>
 
           {/* CTA único abaixo do grid */}
