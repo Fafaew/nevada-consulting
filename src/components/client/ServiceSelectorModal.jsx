@@ -10,22 +10,29 @@ import {
 } from 'react-icons/pi';
 import { FaChartLine } from 'react-icons/fa';
 import { RiTeamLine } from 'react-icons/ri';
-import { FaUsersViewfinder } from 'react-icons/fa6';
 import React from 'react';
 
-export default function ServiceSelectorModal({ isOpen, onClose }) {
+const B2C_SLUGS = ['behavioral-assessment', 'resume-linkedin-portfolio', 'interview-preparation'];
+const B2B_SLUGS = ['high-performance-team', 'recruitment-training'];
+
+export default function ServiceSelectorModal({ isOpen, onClose, filter }) {
   const { t } = useTranslation();
   const { currentLanguage } = useLanguage();
   const router = useRouter();
 
-  const items = [
+  const allItems = [
     { slug: 'high-performance-team', icon: <PiBuildingOfficeThin />, label: t('services.first.subtitle') },
-    { slug: 'leadership-coaching', icon: <FaUsersViewfinder />, label: t('services.second.subtitle') },
     { slug: 'recruitment-training', icon: <FaChartLine />, label: t('services.third.subtitle') },
     { slug: 'behavioral-assessment', icon: <RiTeamLine />, label: t('services.fourth.subtitle') },
     { slug: 'resume-linkedin-portfolio', icon: <PiStrategy />, label: t('services.fifth.subtitle') },
     { slug: 'interview-preparation', icon: <PiPresentationChart />, label: t('services.sixth.subtitle') },
   ];
+
+  const items = filter === 'b2c'
+    ? allItems.filter((i) => B2C_SLUGS.includes(i.slug))
+    : filter === 'b2b'
+      ? allItems.filter((i) => B2B_SLUGS.includes(i.slug))
+      : allItems;
 
   const handleSelect = (slug) => {
     onClose();
