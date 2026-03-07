@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { useSession } from 'next-auth/react';
 import { IoClose, IoChevronBack, IoChevronForward } from 'react-icons/io5';
 import { useLanguage } from '../../providers/LanguageContext.jsx';
 
@@ -45,35 +44,24 @@ const i18n = {
   pt: {
     chooseDate: 'Escolha uma data',
     chooseTime: 'Escolha um horário',
-    confirm: 'Confirmar agendamento',
-    confirmed: 'Agendamento confirmado!',
-    confirmedMsg: (service, dateLabel, timeLabel) =>
-      `Sua consulta de ${service} foi agendada para ${dateLabel} às ${timeLabel}.`,
-    emailSent: 'Um e-mail de confirmação foi enviado para',
+    goToPayment: 'Ir para pagamento',
     noSlots: 'Nenhum horário disponível neste dia.',
     errorSlots: 'Erro ao buscar horários.',
     back: '← Voltar',
     loading: 'Aguarde...',
-    close: 'Fechar',
   },
   en: {
     chooseDate: 'Choose a date',
     chooseTime: 'Choose a time',
-    confirm: 'Confirm booking',
-    confirmed: 'Booking confirmed!',
-    confirmedMsg: (service, dateLabel, timeLabel) =>
-      `Your ${service} session has been booked for ${dateLabel} at ${timeLabel}.`,
-    emailSent: 'A confirmation email was sent to',
+    goToPayment: 'Go to payment',
     noSlots: 'No slots available on this day.',
     errorSlots: 'Error fetching slots.',
     back: '← Back',
     loading: 'Please wait...',
-    close: 'Close',
   },
 };
 
 export default function SchedulingModal({ isOpen, onClose, slug, serviceName }) {
-  const { data: session } = useSession();
   const { currentLanguage: lang } = useLanguage();
   const t = i18n[lang] ?? i18n.pt;
 
@@ -87,7 +75,7 @@ export default function SchedulingModal({ isOpen, onClose, slug, serviceName }) 
   const [slots, setSlots] = useState([]);
   const [slotsLoading, setSlotsLoading] = useState(false);
   const [selectedSlot, setSelectedSlot] = useState(null);
-  const [submitting, setSubmitting] = useState(false);
+  const [redirecting, setRedirecting] = useState(false);
   const [error, setError] = useState('');
 
   useEffect(() => {
@@ -121,22 +109,21 @@ export default function SchedulingModal({ isOpen, onClose, slug, serviceName }) 
       .finally(() => setSlotsLoading(false));
   }, [selectedDate, slug]);
 
-  const handleConfirm = async () => {
-    setSubmitting(true);
+  const handlePayment = async () => {
+    setRedirecting(true);
     setError('');
     try {
-      const res = await fetch('/api/bookings', {
+      const res = await fetch('/api/checkout', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ slug, startTime: selectedSlot, serviceName }),
+        body: JSON.stringify({ slug, startTime: selectedSlot, serviceName, lang }),
       });
       const data = await res.json();
-      if (!res.ok) throw new Error(data.error ?? 'Booking failed');
-      setStep(3);
+      if (!res.ok) throw new Error(data.error ?? 'Erro ao iniciar pagamento');
+      if (data.url) window.location.href = data.url;
     } catch (err) {
       setError(err.message);
-    } finally {
-      setSubmitting(false);
+      setRedirecting(false);
     }
   };
 
@@ -322,43 +309,16 @@ export default function SchedulingModal({ isOpen, onClose, slug, serviceName }) 
                 {error && <p className='text-red-400 text-sm mb-4'>{error}</p>}
 
                 <button
-                  onClick={handleConfirm}
-                  disabled={!selectedSlot || submitting}
+                  onClick={handlePayment}
+                  disabled={!selectedSlot || redirecting}
                   className='w-full bg-purple-primary hover:bg-purple-700 text-white font-semibold
                     py-3 rounded-lg transition-colors duration-300 disabled:opacity-50 cursor-pointer'
                 >
-                  {submitting ? t.loading : t.confirm}
+                  {redirecting ? t.loading : t.goToPayment}
                 </button>
               </>
             )}
           </>
-        )}
-
-        {/* Step 3 — Confirmation */}
-        {step === 3 && (
-          <div className='flex flex-col items-center text-center py-4'>
-            <div className='w-16 h-16 rounded-full bg-purple-primary/20 flex items-center justify-center mb-6'>
-              <span className='text-3xl text-purple-primary'>✓</span>
-            </div>
-            <h2 className='text-white text-xl font-bold mb-3'>{t.confirmed}</h2>
-            <p className='text-gray-300 text-sm leading-relaxed mb-2'>
-              {t.confirmedMsg(
-                serviceName,
-                selectedDate ? formatDateLabel(selectedDate, lang) : '',
-                selectedSlot ? formatTimeSlot(selectedSlot, lang) : ''
-              )}
-            </p>
-            <p className='text-gray-500 text-xs mb-8'>
-              {t.emailSent} {session?.user?.email}
-            </p>
-            <button
-              onClick={onClose}
-              className='bg-purple-primary hover:bg-purple-700 text-white font-semibold
-                px-8 py-3 rounded-lg transition-colors duration-300 cursor-pointer'
-            >
-              {t.close}
-            </button>
-          </div>
         )}
       </div>
     </div>
