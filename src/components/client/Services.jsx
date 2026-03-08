@@ -13,12 +13,12 @@ import {
 } from 'react-icons/pi';
 import { FaChartLine } from 'react-icons/fa';
 import { RiTeamLine } from 'react-icons/ri';
-import { FaUsersViewfinder } from 'react-icons/fa6';
 
 const Services = () => {
   const { t } = useTranslation();
   const { currentLanguage } = useLanguage();
   const [selectorOpen, setSelectorOpen] = useState(false);
+  const [activeTab, setActiveTab] = useState('b2c');
 
   const items = [
     {
@@ -27,13 +27,6 @@ const Services = () => {
       icon: <PiBuildingOfficeThin />,
       subtitle: t('services.first.subtitle'),
       description: t('services.first.description'),
-    },
-    {
-      id: 2,
-      slug: 'leadership-coaching',
-      icon: <FaUsersViewfinder />,
-      subtitle: t('services.second.subtitle'),
-      description: t('services.second.description'),
     },
     {
       id: 3,
@@ -76,27 +69,82 @@ const Services = () => {
             {t('services.title')}
           </h2>
 
-          <div className='grid sm:grid-cols-2 md:grid-cols-3 gap-8 sm:px-5'>
-            {items.map(({ id, slug, icon, subtitle, description }) => (
-              <Link
-                key={id}
-                href={`/${currentLanguage}/services/${slug}`}
-                className='mx-6 lg:mx-0 px-8 pt-4 pb-6 shadow-md shadow-purple-secondary
-                  rounded-lg overflow-hidden duration-200 hover:scale-105 hover:shadow-purple-primary'
+          {/* Tabs */}
+          <div className='sm:px-5 mx-6 sm:mx-0'>
+            <div className='flex gap-1 bg-white/5 rounded-xl p-1 mb-8 w-fit mx-auto'>
+              <button
+                onClick={() => setActiveTab('b2c')}
+                className={`px-6 py-2 rounded-lg text-sm font-semibold transition-all duration-200 cursor-pointer
+                  ${activeTab === 'b2c'
+                    ? 'bg-purple-primary text-white shadow-md'
+                    : 'text-gray-400 hover:text-white'}`}
               >
-                <div className='text-purple-primary'>
-                  {React.cloneElement(icon, { className: 'w-10 h-10 m-auto' })}
+                {t('services.b2cLabel')}
+              </button>
+              <button
+                onClick={() => setActiveTab('b2b')}
+                className={`px-6 py-2 rounded-lg text-sm font-semibold transition-all duration-200 cursor-pointer
+                  ${activeTab === 'b2b'
+                    ? 'bg-purple-primary text-white shadow-md'
+                    : 'text-gray-400 hover:text-white'}`}
+              >
+                {t('services.b2bLabel')}
+              </button>
+            </div>
+
+            <div className='grid'>
+              <div className={`col-start-1 row-start-1 transition-opacity duration-200
+                ${activeTab === 'b2c' ? 'opacity-100' : 'opacity-0 invisible pointer-events-none'}`}>
+                <div className='grid grid-cols-1 sm:grid-cols-3 gap-8'>
+                  {items.slice(2).map(({ id, slug, icon, subtitle, description }) => (
+                    <Link
+                      key={id}
+                      href={`/${currentLanguage}/services/${slug}`}
+                      className='px-8 pt-6 pb-8 rounded-xl border border-purple-primary/25
+                        bg-purple-primary/5 shadow-md shadow-purple-secondary duration-200
+                        hover:scale-105 hover:shadow-purple-primary hover:border-purple-primary/60'
+                    >
+                      <div className='text-purple-primary'>
+                        {React.cloneElement(icon, { className: 'w-12 h-12 m-auto' })}
+                      </div>
+                      <div className='font-bold text-center mt-3'>{subtitle}</div>
+                      <div className='text-center text-gray-300 text-sm mt-4'>{description}</div>
+                    </Link>
+                  ))}
                 </div>
-                <div className='font-bold text-center mt-2'>{subtitle}</div>
-                <div className='flex text-center my-6'>{description}</div>
-              </Link>
-            ))}
+              </div>
+
+              <div className={`col-start-1 row-start-1 transition-opacity duration-200
+                ${activeTab === 'b2b' ? 'opacity-100' : 'opacity-0 invisible pointer-events-none'}`}>
+                <div className='flex flex-wrap justify-center gap-8'>
+                  {items.slice(0, 2).map(({ id, slug, icon, subtitle, description }) => (
+                    <Link
+                      key={id}
+                      href={`/${currentLanguage}/services/${slug}`}
+                      className='w-[25rem] px-8 pt-6 pb-8 rounded-xl border border-purple-primary/25
+                        bg-purple-primary/5 shadow-md shadow-purple-secondary duration-200
+                        hover:scale-105 hover:shadow-purple-primary hover:border-purple-primary/60'
+                    >
+                      <div className='text-purple-primary'>
+                        {React.cloneElement(icon, { className: 'w-12 h-12 m-auto' })}
+                      </div>
+                      <div className='font-bold text-center mt-3'>{subtitle}</div>
+                      <div className='text-center text-gray-300 text-sm mt-4'>{description}</div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
 
-          {/* CTA único abaixo do grid */}
+          {/* CTA */}
           <div className='mt-12 mx-6 sm:mx-12 border border-gray-700 rounded-2xl px-8 py-10 flex flex-col items-center gap-4'>
-            <h3 className='text-2xl font-bold text-white'>{t('services.ctaTitle')}</h3>
-            <p className='text-gray-400 max-w-md'>{t('services.ctaSubtitle')}</p>
+            <h3 className='text-2xl font-bold text-white'>
+              {t(activeTab === 'b2c' ? 'services.ctaTitleB2C' : 'services.ctaTitleB2B')}
+            </h3>
+            <p className='text-gray-400 max-w-md'>
+              {t(activeTab === 'b2c' ? 'services.ctaSubtitleB2C' : 'services.ctaSubtitleB2B')}
+            </p>
             <button
               onClick={() => setSelectorOpen(true)}
               className='mt-2 px-8 py-3 bg-purple-primary text-white font-semibold rounded-lg
@@ -111,6 +159,7 @@ const Services = () => {
       <ServiceSelectorModal
         isOpen={selectorOpen}
         onClose={() => setSelectorOpen(false)}
+        filter={activeTab}
       />
     </>
   );
