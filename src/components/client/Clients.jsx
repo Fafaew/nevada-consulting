@@ -26,7 +26,7 @@ const Clients = ({ logos }) => {
     };
 
     animateCarousel();
-  }, []);
+  }, [controls, duplicatedLogos.length]);
 
   return (
     <section id='clients' className='py-16 bg-gray-100 overflow-hidden'>

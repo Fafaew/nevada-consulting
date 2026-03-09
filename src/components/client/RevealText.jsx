@@ -24,7 +24,7 @@ export const RevealText = () => {
     }, 3000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [phrases.length]);
 
   return (
     <div className='App text-[antiquewhite] text-xl sm:text-3xl'>

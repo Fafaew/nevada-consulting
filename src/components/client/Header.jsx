@@ -25,10 +25,11 @@ const Header = () => {
       id='home'
       className='relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32 h-[85vh] lg:h-auto'
     >
-      <img
+      <Image
         alt=''
         src='https://images.pexels.com/photos/2422294/pexels-photo-2422294.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-        className='absolute inset-0 -z-10 size-full object-cover object-right md:object-center scale-x-[-1]'
+        fill
+        className='absolute inset-0 -z-10 object-cover object-right md:object-center scale-x-[-1]'
       />
       <div className='absolute inset-0 bg-gradient-to-b from-black/70 to-black/90'></div>
 
