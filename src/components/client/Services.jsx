@@ -13,6 +13,7 @@ import {
 } from 'react-icons/pi';
 import { FaChartLine } from 'react-icons/fa';
 import { RiTeamLine } from 'react-icons/ri';
+import { WHATSAPP_NUMBER } from '../../lib/servicesConfig.js';
 
 const Services = () => {
   const { t } = useTranslation();
@@ -145,13 +146,25 @@ const Services = () => {
             <p className='text-gray-400 max-w-md'>
               {t(activeTab === 'b2c' ? 'services.ctaSubtitleB2C' : 'services.ctaSubtitleB2B')}
             </p>
-            <button
-              onClick={() => setSelectorOpen(true)}
-              className='mt-2 px-8 py-3 bg-purple-primary text-white font-semibold rounded-lg
-                hover:bg-purple-700 transition-colors duration-300 cursor-pointer'
-            >
-              {t('services.ctaButton')}
-            </button>
+            {activeTab === 'b2b' ? (
+              <a
+                href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Olá! Gostaria de saber mais sobre as soluções corporativas da Nevada Consulting.')}`}
+                target='_blank'
+                rel='noopener noreferrer'
+                className='mt-2 px-8 py-3 bg-purple-primary text-white font-semibold rounded-lg
+                  hover:bg-purple-700 transition-colors duration-300'
+              >
+                {t('services.talkToSpecialist')}
+              </a>
+            ) : (
+              <button
+                onClick={() => setSelectorOpen(true)}
+                className='mt-2 px-8 py-3 bg-purple-primary text-white font-semibold rounded-lg
+                  hover:bg-purple-700 transition-colors duration-300 cursor-pointer'
+              >
+                {t('services.ctaButton')}
+              </button>
+            )}
           </div>
         </div>
       </div>
