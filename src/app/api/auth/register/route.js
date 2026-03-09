@@ -3,9 +3,9 @@ import _bcrypt from 'bcryptjs';
 import { Resend } from 'resend';
 
 const bcrypt = _bcrypt.default ?? _bcrypt;
-const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request) {
+  const resend = new Resend(process.env.RESEND_API_KEY);
   try {
     const { name, email, password } = await request.json();
 

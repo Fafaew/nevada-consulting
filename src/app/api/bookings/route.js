@@ -5,7 +5,6 @@ import { getCalendarClient } from '../../../lib/googleCalendar.js';
 import { serviceItems } from '../../../lib/servicesConfig.js';
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
 const TZ = 'America/Sao_Paulo';
 
 export async function GET() {
@@ -17,6 +16,7 @@ export async function GET() {
 }
 
 export async function POST(request) {
+  const resend = new Resend(process.env.RESEND_API_KEY);
   const session = await getServerSession(authOptions);
   if (!session?.user?.email) {
     return Response.json({ error: 'Unauthorized' }, { status: 401 });

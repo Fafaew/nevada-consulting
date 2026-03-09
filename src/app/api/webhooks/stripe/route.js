@@ -6,11 +6,11 @@ import { Resend } from 'resend';
 
 export const dynamic = 'force-dynamic';
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
-const resend = new Resend(process.env.RESEND_API_KEY);
 const TZ = 'America/Sao_Paulo';
 
 export async function POST(request) {
+  const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
+  const resend = new Resend(process.env.RESEND_API_KEY);
   const rawBody = await request.text();
   const sig = request.headers.get('stripe-signature');
 

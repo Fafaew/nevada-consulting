@@ -8,8 +8,6 @@ import { Resend } from 'resend';
 import { getCalendarClient } from '../../../../lib/googleCalendar.js';
 import Navbar from '../../../../components/client/Navbar';
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
-const resend = new Resend(process.env.RESEND_API_KEY);
 const TZ = 'America/Sao_Paulo';
 
 const i18n = {
@@ -32,6 +30,8 @@ const i18n = {
 };
 
 export default async function BookingSuccessPage({ params, searchParams }) {
+  const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
+  const resend = new Resend(process.env.RESEND_API_KEY);
   const { lang } = await params;
   const { session_id } = await searchParams;
   const t = i18n[lang] ?? i18n.pt;
