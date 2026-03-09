@@ -10,7 +10,8 @@ import _bcrypt from 'bcryptjs';
 const NextAuth = _NextAuth.default ?? _NextAuth;
 const GoogleProvider = _GoogleProvider.default ?? _GoogleProvider;
 const FacebookProvider = _FacebookProvider.default ?? _FacebookProvider;
-const CredentialsProvider = _CredentialsProvider.default ?? _CredentialsProvider;
+const CredentialsProvider =
+  _CredentialsProvider.default ?? _CredentialsProvider;
 const bcrypt = _bcrypt.default ?? _bcrypt;
 
 export const authOptions = {
@@ -48,7 +49,7 @@ export const authOptions = {
 
         const passwordMatch = await bcrypt.compare(
           credentials.password,
-          user.password
+          user.password,
         );
 
         if (!passwordMatch) return null;

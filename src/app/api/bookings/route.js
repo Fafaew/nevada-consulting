@@ -5,17 +5,18 @@ import { getCalendarClient } from '../../../lib/googleCalendar.js';
 import { serviceItems } from '../../../lib/servicesConfig.js';
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
 const TZ = 'America/Sao_Paulo';
 
 export async function GET() {
   return Response.json({
     message: 'Bookings endpoint',
-    calendarConfigured: !!process.env.GOOGLE_CALENDAR_ID && !!process.env.GOOGLE_REFRESH_TOKEN,
+    calendarConfigured:
+      !!process.env.GOOGLE_CALENDAR_ID && !!process.env.GOOGLE_REFRESH_TOKEN,
   });
 }
 
 export async function POST(request) {
+  const resend = new Resend(process.env.RESEND_API_KEY);
   const session = await getServerSession(authOptions);
   if (!session?.user?.email) {
     return Response.json({ error: 'Unauthorized' }, { status: 401 });
@@ -25,7 +26,10 @@ export async function POST(request) {
   const { slug, startTime, serviceName } = body;
 
   if (!slug || !startTime || !serviceName) {
-    return Response.json({ error: 'Missing fields: slug, startTime, serviceName' }, { status: 400 });
+    return Response.json(
+      { error: 'Missing fields: slug, startTime, serviceName' },
+      { status: 400 },
+    );
   }
 
   const service = serviceItems.find((s) => s.slug === slug);
@@ -36,7 +40,9 @@ export async function POST(request) {
   const start = new Date(startTime);
   const end = new Date(start.getTime() + service.duration * 60 * 1000);
 
-  const user = await prisma.user.findUnique({ where: { email: session.user.email } });
+  const user = await prisma.user.findUnique({
+    where: { email: session.user.email },
+  });
   if (!user) {
     return Response.json({ error: 'User not found' }, { status: 404 });
   }
@@ -77,8 +83,12 @@ export async function POST(request) {
       },
     });
   } catch (err) {
-    calendarError = err?.response?.data?.error ?? err?.message ?? 'unknown error';
-    console.error('[bookings] Calendar event creation failed:', JSON.stringify(err?.response?.data ?? err?.message));
+    calendarError =
+      err?.response?.data?.error ?? err?.message ?? 'unknown error';
+    console.error(
+      '[bookings] Calendar event creation failed:',
+      JSON.stringify(err?.response?.data ?? err?.message),
+    );
   }
 
   // 3. Send confirmation email (non-blocking on failure)

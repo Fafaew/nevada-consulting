@@ -6,19 +6,26 @@ import { Resend } from 'resend';
 
 export const dynamic = 'force-dynamic';
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
-const resend = new Resend(process.env.RESEND_API_KEY);
 const TZ = 'America/Sao_Paulo';
 
 export async function POST(request) {
+  const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
+  const resend = new Resend(process.env.RESEND_API_KEY);
   const rawBody = await request.text();
   const sig = request.headers.get('stripe-signature');
 
   let event;
   try {
-    event = stripe.webhooks.constructEvent(rawBody, sig, process.env.STRIPE_WEBHOOK_SECRET);
+    event = stripe.webhooks.constructEvent(
+      rawBody,
+      sig,
+      process.env.STRIPE_WEBHOOK_SECRET,
+    );
   } catch (err) {
-    console.error('[webhook/stripe] Signature verification failed:', err.message);
+    console.error(
+      '[webhook/stripe] Signature verification failed:',
+      err.message,
+    );
     return Response.json({ error: 'Invalid signature' }, { status: 400 });
   }
 
@@ -27,7 +34,8 @@ export async function POST(request) {
   }
 
   const checkoutSession = event.data.object;
-  const { slug, startTime, serviceName, userEmail, userName, lang } = checkoutSession.metadata;
+  const { slug, startTime, serviceName, userEmail, userName, lang } =
+    checkoutSession.metadata;
   const userId = checkoutSession.client_reference_id;
 
   if (!userId || !slug || !startTime) {
@@ -84,7 +92,10 @@ export async function POST(request) {
       },
     });
   } catch (err) {
-    console.error('[webhook/stripe] Calendar event failed:', err?.response?.data ?? err?.message);
+    console.error(
+      '[webhook/stripe] Calendar event failed:',
+      err?.response?.data ?? err?.message,
+    );
   }
 
   // 3. Send confirmation email (non-blocking)

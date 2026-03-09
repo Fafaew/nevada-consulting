@@ -3,23 +3,23 @@ import _bcrypt from 'bcryptjs';
 import { Resend } from 'resend';
 
 const bcrypt = _bcrypt.default ?? _bcrypt;
-const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request) {
+  const resend = new Resend(process.env.RESEND_API_KEY);
   try {
     const { name, email, password } = await request.json();
 
     if (!name || !email || !password) {
       return Response.json(
         { error: 'Todos os campos são obrigatórios' },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
     if (password.length < 6) {
       return Response.json(
         { error: 'A senha deve ter no mínimo 6 caracteres' },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -28,7 +28,7 @@ export async function POST(request) {
     if (existingUser) {
       return Response.json(
         { error: 'Este email já está cadastrado' },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -78,10 +78,13 @@ export async function POST(request) {
 
     return Response.json(
       { message: 'Conta criada! Verifique seu email para ativar a conta.' },
-      { status: 201 }
+      { status: 201 },
     );
   } catch (error) {
     console.error('Register error:', error);
-    return Response.json({ error: 'Erro interno do servidor' }, { status: 500 });
+    return Response.json(
+      { error: 'Erro interno do servidor' },
+      { status: 500 },
+    );
   }
 }

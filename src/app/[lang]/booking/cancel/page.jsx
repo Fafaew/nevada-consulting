@@ -4,7 +4,8 @@ import Navbar from '../../../../components/client/Navbar';
 const i18n = {
   pt: {
     title: 'Pagamento cancelado',
-    subtitle: 'Nenhuma cobrança foi realizada. Você pode tentar novamente quando quiser.',
+    subtitle:
+      'Nenhuma cobrança foi realizada. Você pode tentar novamente quando quiser.',
     back: 'Voltar aos serviços',
   },
   en: {

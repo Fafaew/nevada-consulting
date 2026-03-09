@@ -4,10 +4,10 @@ import { authOptions } from '../auth/[...nextauth]/route.js';
 import { prisma } from '../../../lib/prisma.js';
 import { serviceItems } from '../../../lib/servicesConfig.js';
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 const APP_URL = process.env.NEXT_PUBLIC_APP_URL ?? 'http://localhost:3000';
 
 export async function POST(request) {
+  const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
   const session = await getServerSession(authOptions);
   if (!session?.user?.email) {
     return Response.json({ error: 'Unauthorized' }, { status: 401 });
@@ -25,7 +25,9 @@ export async function POST(request) {
     return Response.json({ error: 'Unknown service slug' }, { status: 400 });
   }
 
-  const user = await prisma.user.findUnique({ where: { email: session.user.email } });
+  const user = await prisma.user.findUnique({
+    where: { email: session.user.email },
+  });
   if (!user) {
     return Response.json({ error: 'User not found' }, { status: 404 });
   }
@@ -40,8 +42,10 @@ export async function POST(request) {
 
   if (!product) {
     return Response.json(
-      { error: `Produto não encontrado no Stripe para o serviço "${slug}". Adicione o metadado slug ao produto no Dashboard.` },
-      { status: 404 }
+      {
+        error: `Produto não encontrado no Stripe para o serviço "${slug}". Adicione o metadado slug ao produto no Dashboard.`,
+      },
+      { status: 404 },
     );
   }
 
@@ -55,8 +59,10 @@ export async function POST(request) {
 
   if (prices.data.length === 0) {
     return Response.json(
-      { error: `Nenhum preço ativo em ${currency.toUpperCase()} para este serviço. Configure um preço no Stripe Dashboard.` },
-      { status: 404 }
+      {
+        error: `Nenhum preço ativo em ${currency.toUpperCase()} para este serviço. Configure um preço no Stripe Dashboard.`,
+      },
+      { status: 404 },
     );
   }
 

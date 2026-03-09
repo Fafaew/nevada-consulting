@@ -15,7 +15,7 @@ export default function BookServiceButton({ slug, serviceName, b2b = false }) {
 
   if (b2b) {
     const message = encodeURIComponent(
-      `Olá! Tenho interesse no serviço: ${serviceName}. Gostaria de saber mais.`
+      `Olá! Tenho interesse no serviço: ${serviceName}. Gostaria de saber mais.`,
     );
     return (
       <a
