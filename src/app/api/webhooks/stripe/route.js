@@ -40,15 +40,18 @@ export async function POST(request) {
   const duration = service?.duration ?? 60;
   const end = new Date(start.getTime() + duration * 60 * 1000);
 
-  // 1. Create booking in DB
+  // 1. Create booking in DB (upsert for idempotency with success page)
   let booking;
   try {
-    booking = await prisma.booking.create({
-      data: {
+    booking = await prisma.booking.upsert({
+      where: { stripeSessionId: checkoutSession.id },
+      update: { status: 'CONFIRMED' },
+      create: {
         userId,
         service: slug,
         date: start,
         status: 'CONFIRMED',
+        stripeSessionId: checkoutSession.id,
       },
     });
   } catch (err) {
