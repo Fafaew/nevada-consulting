@@ -6,6 +6,10 @@
       "clients": "clients",
       "about": "about",
       "contact": "contact",
+      "login": "Login",
+      "logout": "Sign out",
+      "myAccount": "My account",
+      "homePage": "Home page",
       "language": "language"
     },
     "header": {
@@ -23,7 +27,8 @@
       "title": "Services",
       "first": {
         "subtitle": "Hire a high-performance team",
-        "description": "Hire A-players for your team. We identify and recruit top professionals across all sectors and levels — from operational to executive roles. Count on a strategic and personalized process to ensure precise hires aligned with your business culture and objectives."
+        "description": "Hire A-players for your team. We identify and recruit top professionals across all sectors and levels — from operational to executive roles. Count on a strategic and personalized process to ensure precise hires aligned with your business culture and objectives",
+        "fullDescription": "A bad hire is expensive in time, money, and culture. Whether you're building a team from scratch, replacing a key position, or scaling your operation, finding the right people requires much more than screening resumes. Our B2B recruitment consultancy works strategically and personally: we map the ideal profile for each role, assess both technical and behavioral competencies, and present candidates who truly fit your company's goals and culture. We serve businesses across all sectors, from operational roles to executive leadership. You focus on your business, we take care of finding the right people to help it grow"
       },
       "second": {
         "subtitle": "Mentoring and coaching for leadership",
@@ -31,20 +36,39 @@
       },
       "third": {
         "subtitle": "Recruiting high performers: a training program for hiring managers",
-        "description": "Empower your team with advanced techniques in attraction, screening, and interviewing, making the selection process more agile and efficient."
+        "description": "Empower your team with advanced techniques in attraction, screening, and interviewing, making the selection process more agile and efficient",
+        "fullDescription": "Recruiting well is a skill and it can be developed. This training program was designed for managers and HR teams who want to master modern techniques in candidate attraction, screening, and interviewing. We cover everything from crafting job descriptions that attract the right profiles, to competency-based interview techniques and data-driven decision-making aligned with cultural fit. The result is a more agile, consistent, and efficient selection process — one that reduces turnover and raises the quality of your hires. Ideal for companies looking to build a high-performance recruitment culture from within"
       },
       "fourth": {
         "subtitle": "Behavioral profile assessment",
-        "description": "Make more assertive decisions with in-depth behavioral analyses of skills, development potential, and better fit for your company."
+        "description": "Make more assertive decisions with in-depth behavioral analyses of skills, development potential, and better fit for your company",
+        "fullDescription": "Do you know exactly what your strengths are and how to communicate them confidently in an interview or promotion? The behavioral assessment reveals patterns of behavior and development potential that you may not yet be able to name. You leave with a clear map of who you are professionally: where you shine, where you can grow, and how to position yourself strategically in the market. Ideal for those in a career transition, pursuing a promotion, or simply wanting to make decisions with greater clarity"
       },
       "fifth": {
         "subtitle": "Analysis and enhancement of resume, linkedIn, and portfolio",
-        "description": "Stand out in the market with a professional profile that highlights your skills and competitive advantages. Be strategically noticed by recruiters."
+        "description": "Stand out in the market with a professional profile that highlights your skills and competitive advantages. Be strategically noticed by recruiters",
+        "fullDescription": "Your resume, LinkedIn, and portfolio are your professional showcase and often the deciding factor for whether a recruiter reaches out or moves on. If you feel your profile doesn't truly reflect who you are, or that you're going unnoticed in the market, it's time to change that. In this consultation, we analyze every detail of your professional presentation together: what to highlight, how to structure your career narrative, and which adjustments boost your visibility in LinkedIn's algorithms. You leave with a strategic, cohesive profile ready to attract the right opportunities"
       },
       "sixth": {
         "subtitle": "Mentoring and interview preparation",
-        "description": "Face selection processes with confidence, mastering techniques that increase your chances of securing the ideal position."
-      }
+        "description": "Face selection processes with confidence, mastering techniques that increase your chances of securing the ideal position",
+        "fullDescription": "Freezing up in an interview, not knowing how to present yourself, or leaving with the feeling that you didn't show your best, this is more common than you'd think. Interview preparation mentoring exists to change that. We work together on your communication, body language, professional narrative, and responses to the most common and challenging questions. You learn to introduce yourself with clarity, highlight your experiences strategically, and handle high-pressure moments during the selection process. Ideal for those seeking their first job, switching fields, or competing for a more demanding role"
+      },
+      "hire": "Hire",
+      "bookSession": "Book a session",
+      "loginToBook": "Sign in to book",
+      "talkToSpecialist": "Talk to our specialists",
+      "backToServices": "Back to services",
+      "notFound": "Service not found",
+      "b2cLabel": "For you",
+      "b2bLabel": "Corporate solutions",
+      "ctaTitleB2C": "Ready to take the next step in your career?",
+      "ctaSubtitleB2C": "Talk to a specialist and find out which service is right for you.",
+      "ctaTitleB2B": "Ready to transform your company?",
+      "ctaSubtitleB2B": "Talk to a specialist and find out how we can help your business grow.",
+      "ctaButton": "Hire a service",
+      "selectService": "Select a service",
+      "viewDetails": "View details"
     },
     "clients": {
       "title": "Our Clients"
@@ -60,6 +84,7 @@
       },
       "description": {
         "subtitle": "Senior Consultant",
+        "quote": "High-performance teams don't happen by chance. They are built with intention.",
         "first": "People and culture consultant, specialized in forming efficient teams.",
         "second": "Graduated in Psychology from the Federal University of Minas Gerais, with an MBA in Business Management from USP. I have a strong interest in human behavior within organizational dynamics and strategy.",
         "third": "As a leader in talent attraction, selection, and onboarding, I manage the end-to-end journey of building high-performance teams, ensuring an exceptional experience for both candidates and hiring managers. I also lead initiatives focused on engagement, diversity and inclusion, and organizational development, working closely with business units to drive growth and performance.",
@@ -92,6 +117,30 @@
       "send": "Send",
       "social": "Social links",
       "thankYouMessage": "Message sent successfully! We'll get back to you soon"
+    },
+    "login": {
+      "title": "Sign in to your account",
+      "registerTitle": "Create an account",
+      "email": "Email",
+      "password": "Password",
+      "confirmPassword": "Confirm password",
+      "name": "Full name",
+      "signIn": "Sign in",
+      "registerButton": "Create account",
+      "loading": "Please wait...",
+      "invalidCredentials": "Invalid email or password",
+      "passwordMismatch": "Passwords do not match",
+      "registerSuccess": "Account created! Check your email.",
+      "checkEmailTitle": "Check your email",
+      "checkEmailBody": "We sent a confirmation link to",
+      "checkEmailSpam": "Can't find it? Check your spam folder.",
+      "noAccount": "Don't have an account?",
+      "hasAccount": "Already have an account?",
+      "register": "Sign up",
+      "backToLogin": "Sign in",
+      "or": "or",
+      "google": "Continue with Google",
+      "facebook": "Continue with Facebook"
     },
     "footer": {
       "tel": "+55 11 9 9460-7649",
