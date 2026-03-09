@@ -16,7 +16,7 @@ const About = () => {
       <h2 className='flex justify-center text-4xl font-bold mt-12 mb-6 sm:mb-12 text-purple-secondary'>
         {t('about.title')}
       </h2>
-      <div className='w-full px-8 pb-12 grid grid-cols-1 md:grid-cols-2 items-center gap-8 mx-auto'>
+      <div className='w-full px-8 pb-12 grid grid-cols-1 md:grid-cols-2 items-center gap-8 mx-auto text-center lg:text-justify'>
         <div>
           <h3 className='text-4xl md:text-3xl font-semibold'>
             {t('about.subtitle')}
@@ -37,14 +37,8 @@ const About = () => {
         <ShuffleGrid />
       </div>
       <div className='w-full bg-purple-secondary grid grid-cols-1 md:grid-cols-[35%_65%] relative items-center overflow-visible'>
-        <div className='col-span-1 md:col-start-1 flex flex-col items-center justify-center py-10 px-6'>
-          <h2 className='text-center text-4xl font-bold mb-1 lg:hidden'>
-            Juliana Carvalho
-          </h2>
-          <h3 className='text-center font-medium text-xl mb-6 lg:hidden'>
-            {t('about.description.subtitle')}
-          </h3>
-          <div className='w-52 h-52 lg:w-64 lg:h-64 rounded-full overflow-hidden ring-4 ring-white shadow-xl'>
+        <div className='col-span-1 md:col-start-1 flex flex-col items-center justify-center py-10 px-6 gap-4'>
+          <div className='w-64 h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden ring-4 ring-white shadow-xl'>
             <Image
               className='w-full h-full object-cover scale-150 object-[center_15%]'
               src={juProfile}
@@ -53,15 +47,20 @@ const About = () => {
               height={512}
             />
           </div>
-        </div>
-        <div className='col-span-1 md:col-start-2 p-6 md:pl-0 mx-4 md:mr-14 mt-0 lg:mt-6'>
-          <h2 className='text-4xl font-bold hidden lg:block'>
+          <h2 className='text-center text-2xl font-bold mt-2'>
             Juliana Carvalho
           </h2>
-          <h3 className='font-medium text-xl mt-1 hidden lg:block'>
+          <h3 className='text-center font-medium text-white/70 -mt-2'>
             {t('about.description.subtitle')}
           </h3>
-          <p className='mt-0 lg:mt-6'>{t('about.description.first')}</p>
+        </div>
+        <div className='col-span-1 md:col-start-2 px-6 pb-6 pt-0 md:pl-0 mx-4 md:mr-14 mt-0 text-center lg:text-justify'>
+          <blockquote className='mb-6 lg:mt-6'>
+            <p className='text-white/90 text-lg md:text-xl font-medium italic leading-relaxed'>
+              &ldquo;{t('about.description.quote')}&rdquo;
+            </p>
+          </blockquote>
+          <p className='mt-0'>{t('about.description.first')}</p>
           <p className='mt-4'>{t('about.description.second')}</p>
           <p className='mt-4'>{t('about.description.third')}</p>
           <p className='mt-4'>{t('about.description.fourth')}</p>
