@@ -138,7 +138,7 @@ export default function SchedulingModal({
       })
       .catch(() => setError(t.errorSlots))
       .finally(() => setSlotsLoading(false));
-  }, [selectedDate, slug]);
+  }, [selectedDate, slug, t]);
 
   const handlePayment = async () => {
     setRedirecting(true);
