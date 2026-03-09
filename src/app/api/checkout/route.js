@@ -4,10 +4,10 @@ import { authOptions } from '../auth/[...nextauth]/route.js';
 import { prisma } from '../../../lib/prisma.js';
 import { serviceItems } from '../../../lib/servicesConfig.js';
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 const APP_URL = process.env.NEXT_PUBLIC_APP_URL ?? 'http://localhost:3000';
 
 export async function POST(request) {
+  const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
   const session = await getServerSession(authOptions);
   if (!session?.user?.email) {
     return Response.json({ error: 'Unauthorized' }, { status: 401 });
