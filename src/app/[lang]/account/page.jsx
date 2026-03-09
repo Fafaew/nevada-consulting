@@ -67,7 +67,9 @@ export default async function DashboardPage({ params }) {
           </p>
 
           <section>
-            <h2 className='text-xl font-semibold mb-5'>Próximos agendamentos</h2>
+            <h2 className='text-xl font-semibold mb-5'>
+              Próximos agendamentos
+            </h2>
 
             {upcomingBookings.length === 0 ? (
               <div className='bg-[#1a1a1a] rounded-2xl p-8 text-center'>
@@ -103,7 +105,9 @@ export default async function DashboardPage({ params }) {
                           : 'bg-yellow-900 text-yellow-300'
                       }`}
                     >
-                      {booking.status === 'CONFIRMED' ? 'Confirmado' : 'Pendente'}
+                      {booking.status === 'CONFIRMED'
+                        ? 'Confirmado'
+                        : 'Pendente'}
                     </span>
                   </li>
                 ))}

@@ -76,63 +76,87 @@ const Services = () => {
               <button
                 onClick={() => setActiveTab('b2c')}
                 className={`px-6 py-2 rounded-lg text-sm font-semibold transition-all duration-200 cursor-pointer
-                  ${activeTab === 'b2c'
-                    ? 'bg-purple-primary text-white shadow-md'
-                    : 'text-gray-400 hover:text-white'}`}
+                  ${
+                    activeTab === 'b2c'
+                      ? 'bg-purple-primary text-white shadow-md'
+                      : 'text-gray-400 hover:text-white'
+                  }`}
               >
                 {t('services.b2cLabel')}
               </button>
               <button
                 onClick={() => setActiveTab('b2b')}
                 className={`px-6 py-2 rounded-lg text-sm font-semibold transition-all duration-200 cursor-pointer
-                  ${activeTab === 'b2b'
-                    ? 'bg-purple-primary text-white shadow-md'
-                    : 'text-gray-400 hover:text-white'}`}
+                  ${
+                    activeTab === 'b2b'
+                      ? 'bg-purple-primary text-white shadow-md'
+                      : 'text-gray-400 hover:text-white'
+                  }`}
               >
                 {t('services.b2bLabel')}
               </button>
             </div>
 
             <div className='grid'>
-              <div className={`col-start-1 row-start-1 transition-opacity duration-200
-                ${activeTab === 'b2c' ? 'opacity-100' : 'opacity-0 invisible pointer-events-none'}`}>
+              <div
+                className={`col-start-1 row-start-1 transition-opacity duration-200
+                ${activeTab === 'b2c' ? 'opacity-100' : 'opacity-0 invisible pointer-events-none'}`}
+              >
                 <div className='grid grid-cols-1 sm:grid-cols-3 gap-8'>
-                  {items.slice(2).map(({ id, slug, icon, subtitle, description }) => (
-                    <Link
-                      key={id}
-                      href={`/${currentLanguage}/services/${slug}`}
-                      className='px-8 pt-6 pb-8 rounded-xl border border-purple-primary/25
+                  {items
+                    .slice(2)
+                    .map(({ id, slug, icon, subtitle, description }) => (
+                      <Link
+                        key={id}
+                        href={`/${currentLanguage}/services/${slug}`}
+                        className='px-8 pt-6 pb-8 rounded-xl border border-purple-primary/25
                         bg-purple-primary/5 shadow-md shadow-purple-secondary duration-200
                         hover:scale-105 hover:shadow-purple-primary hover:border-purple-primary/60'
-                    >
-                      <div className='text-purple-primary'>
-                        {React.cloneElement(icon, { className: 'w-12 h-12 m-auto' })}
-                      </div>
-                      <div className='font-bold text-center mt-3'>{subtitle}</div>
-                      <div className='text-center text-gray-300 text-sm mt-4'>{description}</div>
-                    </Link>
-                  ))}
+                      >
+                        <div className='text-purple-primary'>
+                          {React.cloneElement(icon, {
+                            className: 'w-12 h-12 m-auto',
+                          })}
+                        </div>
+                        <div className='font-bold text-center mt-3'>
+                          {subtitle}
+                        </div>
+                        <div className='text-center text-gray-300 text-sm mt-4'>
+                          {description}
+                        </div>
+                      </Link>
+                    ))}
                 </div>
               </div>
 
-              <div className={`col-start-1 row-start-1 transition-opacity duration-200
-                ${activeTab === 'b2b' ? 'opacity-100' : 'opacity-0 invisible pointer-events-none'}`}>
+              <div
+                className={`col-start-1 row-start-1 transition-opacity duration-200
+                ${activeTab === 'b2b' ? 'opacity-100' : 'opacity-0 invisible pointer-events-none'}`}
+              >
                 <div className='flex flex-wrap justify-center gap-8'>
-                  {items.slice(0, 2).map(({ id, slug, icon, subtitle, description }) => (
-                    <Link
-                      key={id}
-                      href={`/${currentLanguage}/services/${slug}`}
-                      className='w-[25rem] px-8 pt-6 pb-8 rounded-xl border border-purple-primary/25
+                  {items
+                    .slice(0, 2)
+                    .map(({ id, slug, icon, subtitle, description }) => (
+                      <Link
+                        key={id}
+                        href={`/${currentLanguage}/services/${slug}`}
+                        className='w-[25rem] px-8 pt-6 pb-8 rounded-xl border border-purple-primary/25
                         bg-purple-primary/5 shadow-md shadow-purple-secondary duration-200
                         hover:scale-105 hover:shadow-purple-primary hover:border-purple-primary/60'
-                    >
-                      <div className='text-purple-primary'>
-                        {React.cloneElement(icon, { className: 'w-12 h-12 m-auto' })}
-                      </div>
-                      <div className='font-bold text-center mt-3'>{subtitle}</div>
-                      <div className='text-center text-gray-300 text-sm mt-4'>{description}</div>
-                    </Link>
-                  ))}
+                      >
+                        <div className='text-purple-primary'>
+                          {React.cloneElement(icon, {
+                            className: 'w-12 h-12 m-auto',
+                          })}
+                        </div>
+                        <div className='font-bold text-center mt-3'>
+                          {subtitle}
+                        </div>
+                        <div className='text-center text-gray-300 text-sm mt-4'>
+                          {description}
+                        </div>
+                      </Link>
+                    ))}
                 </div>
               </div>
             </div>
@@ -141,10 +165,18 @@ const Services = () => {
           {/* CTA */}
           <div className='mt-12 mx-6 sm:mx-12 border border-gray-700 rounded-2xl px-8 py-10 flex flex-col items-center gap-4'>
             <h3 className='text-2xl font-bold text-white'>
-              {t(activeTab === 'b2c' ? 'services.ctaTitleB2C' : 'services.ctaTitleB2B')}
+              {t(
+                activeTab === 'b2c'
+                  ? 'services.ctaTitleB2C'
+                  : 'services.ctaTitleB2B',
+              )}
             </h3>
             <p className='text-gray-400 max-w-md'>
-              {t(activeTab === 'b2c' ? 'services.ctaSubtitleB2C' : 'services.ctaSubtitleB2B')}
+              {t(
+                activeTab === 'b2c'
+                  ? 'services.ctaSubtitleB2C'
+                  : 'services.ctaSubtitleB2B',
+              )}
             </p>
             {activeTab === 'b2b' ? (
               <a

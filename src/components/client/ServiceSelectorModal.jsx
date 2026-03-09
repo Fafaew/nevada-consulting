@@ -12,7 +12,11 @@ import { FaChartLine } from 'react-icons/fa';
 import { RiTeamLine } from 'react-icons/ri';
 import React from 'react';
 
-const B2C_SLUGS = ['behavioral-assessment', 'resume-linkedin-portfolio', 'interview-preparation'];
+const B2C_SLUGS = [
+  'behavioral-assessment',
+  'resume-linkedin-portfolio',
+  'interview-preparation',
+];
 const B2B_SLUGS = ['high-performance-team', 'recruitment-training'];
 
 export default function ServiceSelectorModal({ isOpen, onClose, filter }) {
@@ -21,18 +25,39 @@ export default function ServiceSelectorModal({ isOpen, onClose, filter }) {
   const router = useRouter();
 
   const allItems = [
-    { slug: 'high-performance-team', icon: <PiBuildingOfficeThin />, label: t('services.first.subtitle') },
-    { slug: 'recruitment-training', icon: <FaChartLine />, label: t('services.third.subtitle') },
-    { slug: 'behavioral-assessment', icon: <RiTeamLine />, label: t('services.fourth.subtitle') },
-    { slug: 'resume-linkedin-portfolio', icon: <PiStrategy />, label: t('services.fifth.subtitle') },
-    { slug: 'interview-preparation', icon: <PiPresentationChart />, label: t('services.sixth.subtitle') },
+    {
+      slug: 'high-performance-team',
+      icon: <PiBuildingOfficeThin />,
+      label: t('services.first.subtitle'),
+    },
+    {
+      slug: 'recruitment-training',
+      icon: <FaChartLine />,
+      label: t('services.third.subtitle'),
+    },
+    {
+      slug: 'behavioral-assessment',
+      icon: <RiTeamLine />,
+      label: t('services.fourth.subtitle'),
+    },
+    {
+      slug: 'resume-linkedin-portfolio',
+      icon: <PiStrategy />,
+      label: t('services.fifth.subtitle'),
+    },
+    {
+      slug: 'interview-preparation',
+      icon: <PiPresentationChart />,
+      label: t('services.sixth.subtitle'),
+    },
   ];
 
-  const items = filter === 'b2c'
-    ? allItems.filter((i) => B2C_SLUGS.includes(i.slug))
-    : filter === 'b2b'
-      ? allItems.filter((i) => B2B_SLUGS.includes(i.slug))
-      : allItems;
+  const items =
+    filter === 'b2c'
+      ? allItems.filter((i) => B2C_SLUGS.includes(i.slug))
+      : filter === 'b2b'
+        ? allItems.filter((i) => B2B_SLUGS.includes(i.slug))
+        : allItems;
 
   const handleSelect = (slug) => {
     onClose();
@@ -51,7 +76,9 @@ export default function ServiceSelectorModal({ isOpen, onClose, filter }) {
         onClick={(e) => e.stopPropagation()}
       >
         <div className='flex justify-between items-center mb-6'>
-          <h2 className='text-white text-xl font-bold'>{t('services.selectService')}</h2>
+          <h2 className='text-white text-xl font-bold'>
+            {t('services.selectService')}
+          </h2>
           <button
             onClick={onClose}
             className='text-gray-400 hover:text-white transition-colors text-2xl leading-none cursor-pointer'
@@ -72,8 +99,12 @@ export default function ServiceSelectorModal({ isOpen, onClose, filter }) {
                 <span className='text-purple-primary group-hover:text-white text-xl flex-shrink-0'>
                   {React.cloneElement(icon, { className: 'w-5 h-5' })}
                 </span>
-                <span className='text-sm font-medium leading-snug'>{label}</span>
-                <span className='ml-auto text-gray-600 group-hover:text-white'>→</span>
+                <span className='text-sm font-medium leading-snug'>
+                  {label}
+                </span>
+                <span className='ml-auto text-gray-600 group-hover:text-white'>
+                  →
+                </span>
               </button>
             </li>
           ))}

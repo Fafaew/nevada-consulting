@@ -61,7 +61,11 @@ export default async function ServicePage({ params }) {
             {service.fullDescription ?? service.description}
           </p>
 
-          <BookServiceButton slug={slug} serviceName={service.subtitle} b2b={serviceConfig?.b2b ?? false} />
+          <BookServiceButton
+            slug={slug}
+            serviceName={service.subtitle}
+            b2b={serviceConfig?.b2b ?? false}
+          />
         </div>
       </main>
     </>

@@ -27,8 +27,12 @@ export async function GET(request) {
     return Response.json({ slots: [] });
   }
 
-  const dayStart = new Date(`${dateStr}T${String(WORK_START_HOUR).padStart(2, '0')}:00:00-03:00`);
-  const dayEnd = new Date(`${dateStr}T${String(WORK_END_HOUR).padStart(2, '0')}:00:00-03:00`);
+  const dayStart = new Date(
+    `${dateStr}T${String(WORK_START_HOUR).padStart(2, '0')}:00:00-03:00`,
+  );
+  const dayEnd = new Date(
+    `${dateStr}T${String(WORK_END_HOUR).padStart(2, '0')}:00:00-03:00`,
+  );
   const duration = service.duration; // minutes
 
   try {
@@ -68,6 +72,9 @@ export async function GET(request) {
     return Response.json({ slots });
   } catch (err) {
     console.error('[availability] Google Calendar error:', err);
-    return Response.json({ error: 'Failed to fetch availability' }, { status: 500 });
+    return Response.json(
+      { error: 'Failed to fetch availability' },
+      { status: 500 },
+    );
   }
 }

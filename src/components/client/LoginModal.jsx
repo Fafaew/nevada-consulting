@@ -132,10 +132,14 @@ const LoginModal = ({ isOpen, onClose }) => {
             <p className='text-gray-400 text-sm mb-6'>
               {mode === 'login' ? t('login.noAccount') : t('login.hasAccount')}{' '}
               <button
-                onClick={() => switchMode(mode === 'login' ? 'register' : 'login')}
+                onClick={() =>
+                  switchMode(mode === 'login' ? 'register' : 'login')
+                }
                 className='text-purple-primary hover:underline font-medium cursor-pointer'
               >
-                {mode === 'login' ? t('login.register') : t('login.backToLogin')}
+                {mode === 'login'
+                  ? t('login.register')
+                  : t('login.backToLogin')}
               </button>
             </p>
 
@@ -222,7 +226,9 @@ const LoginModal = ({ isOpen, onClose }) => {
             {/* Divider */}
             <div className='flex items-center my-6'>
               <div className='flex-1 border-t border-gray-700' />
-              <span className='px-4 text-gray-400 text-sm'>{t('login.or')}</span>
+              <span className='px-4 text-gray-400 text-sm'>
+                {t('login.or')}
+              </span>
               <div className='flex-1 border-t border-gray-700' />
             </div>
 

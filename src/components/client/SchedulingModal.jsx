@@ -31,13 +31,39 @@ const formatTimeSlot = (isoString, lang) =>
   });
 
 const MONTH_NAMES = {
-  pt: ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'],
-  en: ['January','February','March','April','May','June','July','August','September','October','November','December'],
+  pt: [
+    'Janeiro',
+    'Fevereiro',
+    'Março',
+    'Abril',
+    'Maio',
+    'Junho',
+    'Julho',
+    'Agosto',
+    'Setembro',
+    'Outubro',
+    'Novembro',
+    'Dezembro',
+  ],
+  en: [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
+  ],
 };
 
 const DAY_NAMES = {
-  pt: ['Dom','Seg','Ter','Qua','Qui','Sex','Sáb'],
-  en: ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],
+  pt: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'],
+  en: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
 };
 
 const i18n = {
@@ -61,7 +87,12 @@ const i18n = {
   },
 };
 
-export default function SchedulingModal({ isOpen, onClose, slug, serviceName }) {
+export default function SchedulingModal({
+  isOpen,
+  onClose,
+  slug,
+  serviceName,
+}) {
   const { currentLanguage: lang } = useLanguage();
   const t = i18n[lang] ?? i18n.pt;
 
@@ -116,7 +147,12 @@ export default function SchedulingModal({ isOpen, onClose, slug, serviceName }) 
       const res = await fetch('/api/checkout', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ slug, startTime: selectedSlot, serviceName, lang }),
+        body: JSON.stringify({
+          slug,
+          startTime: selectedSlot,
+          serviceName,
+          lang,
+        }),
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error ?? 'Erro ao iniciar pagamento');
@@ -138,14 +174,18 @@ export default function SchedulingModal({ isOpen, onClose, slug, serviceName }) 
 
   const handlePrevMonth = () => {
     if (!canGoPrev) return;
-    if (calMonth === 0) { setCalYear(calYear - 1); setCalMonth(11); }
-    else setCalMonth(calMonth - 1);
+    if (calMonth === 0) {
+      setCalYear(calYear - 1);
+      setCalMonth(11);
+    } else setCalMonth(calMonth - 1);
   };
 
   const handleNextMonth = () => {
     if (!canGoNext) return;
-    if (calMonth === 11) { setCalYear(calYear + 1); setCalMonth(0); }
-    else setCalMonth(calMonth + 1);
+    if (calMonth === 11) {
+      setCalYear(calYear + 1);
+      setCalMonth(0);
+    } else setCalMonth(calMonth + 1);
   };
 
   const handleDayClick = (day) => {
@@ -164,7 +204,10 @@ export default function SchedulingModal({ isOpen, onClose, slug, serviceName }) 
 
   return (
     <div className='fixed inset-0 z-[100] flex items-center justify-center'>
-      <div className='absolute inset-0 bg-black/70 backdrop-blur-sm' onClick={onClose} />
+      <div
+        className='absolute inset-0 bg-black/70 backdrop-blur-sm'
+        onClick={onClose}
+      />
 
       <div className='relative bg-[#111] border border-gray-800 rounded-2xl p-8 w-full max-w-lg mx-4 z-10 max-h-[90vh] overflow-y-auto'>
         <button
@@ -191,7 +234,9 @@ export default function SchedulingModal({ isOpen, onClose, slug, serviceName }) 
         {/* Step 1 — Calendar picker */}
         {step === 1 && (
           <>
-            <h2 className='text-white text-xl font-bold mb-1'>{t.chooseDate}</h2>
+            <h2 className='text-white text-xl font-bold mb-1'>
+              {t.chooseDate}
+            </h2>
             <p className='text-gray-400 text-sm mb-6'>{serviceName}</p>
 
             {/* Month navigation */}
@@ -206,7 +251,8 @@ export default function SchedulingModal({ isOpen, onClose, slug, serviceName }) 
               </button>
 
               <span className='text-white font-semibold text-sm'>
-                {MONTH_NAMES[lang]?.[calMonth] ?? MONTH_NAMES.pt[calMonth]} {calYear}
+                {MONTH_NAMES[lang]?.[calMonth] ?? MONTH_NAMES.pt[calMonth]}{' '}
+                {calYear}
               </span>
 
               <button
@@ -222,7 +268,10 @@ export default function SchedulingModal({ isOpen, onClose, slug, serviceName }) 
             {/* Day-of-week headers */}
             <div className='grid grid-cols-7 mb-1'>
               {(DAY_NAMES[lang] ?? DAY_NAMES.pt).map((name) => (
-                <div key={name} className='text-center text-gray-500 text-xs font-medium py-1'>
+                <div
+                  key={name}
+                  className='text-center text-gray-500 text-xs font-medium py-1'
+                >
                   {name}
                 </div>
               ))}
@@ -238,7 +287,8 @@ export default function SchedulingModal({ isOpen, onClose, slug, serviceName }) 
                 const isWeekend = dow === 0 || dow === 6;
                 const isPast = date <= today;
                 const isDisabled = isWeekend || isPast;
-                const isSelected = selectedDate && isSameDay(date, selectedDate);
+                const isSelected =
+                  selectedDate && isSameDay(date, selectedDate);
 
                 return (
                   <button
@@ -248,11 +298,12 @@ export default function SchedulingModal({ isOpen, onClose, slug, serviceName }) 
                     className={`
                       aspect-square flex items-center justify-center rounded-lg text-sm font-medium
                       transition-colors duration-200
-                      ${isDisabled
-                        ? 'text-gray-600 cursor-not-allowed'
-                        : isSelected
-                          ? 'bg-purple-primary text-white'
-                          : 'text-gray-300 hover:bg-purple-primary/20 hover:text-white cursor-pointer'
+                      ${
+                        isDisabled
+                          ? 'text-gray-600 cursor-not-allowed'
+                          : isSelected
+                            ? 'bg-purple-primary text-white'
+                            : 'text-gray-300 hover:bg-purple-primary/20 hover:text-white cursor-pointer'
                       }
                     `}
                   >
@@ -268,12 +319,17 @@ export default function SchedulingModal({ isOpen, onClose, slug, serviceName }) 
         {step === 2 && (
           <>
             <button
-              onClick={() => { setStep(1); setError(''); }}
+              onClick={() => {
+                setStep(1);
+                setError('');
+              }}
               className='text-gray-400 hover:text-white text-sm mb-4 flex items-center gap-1 cursor-pointer'
             >
               {t.back}
             </button>
-            <h2 className='text-white text-xl font-bold mb-1'>{t.chooseTime}</h2>
+            <h2 className='text-white text-xl font-bold mb-1'>
+              {t.chooseTime}
+            </h2>
             <p className='text-gray-400 text-sm mb-6 capitalize'>
               {selectedDate && formatDateLabel(selectedDate, lang)}
             </p>
@@ -296,9 +352,10 @@ export default function SchedulingModal({ isOpen, onClose, slug, serviceName }) 
                       key={slot}
                       onClick={() => setSelectedSlot(slot)}
                       className={`px-3 py-3 rounded-xl border text-sm font-medium transition-colors duration-200 cursor-pointer
-                        ${selectedSlot === slot
-                          ? 'border-purple-primary bg-purple-primary text-white'
-                          : 'border-gray-700 text-gray-300 hover:border-purple-primary hover:text-white hover:bg-purple-primary/10'
+                        ${
+                          selectedSlot === slot
+                            ? 'border-purple-primary bg-purple-primary text-white'
+                            : 'border-gray-700 text-gray-300 hover:border-purple-primary hover:text-white hover:bg-purple-primary/10'
                         }`}
                     >
                       {formatTimeSlot(slot, lang)}

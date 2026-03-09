@@ -42,9 +42,15 @@ export default async function BookingSuccessPage({ params, searchParams }) {
 
   if (session_id) {
     try {
-      const checkoutSession = await stripe.checkout.sessions.retrieve(session_id);
-      const { slug, startTime, serviceName: metaServiceName, userName, userEmail } =
-        checkoutSession.metadata ?? {};
+      const checkoutSession =
+        await stripe.checkout.sessions.retrieve(session_id);
+      const {
+        slug,
+        startTime,
+        serviceName: metaServiceName,
+        userName,
+        userEmail,
+      } = checkoutSession.metadata ?? {};
       const userId = checkoutSession.client_reference_id;
 
       serviceName = metaServiceName ?? '';
@@ -58,7 +64,12 @@ export default async function BookingSuccessPage({ params, searchParams }) {
       }
 
       // Create booking + send email only if webhook hasn't done it yet
-      if (userId && slug && startTime && checkoutSession.payment_status === 'paid') {
+      if (
+        userId &&
+        slug &&
+        startTime &&
+        checkoutSession.payment_status === 'paid'
+      ) {
         const start = new Date(startTime);
         const alreadyCreated = await prisma.booking.findUnique({
           where: { stripeSessionId: session_id },
@@ -104,7 +115,10 @@ export default async function BookingSuccessPage({ params, searchParams }) {
               },
             });
           } catch (calErr) {
-            console.error('[booking/success] Calendar event failed:', calErr?.response?.data ?? calErr?.message);
+            console.error(
+              '[booking/success] Calendar event failed:',
+              calErr?.response?.data ?? calErr?.message,
+            );
           }
 
           // Send confirmation email
