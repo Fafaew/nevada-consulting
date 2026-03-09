@@ -35,6 +35,7 @@ export default async function ServicePage({ params }) {
   const t = translations.translation;
   const service = t.services[translationKey];
   const backLabel = t.services.backToServices;
+  const serviceConfig = serviceItems.find((s) => s.slug === slug);
 
   return (
     <>
@@ -57,10 +58,10 @@ export default async function ServicePage({ params }) {
           </h1>
 
           <p className='text-gray-300 text-lg leading-relaxed'>
-            {service.description}
+            {service.fullDescription ?? service.description}
           </p>
 
-          <BookServiceButton slug={slug} serviceName={service.subtitle} />
+          <BookServiceButton slug={slug} serviceName={service.subtitle} b2b={serviceConfig?.b2b ?? false} />
         </div>
       </main>
     </>

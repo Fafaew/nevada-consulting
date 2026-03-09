@@ -27,7 +27,8 @@
       "title": "Serviços",
       "first": {
         "subtitle": "Contrate uma equipe de alto desempenho",
-        "description": "Contrate profissionais de alto nível para sua equipe. Identificamos e recrutamos os melhores profissionais em todos os setores e níveis — desde funções operacionais até cargos executivos. Conte com um processo estratégico e personalizado para garantir contratações precisas alinhadas com a cultura e os objetivos do seu negócio."
+        "description": "Contrate profissionais de alto nível para sua equipe. Identificamos e recrutamos os melhores profissionais em todos os setores e níveis — desde funções operacionais até cargos executivos. Conte com um processo estratégico e personalizado para garantir contratações precisas alinhadas com a cultura e os objetivos do seu negócio",
+        "fullDescription": "Contratar errado custa caro em tempo, dinheiro e cultura. Seja para compor um time do zero, substituir uma posição-chave ou escalar sua operação, encontrar os profissionais certos exige muito mais do que triagem de currículos. Nossa consultoria de recrutamento B2B atua de forma estratégica e personalizada: mapeamos o perfil ideal para cada posição, analisamos competências técnicas e comportamentais, e apresentamos candidatos que realmente se encaixam nos objetivos e na cultura da sua empresa. Atendemos empresas de todos os setores, desde funções operacionais até cargos de liderança executiva. Você foca no seu negócio, nós cuidamos de encontrar as pessoas certas para fazê-lo crescer"
       },
       "second": {
         "subtitle": "Mentoring e coaching para lideranças",
@@ -35,23 +36,28 @@
       },
       "third": {
         "subtitle": "Recrutando profissionais de alto desempenho: um programa de treinamento para gestores de contratação",
-        "description": "Capacite sua equipe com técnicas avanças de atração, triagem e entrevista, tornando o processo seletivo mais ágil e eficiente."
+        "description": "Capacite sua equipe com técnicas avanças de atração, triagem e entrevista, tornando o processo seletivo mais ágil e eficiente",
+        "fullDescription": "Recrutar bem é uma habilidade — e ela pode ser desenvolvida. Este programa de treinamento foi criado para gestores e equipes de RH que querem dominar as técnicas modernas de atração, triagem e entrevista de candidatos. Vamos trabalhar desde a construção de descrições de vagas que atraem os perfis certos, passando por técnicas de entrevista por competências, até a tomada de decisão baseada em dados e fit cultural. O resultado é um processo seletivo mais ágil, consistente e eficiente — que reduz turnover e aumenta a qualidade das contratações. Ideal para empresas que querem internalizar uma cultura de recrutamento de alto desempenho"
       },
       "fourth": {
         "subtitle": "Assessment de perfil comportamental",
-        "description": "Tome decisões mais assertivas com análises comportamentais profundas de habilidades, potencial de desenvolvimento e com melhor fit para sua empresa."
+        "description": "Tome decisões mais assertivas com análises comportamentais profundas de habilidades, potencial de desenvolvimento e com melhor fit para sua empresa",
+        "fullDescription": "Você sabe exatamente quais são seus pontos fortes e como comunicá-los com confiança em uma entrevista ou promoção? O assessment comportamental revela padrões de comportamento e potencial de desenvolvimento que muitas vezes você ainda não consegue nomear. Você sai com um mapa claro de quem você é profissionalmente: onde brilha, onde pode evoluir, e como se posicionar de forma estratégica no mercado. Ideal para quem está em transição de carreira, buscando uma promoção ou quer tomar decisões com mais clareza"
       },
       "fifth": {
         "subtitle": "Análise e evolução de currículo, linkedin e portfólio",
-        "description": "Destaque-se no mercado com um perfil profissional que valoriza suas habilidades e diferenciais competitivos. Seja notado de maneira estratégica por recrutadoras(es)."
+        "description": "Destaque-se no mercado com um perfil profissional que valoriza suas habilidades e diferenciais competitivos. Seja notado de maneira estratégica por recrutadoras(es)",
+        "fullDescription": "Seu currículo, LinkedIn e portfólio são a sua vitrine, e muitas vezes é por eles que recrutadoras(es) decidem se vão ou não te chamar para uma conversa. Se você sente que seu perfil não reflete quem você realmente é, ou que está passando despercebido no mercado, é hora de mudar isso. Nessa consultoria, analisamos juntos cada detalhe da sua apresentação profissional: o que destacar, como estruturar sua narrativa de carreira e quais ajustes aumentam sua visibilidade nos algoritmos do LinkedIn. Você sai com um perfil estratégico, coerente e pronto para atrair as oportunidades certas"
       },
       "sixth": {
         "subtitle": "Mentoria e preparação para entrevistas",
-        "description": "Encare processos seletivos com confiança, dominando suas técnicas que aumentam suas chances de conquistar a vaga ideal."
+        "description": "Encare processos seletivos com confiança, dominando suas técnicas que aumentam suas chances de conquistar a vaga ideal",
+        "fullDescription": "Chegar em uma entrevista e travar, não saber como se apresentar ou sair com a sensação de que não mostrou seu melhor, isso é mais comum do que parece. A mentoria de preparação para entrevistas existe para mudar esse cenário. Vamos trabalhar juntos sua comunicação, postura, narrativa profissional e respostas para as perguntas mais frequentes e difíceis. Você aprende a se apresentar com clareza, a destacar suas experiências de forma estratégica e a lidar com situações de pressão durante o processo seletivo. Ideal para quem está em busca do primeiro emprego, migrando de área ou disputando uma vaga mais competitiva"
       },
       "hire": "Contratar",
       "bookSession": "Agendar consulta",
       "loginToBook": "Faça login para agendar",
+      "talkToSpecialist": "Fale com nossas especialistas",
       "backToServices": "Voltar aos serviços",
       "notFound": "Serviço não encontrado",
       "b2cLabel": "Para você",
