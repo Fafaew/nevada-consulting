@@ -7,11 +7,18 @@ import { WHATSAPP_NUMBER } from '../../lib/servicesConfig.js';
 import LoginModal from './LoginModal.jsx';
 import SchedulingModal from './SchedulingModal.jsx';
 
-export default function BookServiceButton({ slug, serviceName, b2b = false }) {
+export default function BookServiceButton({
+  slug,
+  serviceName,
+  b2b = false,
+  variants,
+  ctaLabel,
+}) {
   const { data: session } = useSession();
   const { t } = useTranslation();
   const [loginOpen, setLoginOpen] = useState(false);
   const [schedulingOpen, setSchedulingOpen] = useState(false);
+  const [activeVariant, setActiveVariant] = useState(null);
 
   if (b2b) {
     const message = encodeURIComponent(
@@ -25,8 +32,42 @@ export default function BookServiceButton({ slug, serviceName, b2b = false }) {
         className='inline-block mt-8 px-8 py-4 bg-purple-primary text-white font-semibold rounded-lg
           hover:bg-purple-700 transition-colors duration-300 text-lg'
       >
-        {t('services.talkToSpecialist')}
+        {ctaLabel ?? t('services.talkToSpecialist')}
       </a>
+    );
+  }
+
+  if (variants) {
+    const handleVariantClick = (variant) => {
+      if (!session) {
+        setLoginOpen(true);
+        return;
+      }
+      setActiveVariant(variant);
+    };
+
+    return (
+      <>
+        <div className='mt-8 flex flex-col sm:flex-row gap-4'>
+          {variants.map((v) => (
+            <button
+              key={v.slug}
+              onClick={() => handleVariantClick(v)}
+              className='px-6 py-4 bg-purple-primary text-white font-semibold rounded-lg
+                hover:bg-purple-700 transition-colors duration-300 text-base cursor-pointer'
+            >
+              {session ? v.label : t('services.loginToBook')}
+            </button>
+          ))}
+        </div>
+        <LoginModal isOpen={loginOpen} onClose={() => setLoginOpen(false)} />
+        <SchedulingModal
+          isOpen={!!activeVariant}
+          onClose={() => setActiveVariant(null)}
+          slug={activeVariant?.slug}
+          serviceName={activeVariant?.label}
+        />
+      </>
     );
   }
 
