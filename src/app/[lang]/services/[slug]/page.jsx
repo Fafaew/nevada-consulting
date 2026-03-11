@@ -6,6 +6,44 @@ import { slugToKey, serviceItems } from '../../../../lib/servicesConfig';
 import ptTranslations from '../../../../locale/pt.json';
 import enTranslations from '../../../../locale/en.json';
 
+function renderWithLinks(text, links, lang) {
+  const regex = /\{\{(\w+)\}\}|<b>([\s\S]*?)<\/b>/g;
+  const parts = [];
+  let lastIndex = 0;
+  let match;
+  while ((match = regex.exec(text)) !== null) {
+    parts.push(text.slice(lastIndex, match.index));
+    if (match[1]) {
+      const link = links?.[match[1]];
+      if (link) {
+        const href = link.href ?? `/${lang}/services/${link.slug}`;
+        parts.push(
+          <a
+            key={`link-${match.index}`}
+            href={href}
+            target={link.external ? '_blank' : '_self'}
+            rel={link.external ? 'noopener noreferrer' : undefined}
+            className='text-purple-primary underline hover:opacity-80 transition-opacity'
+          >
+            {link.label}
+          </a>
+        );
+      } else {
+        parts.push(match[0]);
+      }
+    } else if (match[2] !== undefined) {
+      parts.push(
+        <strong key={`bold-${match.index}`} className='text-white font-semibold'>
+          {match[2]}
+        </strong>
+      );
+    }
+    lastIndex = match.index + match[0].length;
+  }
+  parts.push(text.slice(lastIndex));
+  return parts;
+}
+
 export async function generateStaticParams() {
   const slugs = Object.keys(slugToKey);
   const langs = ['pt', 'en'];
@@ -37,6 +75,20 @@ export default async function ServicePage({ params }) {
   const backLabel = t.services.backToServices;
   const serviceConfig = serviceItems.find((s) => s.slug === slug);
 
+  const bookingVariants =
+    translationKey === 'fifth'
+      ? [
+          {
+            slug: 'resume-linkedin-portfolio',
+            label: t.services.ctaResumeOnly,
+          },
+          {
+            slug: 'resume-linkedin-assessment',
+            label: t.services.ctaResumeWithAssessment,
+          },
+        ]
+      : null;
+
   return (
     <>
       <Navbar hideNav />
@@ -57,14 +109,16 @@ export default async function ServicePage({ params }) {
             {service.subtitle}
           </h1>
 
-          <p className='text-gray-300 text-lg leading-relaxed'>
-            {service.fullDescription ?? service.description}
+          <p className='text-gray-300 text-lg leading-relaxed whitespace-pre-line'>
+            {renderWithLinks(service.fullDescription ?? service.description, service.links, lang)}
           </p>
 
           <BookServiceButton
             slug={slug}
             serviceName={service.subtitle}
             b2b={serviceConfig?.b2b ?? false}
+            variants={bookingVariants}
+            ctaLabel={service.ctaLabel}
           />
         </div>
       </main>
