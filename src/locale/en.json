@@ -19,16 +19,17 @@
       "recruitment": "Talent recruitment and selection by high performance team",
       "coaching": "Mentoring and coaching for leadership",
       "training": "Recruitment and selection training",
-      "assessment": "Behavioral profile assessment",
+      "assessment": "Behavioral assessment (PDA test)",
       "analisys": "Analysis and enhancement of resume, linkedIn, and portfolio",
       "mentoring": "Mentoring and interview preparation"
     },
     "services": {
       "title": "Services",
       "first": {
-        "subtitle": "Hire a high-performance team",
-        "description": "Hire A-players for your team. We identify and recruit top professionals across all sectors and levels — from operational to executive roles. Count on a strategic and personalized process to ensure precise hires aligned with your business culture and objectives",
-        "fullDescription": "A bad hire is expensive in time, money, and culture. Whether you're building a team from scratch, replacing a key position, or scaling your operation, finding the right people requires much more than screening resumes. Our B2B recruitment consultancy works strategically and personally: we map the ideal profile for each role, assess both technical and behavioral competencies, and present candidates who truly fit your company's goals and culture. We serve businesses across all sectors, from operational roles to executive leadership. You focus on your business, we take care of finding the right people to help it grow"
+        "subtitle": "Hire great people",
+        "description": "We build A-Player teams for your company",
+        "fullDescription": "A bad hire is a cost nobody puts on the spreadsheet — but everyone pays. We map the technical and behavioral profile before any search begins, build qualified pipelines, and deliver candidates who don't just fill positions: they raise the bar for the whole team.\n\nWe work on a success fee model (one month's salary only), helping reduce time-to-hire, bringing more predictability to critical hires, and offering a guarantee during the initial period.\n\nBelieve it: the right people are what determine whether a business becomes successful and profitable — or gets swallowed by the market.\n\nThe right talent needs to be found, and that's exactly what we do here.\n\nI'm Juliana, and I've spent the last several years leading talent acquisition teams at leading companies. It would be a pleasure to talk with you.",
+        "ctaLabel": "Let’s talk"
       },
       "second": {
         "subtitle": "Mentoring and coaching for leadership",
@@ -40,24 +41,37 @@
         "fullDescription": "Recruiting well is a skill and it can be developed. This training program was designed for managers and HR teams who want to master modern techniques in candidate attraction, screening, and interviewing. We cover everything from crafting job descriptions that attract the right profiles, to competency-based interview techniques and data-driven decision-making aligned with cultural fit. The result is a more agile, consistent, and efficient selection process — one that reduces turnover and raises the quality of your hires. Ideal for companies looking to build a high-performance recruitment culture from within"
       },
       "fourth": {
-        "subtitle": "Behavioral profile assessment",
-        "description": "Make more assertive decisions with in-depth behavioral analyses of skills, development potential, and better fit for your company",
-        "fullDescription": "Do you know exactly what your strengths are and how to communicate them confidently in an interview or promotion? The behavioral assessment reveals patterns of behavior and development potential that you may not yet be able to name. You leave with a clear map of who you are professionally: where you shine, where you can grow, and how to position yourself strategically in the market. Ideal for those in a career transition, pursuing a promotion, or simply wanting to make decisions with greater clarity"
+        "subtitle": "Behavioral assessment (PDA test)",
+        "description": "Comprehensive 23-page behavioral and leadership assessment report",
+        "fullDescription": "CVs reveal the past. PDA reveals potential. We apply the PDA (Personal Development Analysis) assessment and deliver a 23-page executive report that decodes behavioral drivers, leadership style, pressure management, and cultural fit with scientific precision. Decisions about people deserve more than intuition — they deserve data. Make more informed hiring and development decisions with deep behavioral insights into skills, growth potential, and organizational fit."
       },
       "fifth": {
-        "subtitle": "Analysis and enhancement of resume, linkedIn, and portfolio",
-        "description": "Stand out in the market with a professional profile that highlights your skills and competitive advantages. Be strategically noticed by recruiters",
-        "fullDescription": "Your resume, LinkedIn, and portfolio are your professional showcase and often the deciding factor for whether a recruiter reaches out or moves on. If you feel your profile doesn't truly reflect who you are, or that you're going unnoticed in the market, it's time to change that. In this consultation, we analyze every detail of your professional presentation together: what to highlight, how to structure your career narrative, and which adjustments boost your visibility in LinkedIn's algorithms. You leave with a strategic, cohesive profile ready to attract the right opportunities"
+        "subtitle": "LinkedIn & CV Review",
+        "description": "You are more than your CV — but the market judges what it sees first",
+        "fullDescription": "The market is competitive and the best opportunities are no longer posted on LinkedIn. They circulate directly among recruiters who use powerful tools to identify talent.\nWe restructure your personal brand to pass ATS filters, rank in LinkedIn searches, and communicate value before the first conversation even happens. Your next opportunity starts with the impression you make before you're even called.\n\nHow it works:\n\nStep 1: Strategic conversation (1 hour)\nWe will have an in-depth conversation about your professional moment, career trajectory, goals, and desired next steps.\nAt this stage, you can also choose to include a behavioral assessment (23-page report) that helps understand your behavioral tendencies in the workplace and supports building a more strategic individual development plan.\nIf you'd like to learn more about the assessment, the link is available {{assessmentLink}}.\n\nStep 2: Strategic LinkedIn and Resume Review\nYour LinkedIn and resume will be reviewed by a senior recruiter, focused on strategic market positioning.\n\n- We define your professional positioning strategy\n- We optimize your LinkedIn profile for recruiter search rankings\n- We structure and rewrite your resume strategically\n\nYou will receive all materials ready to use.\nDelivery time: up to 10 business days.\n\nStep 3: Final debrief (30 minutes)\nWe hold a debrief meeting to present the finalized materials and guide you on how to use them strategically.\nIf you opted for the assessment, we will also debrief the behavioral report (PDA) with interpretation and development recommendations.\n\nI'm Juliana ({{linkedinLabel}}), I've worked at leading companies, led talent acquisition teams, and today I work globally selecting talent on an international scale.",
+        "links": {
+          "linkedinLabel": {
+            "label": "LinkedIn",
+            "href": "https://www.linkedin.com/in/juliana-carvalho-41b452142/",
+            "external": true
+          },
+          "assessmentLink": {
+            "label": "here",
+            "slug": "behavioral-assessment"
+          }
+        }
       },
       "sixth": {
         "subtitle": "Mentoring and interview preparation",
-        "description": "Face selection processes with confidence, mastering techniques that increase your chances of securing the ideal position",
-        "fullDescription": "Freezing up in an interview, not knowing how to present yourself, or leaving with the feeling that you didn't show your best, this is more common than you'd think. Interview preparation mentoring exists to change that. We work together on your communication, body language, professional narrative, and responses to the most common and challenging questions. You learn to introduce yourself with clarity, highlight your experiences strategically, and handle high-pressure moments during the selection process. Ideal for those seeking their first job, switching fields, or competing for a more demanding role"
+        "description": "The ideal role is not won by luck, it is earned through preparation.",
+        "fullDescription": "We help you develop a clear and compelling professional narrative, simulate real interview scenarios with precise feedback, and teach techniques that transform nervousness into confidence and executive presence.Our goal is simple: When you walk into the interview, you know exactly who you are, what you bring, and why you are the right person for the role.\n\nHow it works:\nWe'll work with scorecards (interview script for the position)\n- Frequently asked questions;\n- Posture and language\n- Executive communication\n\nIn addition, it's a moment to ask questions, raise topics, and share best practices"
       },
+      "ctaResumeOnly": "Strategic LinkedIn + Resume Review",
+      "ctaResumeWithAssessment": "Strategic LinkedIn + Resume Review + PDA Assessment",
       "hire": "Hire",
-      "bookSession": "Book a session",
+      "bookSession": "Book here",
       "loginToBook": "Sign in to book",
-      "talkToSpecialist": "Talk to our specialists",
+      "talkToSpecialist": "Click here and get your quote",
       "backToServices": "Back to services",
       "notFound": "Service not found",
       "b2cLabel": "For you",

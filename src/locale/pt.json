@@ -19,45 +19,59 @@
       "recruitment": "Recrutamento e seleção de talentos",
       "coaching": "Mentoring e coaching para lideranças",
       "training": "Treinamento de recrutamento e seleção",
-      "assessment": "Assessment de perfil comportamental",
+      "assessment": "Assessment & perfil comportamental (PDA)",
       "analisys": "Análise e evolução de currículo, linkedin e porfólio",
       "mentoring": "Mentoria e preparação para entrevistas"
     },
     "services": {
       "title": "Serviços",
       "first": {
-        "subtitle": "Contrate uma equipe de alto desempenho",
-        "description": "Contrate profissionais de alto nível para sua equipe. Identificamos e recrutamos os melhores profissionais em todos os setores e níveis — desde funções operacionais até cargos executivos. Conte com um processo estratégico e personalizado para garantir contratações precisas alinhadas com a cultura e os objetivos do seu negócio",
-        "fullDescription": "Contratar errado custa caro em tempo, dinheiro e cultura. Seja para compor um time do zero, substituir uma posição-chave ou escalar sua operação, encontrar os profissionais certos exige muito mais do que triagem de currículos. Nossa consultoria de recrutamento B2B atua de forma estratégica e personalizada: mapeamos o perfil ideal para cada posição, analisamos competências técnicas e comportamentais, e apresentamos candidatos que realmente se encaixam nos objetivos e na cultura da sua empresa. Atendemos empresas de todos os setores, desde funções operacionais até cargos de liderança executiva. Você foca no seu negócio, nós cuidamos de encontrar as pessoas certas para fazê-lo crescer"
+        "subtitle": "Recrutamento & Seleção",
+        "description": "Contratamos um time de alto desempenho pra você",
+        "fullDescription": "Contratar errado é o custo que ninguém coloca na planilha — mas todos pagam. Mapeamos o perfil técnico e comportamental antes de qualquer busca, construímos pipelines qualificados e entregamos candidatos que não apenas preenchem vagas: elevam o nível do time.\n\nAtuamos no modelo success fee (apenas o 1º salário), ajudando a reduzir o time-to-hire, trazendo mais previsibilidade para contratações críticas e oferecendo garantia no período inicial.\n\nAcredite: são as pessoas certas que definem se um negócio se tornará bem-sucedido e rentável ou se acabará sendo engolido pelo mercado.\n\nO talento certo precisa ser encontrado e é isso que fazemos aqui.\n\nSou a Juliana e passei os últimos anos liderando times de aquisição de talentos em empresas de referência. Será um prazer falar com você.",
+        "ctaLabel": "Fale diretamente comigo"
       },
       "second": {
         "subtitle": "Mentoring e coaching para lideranças",
         "description": "Desenvolva lideranças preparadas para tomar decisões estratégicas, engajar equipes e impulsionar resultados com uma gestão humanizada e eficaz."
       },
       "third": {
-        "subtitle": "Recrutando profissionais de alto desempenho: um programa de treinamento para gestores de contratação",
-        "description": "Capacite sua equipe com técnicas avanças de atração, triagem e entrevista, tornando o processo seletivo mais ágil e eficiente",
-        "fullDescription": "Recrutar bem é uma habilidade — e ela pode ser desenvolvida. Este programa de treinamento foi criado para gestores e equipes de RH que querem dominar as técnicas modernas de atração, triagem e entrevista de candidatos. Vamos trabalhar desde a construção de descrições de vagas que atraem os perfis certos, passando por técnicas de entrevista por competências, até a tomada de decisão baseada em dados e fit cultural. O resultado é um processo seletivo mais ágil, consistente e eficiente — que reduz turnover e aumenta a qualidade das contratações. Ideal para empresas que querem internalizar uma cultura de recrutamento de alto desempenho"
+        "subtitle": "Formação de hiring managers",
+        "description": "Gestores excepcionais não improvisam nas entrevistas — eles conduzem. A qualidade de quem você contrata começa com a qualidade de quem conduz a seleção",
+        "fullDescription": "Recrutar bem é uma habilidade — e ela pode ser desenvolvida. Este programa de treinamento foi criado para gestores e equipes de RH que querem dominar as técnicas modernas de atração, triagem e entrevista de candidatos. Vamos trabalhar desde a construção de descrições de vagas que atraem os perfis certos, passando por técnicas de entrevista por competências, até a tomada de decisão baseada em dados e fit cultural. O resultado é um processo seletivo mais ágil, consistente e eficiente — que reduz turnover e aumenta a qualidade das contratações. Ideal para empresas que querem internalizar uma cultura de recrutamento de alto desempenho.\n\nTreinamos líderes para estruturar processos, identificar vieses ocultos e tomar decisões de contratação com metodologia e confiança.\n\nO que ensinamos: as 4 etapas do método\n\n<b>1- Scorecard - a bússola do gestor</b>\nAntes de iniciar qualquer busca, o gestor aprende a definir com clareza a missão do cargo, os resultados esperados e as competências inegociáveis. O scorecard descreve exatamente o que a posição precisa entregar e quais características se alinham à cultura da empresa. Sem isso, qualquer entrevista vira um chute no escuro.\n\n<b>2- Source: onde os A players estão</b>\nTreinamos gestores a construir um fluxo contínuo de talentos, em vez de buscar candidatos apenas quando surge uma urgência. Contratar com pressa quase sempre leva a decisões ruins.\n\n<b>3- Select: a arte de entrevistar com profundidade</b>\nA entrevista baseada em topgrading analisa o histórico real do candidato: responsabilidades, conquistas, desafios, erros e motivos de saída de cada empresa. Assim, gestores deixam de contratar por impressão e passam a contratar com base em evidências.\n\n<b>4- Sell: fechar com o talento certo</b>\nAtrair um grande talento exige mais do que salário. Apresentamos os 5 fatores que fazem um A player aceitar uma proposta: alinhamento com missão e cultura, respeito à vida pessoal, autonomia, estabilidade e compensação, além de um ambiente onde vale a pena trabalhar.\n\nO orçamento varia de acordo com modelo de treinamento e número de pessoas."
       },
       "fourth": {
-        "subtitle": "Assessment de perfil comportamental",
-        "description": "Tome decisões mais assertivas com análises comportamentais profundas de habilidades, potencial de desenvolvimento e com melhor fit para sua empresa",
-        "fullDescription": "Você sabe exatamente quais são seus pontos fortes e como comunicá-los com confiança em uma entrevista ou promoção? O assessment comportamental revela padrões de comportamento e potencial de desenvolvimento que muitas vezes você ainda não consegue nomear. Você sai com um mapa claro de quem você é profissionalmente: onde brilha, onde pode evoluir, e como se posicionar de forma estratégica no mercado. Ideal para quem está em transição de carreira, buscando uma promoção ou quer tomar decisões com mais clareza"
+        "subtitle": "Assessment & perfil comportamental (PDA)",
+        "description": "Relatório de 23 páginas sobre tendências comportamentais e gestão",
+        "fullDescription": "Aplicamos o instrumento PDA com relatório executivo de 23 páginas que decodifica motivações, estilo de liderança, gestão de pressão e fit cultural com precisão científica. Decisões sobre pessoas merecem mais do que intuição — merecem dados. Tome decisões mais assertivas com análises comportamentais profundas de habilidades, potencial de desenvolvimento e com melhor fit para sua empresa."
       },
       "fifth": {
-        "subtitle": "Análise e evolução de currículo, linkedin e portfólio",
-        "description": "Destaque-se no mercado com um perfil profissional que valoriza suas habilidades e diferenciais competitivos. Seja notado de maneira estratégica por recrutadoras(es)",
-        "fullDescription": "Seu currículo, LinkedIn e portfólio são a sua vitrine, e muitas vezes é por eles que recrutadoras(es) decidem se vão ou não te chamar para uma conversa. Se você sente que seu perfil não reflete quem você realmente é, ou que está passando despercebido no mercado, é hora de mudar isso. Nessa consultoria, analisamos juntos cada detalhe da sua apresentação profissional: o que destacar, como estruturar sua narrativa de carreira e quais ajustes aumentam sua visibilidade nos algoritmos do LinkedIn. Você sai com um perfil estratégico, coerente e pronto para atrair as oportunidades certas"
+        "subtitle": "Revisão Linkedin & CV",
+        "description": "Seu linkedin & CV feitos por uma recrutadora global",
+        "fullDescription": "Você é mais do que seu currículo — mas o mercado julga pelo que vê primeiro.\nO mercado está competitivo e as melhores oportunidades já não estão publicadas no LinkedIn, elas circulam diretamente entre recrutadores que utilizam ferramentas robustas para identificar talentos.\nReestruturamos sua marca pessoal para passar por filtros de ATS, ranquear nas buscas do LinkedIn e comunicar valor antes mesmo da primeira conversa. Sua próxima oportunidade começa com a impressão que você causa antes de ser convocado.\n\nComo funciona:\n\nPasso 1: Conversa estratégica (1 hora)\nRealizaremos uma conversa aprofundada sobre seu momento profissional, trajetória, objetivos de carreira e próximos passos desejados.\nNesta etapa, você também pode optar por incluir um assessment comportamental (relatório de 23 páginas), que ajuda a compreender suas tendências de comportamento no ambiente de trabalho e apoia a construção de um plano de desenvolvimento individual mais estratégico.\nCaso queira conhecer mais sobre o assessment, o link está disponível {{assessmentLink}}.\n\nPasso 2: Revisão estratégica de LinkedIn e Currículo\nSeu LinkedIn e currículo serão revisados por uma recrutadora sênior, com foco em posicionamento estratégico no mercado.\n\n- Definimos a estratégia de posicionamento profissional\n- Otimizamos seu perfil no LinkedIn para ranqueamento em buscas de recrutadores\n- Estruturamos e reescrevemos seu currículo de forma estratégica\n\nVocê receberá todos os materiais prontos para uso.\nPrazo de entrega: até 10 dias úteis.\n\nPasso 3: Devolutiva final (30 minutos)\nRealizamos uma reunião de devolução para apresentar os materiais finalizados e orientar como utilizá-los estrategicamente.\nCaso tenha optado pelo assessment, também faremos a devolutiva do relatório comportamental (PDA) com interpretação e recomendações de desenvolvimento.\n\nSou a Juliana ({{linkedinLabel}}), atuei em empresas referências, liderei times de aquisição de talentos e hoje atuo de forma global selecionando talentos de forma global.",
+        "links": {
+          "linkedinLabel": {
+            "label": "LinkedIn",
+            "href": "https://www.linkedin.com/in/juliana-carvalho-41b452142/",
+            "external": true
+          },
+          "assessmentLink": {
+            "label": "aqui",
+            "slug": "behavioral-assessment"
+          }
+        }
       },
       "sixth": {
         "subtitle": "Mentoria e preparação para entrevistas",
-        "description": "Encare processos seletivos com confiança, dominando suas técnicas que aumentam suas chances de conquistar a vaga ideal",
-        "fullDescription": "Chegar em uma entrevista e travar, não saber como se apresentar ou sair com a sensação de que não mostrou seu melhor, isso é mais comum do que parece. A mentoria de preparação para entrevistas existe para mudar esse cenário. Vamos trabalhar juntos sua comunicação, postura, narrativa profissional e respostas para as perguntas mais frequentes e difíceis. Você aprende a se apresentar com clareza, a destacar suas experiências de forma estratégica e a lidar com situações de pressão durante o processo seletivo. Ideal para quem está em busca do primeiro emprego, migrando de área ou disputando uma vaga mais competitiva"
+        "description": "A vaga ideal não se conquista na sorte — se conquista na preparação",
+        "fullDescription": "Desenvolvemos sua narrativa profissional, simulamos entrevistas com feedback preciso e entregamos as técnicas que transformam nervosismo em presença. Para que você entre na sala sabendo exatamente quem é e o que veio fazer.\n\nComo funciona:\nTrabalharemos com scorecards (script de entrevista sobre a vaga)\n- Perguntas frequentes;\n- Postura e linguagem\n- Comunicação executiva\n\nAlém disso, é um momento para tirar dúvidas, trazer questões e compartilhar boas práticas"
       },
+      "ctaResumeOnly": "Revisão estratégica de LinkedIn + Currículo",
+      "ctaResumeWithAssessment": "Revisão estratégica de LinkedIn + Currículo + Assessment PDA",
       "hire": "Contratar",
       "bookSession": "Agendar horário",
       "loginToBook": "Faça login para agendar",
-      "talkToSpecialist": "Fale com nossas especialistas",
+      "talkToSpecialist": "Clique aqui e faça o seu orçamento",
       "backToServices": "Voltar aos serviços",
       "notFound": "Serviço não encontrado",
       "b2cLabel": "Para você",

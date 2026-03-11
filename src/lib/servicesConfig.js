@@ -46,6 +46,17 @@ export const serviceItems = [
     },
   },
   {
+    id: 8,
+    slug: 'resume-linkedin-assessment',
+    translationKey: 'fifth',
+    duration: 45,
+    b2b: false,
+    name: {
+      pt: 'Currículo, LinkedIn + Assessment PDA',
+      en: 'Resume, LinkedIn + PDA Assessment',
+    },
+  },
+  {
     id: 6,
     slug: 'interview-preparation',
     translationKey: 'sixth',
