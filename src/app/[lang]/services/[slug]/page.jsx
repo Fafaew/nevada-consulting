@@ -26,16 +26,19 @@ function renderWithLinks(text, links, lang) {
             className='text-purple-primary underline hover:opacity-80 transition-opacity'
           >
             {link.label}
-          </a>
+          </a>,
         );
       } else {
         parts.push(match[0]);
       }
     } else if (match[2] !== undefined) {
       parts.push(
-        <strong key={`bold-${match.index}`} className='text-white font-semibold'>
+        <strong
+          key={`bold-${match.index}`}
+          className='text-white font-semibold'
+        >
           {match[2]}
-        </strong>
+        </strong>,
       );
     }
     lastIndex = match.index + match[0].length;
@@ -110,7 +113,11 @@ export default async function ServicePage({ params }) {
           </h1>
 
           <p className='text-gray-300 text-lg leading-relaxed whitespace-pre-line'>
-            {renderWithLinks(service.fullDescription ?? service.description, service.links, lang)}
+            {renderWithLinks(
+              service.fullDescription ?? service.description,
+              service.links,
+              lang,
+            )}
           </p>
 
           <BookServiceButton
