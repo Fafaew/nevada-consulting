@@ -109,11 +109,7 @@ export default function BookServiceButton({
 
   if (whatsappCta) {
     return (
-      <NeonButton
-        href={whatsappHref}
-        target='_blank'
-        rel='noopener noreferrer'
-      >
+      <NeonButton href={whatsappHref} target='_blank' rel='noopener noreferrer'>
         {ctaLabel ?? t('services.talkDirectly')}
       </NeonButton>
     );
@@ -122,7 +118,8 @@ export default function BookServiceButton({
   return (
     <>
       <NeonButton onClick={handleClick}>
-        {ctaLabel ?? (session ? t('services.bookSession') : t('services.loginToBook'))}
+        {ctaLabel ??
+          (session ? t('services.bookSession') : t('services.loginToBook'))}
       </NeonButton>
       <LoginModal isOpen={loginOpen} onClose={() => setLoginOpen(false)} />
       <SchedulingModal

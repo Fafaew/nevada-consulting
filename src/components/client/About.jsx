@@ -88,7 +88,9 @@ const About = () => {
           <p className='mt-0'>{t('about.description.first')}</p>
           <p className='mt-4'>{t('about.description.second')}</p>
           <p className='mt-4'>{t('about.description.third')}</p>
-          <p className='mt-4 whitespace-pre-line'>{t('about.description.fourth')}</p>
+          <p className='mt-4 whitespace-pre-line'>
+            {t('about.description.fourth')}
+          </p>
         </div>
       </div>
       <Testimonials />
