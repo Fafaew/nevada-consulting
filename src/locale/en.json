@@ -43,7 +43,8 @@
       "fourth": {
         "subtitle": "Behavioral assessment (PDA test)",
         "description": "Comprehensive 23-page behavioral and leadership assessment report",
-        "fullDescription": "CVs reveal the past. PDA reveals potential. We apply the PDA (Personal Development Analysis) assessment and deliver a 23-page executive report that decodes behavioral drivers, leadership style, pressure management, and cultural fit with scientific precision. Decisions about people deserve more than intuition — they deserve data. Make more informed hiring and development decisions with deep behavioral insights into skills, growth potential, and organizational fit."
+        "quote": "A bad hire affects the team, the culture, and the results. Understanding the profile before deciding is what changes everything.",
+        "fullDescription": "We apply the PDA (Personal Development Analysis) assessment and deliver a 23-page executive report that decodes behavioral drivers, leadership style, pressure management, and cultural fit with scientific precision. Decisions about people deserve more than intuition — they deserve data. Make more informed hiring and development decisions with deep behavioral insights into skills, growth potential, and organizational fit."
       },
       "fifth": {
         "subtitle": "LinkedIn & CV Review",
@@ -65,7 +66,7 @@
       "sixth": {
         "subtitle": "Mentoring and interview preparation",
         "description": "The ideal role is not won by luck, it is earned through preparation.",
-        "fullDescription": "We help you develop a clear and compelling professional narrative, simulate real interview scenarios with precise feedback, and teach techniques that transform nervousness into confidence and executive presence.Our goal is simple: When you walk into the interview, you know exactly who you are, what you bring, and why you are the right person for the role.\n\nHow it works:\nWe'll work with scorecards (interview script for the position)\n- Frequently asked questions;\n- Posture and language\n- Executive communication\n\nIn addition, it's a moment to ask questions, raise topics, and share best practices"
+        "fullDescription": "We help you develop a clear and compelling professional narrative, simulate real interview scenarios with precise feedback, and teach techniques that transform nervousness into confidence and executive presence.Our goal is simple: When you walk into the interview, you know exactly who you are, what you bring, and why you are the right person for the role.\n\nHow it works:\nWe'll work with scorecards (interview script for the position)\n\n- Frequently asked questions;\n- Posture and language\n- Executive communication\n\nIn addition, it's a moment to ask questions, raise topics, and share best practices"
       },
       "ctaResumeOnly": "Strategic LinkedIn + Resume Review",
       "ctaResumeWithAssessment": "Strategic LinkedIn + Resume Review + PDA Assessment",
@@ -73,6 +74,7 @@
       "bookSession": "Book here",
       "loginToBook": "Sign in to book",
       "talkToSpecialist": "Click here and get your quote",
+      "talkDirectly": "Talk directly with me",
       "backToServices": "Back to services",
       "notFound": "Service not found",
       "b2cLabel": "For you",
