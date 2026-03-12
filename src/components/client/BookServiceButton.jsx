@@ -12,7 +12,9 @@ function NeonButton({ children, onClick, href, target, rel, noMargin }) {
     'relative z-10 px-6 py-3 bg-purple-primary text-white font-semibold rounded-lg transition-transform duration-300 group-hover:scale-105 h-12 flex items-center justify-center text-base';
 
   const wrapper = (content) => (
-    <div className={`group relative w-fit active:scale-95${noMargin ? '' : ' mt-8'}`}>
+    <div
+      className={`group relative w-fit active:scale-95${noMargin ? '' : ' mt-8'}`}
+    >
       {content}
       <span className='pointer-events-none absolute -inset-3 z-0 rounded-xl bg-gradient-to-br from-fuchsia-500 to-purple-700 opacity-0 blur-lg transition-all duration-300 group-hover:opacity-50'></span>
     </div>
