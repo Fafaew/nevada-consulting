@@ -16,11 +16,11 @@
       "subtitle": "Recrutamento global B2B e B2C"
     },
     "revealText": {
-      "recruitment": "Recrutamento e seleção de talentos",
+      "recruitment": "Recrutamento & Seleção",
       "coaching": "Mentoring e coaching para lideranças",
-      "training": "Treinamento de recrutamento e seleção",
+      "training": "Formação de hiring managers",
       "assessment": "Assessment & perfil comportamental (PDA)",
-      "analisys": "Análise e evolução de currículo, linkedin e porfólio",
+      "analisys": "Revisão LinkedIn & CV",
       "mentoring": "Mentoria e preparação para entrevistas"
     },
     "services": {
@@ -48,10 +48,11 @@
       "fifth": {
         "subtitle": "Revisão Linkedin & CV",
         "description": "Seu linkedin & CV feitos por uma recrutadora global",
-        "fullDescription": "Você é mais do que seu currículo — mas o mercado julga pelo que vê primeiro.\nO mercado está competitivo e as melhores oportunidades já não estão publicadas no LinkedIn, elas circulam diretamente entre recrutadores que utilizam ferramentas robustas para identificar talentos.\nReestruturamos sua marca pessoal para passar por filtros de ATS, ranquear nas buscas do LinkedIn e comunicar valor antes mesmo da primeira conversa. Sua próxima oportunidade começa com a impressão que você causa antes de ser convocado.\n\nComo funciona:\n\nPasso 1: Conversa estratégica (1 hora)\nRealizaremos uma conversa aprofundada sobre seu momento profissional, trajetória, objetivos de carreira e próximos passos desejados.\nNesta etapa, você também pode optar por incluir um assessment comportamental (relatório de 23 páginas), que ajuda a compreender suas tendências de comportamento no ambiente de trabalho e apoia a construção de um plano de desenvolvimento individual mais estratégico.\nCaso queira conhecer mais sobre o assessment, o link está disponível {{assessmentLink}}.\n\nPasso 2: Revisão estratégica de LinkedIn e Currículo\nSeu LinkedIn e currículo serão revisados por uma recrutadora sênior, com foco em posicionamento estratégico no mercado.\n\n- Definimos a estratégia de posicionamento profissional\n- Otimizamos seu perfil no LinkedIn para ranqueamento em buscas de recrutadores\n- Estruturamos e reescrevemos seu currículo de forma estratégica\n\nVocê receberá todos os materiais prontos para uso.\nPrazo de entrega: até 10 dias úteis.\n\nPasso 3: Devolutiva final (30 minutos)\nRealizamos uma reunião de devolução para apresentar os materiais finalizados e orientar como utilizá-los estrategicamente.\nCaso tenha optado pelo assessment, também faremos a devolutiva do relatório comportamental (PDA) com interpretação e recomendações de desenvolvimento.\n\nSou a Juliana ({{linkedinLabel}}), atuei em empresas referências, liderei times de aquisição de talentos e hoje atuo de forma global selecionando talentos de forma global.",
+        "fullDescription": "Você é mais do que seu currículo — mas o mercado julga pelo que vê primeiro.\nO mercado está competitivo e as melhores oportunidades já não estão publicadas no LinkedIn, elas circulam diretamente entre recrutadores que utilizam ferramentas robustas para identificar talentos.\nReestruturamos sua marca pessoal para passar por filtros de ATS, ranquear nas buscas do LinkedIn e comunicar valor antes mesmo da primeira conversa. Sua próxima oportunidade começa com a impressão que você causa antes de ser convocado.\n\nComo funciona:\n\nPasso 1: Conversa estratégica (1 hora)\nRealizaremos uma conversa aprofundada sobre seu momento profissional, trajetória, objetivos de carreira e próximos passos desejados.\nNesta etapa, você também pode optar por incluir um assessment comportamental (relatório de 23 páginas), que ajuda a compreender suas tendências de comportamento no ambiente de trabalho e apoia a construção de um plano de desenvolvimento individual mais estratégico.\nCaso queira conhecer mais sobre o assessment, o link está disponível {{assessmentLink}}.\n\nPasso 2: Revisão estratégica de LinkedIn e Currículo\nSeu LinkedIn e currículo serão revisados por uma recrutadora sênior, com foco em posicionamento estratégico no mercado.\n\n- Definimos a estratégia de posicionamento profissional\n- Otimizamos seu perfil no LinkedIn para ranqueamento em buscas de recrutadores\n- Estruturamos e reescrevemos seu currículo de forma estratégica\n\n<b>Você receberá todos os materiais prontos.</b>\n<i>Prazo de entrega: até 10 dias úteis.</i>\n\nPasso 3: Devolutiva final (30 minutos)\nRealizamos uma reunião de devolução para apresentar os materiais finalizados e orientar como utilizá-los estrategicamente.\nCaso tenha optado pelo assessment, também faremos a devolutiva do relatório comportamental (PDA) com interpretação e recomendações de desenvolvimento.\n\nSou a {{linkedinLabel}}, atuei em empresas referências, liderei times de aquisição de talentos e hoje atuo de forma global selecionando talentos de forma global.",
+        "callout": "Agende diratamente um horário direto comigo",
         "links": {
           "linkedinLabel": {
-            "label": "LinkedIn",
+            "label": "Juliana",
             "href": "https://www.linkedin.com/in/juliana-carvalho-41b452142/",
             "external": true
           },
@@ -85,7 +86,7 @@
       "viewDetails": "Ver detalhes"
     },
     "clients": {
-      "title": "Nossos Clientes"
+      "title": "Empresas onde já atuamos"
     },
     "about": {
       "title": "Sobre",

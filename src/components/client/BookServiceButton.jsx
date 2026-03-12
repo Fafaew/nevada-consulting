@@ -7,12 +7,39 @@ import { WHATSAPP_NUMBER } from '../../lib/servicesConfig.js';
 import LoginModal from './LoginModal.jsx';
 import SchedulingModal from './SchedulingModal.jsx';
 
+function NeonButton({ children, onClick, href, target, rel }) {
+  const baseClass =
+    'relative z-10 px-6 py-3 bg-purple-primary text-white font-semibold rounded-lg transition-transform duration-300 group-hover:scale-105 h-12 flex items-center justify-center text-base';
+
+  const wrapper = (content) => (
+    <div className='group relative w-fit active:scale-95 mt-8'>
+      {content}
+      <span className='pointer-events-none absolute -inset-3 z-0 rounded-xl bg-gradient-to-br from-fuchsia-500 to-purple-700 opacity-0 blur-lg transition-all duration-300 group-hover:opacity-50'></span>
+    </div>
+  );
+
+  if (href) {
+    return wrapper(
+      <a href={href} target={target} rel={rel} className={baseClass}>
+        {children}
+      </a>,
+    );
+  }
+
+  return wrapper(
+    <button onClick={onClick} className={`${baseClass} cursor-pointer`}>
+      {children}
+    </button>,
+  );
+}
+
 export default function BookServiceButton({
   slug,
   serviceName,
   b2b = false,
   variants,
   ctaLabel,
+  alwaysShowLabel = false,
 }) {
   const { data: session } = useSession();
   const { t } = useTranslation();
@@ -25,15 +52,13 @@ export default function BookServiceButton({
       `Olá! Tenho interesse no serviço: ${serviceName}. Gostaria de saber mais.`,
     );
     return (
-      <a
+      <NeonButton
         href={`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`}
         target='_blank'
         rel='noopener noreferrer'
-        className='inline-block mt-8 px-8 py-4 bg-purple-primary text-white font-semibold rounded-lg
-          hover:bg-purple-700 transition-colors duration-300 text-lg'
       >
         {ctaLabel ?? t('services.talkToSpecialist')}
-      </a>
+      </NeonButton>
     );
   }
 
@@ -48,16 +73,11 @@ export default function BookServiceButton({
 
     return (
       <>
-        <div className='mt-8 flex flex-col sm:flex-row gap-4'>
+        <div className='mt-4 flex flex-col sm:flex-row gap-6'>
           {variants.map((v) => (
-            <button
-              key={v.slug}
-              onClick={() => handleVariantClick(v)}
-              className='px-6 py-4 bg-purple-primary text-white font-semibold rounded-lg
-                hover:bg-purple-700 transition-colors duration-300 text-base cursor-pointer'
-            >
-              {session ? v.label : t('services.loginToBook')}
-            </button>
+            <NeonButton key={v.slug} onClick={() => handleVariantClick(v)}>
+              {session || alwaysShowLabel ? v.label : t('services.loginToBook')}
+            </NeonButton>
           ))}
         </div>
         <LoginModal isOpen={loginOpen} onClose={() => setLoginOpen(false)} />
@@ -81,13 +101,9 @@ export default function BookServiceButton({
 
   return (
     <>
-      <button
-        onClick={handleClick}
-        className='mt-8 px-8 py-4 bg-purple-primary text-white font-semibold rounded-lg
-          hover:bg-purple-700 transition-colors duration-300 text-lg cursor-pointer'
-      >
+      <NeonButton onClick={handleClick}>
         {session ? t('services.bookSession') : t('services.loginToBook')}
-      </button>
+      </NeonButton>
       <LoginModal isOpen={loginOpen} onClose={() => setLoginOpen(false)} />
       <SchedulingModal
         isOpen={schedulingOpen}

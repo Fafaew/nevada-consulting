@@ -16,12 +16,12 @@
       "subtitle": "B2B and B2C global recruiting"
     },
     "revealText": {
-      "recruitment": "Talent recruitment and selection by high performance team",
-      "coaching": "Mentoring and coaching for leadership",
-      "training": "Recruitment and selection training",
-      "assessment": "Behavioral assessment (PDA test)",
-      "analisys": "Analysis and enhancement of resume, linkedIn, and portfolio",
-      "mentoring": "Mentoring and interview preparation"
+      "recruitment": "Recruitment & Selection",
+      "coaching": "Leadership Mentoring & Coaching",
+      "training": "Hiring Manager Training",
+      "assessment": "Assessment & Behavioral Profile (PDA)",
+      "analisys": "LinkedIn & CV Review",
+      "mentoring": "Mentoring and Interview Preparation"
     },
     "services": {
       "title": "Services",
@@ -48,10 +48,11 @@
       "fifth": {
         "subtitle": "LinkedIn & CV Review",
         "description": "You are more than your CV — but the market judges what it sees first",
-        "fullDescription": "The market is competitive and the best opportunities are no longer posted on LinkedIn. They circulate directly among recruiters who use powerful tools to identify talent.\nWe restructure your personal brand to pass ATS filters, rank in LinkedIn searches, and communicate value before the first conversation even happens. Your next opportunity starts with the impression you make before you're even called.\n\nHow it works:\n\nStep 1: Strategic conversation (1 hour)\nWe will have an in-depth conversation about your professional moment, career trajectory, goals, and desired next steps.\nAt this stage, you can also choose to include a behavioral assessment (23-page report) that helps understand your behavioral tendencies in the workplace and supports building a more strategic individual development plan.\nIf you'd like to learn more about the assessment, the link is available {{assessmentLink}}.\n\nStep 2: Strategic LinkedIn and Resume Review\nYour LinkedIn and resume will be reviewed by a senior recruiter, focused on strategic market positioning.\n\n- We define your professional positioning strategy\n- We optimize your LinkedIn profile for recruiter search rankings\n- We structure and rewrite your resume strategically\n\nYou will receive all materials ready to use.\nDelivery time: up to 10 business days.\n\nStep 3: Final debrief (30 minutes)\nWe hold a debrief meeting to present the finalized materials and guide you on how to use them strategically.\nIf you opted for the assessment, we will also debrief the behavioral report (PDA) with interpretation and development recommendations.\n\nI'm Juliana ({{linkedinLabel}}), I've worked at leading companies, led talent acquisition teams, and today I work globally selecting talent on an international scale.",
+        "fullDescription": "The market is competitive and the best opportunities are no longer posted on LinkedIn. They circulate directly among recruiters who use powerful tools to identify talent.\nWe restructure your personal brand to pass ATS filters, rank in LinkedIn searches, and communicate value before the first conversation even happens. Your next opportunity starts with the impression you make before you're even called.\n\nHow it works:\n\nStep 1: Strategic conversation (1 hour)\nWe will have an in-depth conversation about your professional moment, career trajectory, goals, and desired next steps.\nAt this stage, you can also choose to include a behavioral assessment (23-page report) that helps understand your behavioral tendencies in the workplace and supports building a more strategic individual development plan.\nIf you'd like to learn more about the assessment, the link is available {{assessmentLink}}.\n\nStep 2: Strategic LinkedIn and Resume Review\nYour LinkedIn and resume will be reviewed by a senior recruiter, focused on strategic market positioning.\n\n- We define your professional positioning strategy\n- We optimize your LinkedIn profile for recruiter search rankings\n- We structure and rewrite your resume strategically\n\n<b>You will receive all materials ready to use.</b>\n<i>Delivery time: up to 10 business days.</i>\n\nStep 3: Final debrief (30 minutes)\nWe hold a debrief meeting to present the finalized materials and guide you on how to use them strategically.\nIf you opted for the assessment, we will also debrief the behavioral report (PDA) with interpretation and development recommendations.\n\nI'm {{linkedinLabel}}, I've worked at leading companies, led talent acquisition teams, and today I work globally selecting talent on an international scale.",
+        "callout": "Schedule a time directly with me",
         "links": {
           "linkedinLabel": {
-            "label": "LinkedIn",
+            "label": "Juliana",
             "href": "https://www.linkedin.com/in/juliana-carvalho-41b452142/",
             "external": true
           },
@@ -85,7 +86,7 @@
       "viewDetails": "View details"
     },
     "clients": {
-      "title": "Our Clients"
+      "title": "Companies where we have worked"
     },
     "about": {
       "title": "About",
