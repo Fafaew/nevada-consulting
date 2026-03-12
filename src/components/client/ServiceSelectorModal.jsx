@@ -109,6 +109,20 @@ export default function ServiceSelectorModal({ isOpen, onClose, filter }) {
             </li>
           ))}
         </ul>
+
+        <div className='mt-5 pt-4 border-t border-gray-800 text-center'>
+          <span className='text-sm text-gray-400'>
+            Tá em dúvida?{' '}
+            <a
+              href={`https://wa.me/5511994607649?text=${encodeURIComponent('Olá! Estou em dúvida sobre os serviços e gostaria de falar com você.')}`}
+              target='_blank'
+              rel='noopener noreferrer'
+              className='ml-1 text-purple-primary underline underline-offset-2 hover:opacity-80 transition-opacity duration-200'
+            >
+              fale comigo
+            </a>
+          </span>
+        </div>
       </div>
     </div>
   );
