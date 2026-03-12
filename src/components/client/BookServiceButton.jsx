@@ -109,35 +109,20 @@ export default function BookServiceButton({
 
   if (whatsappCta) {
     return (
-      <>
-        <div className='mt-8 flex flex-col sm:flex-row gap-4 items-start'>
-          <NeonButton noMargin onClick={handleClick}>
-            {session ? t('services.bookSession') : t('services.loginToBook')}
-          </NeonButton>
-          <NeonButton
-            noMargin
-            href={whatsappHref}
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            {t('services.talkDirectly')}
-          </NeonButton>
-        </div>
-        <LoginModal isOpen={loginOpen} onClose={() => setLoginOpen(false)} />
-        <SchedulingModal
-          isOpen={schedulingOpen}
-          onClose={() => setSchedulingOpen(false)}
-          slug={slug}
-          serviceName={serviceName}
-        />
-      </>
+      <NeonButton
+        href={whatsappHref}
+        target='_blank'
+        rel='noopener noreferrer'
+      >
+        {ctaLabel ?? t('services.talkDirectly')}
+      </NeonButton>
     );
   }
 
   return (
     <>
       <NeonButton onClick={handleClick}>
-        {session ? t('services.bookSession') : t('services.loginToBook')}
+        {ctaLabel ?? (session ? t('services.bookSession') : t('services.loginToBook'))}
       </NeonButton>
       <LoginModal isOpen={loginOpen} onClose={() => setLoginOpen(false)} />
       <SchedulingModal

@@ -9,7 +9,6 @@ export const RevealText = () => {
 
   const phrases = [
     t('revealText.recruitment'),
-    t('revealText.coaching'),
     t('revealText.training'),
     t('revealText.assessment'),
     t('revealText.analisys'),

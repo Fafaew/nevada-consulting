@@ -61,7 +61,7 @@ function renderBlock(block, index, links, lang) {
     return (
       <div key={index} className='border-l-2 border-purple-primary pl-4 py-1'>
         <p className='font-bold text-gray-900 mb-1'>{boldTitleMatch[1]}</p>
-        <p className='text-gray-600 leading-relaxed text-[15px]'>
+        <p className='text-gray-600 leading-relaxed text-[16px]'>
           {renderInline(boldTitleMatch[2], links, lang)}
         </p>
       </div>
@@ -75,7 +75,7 @@ function renderBlock(block, index, links, lang) {
     return (
       <ul key={index} className='space-y-2'>
         {lines.map((line, j) => (
-          <li key={j} className='flex gap-3 text-gray-600 text-[15px]'>
+          <li key={j} className='flex gap-3 text-gray-600 text-[16px]'>
             <span className='text-purple-primary font-bold shrink-0 mt-px'>
               —
             </span>
@@ -97,7 +97,7 @@ function renderBlock(block, index, links, lang) {
         <p className='text-xs font-bold uppercase tracking-widest text-purple-primary mb-2'>
           {header}
         </p>
-        <p className='text-gray-600 leading-relaxed text-[15px]'>
+        <p className='text-gray-600 leading-relaxed text-[16px]'>
           {renderInline(body, links, lang)}
         </p>
       </div>
@@ -116,23 +116,9 @@ function renderBlock(block, index, links, lang) {
     );
   }
 
-  // First block → intro paragraph (larger)
-  if (index === 0) {
-    return (
-      <p key={index} className='text-gray-700 text-lg leading-relaxed'>
-        {lines.map((line, j) => (
-          <span key={j}>
-            {j > 0 && <br />}
-            {renderInline(line, links, lang)}
-          </span>
-        ))}
-      </p>
-    );
-  }
-
   // Regular paragraph
   return (
-    <p key={index} className='text-gray-600 leading-relaxed text-[15px]'>
+    <p key={index} className='text-gray-600 leading-relaxed text-[16px]'>
       {lines.map((line, j) => (
         <span key={j}>
           {j > 0 && <br />}
@@ -194,9 +180,11 @@ function parseSteps(text) {
   // Move the last block of the last step to outro if it looks like a sign-off
   if (steps.length > 0) {
     const lastStep = steps[steps.length - 1];
-    const last = lastStep.content[lastStep.content.length - 1] ?? '';
-    if (/^(Sou a |I'm |I am )/i.test(last)) {
-      outro.push(lastStep.content.pop());
+    const signOffIdx = lastStep.content.findIndex((b) =>
+      /^(Sou a |I'm |I am )/i.test(b),
+    );
+    if (signOffIdx !== -1) {
+      outro.push(...lastStep.content.splice(signOffIdx));
     }
   }
 
@@ -268,10 +256,7 @@ export default async function ServicePage({ params }) {
   const backLabel = t.services.backToServices;
   const serviceConfig = serviceItems.find((s) => s.slug === slug);
 
-  const showWhatsAppCta = [
-    'behavioral-assessment',
-    'interview-preparation',
-  ].includes(slug);
+  const showWhatsAppCta = slug === 'behavioral-assessment';
 
   const bookingVariants =
     translationKey === 'fifth'
@@ -362,15 +347,10 @@ export default async function ServicePage({ params }) {
 
               {/* Outro */}
               {parsed.outro.length > 0 && (
-                <div className='space-y-3'>
-                  {parsed.outro.map((block, i) => (
-                    <p
-                      key={i}
-                      className='text-gray-600 text-[15px] leading-relaxed'
-                    >
-                      {renderInline(block, service.links, lang)}
-                    </p>
-                  ))}
+                <div className='space-y-4 mt-4'>
+                  {parsed.outro.map((block, i) =>
+                    renderBlock(block, i, service.links, lang),
+                  )}
                 </div>
               )}
             </>
