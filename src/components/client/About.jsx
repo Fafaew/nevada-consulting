@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 import Testimonials from './Testimonials';
 
 import Image from 'next/image';
-import juProfile from '../../assets/imgs/juProfile.webp';
+import juProfile from '../../assets/imgs/juProfile2.webp';
 
 const About = () => {
   const { t } = useTranslation();
@@ -40,11 +40,12 @@ const About = () => {
         <div className='col-span-1 md:col-start-1 flex flex-col items-center justify-center py-10 px-6 gap-4'>
           <div className='w-64 h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden ring-4 ring-white shadow-xl'>
             <Image
-              className='w-full h-full object-cover scale-150 object-[center_15%]'
+              className='w-full h-full object-cover scale-150 object-[center_10%]'
               src={juProfile}
               alt='Juliana Carvalho'
-              width={512}
-              height={512}
+              width={1200}
+              height={1200}
+              quality={90}
             />
           </div>
           <h2 className='text-center text-2xl font-bold mt-2'>
