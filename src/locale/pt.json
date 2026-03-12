@@ -43,13 +43,14 @@
       "fourth": {
         "subtitle": "Assessment & perfil comportamental (PDA)",
         "description": "Relatório de 23 páginas sobre tendências comportamentais e gestão",
+        "quote": "Uma contratação errada afeta o time, o clima e o resultado. Entender o perfil antes de decidir é o que muda o jogo.",
         "fullDescription": "Aplicamos o instrumento PDA com relatório executivo de 23 páginas que decodifica motivações, estilo de liderança, gestão de pressão e fit cultural com precisão científica. Decisões sobre pessoas merecem mais do que intuição — merecem dados. Tome decisões mais assertivas com análises comportamentais profundas de habilidades, potencial de desenvolvimento e com melhor fit para sua empresa."
       },
       "fifth": {
         "subtitle": "Revisão Linkedin & CV",
         "description": "Seu linkedin & CV feitos por uma recrutadora global",
-        "fullDescription": "Você é mais do que seu currículo — mas o mercado julga pelo que vê primeiro.\nO mercado está competitivo e as melhores oportunidades já não estão publicadas no LinkedIn, elas circulam diretamente entre recrutadores que utilizam ferramentas robustas para identificar talentos.\nReestruturamos sua marca pessoal para passar por filtros de ATS, ranquear nas buscas do LinkedIn e comunicar valor antes mesmo da primeira conversa. Sua próxima oportunidade começa com a impressão que você causa antes de ser convocado.\n\nComo funciona:\n\nPasso 1: Conversa estratégica (1 hora)\nRealizaremos uma conversa aprofundada sobre seu momento profissional, trajetória, objetivos de carreira e próximos passos desejados.\nNesta etapa, você também pode optar por incluir um assessment comportamental (relatório de 23 páginas), que ajuda a compreender suas tendências de comportamento no ambiente de trabalho e apoia a construção de um plano de desenvolvimento individual mais estratégico.\nCaso queira conhecer mais sobre o assessment, o link está disponível {{assessmentLink}}.\n\nPasso 2: Revisão estratégica de LinkedIn e Currículo\nSeu LinkedIn e currículo serão revisados por uma recrutadora sênior, com foco em posicionamento estratégico no mercado.\n\n- Definimos a estratégia de posicionamento profissional\n- Otimizamos seu perfil no LinkedIn para ranqueamento em buscas de recrutadores\n- Estruturamos e reescrevemos seu currículo de forma estratégica\n\n<b>Você receberá todos os materiais prontos.</b>\n<i>Prazo de entrega: até 10 dias úteis.</i>\n\nPasso 3: Devolutiva final (30 minutos)\nRealizamos uma reunião de devolução para apresentar os materiais finalizados e orientar como utilizá-los estrategicamente.\nCaso tenha optado pelo assessment, também faremos a devolutiva do relatório comportamental (PDA) com interpretação e recomendações de desenvolvimento.\n\nSou a {{linkedinLabel}}, atuei em empresas referências, liderei times de aquisição de talentos e hoje atuo de forma global selecionando talentos de forma global.",
-        "callout": "Agende diratamente um horário direto comigo",
+        "fullDescription": "Você é mais do que seu currículo — mas o mercado julga pelo que vê primeiro.\nO mercado está competitivo e as melhores oportunidades já não estão publicadas no LinkedIn, elas circulam diretamente entre recrutadores que utilizam ferramentas robustas para identificar talentos.\nReestruturamos sua marca pessoal para passar por filtros de ATS, ranquear nas buscas do LinkedIn e comunicar valor antes mesmo da primeira conversa.\n\nComo funciona:\n\nPasso 1: Conversa estratégica (1 hora)\nRealizaremos uma conversa aprofundada sobre seu momento profissional, trajetória, objetivos de carreira e próximos passos desejados.\nNesta etapa, você também pode optar por incluir um assessment comportamental (relatório de 23 páginas), que ajuda a compreender suas tendências de comportamento no ambiente de trabalho e apoia a construção de um plano de desenvolvimento individual mais estratégico.\nCaso queira conhecer mais sobre o assessment, o link está disponível {{assessmentLink}}.\n\nPasso 2: Revisão estratégica de LinkedIn e Currículo\nSeu LinkedIn e currículo serão revisados por uma recrutadora sênior, com foco em posicionamento estratégico no mercado.\n\n- Definimos a estratégia de posicionamento profissional\n- Otimizamos seu perfil no LinkedIn para ranqueamento em buscas de recrutadores\n- Estruturamos e reescrevemos seu currículo de forma estratégica\n\n<b>Você receberá todos os materiais prontos.</b>\n<i>Prazo de entrega: até 10 dias úteis.</i>\n\nPasso 3: Devolutiva final (30 minutos)\nRealizamos uma reunião de devolução para apresentar os materiais finalizados e orientar como utilizá-los estrategicamente.\nCaso tenha optado pelo assessment, também faremos a devolutiva do relatório comportamental (PDA) com interpretação e recomendações de desenvolvimento.\n\nSou a {{linkedinLabel}}, atuei em empresas referências e liderei times de aquisição de talentos  nacional e global, posso te ajudar?",
+        "callout": "Agende diretamente um horário direto comigo",
         "links": {
           "linkedinLabel": {
             "label": "Juliana",
@@ -65,14 +66,15 @@
       "sixth": {
         "subtitle": "Mentoria e preparação para entrevistas",
         "description": "A vaga ideal não se conquista na sorte — se conquista na preparação",
-        "fullDescription": "Desenvolvemos sua narrativa profissional, simulamos entrevistas com feedback preciso e entregamos as técnicas que transformam nervosismo em presença. Para que você entre na sala sabendo exatamente quem é e o que veio fazer.\n\nComo funciona:\nTrabalharemos com scorecards (script de entrevista sobre a vaga)\n- Perguntas frequentes;\n- Postura e linguagem\n- Comunicação executiva\n\nAlém disso, é um momento para tirar dúvidas, trazer questões e compartilhar boas práticas"
+        "fullDescription": "Desenvolvemos sua narrativa profissional, simulamos entrevistas com feedback preciso e entregamos as técnicas que transformam nervosismo em presença. Para que você entre na sala sabendo exatamente quem é e o que veio fazer.\n\nComo funciona:\nTrabalharemos com scorecards (script de entrevista sobre a vaga):\n\n- Perguntas frequentes;\n- Postura e linguagem\n- Comunicação executiva\n\nAlém disso, é um momento para tirar dúvidas, trazer questões e compartilhar boas práticas"
       },
-      "ctaResumeOnly": "Revisão estratégica de LinkedIn + Currículo",
-      "ctaResumeWithAssessment": "Revisão estratégica de LinkedIn + Currículo + Assessment PDA",
+      "ctaResumeOnly": "Revisão de LinkedIn + Currículo",
+      "ctaResumeWithAssessment": "Revisão de LinkedIn + Currículo + Assessment PDA",
       "hire": "Contratar",
       "bookSession": "Agendar horário",
       "loginToBook": "Faça login para agendar",
       "talkToSpecialist": "Clique aqui e faça o seu orçamento",
+      "talkDirectly": "Fale diretamente comigo",
       "backToServices": "Voltar aos serviços",
       "notFound": "Serviço não encontrado",
       "b2cLabel": "Para você",

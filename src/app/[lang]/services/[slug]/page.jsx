@@ -268,6 +268,11 @@ export default async function ServicePage({ params }) {
   const backLabel = t.services.backToServices;
   const serviceConfig = serviceItems.find((s) => s.slug === slug);
 
+  const showWhatsAppCta = [
+    'behavioral-assessment',
+    'interview-preparation',
+  ].includes(slug);
+
   const bookingVariants =
     translationKey === 'fifth'
       ? [
@@ -292,7 +297,7 @@ export default async function ServicePage({ params }) {
     <>
       <Navbar hideNav />
       <main className='min-h-screen bg-white text-gray-900 pt-24 pb-20 px-6'>
-        <div className={`mx-auto ${hasSteps ? 'max-w-5xl' : 'max-w-2xl'}`}>
+        <div className={`mx-auto ${hasSteps ? 'max-w-5xl' : 'max-w-2xl mt-8'}`}>
           <Link
             href={`/${lang}#services`}
             className='inline-flex items-center gap-2 text-sm text-gray-400 hover:text-gray-700 transition-colors duration-200 mb-12'
@@ -357,7 +362,7 @@ export default async function ServicePage({ params }) {
 
               {/* Outro */}
               {parsed.outro.length > 0 && (
-                <div className='space-y-3 max-w-2xl'>
+                <div className='space-y-3'>
                   {parsed.outro.map((block, i) => (
                     <p
                       key={i}
@@ -370,13 +375,26 @@ export default async function ServicePage({ params }) {
               )}
             </>
           ) : (
-            <div className='space-y-6'>
-              {renderDescription(fullText, service.links, lang)}
-            </div>
+            <>
+              {service.quote && (
+                <p className='text-gray-700 text-lg italic leading-relaxed mb-4'>
+                  <span className='text-purple-primary font-serif'>
+                    &ldquo;
+                  </span>
+                  {service.quote}
+                  <span className='text-purple-primary font-serif'>
+                    &rdquo;
+                  </span>
+                </p>
+              )}
+              <div className='space-y-6'>
+                {renderDescription(fullText, service.links, lang)}
+              </div>
+            </>
           )}
 
           {service.callout ? (
-            <div className='mt-10 rounded-2xl border border-purple-primary/25 bg-purple-primary/5 px-8 py-8'>
+            <div className='mt-10 rounded-2xl border border-purple-primary/25 bg-purple-primary/5 px-8 py-8 justify-items-center'>
               <p className='text-purple-primary font-semibold text-xl italic mb-1 text-center'>
                 {service.callout}
               </p>
@@ -387,6 +405,7 @@ export default async function ServicePage({ params }) {
                 variants={bookingVariants}
                 ctaLabel={service.ctaLabel}
                 alwaysShowLabel
+                whatsappCta={showWhatsAppCta}
               />
             </div>
           ) : (
@@ -396,6 +415,7 @@ export default async function ServicePage({ params }) {
               b2b={serviceConfig?.b2b ?? false}
               variants={bookingVariants}
               ctaLabel={service.ctaLabel}
+              whatsappCta={showWhatsAppCta}
             />
           )}
         </div>
