@@ -65,7 +65,7 @@ const Header = () => {
             className='h-24 lg:h-48 mb-4 w-auto'
           />
           <h1 className='text-5xl font-semibold tracking-tight text-white sm:text-7xl text-center'>
-            Nevada Consulting
+            Nevada Co.
           </h1>
           <p className='text-base font-semibold tracking-tight text-white sm:text-2xl text-center mt-2'>
             {t('header.subtitle')}
