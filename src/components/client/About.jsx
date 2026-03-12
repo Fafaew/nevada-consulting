@@ -3,6 +3,8 @@
 import { motion } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { FaLinkedin } from 'react-icons/fa';
+import { SiGmail } from 'react-icons/si';
 import Testimonials from './Testimonials';
 
 import Image from 'next/image';
@@ -48,23 +50,47 @@ const About = () => {
               quality={90}
             />
           </div>
-          <h2 className='text-center text-2xl font-bold mt-2'>
-            Juliana Carvalho
-          </h2>
-          <h3 className='text-center font-medium text-white/70 -mt-2'>
+          <h3 className='text-center font-medium text-white/70'>
             {t('about.description.subtitle')}
           </h3>
+          <div className='flex flex-col items-center gap-2 mt-3'>
+            <p className='text-white/60 text-xs uppercase tracking-widest'>
+              fale comigo
+            </p>
+            <div className='flex gap-3'>
+              <a
+                href='https://www.linkedin.com/in/juliana-carvalho-41b452142/pt/'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='opacity-90 hover:opacity-100 transition-opacity duration-200'
+                aria-label='LinkedIn'
+              >
+                <FaLinkedin size={28} color='#0A66C2' />
+              </a>
+              <a
+                href='mailto:consultingnevada@gmail.com'
+                className='opacity-90 hover:opacity-100 transition-opacity duration-200'
+                aria-label='Gmail'
+              >
+                <SiGmail size={28} color='#EA4335' />
+              </a>
+            </div>
+          </div>
         </div>
         <div className='col-span-1 md:col-start-2 px-6 pb-6 pt-0 md:pl-0 mx-4 md:mr-14 mt-0 text-center lg:text-justify'>
-          <blockquote className='mb-6 lg:mt-6'>
-            <p className='text-white/90 text-lg md:text-xl font-medium italic leading-relaxed'>
-              &ldquo;{t('about.description.quote')}&rdquo;
+          <div className='mb-6 lg:mt-6'>
+            <p className='text-white/60 text-xs uppercase tracking-widest mb-2'>
+              Quem sou eu
             </p>
-          </blockquote>
+            <p className='text-white font-bold text-xl'>Juliana Carvalho</p>
+            <p className='text-white/70 text-sm'>Consultora Sênior</p>
+          </div>
           <p className='mt-0'>{t('about.description.first')}</p>
           <p className='mt-4'>{t('about.description.second')}</p>
           <p className='mt-4'>{t('about.description.third')}</p>
-          <p className='mt-4'>{t('about.description.fourth')}</p>
+          <p className='mt-4 whitespace-pre-line'>
+            {t('about.description.fourth')}
+          </p>
         </div>
       </div>
       <Testimonials />

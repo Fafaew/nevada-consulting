@@ -1,6 +1,5 @@
 export const slugToKey = {
   'high-performance-team': 'first',
-  'leadership-coaching': 'second',
   'recruitment-training': 'third',
   'behavioral-assessment': 'fourth',
   'resume-linkedin-portfolio': 'fifth',
@@ -63,16 +62,5 @@ export const serviceItems = [
     duration: 60,
     b2b: false,
     name: { pt: 'Preparação para Entrevistas', en: 'Interview Preparation' },
-  },
-  {
-    id: 2,
-    slug: 'leadership-coaching',
-    translationKey: 'second',
-    duration: 60,
-    b2b: true,
-    name: {
-      pt: 'Mentoring e Coaching para Lideranças',
-      en: 'Leadership Mentoring & Coaching',
-    },
   },
 ];
