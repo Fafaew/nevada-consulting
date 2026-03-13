@@ -50,13 +50,10 @@ const About = () => {
               quality={90}
             />
           </div>
-          <h3 className='text-center font-medium text-white/70'>
+          <h3 className='text-lg text-center font-medium text-white/70'>
             {t('about.description.subtitle')}
           </h3>
-          <div className='flex flex-col items-center gap-2 mt-3'>
-            <p className='text-white/60 text-xs uppercase tracking-widest'>
-              fale comigo
-            </p>
+          <div className='flex flex-col items-center gap-2'>
             <div className='flex gap-3'>
               <a
                 href='https://www.linkedin.com/in/juliana-carvalho-41b452142/pt/'
@@ -77,7 +74,7 @@ const About = () => {
             </div>
           </div>
         </div>
-        <div className='col-span-1 md:col-start-2 px-6 pb-6 pt-0 md:pl-0 mx-4 md:mr-14 mt-0 text-center lg:text-justify'>
+        <div className='col-span-1 md:col-start-2 px-6 pb-6 pt-0 md:pl-0 mx-4 md:mr-14 mt-0 text-center text-white lg:text-justify'>
           <div className='mb-6 lg:mt-6'>
             <p className='text-white/60 text-xs uppercase tracking-widest mb-2'>
               Quem sou eu
