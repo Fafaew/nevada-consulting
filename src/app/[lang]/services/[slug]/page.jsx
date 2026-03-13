@@ -282,7 +282,9 @@ export default async function ServicePage({ params }) {
     <>
       <Navbar hideNav />
       <main className='min-h-screen bg-white text-gray-900 pt-24 pb-20 px-6'>
-        <div className={`mx-auto ${hasSteps ? 'max-w-5xl' : 'max-w-2xl mt-8'}`}>
+        <div
+          className={`mx-auto mt-8 ${hasSteps ? 'max-w-5xl' : 'max-w-2xl mt-8'}`}
+        >
           <Link
             href={`/${lang}#services`}
             className='inline-flex items-center gap-2 text-sm text-gray-400 hover:text-gray-700 transition-colors duration-200 mb-12'
