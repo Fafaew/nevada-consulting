@@ -102,6 +102,9 @@ export async function POST(request) {
     success_url: `${APP_URL}/${lang}/booking/success?session_id={CHECKOUT_SESSION_ID}`,
     cancel_url: `${APP_URL}/${lang}/services/${slug}`,
     payment_method_types: ['card'],
+    payment_method_options: isBRL
+      ? { card: { installments: { enabled: true } } }
+      : undefined,
     locale: isBRL ? 'pt-BR' : 'en',
   });
 
