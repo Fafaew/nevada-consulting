@@ -10,7 +10,9 @@ const TZ = 'America/Sao_Paulo';
 
 export async function POST(request) {
   const resend = new Resend(process.env.RESEND_API_KEY);
-  const client = new MercadoPagoConfig({ accessToken: process.env.MP_ACCESS_TOKEN });
+  const client = new MercadoPagoConfig({
+    accessToken: process.env.MP_ACCESS_TOKEN,
+  });
 
   // MP envia notificação via query params (IPN) ou JSON body (webhooks)
   const { searchParams } = new URL(request.url);
@@ -48,10 +50,14 @@ export async function POST(request) {
     metadata = JSON.parse(payment.external_reference);
   } catch {
     console.error('[webhook/mp] Invalid external_reference');
-    return Response.json({ error: 'Invalid external_reference' }, { status: 400 });
+    return Response.json(
+      { error: 'Invalid external_reference' },
+      { status: 400 },
+    );
   }
 
-  const { slug, startTime, serviceName, userEmail, userName, userId, lang } = metadata;
+  const { slug, startTime, serviceName, userEmail, userName, userId, lang } =
+    metadata;
 
   if (!userId || !slug || !startTime) {
     console.error('[webhook/mp] Missing metadata fields');
@@ -107,7 +113,10 @@ export async function POST(request) {
       },
     });
   } catch (err) {
-    console.error('[webhook/mp] Calendar event failed:', err?.response?.data ?? err?.message);
+    console.error(
+      '[webhook/mp] Calendar event failed:',
+      err?.response?.data ?? err?.message,
+    );
   }
 
   // 3. Enviar email de confirmação (não bloqueante)

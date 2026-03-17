@@ -7,7 +7,9 @@ import { serviceItems } from '../../../lib/servicesConfig.js';
 const APP_URL = process.env.NEXT_PUBLIC_APP_URL ?? 'http://localhost:3000';
 
 export async function POST(request) {
-  const client = new MercadoPagoConfig({ accessToken: process.env.MP_ACCESS_TOKEN });
+  const client = new MercadoPagoConfig({
+    accessToken: process.env.MP_ACCESS_TOKEN,
+  });
   const session = await getServerSession(authOptions);
 
   if (!session?.user?.email) {
@@ -39,7 +41,9 @@ export async function POST(request) {
 
   if (!priceValue || isNaN(price) || price <= 0) {
     return Response.json(
-      { error: `Preço não configurado para o serviço "${slug}". Configure a variável ${priceEnvKey} na Vercel.` },
+      {
+        error: `Preço não configurado para o serviço "${slug}". Configure a variável ${priceEnvKey} na Vercel.`,
+      },
       { status: 404 },
     );
   }
