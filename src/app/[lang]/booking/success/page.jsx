@@ -1,4 +1,3 @@
-import Stripe from 'stripe';
 import Link from 'next/link';
 import { getServerSession } from 'next-auth/next';
 import { authOptions } from '../../../api/auth/[...nextauth]/route';
@@ -13,7 +12,10 @@ const TZ = 'America/Sao_Paulo';
 const i18n = {
   pt: {
     title: 'Agendamento confirmado!',
+    titlePending: 'Pagamento em análise',
     subtitle: 'Seu pagamento foi aprovado e sua consulta está agendada.',
+    subtitlePending:
+      'Assim que o pagamento for confirmado, você receberá um e-mail com os detalhes.',
     service: 'Serviço',
     date: 'Data',
     email: 'Um e-mail de confirmação foi enviado para você.',
@@ -21,7 +23,10 @@ const i18n = {
   },
   en: {
     title: 'Booking confirmed!',
+    titlePending: 'Payment in review',
     subtitle: 'Your payment was approved and your session is scheduled.',
+    subtitlePending:
+      'Once payment is confirmed, you will receive an email with the details.',
     service: 'Service',
     date: 'Date',
     email: 'A confirmation email has been sent to you.',
@@ -30,30 +35,29 @@ const i18n = {
 };
 
 export default async function BookingSuccessPage({ params, searchParams }) {
-  const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
   const resend = new Resend(process.env.RESEND_API_KEY);
   const { lang } = await params;
-  const { session_id } = await searchParams;
+  const { payment_id, status, external_reference } = await searchParams;
   const t = i18n[lang] ?? i18n.pt;
   const locale = lang === 'pt' ? 'pt-BR' : 'en-US';
+  const isApproved = status === 'approved';
 
   let serviceName = '';
   let formattedDate = '';
 
-  if (session_id) {
+  if (external_reference) {
     try {
-      const checkoutSession =
-        await stripe.checkout.sessions.retrieve(session_id);
+      const metadata = JSON.parse(decodeURIComponent(external_reference));
       const {
         slug,
         startTime,
-        serviceName: metaServiceName,
-        userName,
+        serviceName: sn,
         userEmail,
-      } = checkoutSession.metadata ?? {};
-      const userId = checkoutSession.client_reference_id;
+        userName,
+        userId,
+      } = metadata;
 
-      serviceName = metaServiceName ?? '';
+      serviceName = sn ?? '';
 
       if (startTime) {
         formattedDate = new Date(startTime).toLocaleString(locale, {
@@ -63,16 +67,11 @@ export default async function BookingSuccessPage({ params, searchParams }) {
         });
       }
 
-      // Create booking + send email only if webhook hasn't done it yet
-      if (
-        userId &&
-        slug &&
-        startTime &&
-        checkoutSession.payment_status === 'paid'
-      ) {
+      // Fallback: cria booking caso webhook ainda não tenha processado
+      if (isApproved && payment_id && userId && slug && startTime) {
         const start = new Date(startTime);
         const alreadyCreated = await prisma.booking.findUnique({
-          where: { stripeSessionId: session_id },
+          where: { paymentSessionId: String(payment_id) },
         });
 
         if (!alreadyCreated) {
@@ -86,11 +85,11 @@ export default async function BookingSuccessPage({ params, searchParams }) {
               service: slug,
               date: start,
               status: 'CONFIRMED',
-              stripeSessionId: session_id,
+              paymentSessionId: String(payment_id),
             },
           });
 
-          // Create Google Calendar event (non-blocking)
+          // Criar evento no Google Calendar
           try {
             const calendar = getCalendarClient();
             await calendar.events.insert({
@@ -121,7 +120,7 @@ export default async function BookingSuccessPage({ params, searchParams }) {
             );
           }
 
-          // Send confirmation email
+          // Enviar email de confirmação
           try {
             await resend.emails.send({
               from: 'Nevada Consulting <noreply@nevadaconsulting.com.br>',
@@ -156,11 +155,17 @@ export default async function BookingSuccessPage({ params, searchParams }) {
       <main className='min-h-screen bg-[#0e0e0e] text-white flex items-center justify-center px-6'>
         <div className='max-w-md w-full text-center'>
           <div className='w-20 h-20 rounded-full bg-purple-primary/20 flex items-center justify-center mx-auto mb-8'>
-            <span className='text-4xl text-purple-primary'>✓</span>
+            <span className='text-4xl text-purple-primary'>
+              {isApproved ? '✓' : '⏳'}
+            </span>
           </div>
 
-          <h1 className='text-3xl font-bold mb-3'>{t.title}</h1>
-          <p className='text-gray-400 mb-8'>{t.subtitle}</p>
+          <h1 className='text-3xl font-bold mb-3'>
+            {isApproved ? t.title : t.titlePending}
+          </h1>
+          <p className='text-gray-400 mb-8'>
+            {isApproved ? t.subtitle : t.subtitlePending}
+          </p>
 
           {(serviceName || formattedDate) && (
             <div className='bg-[#1a1a1a] border border-gray-800 rounded-xl p-6 mb-8 text-left'>
@@ -170,7 +175,7 @@ export default async function BookingSuccessPage({ params, searchParams }) {
                   {serviceName}
                 </p>
               )}
-              {formattedDate && (
+              {formattedDate && isApproved && (
                 <p className='text-gray-400 text-sm mt-2'>
                   <span className='text-white font-semibold'>{t.date}:</span>{' '}
                   {formattedDate}
@@ -179,7 +184,9 @@ export default async function BookingSuccessPage({ params, searchParams }) {
             </div>
           )}
 
-          <p className='text-gray-500 text-sm mb-8'>{t.email}</p>
+          {isApproved && (
+            <p className='text-gray-500 text-sm mb-8'>{t.email}</p>
+          )}
 
           <Link
             href={`/${lang}`}

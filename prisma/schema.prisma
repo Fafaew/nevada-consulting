@@ -97,7 +97,7 @@ model Booking {
   date            DateTime
   status          BookingStatus @default(PENDING)
   notes           String?       @db.Text
-  stripeSessionId String?       @unique
+  paymentSessionId String?      @unique
   payment         Payment?
   createdAt       DateTime      @default(now())
   updatedAt       DateTime      @updatedAt
