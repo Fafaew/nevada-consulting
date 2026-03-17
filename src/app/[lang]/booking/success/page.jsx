@@ -14,7 +14,8 @@ const i18n = {
     title: 'Agendamento confirmado!',
     titlePending: 'Pagamento em análise',
     subtitle: 'Seu pagamento foi aprovado e sua consulta está agendada.',
-    subtitlePending: 'Assim que o pagamento for confirmado, você receberá um e-mail com os detalhes.',
+    subtitlePending:
+      'Assim que o pagamento for confirmado, você receberá um e-mail com os detalhes.',
     service: 'Serviço',
     date: 'Data',
     email: 'Um e-mail de confirmação foi enviado para você.',
@@ -24,7 +25,8 @@ const i18n = {
     title: 'Booking confirmed!',
     titlePending: 'Payment in review',
     subtitle: 'Your payment was approved and your session is scheduled.',
-    subtitlePending: 'Once payment is confirmed, you will receive an email with the details.',
+    subtitlePending:
+      'Once payment is confirmed, you will receive an email with the details.',
     service: 'Service',
     date: 'Date',
     email: 'A confirmation email has been sent to you.',
@@ -46,7 +48,14 @@ export default async function BookingSuccessPage({ params, searchParams }) {
   if (external_reference) {
     try {
       const metadata = JSON.parse(decodeURIComponent(external_reference));
-      const { slug, startTime, serviceName: sn, userEmail, userName, userId } = metadata;
+      const {
+        slug,
+        startTime,
+        serviceName: sn,
+        userEmail,
+        userName,
+        userId,
+      } = metadata;
 
       serviceName = sn ?? '';
 
@@ -105,7 +114,10 @@ export default async function BookingSuccessPage({ params, searchParams }) {
               },
             });
           } catch (calErr) {
-            console.error('[booking/success] Calendar event failed:', calErr?.response?.data ?? calErr?.message);
+            console.error(
+              '[booking/success] Calendar event failed:',
+              calErr?.response?.data ?? calErr?.message,
+            );
           }
 
           // Enviar email de confirmação
@@ -143,7 +155,9 @@ export default async function BookingSuccessPage({ params, searchParams }) {
       <main className='min-h-screen bg-[#0e0e0e] text-white flex items-center justify-center px-6'>
         <div className='max-w-md w-full text-center'>
           <div className='w-20 h-20 rounded-full bg-purple-primary/20 flex items-center justify-center mx-auto mb-8'>
-            <span className='text-4xl text-purple-primary'>{isApproved ? '✓' : '⏳'}</span>
+            <span className='text-4xl text-purple-primary'>
+              {isApproved ? '✓' : '⏳'}
+            </span>
           </div>
 
           <h1 className='text-3xl font-bold mb-3'>
