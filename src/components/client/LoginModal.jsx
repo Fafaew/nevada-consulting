@@ -242,13 +242,13 @@ const LoginModal = ({ isOpen, onClose }) => {
                 {t('login.google')}
               </button>
 
-              <button
+              {/* <button
                 onClick={() => signIn('facebook')}
                 className='w-full flex items-center justify-center gap-3 bg-[#1877F2] hover:bg-[#1877F2]/90 text-white font-semibold py-3 rounded-lg transition-colors cursor-pointer'
               >
                 <FaFacebook size={22} />
                 {t('login.facebook')}
-              </button>
+              </button> */}
             </div>
           </>
         )}
