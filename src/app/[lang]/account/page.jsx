@@ -83,7 +83,9 @@ export default async function DashboardPage({ params }) {
           <p className='text-purple-primary text-sm font-semibold uppercase tracking-widest mb-3'>
             {t.area}
           </p>
-          <h1 className='text-4xl font-bold mb-2'>{t.hello}, {firstName}!</h1>
+          <h1 className='text-4xl font-bold mb-2'>
+            {t.hello}, {firstName}!
+          </h1>
           <p className='text-gray-400 text-lg mb-10'>{t.welcome}</p>
 
           <section>
