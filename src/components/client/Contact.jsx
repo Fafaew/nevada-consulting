@@ -2,7 +2,6 @@
 
 import { React, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const { t } = useTranslation();
@@ -12,43 +11,34 @@ const Contact = () => {
   const [showSnackbar, setShowSnackbar] = useState(false);
   const [showForm, setShowForm] = useState(true);
 
-  function sendEmail(e) {
+  async function sendEmail(e) {
     e.preventDefault();
 
     if (name === '' || email === '' || message === '') {
       return;
     }
 
-    const templateParams = {
-      from_name: name,
-      message: message,
-      email: email,
-    };
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, message }),
+      });
 
-    emailjs
-      .send(
-        'service_jtmtc9o',
-        'template_smovfcs',
-        templateParams,
-        'ylu3SO7qR-i-z9E09',
-      )
-      .then(
-        (res) => {
-          console.log('Email Enviado', res.status, res.text);
-          setName('');
-          setEmail('');
-          setMessage('');
-          setShowForm(false); // Oculta o formulário
-          setShowSnackbar(true); // Mostra a snackbar
-          setTimeout(() => {
-            setShowSnackbar(false); // Esconde a snackbar
-            setShowForm(true); // Mostra o formulário novamente
-          }, 5000);
-        },
-        (err) => {
-          console.log('error', err);
-        },
-      );
+      if (!res.ok) throw new Error('Erro ao enviar');
+
+      setName('');
+      setEmail('');
+      setMessage('');
+      setShowForm(false);
+      setShowSnackbar(true);
+      setTimeout(() => {
+        setShowSnackbar(false);
+        setShowForm(true);
+      }, 5000);
+    } catch (err) {
+      console.log('error', err);
+    }
   }
 
   return (
