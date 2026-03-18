@@ -48,13 +48,20 @@ export async function POST(request) {
     );
   }
 
+  const usdPriceEnvKey = `PRICE_USD_${slug.toUpperCase().replace(/-/g, '_')}`;
+  const usdPrice = process.env[usdPriceEnvKey];
+  const itemTitle =
+    lang === 'en' && usdPrice
+      ? `${serviceName} ($ ${usdPrice} USD)`
+      : serviceName;
+
   const preferenceClient = new Preference(client);
   const preference = await preferenceClient.create({
     body: {
       items: [
         {
           id: slug,
-          title: serviceName,
+          title: itemTitle,
           unit_price: price,
           quantity: 1,
           currency_id: 'BRL',
