@@ -73,57 +73,6 @@ const Services = () => {
           </h2>
 
           <div className='sm:px-5 mx-6 sm:mx-0 flex flex-col gap-16'>
-            {/* B2C — Para você */}
-            <div>
-              <h3 className='text-xl font-semibold text-purple-300 mb-6'>
-                {t('services.b2cLabel')}
-              </h3>
-              <div className='grid grid-cols-1 sm:grid-cols-3 gap-8'>
-                {items
-                  .slice(2)
-                  .map(({ id, slug, icon, subtitle, description }) => (
-                    <Link
-                      key={id}
-                      href={`/${currentLanguage}/services/${slug}`}
-                      className={cardClass}
-                    >
-                      <div className='text-purple-primary'>
-                        {React.cloneElement(icon, {
-                          className: 'w-12 h-12 m-auto',
-                        })}
-                      </div>
-                      <div className='font-bold text-center mt-3'>
-                        {subtitle}
-                      </div>
-                      <div className='text-center text-gray-300 text-sm mt-4'>
-                        {description}
-                      </div>
-                    </Link>
-                  ))}
-              </div>
-              <div className='mt-8 flex flex-col items-center gap-3'>
-                <p className='text-gray-400 max-w-md'>
-                  {t('services.ctaSubtitleB2C')}
-                </p>
-                <button
-                  onClick={() => setSelectorOpen(true)}
-                  className='px-8 py-3 bg-purple-primary text-white font-semibold rounded-lg
-                    hover:bg-purple-700 transition-colors duration-300 cursor-pointer'
-                >
-                  {t('services.ctaButton')}
-                </button>
-              </div>
-            </div>
-
-            {/* Divider */}
-            <div className='flex items-center gap-4'>
-              <div className='flex-1 h-px bg-gradient-to-r from-transparent to-purple-primary/40' />
-              <div className='w-2 h-2 rounded-full bg-purple-primary/60' />
-              <div className='w-3 h-3 rounded-full bg-purple-primary' />
-              <div className='w-2 h-2 rounded-full bg-purple-primary/60' />
-              <div className='flex-1 h-px bg-gradient-to-l from-transparent to-purple-primary/40' />
-            </div>
-
             {/* B2B — Soluções corporativas */}
             <div>
               <h3 className='text-xl font-semibold text-purple-300 mb-6'>
@@ -165,6 +114,57 @@ const Services = () => {
                 >
                   {t('services.talkToSpecialist')}
                 </a>
+              </div>
+            </div>
+
+            {/* Divider */}
+            <div className='flex items-center gap-4'>
+              <div className='flex-1 h-px bg-gradient-to-r from-transparent to-purple-primary/40' />
+              <div className='w-2 h-2 rounded-full bg-purple-primary/60' />
+              <div className='w-3 h-3 rounded-full bg-purple-primary' />
+              <div className='w-2 h-2 rounded-full bg-purple-primary/60' />
+              <div className='flex-1 h-px bg-gradient-to-l from-transparent to-purple-primary/40' />
+            </div>
+
+            {/* B2C — Para você */}
+            <div>
+              <h3 className='text-xl font-semibold text-purple-300 mb-6'>
+                {t('services.b2cLabel')}
+              </h3>
+              <div className='grid grid-cols-1 sm:grid-cols-3 gap-8'>
+                {items
+                  .slice(2)
+                  .map(({ id, slug, icon, subtitle, description }) => (
+                    <Link
+                      key={id}
+                      href={`/${currentLanguage}/services/${slug}`}
+                      className={cardClass}
+                    >
+                      <div className='text-purple-primary'>
+                        {React.cloneElement(icon, {
+                          className: 'w-12 h-12 m-auto',
+                        })}
+                      </div>
+                      <div className='font-bold text-center mt-3'>
+                        {subtitle}
+                      </div>
+                      <div className='text-center text-gray-300 text-sm mt-4'>
+                        {description}
+                      </div>
+                    </Link>
+                  ))}
+              </div>
+              <div className='mt-8 flex flex-col items-center gap-3'>
+                <p className='text-gray-400 max-w-md'>
+                  {t('services.ctaSubtitleB2C')}
+                </p>
+                <button
+                  onClick={() => setSelectorOpen(true)}
+                  className='px-8 py-3 bg-purple-primary text-white font-semibold rounded-lg
+                    hover:bg-purple-700 transition-colors duration-300 cursor-pointer'
+                >
+                  {t('services.ctaButton')}
+                </button>
               </div>
             </div>
           </div>
