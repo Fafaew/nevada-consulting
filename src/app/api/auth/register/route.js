@@ -4,7 +4,37 @@ import { Resend } from 'resend';
 
 const bcrypt = _bcrypt.default ?? _bcrypt;
 
+// Rate limit: max 5 tentativas por IP a cada 15 minutos
+const rateLimit = new Map();
+const RATE_LIMIT_MAX = 5;
+const RATE_LIMIT_WINDOW_MS = 15 * 60 * 1000;
+
+function checkRateLimit(ip) {
+  const now = Date.now();
+  const entry = rateLimit.get(ip);
+
+  if (!entry || now - entry.startedAt > RATE_LIMIT_WINDOW_MS) {
+    rateLimit.set(ip, { count: 1, startedAt: now });
+    return true;
+  }
+
+  if (entry.count >= RATE_LIMIT_MAX) return false;
+
+  entry.count += 1;
+  return true;
+}
+
 export async function POST(request) {
+  const ip =
+    request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ?? 'unknown';
+
+  if (!checkRateLimit(ip)) {
+    return Response.json(
+      { error: 'Muitas tentativas. Tente novamente em 15 minutos.' },
+      { status: 429 },
+    );
+  }
+
   const resend = new Resend(process.env.RESEND_API_KEY);
   try {
     const { name, email, password } = await request.json();

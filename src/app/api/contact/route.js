@@ -2,6 +2,15 @@ import { Resend } from 'resend';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
+function escapeHtml(str) {
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
 export async function POST(request) {
   const { name, email, message } = await request.json();
 
@@ -9,18 +18,22 @@ export async function POST(request) {
     return Response.json({ error: 'Missing fields' }, { status: 400 });
   }
 
+  const safeName = escapeHtml(name);
+  const safeEmail = escapeHtml(email);
+  const safeMessage = escapeHtml(message);
+
   await resend.emails.send({
     from: 'Nevada Consulting <noreply@nevadaconsulting.com.br>',
     to: process.env.GOOGLE_CALENDAR_ID,
     replyTo: email,
-    subject: `Contato via site — ${name}`,
+    subject: `Contato via site — ${safeName}`,
     html: `
       <div style="font-family: sans-serif; max-width: 480px; margin: 0 auto; padding: 32px; background: #111; color: #fff; border-radius: 12px;">
         <h2 style="color: #8D519E; margin-bottom: 8px;">Nova mensagem de contato</h2>
-        <p style="color: #ccc;"><strong>Nome:</strong> ${name}</p>
-        <p style="color: #ccc;"><strong>E-mail:</strong> ${email}</p>
+        <p style="color: #ccc;"><strong>Nome:</strong> ${safeName}</p>
+        <p style="color: #ccc;"><strong>E-mail:</strong> ${safeEmail}</p>
         <div style="background: #1a1a1a; border-radius: 8px; padding: 16px; margin-top: 16px;">
-          <p style="color: #fff; margin: 0; white-space: pre-wrap;">${message}</p>
+          <p style="color: #fff; margin: 0; white-space: pre-wrap;">${safeMessage}</p>
         </div>
       </div>
     `,

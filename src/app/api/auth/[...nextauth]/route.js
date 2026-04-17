@@ -54,6 +54,8 @@ export const authOptions = {
 
         if (!passwordMatch) return null;
 
+        if (!user.emailVerified) return null;
+
         return user;
       },
     }),
