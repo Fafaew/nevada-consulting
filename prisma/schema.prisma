@@ -103,6 +103,13 @@ model Booking {
   updatedAt       DateTime      @updatedAt
 }
 
+model ServicePrice {
+  slug     String   @id
+  priceBrl Decimal  @db.Decimal(10, 2)
+  priceUsd Decimal? @db.Decimal(10, 2)
+  updatedAt DateTime @updatedAt
+}
+
 model Payment {
   id        String        @id @default(cuid())
   bookingId String        @unique
