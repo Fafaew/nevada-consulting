@@ -22,9 +22,13 @@ export default async function AdminPage({ params }) {
   const stored = await prisma.servicePrice.findMany();
   const storedMap = Object.fromEntries(stored.map((p) => [p.slug, p]));
 
+  const excluded = [
+    'high-performance-team',
+    'recruitment-training',
+    'behavioral-assessment',
+  ];
   const commercialServices = serviceItems.filter(
-    (s) =>
-      !['high-performance-team', 'recruitment-training', 'behavioral-assessment'].includes(s.slug),
+    (s) => !excluded.includes(s.slug),
   );
 
   // Inicializa preços ausentes com as env vars
