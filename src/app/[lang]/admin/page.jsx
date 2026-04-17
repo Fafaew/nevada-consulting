@@ -22,8 +22,17 @@ export default async function AdminPage({ params }) {
   const stored = await prisma.servicePrice.findMany();
   const storedMap = Object.fromEntries(stored.map((p) => [p.slug, p]));
 
+  const excluded = [
+    'high-performance-team',
+    'recruitment-training',
+    'behavioral-assessment',
+  ];
+  const commercialServices = serviceItems.filter(
+    (s) => !excluded.includes(s.slug),
+  );
+
   // Inicializa preços ausentes com as env vars
-  const prices = serviceItems.map((s) => {
+  const prices = commercialServices.map((s) => {
     if (storedMap[s.slug]) return storedMap[s.slug];
     const key = s.slug.toUpperCase().replace(/-/g, '_');
     return {
@@ -48,10 +57,10 @@ export default async function AdminPage({ params }) {
           <AdminPricesForm
             initialPrices={prices.map((p) => ({
               slug: p.slug,
-              priceBrl: p.priceBrl,
-              priceUsd: p.priceUsd,
+              priceBrl: p.priceBrl?.toString() ?? '0',
+              priceUsd: p.priceUsd?.toString() ?? '',
             }))}
-            serviceItems={serviceItems}
+            serviceItems={commercialServices}
           />
         </div>
       </main>
