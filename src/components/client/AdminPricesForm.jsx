@@ -36,7 +36,10 @@ export default function AdminPricesForm({ initialPrices, serviceItems }) {
       });
 
       if (res.ok) {
-        setMessage({ type: 'success', text: 'Preços atualizados com sucesso!' });
+        setMessage({
+          type: 'success',
+          text: 'Preços atualizados com sucesso!',
+        });
       } else {
         const data = await res.json();
         setMessage({ type: 'error', text: data.error ?? 'Erro ao salvar.' });
@@ -52,7 +55,9 @@ export default function AdminPricesForm({ initialPrices, serviceItems }) {
     <form onSubmit={handleSubmit} className='flex flex-col gap-6'>
       {prices.map((p) => (
         <div key={p.slug} className='bg-[#1a1a1a] rounded-2xl px-6 py-5'>
-          <p className='font-semibold text-white mb-4'>{getServiceName(p.slug)}</p>
+          <p className='font-semibold text-white mb-4'>
+            {getServiceName(p.slug)}
+          </p>
           <div className='flex flex-col sm:flex-row gap-4'>
             <label className='flex flex-col gap-1 flex-1'>
               <span className='text-gray-400 text-sm'>Preço BRL (R$)</span>
@@ -61,19 +66,25 @@ export default function AdminPricesForm({ initialPrices, serviceItems }) {
                 min='0'
                 step='0.01'
                 value={p.priceBrl}
-                onChange={(e) => handleChange(p.slug, 'priceBrl', e.target.value)}
+                onChange={(e) =>
+                  handleChange(p.slug, 'priceBrl', e.target.value)
+                }
                 className='bg-[#111] border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-purple-500'
                 required
               />
             </label>
             <label className='flex flex-col gap-1 flex-1'>
-              <span className='text-gray-400 text-sm'>Preço USD ($) — opcional</span>
+              <span className='text-gray-400 text-sm'>
+                Preço USD ($) — opcional
+              </span>
               <input
                 type='number'
                 min='0'
                 step='0.01'
                 value={p.priceUsd}
-                onChange={(e) => handleChange(p.slug, 'priceUsd', e.target.value)}
+                onChange={(e) =>
+                  handleChange(p.slug, 'priceUsd', e.target.value)
+                }
                 className='bg-[#111] border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-purple-500'
               />
             </label>
