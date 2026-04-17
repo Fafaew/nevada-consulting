@@ -19,9 +19,17 @@ export async function GET(request) {
     return Response.json({ error: 'Unknown service slug' }, { status: 400 });
   }
 
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(dateStr)) {
+    return Response.json({ error: 'Invalid date format' }, { status: 400 });
+  }
+
   // Reject weekends using local date math
   const [year, month, day] = dateStr.split('-').map(Number);
   const localDate = new Date(year, month - 1, day);
+
+  if (isNaN(localDate.getTime())) {
+    return Response.json({ error: 'Invalid date' }, { status: 400 });
+  }
   const dow = localDate.getDay(); // 0=Sun, 6=Sat
   if (dow === 0 || dow === 6) {
     return Response.json({ slots: [] });
