@@ -35,21 +35,22 @@ export async function POST(request) {
     return Response.json({ error: 'User not found' }, { status: 404 });
   }
 
-  const priceEnvKey = `PRICE_${slug.toUpperCase().replace(/-/g, '_')}`;
-  const priceValue = process.env[priceEnvKey];
-  const price = parseFloat(priceValue);
+  const servicePrice = await prisma.servicePrice.findUnique({
+    where: { slug },
+  });
 
-  if (!priceValue || isNaN(price) || price <= 0) {
+  const price = servicePrice ? parseFloat(servicePrice.priceBrl) : NaN;
+
+  if (!servicePrice || isNaN(price) || price <= 0) {
     return Response.json(
-      {
-        error: `Preço não configurado para o serviço "${slug}". Configure a variável ${priceEnvKey} na Vercel.`,
-      },
+      { error: `Preço não configurado para o serviço "${slug}".` },
       { status: 404 },
     );
   }
 
-  const usdPriceEnvKey = `PRICE_USD_${slug.toUpperCase().replace(/-/g, '_')}`;
-  const usdPrice = process.env[usdPriceEnvKey];
+  const usdPrice = servicePrice.priceUsd
+    ? parseFloat(servicePrice.priceUsd).toString()
+    : null;
   const itemTitle =
     lang === 'en' && usdPrice
       ? `${serviceName} ($ ${usdPrice} USD)`
