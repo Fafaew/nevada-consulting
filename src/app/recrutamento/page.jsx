@@ -4,28 +4,18 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import juProfile from '../../assets/imgs/juProfile.webp';
 import Navbar from '../../components/client/Navbar.jsx';
+import { SiWhatsapp } from 'react-icons/si';
 
-const WA_LINK =
-  'https://wa.me/5511994607649?text=Oi%20Juliana%2C%20vim%20pela%20p%C3%A1gina%20da%20Nevada%20e%20gostaria%20de%20conversar%20sobre%20uma%20vaga.';
-
-const WA_PATH =
-  'M17.6 6.32A7.85 7.85 0 0012.05 4a7.94 7.94 0 00-6.88 11.9L4 20l4.2-1.1a7.93 7.93 0 003.84.98h.01c4.37 0 7.93-3.55 7.93-7.93a7.88 7.88 0 00-2.38-5.63zm-5.55 12.2h-.01a6.59 6.59 0 01-3.36-.92l-.24-.14-2.49.65.66-2.43-.16-.25a6.6 6.6 0 1112.24-3.5 6.61 6.61 0 01-6.64 6.59zm3.62-4.93c-.2-.1-1.17-.58-1.36-.64-.18-.07-.31-.1-.45.1-.13.2-.51.64-.62.77-.12.13-.23.15-.42.05-.2-.1-.84-.31-1.6-.99-.59-.53-.99-1.18-1.1-1.38-.12-.2-.01-.31.09-.4.09-.09.2-.23.3-.35.1-.12.13-.2.2-.33.07-.13.03-.25-.02-.35-.05-.1-.45-1.08-.62-1.48-.16-.39-.33-.34-.45-.34-.12 0-.25-.02-.39-.02-.13 0-.35.05-.54.25-.18.2-.7.69-.7 1.67 0 .98.71 1.93.81 2.06.1.13 1.4 2.13 3.4 2.99.47.2.85.32 1.14.42.48.15.92.13 1.27.08.39-.06 1.17-.48 1.34-.95.16-.46.16-.86.12-.94-.05-.08-.18-.13-.38-.23z';
 
 function BtnWA({ children = 'Fale conosco no WhatsApp' }) {
   return (
     <div className='group relative w-fit transition-transform duration-300 active:scale-95 mx-auto'>
       <a
-        href={WA_LINK}
+        href='https://wa.me/5511994607649'
         className='relative z-10 flex rounded-lg bg-gradient-to-br from-indigo-500 to-fuchsia-500 p-0.5 duration-300 group-hover:scale-110'
       >
         <span className='flex items-center justify-center gap-3 rounded-md bg-slate-950 px-4 py-2 font-semibold text-slate-100 duration-300 h-12 whitespace-nowrap'>
-          <svg
-            viewBox='0 0 24 24'
-            fill='currentColor'
-            className='w-5 h-5 shrink-0'
-          >
-            <path d={WA_PATH} />
-          </svg>
+          <SiWhatsapp className='w-5 h-5 shrink-0' />
           {children}
         </span>
       </a>
@@ -867,17 +857,11 @@ export default function RecrutamentoPage() {
 
       {/* FAB WHATSAPP */}
       <a
-        href={WA_LINK}
+        href='https://wa.me/5511994607649'
         className='fixed bottom-6 right-6 bg-[#25D366] text-white w-[60px] h-[60px] rounded-full flex items-center justify-center shadow-[0_8px_24px_rgba(37,211,102,0.4)] no-underline z-[100] transition-transform duration-200 hover:scale-[1.08]'
         aria-label='Falar no WhatsApp'
       >
-        <svg
-          viewBox='0 0 24 24'
-          fill='currentColor'
-          className='w-[30px] h-[30px]'
-        >
-          <path d={WA_PATH} />
-        </svg>
+        <SiWhatsapp className='w-[30px] h-[30px]' />
       </a>
     </div>
   );
