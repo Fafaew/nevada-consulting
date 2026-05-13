@@ -7,7 +7,7 @@ import Logo from '../../assets/icons/Logo.jsx';
 import { useTranslation } from 'react-i18next';
 import { useLanguage } from '../../providers/LanguageContext.jsx';
 import { AnimatedHamburgerButton } from './HamburgerButton';
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 import { useScrollDirection } from '../../hooks/useScrollDirection.js';
 import LoginModal from './LoginModal.jsx';
 import { useSession, signOut } from 'next-auth/react';
@@ -16,11 +16,14 @@ const Navbar = ({ hideNav = false }) => {
   const { t } = useTranslation();
   const { changeLanguage, currentLanguage } = useLanguage();
   const router = useRouter();
+  const pathname = usePathname();
 
   const { data: session } = useSession();
   const [nav, setNav] = useState(false);
   const [loginOpen, setLoginOpen] = useState(false);
   const scrollDirection = useScrollDirection();
+
+  const isHomePage = pathname === '/pt' || pathname === '/en' || pathname === '/';
 
   const handleLanguageChange = (lang) => {
     changeLanguage(lang);
@@ -62,19 +65,38 @@ const Navbar = ({ hideNav = false }) => {
       {/* Desktop Navigation */}
       <ul className='hidden md:flex items-center lg:mr-8'>
         {!hideNav &&
-          navItems.map((item) => (
-            <li key={item.id}>
-              <Link
-                to={item.to}
-                smooth={true}
-                duration={800}
-                easing='easeInOutQuart'
-                className='p-4 hover:bg-purple-primary rounded-xl m-2 cursor-pointer duration-300 hover:text-black'
-              >
-                {item.text}
-              </Link>
-            </li>
-          ))}
+          navItems.map((item) =>
+            isHomePage ? (
+              <li key={item.id}>
+                <Link
+                  to={item.to}
+                  smooth={true}
+                  duration={800}
+                  easing='easeInOutQuart'
+                  className='p-4 hover:bg-purple-primary rounded-xl m-2 cursor-pointer duration-300 hover:text-black'
+                >
+                  {item.text}
+                </Link>
+              </li>
+            ) : (
+              <li key={item.id}>
+                <a
+                  href={`/${currentLanguage}`}
+                  className='p-4 hover:bg-purple-primary rounded-xl m-2 cursor-pointer duration-300 hover:text-black block'
+                >
+                  {item.text}
+                </a>
+              </li>
+            )
+          )}
+        <li>
+          <a
+            href='/recrutamento'
+            className='p-4 hover:bg-purple-primary rounded-xl m-2 cursor-pointer duration-300 hover:text-black block'
+          >
+            {t('navbar.recrutamento')}
+          </a>
+        </li>
         <button
           onClick={() => handleLanguageChange('pt')}
           className='fi fi-br h-[32px] cursor-pointer ml-8 lg:mr-2'
@@ -125,20 +147,41 @@ const Navbar = ({ hideNav = false }) => {
       >
         {/* Mobile Navigation Items */}
         {!hideNav &&
-          navItems.map((item) => (
-            <li key={item.id}>
-              <Link
-                to={item.to}
-                smooth={true}
-                duration={800}
-                easing='easeInOutQuart'
-                className='block p-4 pl-8 border-b rounded-xl hover:bg-purple-primary duration-300 hover:text-black cursor-pointer border-gray-600'
-                onClick={() => setNav(false)}
-              >
-                {item.text}
-              </Link>
-            </li>
-          ))}
+          navItems.map((item) =>
+            isHomePage ? (
+              <li key={item.id}>
+                <Link
+                  to={item.to}
+                  smooth={true}
+                  duration={800}
+                  easing='easeInOutQuart'
+                  className='block p-4 pl-8 border-b rounded-xl hover:bg-purple-primary duration-300 hover:text-black cursor-pointer border-gray-600'
+                  onClick={() => setNav(false)}
+                >
+                  {item.text}
+                </Link>
+              </li>
+            ) : (
+              <li key={item.id}>
+                <a
+                  href={`/${currentLanguage}`}
+                  className='block p-4 pl-8 border-b rounded-xl hover:bg-purple-primary duration-300 hover:text-black cursor-pointer border-gray-600'
+                  onClick={() => setNav(false)}
+                >
+                  {item.text}
+                </a>
+              </li>
+            )
+          )}
+        <li>
+          <a
+            href='/recrutamento'
+            className='block p-4 pl-8 border-b rounded-xl hover:bg-purple-primary duration-300 hover:text-black cursor-pointer border-gray-600'
+            onClick={() => setNav(false)}
+          >
+            {t('navbar.recrutamento')}
+          </a>
+        </li>
         {session ? (
           <>
             <li>
