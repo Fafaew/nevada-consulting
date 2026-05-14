@@ -176,12 +176,12 @@ export default function RecrutamentoPage() {
   const sliderRef = useRef(null);
 
   return (
-    <div className='font-sans text-base font-normal leading-[1.55] text-white bg-[#020617] antialiased'>
+    <div className='text-base font-normal leading-[1.55] text-white bg-[#020617] antialiased'>
       <Navbar />
 
       {/* HERO */}
       <section
-        className='relative overflow-hidden pt-24 pb-[88px] max-[900px]:pt-16 max-[900px]:pb-16'
+        className='relative overflow-hidden pt-24 pb-[64px] max-[900px]:pt-16 max-[900px]:pb-16'
         style={{
           background:
             'radial-gradient(ellipse at top right, rgba(141,81,158,0.18) 0%, transparent 60%), radial-gradient(ellipse at bottom left, rgba(99,102,241,0.12) 0%, transparent 50%), #020617',
@@ -189,7 +189,7 @@ export default function RecrutamentoPage() {
       >
         <div className='max-w-[1200px] mx-auto px-8 max-[900px]:px-6'>
           <div className='text-center max-w-[760px] mx-auto'>
-            <h1 className='text-[clamp(36px,4.8vw,56px)] font-semibold leading-[1.08] tracking-[-0.02em] my-6 text-white'>
+            <h1 className='text-[clamp(36px,4.8vw,56px)] font-semibold leading-[1.08] tracking-[-0.02em] mt-10 mb-6 text-white'>
               Pare de perder{' '}
               <strong className='text-[#8D519E] font-bold'>tempo</strong> em
               processos lentos - e{' '}
@@ -210,7 +210,7 @@ export default function RecrutamentoPage() {
 
       {/* STATS HIGHLIGHT */}
       <section
-        className='py-20 border-t border-b border-white/[0.06]'
+        className='py-16 border-t border-b border-white/[0.06]'
         style={{
           background:
             'radial-gradient(ellipse at center, rgba(141,81,158,0.12) 0%, transparent 70%), #020617',
@@ -290,14 +290,14 @@ export default function RecrutamentoPage() {
 
       {/* NOSSOS NÚMEROS */}
       <section
-        className='py-[104px] max-[900px]:py-[72px]'
+        className='py-16 max-[900px]:py-[72px]'
         style={{
           background:
             'radial-gradient(ellipse at center, rgba(141,81,158,0.12) 0%, transparent 70%), #F1F5F9',
         }}
       >
         <div className='max-w-[1200px] mx-auto px-8 max-[900px]:px-6'>
-          <h2 className='text-[clamp(36px,5vw,56px)] font-extrabold leading-[1.08] tracking-[-0.02em] text-[#020617] mb-14 text-center'>
+          <h2 className='text-[clamp(36px,5vw,56px)] font-bold leading-[1.08] tracking-tight text-[#020617] mb-14 text-center'>
             Nossos números
           </h2>
           <div className='grid grid-cols-3 gap-6 max-[900px]:grid-cols-2 max-sm:grid-cols-1'>
@@ -342,7 +342,7 @@ export default function RecrutamentoPage() {
 
       {/* DIFERENCIAIS */}
       <section
-        className='py-[104px] max-[900px]:py-[72px]'
+        className='py-16 max-[900px]:py-[72px]'
         style={{
           background:
             'radial-gradient(ellipse at top, rgba(141,81,158,0.35) 0%, transparent 65%), radial-gradient(ellipse at bottom, rgba(141,81,158,0.35) 0%, transparent 65%), #020617',
@@ -414,7 +414,7 @@ export default function RecrutamentoPage() {
       </section>
 
       {/* ESPECIALIDADES */}
-      <section className='py-[104px] max-[900px]:py-[72px]' id='especialidades'>
+      <section className='py-16 max-[900px]:py-[72px]' id='especialidades'>
         <div className='max-w-[1200px] mx-auto px-8 max-[900px]:px-6'>
           <h2 className='text-[clamp(30px,3.4vw,40px)] font-bold leading-[1.15] tracking-[-0.01em] text-[#FAEBD7] mb-12 text-center max-w-[800px] mx-auto'>
             Áreas que atuamos
@@ -450,7 +450,7 @@ export default function RecrutamentoPage() {
 
       {/* JULIANA */}
       <section
-        className='py-[104px] max-[900px]:py-[72px]'
+        className='py-16 max-[900px]:py-[72px]'
         style={{
           background:
             'radial-gradient(ellipse at top, rgba(141,81,158,0.35) 0%, transparent 65%), radial-gradient(ellipse at bottom, rgba(141,81,158,0.35) 0%, transparent 65%), #020617',
@@ -530,7 +530,7 @@ export default function RecrutamentoPage() {
       </section>
 
       {/* MÉTODO */}
-      <section className='py-[104px] max-[900px]:py-[72px]' id='metodo'>
+      <section className='py-16 max-[900px]:py-[72px]' id='metodo'>
         <div className='max-w-[1200px] mx-auto px-8 max-[900px]:px-6'>
           <h2 className='text-[clamp(30px,3.4vw,40px)] font-bold leading-[1.15] tracking-[-0.01em] text-[#FAEBD7] mb-12 text-center max-w-[800px] mx-auto'>
             Nosso processo
@@ -640,7 +640,7 @@ export default function RecrutamentoPage() {
       </section>
 
       {/* PROVA SOCIAL */}
-      <section className='py-[104px] max-[900px]:py-[72px] bg-white' id='prova'>
+      <section className='py-16 max-[900px]:py-[72px] bg-white' id='prova'>
         <div className='max-w-[1200px] mx-auto px-8 max-[900px]:px-6'>
           <h2 className='text-[clamp(30px,3.4vw,40px)] font-bold leading-[1.15] tracking-[-0.01em] text-[#020617] mb-12 text-center max-w-[800px] mx-auto'>
             Quem contrata, volta e recomenda
@@ -686,7 +686,7 @@ export default function RecrutamentoPage() {
       </section>
 
       {/* FAQ */}
-      <section className='py-[104px] max-[900px]:py-[72px]' id='faq'>
+      <section className='py-16 max-[900px]:py-[72px]' id='faq'>
         <div className='max-w-[1200px] mx-auto px-8 max-[900px]:px-6'>
           <h2 className='text-[clamp(30px,3.4vw,40px)] font-bold leading-[1.15] tracking-[-0.01em] text-[#FAEBD7] mb-4 text-center max-w-[800px] mx-auto'>
             Perguntas frequentes
@@ -731,7 +731,7 @@ export default function RecrutamentoPage() {
 
       {/* CTA FINAL */}
       <section
-        className='py-[104px] text-center border-t border-white/[0.08]'
+        className='py-16 text-center border-t border-white/[0.08]'
         style={{
           background:
             'radial-gradient(ellipse at top, rgba(141,81,158,0.25) 0%, transparent 60%), #020617',
