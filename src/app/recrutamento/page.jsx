@@ -399,7 +399,7 @@ export default function RecrutamentoPage() {
       </section>
 
       {/* DIFERENCIAIS */}
-      <section className='py-[104px] max-[900px]:py-[72px] bg-[#6366F1]'>
+      <section className='py-[104px] max-[900px]:py-[72px]' style={{ background: 'radial-gradient(ellipse at top, rgba(141,81,158,0.35) 0%, transparent 65%), radial-gradient(ellipse at bottom, rgba(141,81,158,0.35) 0%, transparent 65%), #020617' }}>
         <div className='max-w-[1200px] mx-auto px-8 max-[900px]:px-6'>
           <h2 className='text-[clamp(30px,3.4vw,40px)] font-bold leading-[1.15] tracking-[-0.01em] text-white mb-12 text-center max-w-[800px] mx-auto'>
             Por que as empresas nos escolhem?
@@ -502,7 +502,8 @@ export default function RecrutamentoPage() {
 
       {/* JULIANA */}
       <section
-        className='py-[104px] max-[900px]:py-[72px] bg-[#6366F1]'
+        className='py-[104px] max-[900px]:py-[72px]'
+        style={{ background: 'radial-gradient(ellipse at top, rgba(141,81,158,0.35) 0%, transparent 65%), radial-gradient(ellipse at bottom, rgba(141,81,158,0.35) 0%, transparent 65%), #020617' }}
         id='juliana'
       >
         <div className='max-w-[1200px] mx-auto px-8 max-[900px]:px-6'>
