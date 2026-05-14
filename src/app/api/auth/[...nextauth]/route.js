@@ -65,8 +65,8 @@ export const authOptions = {
   },
   session: {
     strategy: 'jwt',
-    maxAge: 8 * 60 * 60,    // 8 hours
-    updateAge: 60 * 60,     // refresh token every 1 hour while active
+    maxAge: 8 * 60 * 60, // 8 hours
+    updateAge: 60 * 60, // refresh token every 1 hour while active
   },
   secret: process.env.NEXTAUTH_SECRET,
 };

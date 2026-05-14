@@ -23,7 +23,8 @@ const Navbar = ({ hideNav = false }) => {
   const [loginOpen, setLoginOpen] = useState(false);
   const scrollDirection = useScrollDirection();
 
-  const isHomePage = pathname === '/pt' || pathname === '/en' || pathname === '/';
+  const isHomePage =
+    pathname === '/pt' || pathname === '/en' || pathname === '/';
 
   const handleLanguageChange = (lang) => {
     changeLanguage(lang);
@@ -90,7 +91,7 @@ const Navbar = ({ hideNav = false }) => {
                   {item.text}
                 </a>
               </li>
-            )
+            ),
           )}
         <li>
           <a
@@ -174,7 +175,7 @@ const Navbar = ({ hideNav = false }) => {
                   {item.text}
                 </a>
               </li>
-            )
+            ),
           )}
         <li>
           <a

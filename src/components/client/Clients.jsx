@@ -19,7 +19,18 @@ import caixa from '../../assets/imgs/caixa.webp';
 
 const MotionImage = motion.create(Image);
 
-const defaultLogos = [blip, komuh, okto, quive, rv, edvisor, moveo, skintec, trinio, caixa];
+const defaultLogos = [
+  blip,
+  komuh,
+  okto,
+  quive,
+  rv,
+  edvisor,
+  moveo,
+  skintec,
+  trinio,
+  caixa,
+];
 
 const Clients = ({ logos = defaultLogos, title }) => {
   const { t } = useTranslation();

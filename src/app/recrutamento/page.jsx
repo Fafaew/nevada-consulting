@@ -119,18 +119,39 @@ export default function RecrutamentoPage() {
   const sliderRef = useRef(null);
 
   const PROCESS_STEPS = t('recrutamento.metodo.steps', { returnObjects: true });
-  const TESTIMONIALS = t('recrutamento.prova.testimonials', { returnObjects: true }).map(
-    (item, i) => ({ ...item, logo: LOGOS[i] })
-  );
+  const TESTIMONIALS = t('recrutamento.prova.testimonials', {
+    returnObjects: true,
+  }).map((item, i) => ({ ...item, logo: LOGOS[i] }));
   const FAQ_ITEMS = t('recrutamento.faq.items', { returnObjects: true });
-  const AREA_NAMES = t('recrutamento.especialidades.areas', { returnObjects: true });
-  const NEG_ITEMS = t('recrutamento.diferenciais.negative', { returnObjects: true });
-  const POS_ITEMS = t('recrutamento.diferenciais.positive', { returnObjects: true });
-  const JULIANA_CREDENTIALS = t('recrutamento.juliana.credentials', { returnObjects: true });
+  const AREA_NAMES = t('recrutamento.especialidades.areas', {
+    returnObjects: true,
+  });
+  const NEG_ITEMS = t('recrutamento.diferenciais.negative', {
+    returnObjects: true,
+  });
+  const POS_ITEMS = t('recrutamento.diferenciais.positive', {
+    returnObjects: true,
+  });
+  const JULIANA_CREDENTIALS = t('recrutamento.juliana.credentials', {
+    returnObjects: true,
+  });
   const NUMBERS = [
-    { valor: '98', pct: '%', unit: t('recrutamento.numbers.card1unit'), desc: t('recrutamento.numbers.card1desc') },
-    { valor: '5', unit: t('recrutamento.numbers.card2unit'), desc: t('recrutamento.numbers.card2desc') },
-    { valor: '3', unit: t('recrutamento.numbers.card3unit'), desc: t('recrutamento.numbers.card3desc') },
+    {
+      valor: '98',
+      pct: '%',
+      unit: t('recrutamento.numbers.card1unit'),
+      desc: t('recrutamento.numbers.card1desc'),
+    },
+    {
+      valor: '5',
+      unit: t('recrutamento.numbers.card2unit'),
+      desc: t('recrutamento.numbers.card2desc'),
+    },
+    {
+      valor: '3',
+      unit: t('recrutamento.numbers.card3unit'),
+      desc: t('recrutamento.numbers.card3desc'),
+    },
   ];
 
   return (
@@ -149,9 +170,13 @@ export default function RecrutamentoPage() {
           <div className='text-center max-w-[760px] mx-auto'>
             <h1 className='text-[clamp(36px,4.8vw,56px)] font-semibold leading-[1.08] tracking-[-0.02em] mt-10 mb-6 text-white'>
               {t('recrutamento.hero.h1_before')}{' '}
-              <strong className='text-[#8D519E] font-bold'>{t('recrutamento.hero.h1_bold1')}</strong>{' '}
+              <strong className='text-[#8D519E] font-bold'>
+                {t('recrutamento.hero.h1_bold1')}
+              </strong>{' '}
               {t('recrutamento.hero.h1_middle')}{' '}
-              <strong className='text-[#8D519E] font-bold'>{t('recrutamento.hero.h1_bold2')}</strong>{' '}
+              <strong className='text-[#8D519E] font-bold'>
+                {t('recrutamento.hero.h1_bold2')}
+              </strong>{' '}
               {t('recrutamento.hero.h1_after')}
             </h1>
             <p className='text-lg leading-[1.55] text-white/70 mb-9 max-w-[600px] mx-auto max-[900px]:text-[11px] max-[900px]:tracking-[0.08em]'>
