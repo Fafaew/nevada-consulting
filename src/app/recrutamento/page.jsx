@@ -1,12 +1,13 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useState, useRef } from 'react';
 import Image from 'next/image';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
 import juProfile from '../../assets/imgs/juProfile.webp';
 import Navbar from '../../components/client/Navbar.jsx';
 import { SiWhatsapp } from 'react-icons/si';
 import Clients from '../../components/client/Clients.jsx';
-
 
 function BtnWA({ children = 'Fale conosco no WhatsApp' }) {
   return (
@@ -166,72 +167,8 @@ const FAQ_ITEMS = [
 
 export default function RecrutamentoPage() {
   const [openFaq, setOpenFaq] = useState(null);
-
-  useEffect(() => {
-    const carousel = document.querySelector('.process-carousel');
-    if (!carousel) return;
-    const track = carousel.querySelector('.process-track');
-    const cards = carousel.querySelectorAll('.process-step');
-    const prevBtn = carousel.querySelector('.process-nav--prev');
-    const nextBtn = carousel.querySelector('.process-nav--next');
-    const dotsContainer = document.querySelector('.process-dots');
-    const gap = 24;
-    let currentIndex = 0;
-
-    const dotBase =
-      'h-[6px] w-[6px] rounded-full bg-white/30 transition-all duration-200 cursor-pointer border-none p-0';
-    const dotActive =
-      'h-[6px] w-7 rounded-md bg-[#8D519E] transition-all duration-200 cursor-pointer border-none p-0';
-
-    function getVisible() {
-      if (window.innerWidth < 768) return 1;
-      if (window.innerWidth < 1024) return 2;
-      return 3;
-    }
-
-    function update() {
-      const visible = getVisible();
-      const maxIndex = Math.max(0, cards.length - visible);
-      currentIndex = Math.min(currentIndex, maxIndex);
-      const cardWidth = cards[0].offsetWidth;
-      track.style.transform = `translateX(-${currentIndex * (cardWidth + gap)}px)`;
-      prevBtn.disabled = currentIndex === 0;
-      nextBtn.disabled = currentIndex >= maxIndex;
-
-      dotsContainer.innerHTML = '';
-      for (let i = 0; i <= maxIndex; i++) {
-        const dot = document.createElement('button');
-        dot.className = i === currentIndex ? dotActive : dotBase;
-        dot.setAttribute('aria-label', `Ir para etapa ${i + 1}`);
-        dot.addEventListener('click', () => {
-          currentIndex = i;
-          update();
-        });
-        dotsContainer.appendChild(dot);
-      }
-    }
-
-    prevBtn.addEventListener('click', () => {
-      if (currentIndex > 0) {
-        currentIndex--;
-        update();
-      }
-    });
-    nextBtn.addEventListener('click', () => {
-      const maxIndex = Math.max(0, cards.length - getVisible());
-      if (currentIndex < maxIndex) {
-        currentIndex++;
-        update();
-      }
-    });
-
-    let resizeTimer;
-    window.addEventListener('resize', () => {
-      clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(update, 120);
-    });
-    update();
-  }, []);
+  const [slideIndex, setSlideIndex] = useState(0);
+  const sliderRef = useRef(null);
 
   return (
     <div className='font-sans text-base font-normal leading-[1.55] text-white bg-[#020617] antialiased'>
@@ -399,7 +336,13 @@ export default function RecrutamentoPage() {
       </section>
 
       {/* DIFERENCIAIS */}
-      <section className='py-[104px] max-[900px]:py-[72px]' style={{ background: 'radial-gradient(ellipse at top, rgba(141,81,158,0.35) 0%, transparent 65%), radial-gradient(ellipse at bottom, rgba(141,81,158,0.35) 0%, transparent 65%), #020617' }}>
+      <section
+        className='py-[104px] max-[900px]:py-[72px]'
+        style={{
+          background:
+            'radial-gradient(ellipse at top, rgba(141,81,158,0.35) 0%, transparent 65%), radial-gradient(ellipse at bottom, rgba(141,81,158,0.35) 0%, transparent 65%), #020617',
+        }}
+      >
         <div className='max-w-[1200px] mx-auto px-8 max-[900px]:px-6'>
           <h2 className='text-[clamp(30px,3.4vw,40px)] font-bold leading-[1.15] tracking-[-0.01em] text-white mb-12 text-center max-w-[800px] mx-auto'>
             Por que as empresas nos escolhem?
@@ -503,7 +446,10 @@ export default function RecrutamentoPage() {
       {/* JULIANA */}
       <section
         className='py-[104px] max-[900px]:py-[72px]'
-        style={{ background: 'radial-gradient(ellipse at top, rgba(141,81,158,0.35) 0%, transparent 65%), radial-gradient(ellipse at bottom, rgba(141,81,158,0.35) 0%, transparent 65%), #020617' }}
+        style={{
+          background:
+            'radial-gradient(ellipse at top, rgba(141,81,158,0.35) 0%, transparent 65%), radial-gradient(ellipse at bottom, rgba(141,81,158,0.35) 0%, transparent 65%), #020617',
+        }}
         id='juliana'
       >
         <div className='max-w-[1200px] mx-auto px-8 max-[900px]:px-6'>
@@ -556,7 +502,7 @@ export default function RecrutamentoPage() {
                 ))}
               </div>
               <a
-                href='https://www.linkedin.com'
+                href='https://www.linkedin.com/in/juliana-carvalhoss/'
                 target='_blank'
                 rel='noopener'
                 className='inline-flex items-center gap-2 mt-[22px] text-white no-underline text-sm font-semibold border-b border-white/50 pb-1 transition-opacity duration-200 hover:opacity-75'
@@ -584,30 +530,42 @@ export default function RecrutamentoPage() {
           <h2 className='text-[clamp(30px,3.4vw,40px)] font-bold leading-[1.15] tracking-[-0.01em] text-[#FAEBD7] mb-12 text-center max-w-[800px] mx-auto'>
             Nosso processo
           </h2>
-          <div className='process-carousel relative px-16'>
-            <button
-              className='process-nav process-nav--prev absolute top-1/2 -translate-y-1/2 left-0 w-[52px] h-[52px] rounded-full bg-[#111827] border border-[rgba(141,81,158,0.25)] text-white cursor-pointer flex items-center justify-center z-10 transition-all duration-[250ms] p-0 disabled:opacity-30 disabled:cursor-not-allowed enabled:hover:bg-[#8D519E] enabled:hover:border-[#8D519E] enabled:hover:scale-[1.06] enabled:hover:shadow-[0_8px_24px_rgba(141,81,158,0.45)] max-[768px]:top-auto max-[768px]:bottom-0 max-[768px]:translate-y-0 max-[768px]:left-[calc(50%-72px)]'
-              aria-label='Etapa anterior'
-            >
-              <svg
-                viewBox='0 0 24 24'
-                fill='none'
-                stroke='currentColor'
-                strokeWidth='2.5'
-                strokeLinecap='round'
-                strokeLinejoin='round'
-                className='w-[22px] h-[22px]'
+          {/* Desktop: static grid */}
+          <div className='hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-6'>
+            {PROCESS_STEPS.map(({ name, desc }, i) => (
+              <div
+                key={name}
+                className='bg-gradient-to-br from-[#111827] to-[rgba(141,81,158,0.08)] border border-[rgba(141,81,158,0.25)] rounded-[20px] pt-[104px] px-7 pb-10 text-center flex flex-col gap-3.5 relative min-h-[280px] transition-all duration-[250ms] hover:border-[#8D519E] hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(141,81,158,0.22)]'
               >
-                <polyline points='15 18 9 12 15 6' />
-              </svg>
-            </button>
-            <div className='process-viewport overflow-hidden rounded-[18px]'>
-              <div className='process-track flex gap-6 py-3 transition-[transform] duration-[550ms] [transition-timing-function:cubic-bezier(0.4,0,0.2,1)]'>
-                {PROCESS_STEPS.map(({ name, desc }, i) => (
-                  <div
-                    key={name}
-                    className='process-step shrink-0 grow-0 basis-[calc((100%-48px)/3)] max-[1024px]:basis-[calc((100%-24px)/2)] max-[768px]:basis-full bg-gradient-to-br from-[#111827] to-[rgba(141,81,158,0.08)] border border-[rgba(141,81,158,0.25)] rounded-[20px] pt-[104px] px-7 pb-10 text-center flex flex-col gap-3.5 relative min-h-[280px] transition-all duration-[250ms] hover:border-[#8D519E] hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(141,81,158,0.22)]'
-                  >
+                <div className='absolute top-7 left-1/2 -translate-x-1/2 w-16 h-16 rounded-full bg-gradient-to-br from-[#8D519E] to-[#6e3f7c] border-4 border-[#020617] text-white text-2xl font-extrabold flex items-center justify-center shadow-[0_8px_24px_rgba(141,81,158,0.5)]'>
+                  {i + 1}
+                </div>
+                <span className='text-[19px] font-bold text-white tracking-[0.01em]'>
+                  {name}
+                </span>
+                <span className='text-sm text-white/60 leading-[1.6]'>
+                  {desc}
+                </span>
+              </div>
+            ))}
+          </div>
+
+          {/* Mobile: carousel */}
+          <div className='md:hidden'>
+            <Slider
+              ref={sliderRef}
+              arrows={false}
+              dots={false}
+              infinite={false}
+              speed={450}
+              slidesToShow={1}
+              slidesToScroll={1}
+              swipeToSlide
+              afterChange={setSlideIndex}
+            >
+              {PROCESS_STEPS.map(({ name, desc }, i) => (
+                <div key={name} className='px-1'>
+                  <div className='bg-gradient-to-br from-[#111827] to-[rgba(141,81,158,0.08)] border border-[rgba(141,81,158,0.25)] rounded-[20px] pt-[104px] px-7 pb-10 text-center flex flex-col gap-3.5 relative min-h-[280px]'>
                     <div className='absolute top-7 left-1/2 -translate-x-1/2 w-16 h-16 rounded-full bg-gradient-to-br from-[#8D519E] to-[#6e3f7c] border-4 border-[#020617] text-white text-2xl font-extrabold flex items-center justify-center shadow-[0_8px_24px_rgba(141,81,158,0.5)]'>
                       {i + 1}
                     </div>
@@ -618,31 +576,42 @@ export default function RecrutamentoPage() {
                       {desc}
                     </span>
                   </div>
+                </div>
+              ))}
+            </Slider>
+            <div className='flex items-center justify-between mt-6 px-1'>
+              <button
+                onClick={() => sliderRef.current?.slickPrev()}
+                disabled={slideIndex === 0}
+                className='w-[52px] h-[52px] rounded-full bg-[#111827] border border-[rgba(141,81,158,0.25)] text-white flex items-center justify-center transition-all duration-[250ms] p-0 disabled:opacity-30 disabled:cursor-not-allowed active:bg-[#8D519E] active:border-[#8D519E] active:scale-95'
+                aria-label='Etapa anterior'
+              >
+                <svg viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='2.5' strokeLinecap='round' strokeLinejoin='round' className='w-[22px] h-[22px]'>
+                  <polyline points='15 18 9 12 15 6' />
+                </svg>
+              </button>
+              <div className='flex gap-[10px]'>
+                {PROCESS_STEPS.map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => sliderRef.current?.slickGoTo(i)}
+                    aria-label={`Ir para etapa ${i + 1}`}
+                    className={`border-none p-0 cursor-pointer transition-all duration-200 ${i === slideIndex ? 'h-[6px] w-7 rounded-md bg-[#8D519E]' : 'h-[6px] w-[6px] rounded-full bg-white/30'}`}
+                  />
                 ))}
               </div>
-            </div>
-            <button
-              className='process-nav process-nav--next absolute top-1/2 -translate-y-1/2 right-0 w-[52px] h-[52px] rounded-full bg-[#111827] border border-[rgba(141,81,158,0.25)] text-white cursor-pointer flex items-center justify-center z-10 transition-all duration-[250ms] p-0 disabled:opacity-30 disabled:cursor-not-allowed enabled:hover:bg-[#8D519E] enabled:hover:border-[#8D519E] enabled:hover:scale-[1.06] enabled:hover:shadow-[0_8px_24px_rgba(141,81,158,0.45)] max-[768px]:top-auto max-[768px]:bottom-0 max-[768px]:translate-y-0 max-[768px]:right-[calc(50%-72px)]'
-              aria-label='Próxima etapa'
-            >
-              <svg
-                viewBox='0 0 24 24'
-                fill='none'
-                stroke='currentColor'
-                strokeWidth='2.5'
-                strokeLinecap='round'
-                strokeLinejoin='round'
-                className='w-[22px] h-[22px]'
+              <button
+                onClick={() => sliderRef.current?.slickNext()}
+                disabled={slideIndex === PROCESS_STEPS.length - 1}
+                className='w-[52px] h-[52px] rounded-full bg-[#111827] border border-[rgba(141,81,158,0.25)] text-white flex items-center justify-center transition-all duration-[250ms] p-0 disabled:opacity-30 disabled:cursor-not-allowed active:bg-[#8D519E] active:border-[#8D519E] active:scale-95'
+                aria-label='Próxima etapa'
               >
-                <polyline points='9 18 15 12 9 6' />
-              </svg>
-            </button>
+                <svg viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='2.5' strokeLinecap='round' strokeLinejoin='round' className='w-[22px] h-[22px]'>
+                  <polyline points='9 18 15 12 9 6' />
+                </svg>
+              </button>
+            </div>
           </div>
-          <div
-            className='process-dots flex gap-[10px] justify-center mt-9'
-            role='tablist'
-            aria-label='Navegação das etapas'
-          />
           <div className='mt-14 flex justify-center'>
             <BtnWA />
           </div>
@@ -795,7 +764,7 @@ export default function RecrutamentoPage() {
                 (11) 9 9460-7649
               </a>
               <a
-                href='https://www.linkedin.com'
+                href='https://www.linkedin.com/in/juliana-carvalhoss/'
                 target='_blank'
                 rel='noopener'
                 className='text-[inherit] no-underline hover:text-white transition-colors'
@@ -803,7 +772,7 @@ export default function RecrutamentoPage() {
                 LinkedIn da Juliana
               </a>
               <a
-                href='https://www.linkedin.com'
+                href='https://www.linkedin.com/in/juliana-carvalhoss/'
                 target='_blank'
                 rel='noopener'
                 className='text-[inherit] no-underline hover:text-white transition-colors'
