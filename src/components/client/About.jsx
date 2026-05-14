@@ -56,7 +56,7 @@ const About = () => {
           <div className='flex flex-col items-center gap-2'>
             <div className='flex gap-3'>
               <a
-                href='https://www.linkedin.com/in/juliana-carvalho-41b452142/pt/'
+                href='https://www.linkedin.com/in/juliana-carvalhoss/'
                 target='_blank'
                 rel='noopener noreferrer'
                 className='opacity-90 hover:opacity-100 transition-opacity duration-200'

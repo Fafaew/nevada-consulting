@@ -10,7 +10,8 @@
       "logout": "Desconectar",
       "myAccount": "Minha conta",
       "homePage": "Página inicial",
-      "language": "idioma"
+      "language": "idioma",
+      "recrutamento": "Recrutamento"
     },
     "header": {
       "subtitle": "Recrutamento global B2B e B2C"
@@ -32,7 +33,7 @@
         "links": {
           "linkedinLabel": {
             "label": "Juliana",
-            "href": "https://www.linkedin.com/in/juliana-carvalho-41b452142/",
+            "href": "https://www.linkedin.com/in/juliana-carvalhoss/",
             "external": true
           }
         }
@@ -56,7 +57,7 @@
         "links": {
           "linkedinLabel": {
             "label": "Juliana",
-            "href": "https://www.linkedin.com/in/juliana-carvalho-41b452142/",
+            "href": "https://www.linkedin.com/in/juliana-carvalhoss/",
             "external": true
           },
           "assessmentLink": {
@@ -74,7 +75,7 @@
         "links": {
           "linkedinLabel": {
             "label": "Juliana",
-            "href": "https://www.linkedin.com/in/juliana-carvalho-41b452142/",
+            "href": "https://www.linkedin.com/in/juliana-carvalhoss/",
             "external": true
           }
         }
@@ -172,7 +173,155 @@
     },
     "footer": {
       "tel": "(11) 9 9460-7649",
-      "copyright": "COPYRIGHT ©2025 Nevada Consulting Todos os direitos reservados"
+      "copyright": "COPYRIGHT ©2026 Nevada Consulting Todos os direitos reservados"
+    },
+    "recrutamento": {
+      "hero": {
+        "h1_before": "Pare de perder",
+        "h1_bold1": "tempo",
+        "h1_middle": "em processos lentos - e",
+        "h1_bold2": "dinheiro",
+        "h1_after": "com contratações erradas.",
+        "subtitle": "Ajudamos empresas em crescimento a contratar profissionais excepcionais de forma rápida, menos custosa e sem risco.",
+        "btnWA": "Fale conosco no WhatsApp"
+      },
+      "clients": {
+        "title": "Empresas que já confiaram na Nevada"
+      },
+      "stats": {
+        "title": "Os dados do mercado",
+        "stat1": "das empresas erraram uma contratação em 2025",
+        "stat2": "dos erros de contratação estão relacionados ao fit cultural",
+        "stat3prefix": "Até",
+        "stat3": "do salário anual é o custo de uma contratação errada de um C-Level"
+      },
+      "numbers": {
+        "title": "Nossos números",
+        "card1unit": "de retenção",
+        "card1desc": "dos candidatos contratados",
+        "card2unit": "dias úteis",
+        "card2desc": "de SLA",
+        "card3unit": "meses",
+        "card3desc": "de garantia de reposição"
+      },
+      "diferenciais": {
+        "title": "Por que as empresas nos escolhem?",
+        "negativeHeader": "O que as outras soluções entregam",
+        "negative": [
+          "Processos que demoram meses sem previsão de prazo",
+          "Fee antecipado independente do resultado",
+          "Sem garantia se o profissional não ficar",
+          "Dezenas de currículos sem curadoria real",
+          "Fit cultural ignorado no processo seletivo",
+          "Analistas júnior conduzindo a vaga do início ao fim"
+        ],
+        "positiveHeader": "O que entregamos",
+        "positive": [
+          "Candidatos aprovados enviados em até 5 dias úteis",
+          "Modelo success fee — você só paga após contratar",
+          "Garantia de reposição de 3 meses",
+          "Apenas 3 finalistas pré-validados, com relatório",
+          "Fit cultural como critério de decisão",
+          "Processo seletivo com avaliação executiva da Juliana"
+        ]
+      },
+      "especialidades": {
+        "title": "Áreas que atuamos",
+        "areas": [
+          "Tecnologia",
+          "Publicidade",
+          "Marketing",
+          "Liderança",
+          "Saúde",
+          "Fintechs",
+          "Corporativo",
+          "Construção Civil"
+        ]
+      },
+      "juliana": {
+        "sectionLabel": "QUEM GARANTE A QUALIDADE DOS PROCESSOS",
+        "subtitle": "Psicóloga, MBA USP, University of Akron (Ohio, EUA), +10 anos em recrutamento senior",
+        "bio": "Liderei aquisição de talentos em empresas de referência antes de fundar a Nevada. Hoje atendo poucos clientes por escolha: o modelo boutique existe justamente para que cada processo seja conduzido pessoalmente, do primeiro briefing à entrevista final.",
+        "credentials": [
+          "Psicologia · UFMG",
+          "MBA · USP",
+          "College of Business Akron - EUA",
+          "+10 anos"
+        ],
+        "linkedinCta": "Conheça a trajetória completa no LinkedIn"
+      },
+      "metodo": {
+        "title": "Nosso processo",
+        "steps": [
+          {
+            "name": "Awareness",
+            "desc": "Mapeamento do mercado e identificação de talentos"
+          },
+          {
+            "name": "Sourcing",
+            "desc": "Abordagem ativa na rede e atração de candidatos"
+          },
+          {
+            "name": "Interview",
+            "desc": "Entrevistas técnicas e comportamentais conduzidas pessoalmente"
+          },
+          {
+            "name": "Shortlist",
+            "desc": "Apresentação de até 3 finalistas com relatório de fit"
+          },
+          {
+            "name": "Fechamento",
+            "desc": "Suporte na oferta, negociação e decisão final"
+          },
+          {
+            "name": "Acompanhamento",
+            "desc": "Follow-up pós-contratação durante o período de garantia"
+          }
+        ]
+      },
+      "prova": {
+        "title": "Quem contrata, volta e recomenda",
+        "testimonials": [
+          {
+            "quote": "A Juliana realizou um trabalho excepcional na consultoria de recrutamento para a Komuh. Sua abordagem estratégica foi fundamental para otimizar todo nosso processo seletivo. Desde o início, esteve totalmente alinhada com a nossa cultura e necessidades, garantindo que cada pessoa candidata apresentada tivesse não só as habilidades técnicas, mas também o fit certo com o time.",
+            "author": "Head of HR",
+            "company": "Komuh (advertising)"
+          },
+          {
+            "quote": "Tive a oportunidade de trabalhar com a Juliana na Red Ventures Brasil e na OKTO Brasil, e sempre obtive excelentes resultados em seus recrutamentos. Sua habilidade em compreender os aspectos culturais das empresas permite que ela entregue profissionais não apenas alinhados tecnicamente, mas também aderentes à cultura organizacional.",
+            "author": "Head of People",
+            "company": "Red Ventures e OKTO Payments (tecnologia)"
+          }
+        ]
+      },
+      "faq": {
+        "title": "Perguntas frequentes",
+        "items": [
+          {
+            "q": "Quanto tempo leva em média para fechar uma vaga?",
+            "a": "Enviamos os perfis aprovados em até 5 dias úteis. O time to hire médio é de 30 dias — o cronograma detalhado é definido junto com você no briefing da vaga."
+          },
+          {
+            "q": "E se o profissional contratado não vingar nos primeiros meses?",
+            "a": "A Nevada oferece reposição: caso o profissional contratado não permaneça nos primeiros 90 dias por razões relacionadas a fit, a vaga é reaberta sem custo adicional. Os termos são definidos em contrato antes do início do trabalho."
+          },
+          {
+            "q": "Como funciona o pagamento e qual o ticket médio?",
+            "a": "O modelo é por sucesso: o pagamento acontece apenas após a contratação efetiva. Não há mensalidade nem fee inicial. O valor é proporcional ao salário da vaga, dentro da faixa de mercado para boutiques especializadas em recrutamento sênior, e é detalhado no briefing inicial."
+          },
+          {
+            "q": "Em quais áreas e seniorities a Nevada atua?",
+            "a": "Engenharia (back-end, front-end, full-stack, mobile, DevOps, dados, machine learning), produto e design (PM, GPM, CPO, UI/UX), liderança técnica (CTO, VPs, Engineering Managers) e posições de C-level em outras áreas (marketing, agências, comercial). Foco em senioridade média e alta: pleno avançado, sênior, staff e lideranças. A Nevada não atua em vagas júnior nem em recrutamento de alto volume."
+          },
+          {
+            "q": "Em que cidades a Nevada atende?",
+            "a": "A operação é remota e atende empresas em todo o Brasil, com concentração no eixo Sudeste (São Paulo, Rio de Janeiro, Belo Horizonte). Como a maioria dos clientes opera em modelo remoto ou híbrido, a localização da empresa pesa menos do que a localização dos candidatos disponíveis para a vaga."
+          }
+        ]
+      },
+      "cta": {
+        "title": "Vamos conversar sobre sua vaga?"
+      }
     }
   }
 }
