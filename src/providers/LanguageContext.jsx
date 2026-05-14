@@ -13,15 +13,20 @@ export const LanguageProvider = ({ children }) => {
   const pathname = usePathname();
 
   useEffect(() => {
+    const saved = localStorage.getItem('lang');
+    if (saved && ['pt', 'en'].includes(saved) && saved !== i18n.language) {
+      i18n.changeLanguage(saved);
+      setCurrentLanguage(saved);
+    }
+  }, [i18n]);
+
+  useEffect(() => {
     const pathParts = pathname.split('/').filter(Boolean);
     const urlLanguage = pathParts[0];
     if (['pt', 'en'].includes(urlLanguage)) {
       i18n.changeLanguage(urlLanguage);
       setCurrentLanguage(urlLanguage);
-    } else {
-      const defaultLanguage = 'pt';
-      i18n.changeLanguage(defaultLanguage);
-      setCurrentLanguage(defaultLanguage);
+      localStorage.setItem('lang', urlLanguage);
     }
   }, [pathname, i18n]);
 
@@ -29,6 +34,7 @@ export const LanguageProvider = ({ children }) => {
     if (newLanguage !== currentLanguage) {
       i18n.changeLanguage(newLanguage);
       setCurrentLanguage(newLanguage);
+      localStorage.setItem('lang', newLanguage);
     }
   };
 

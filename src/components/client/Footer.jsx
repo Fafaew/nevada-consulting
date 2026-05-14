@@ -28,7 +28,7 @@ const Footer = () => {
           <div className='flex justify-center mt-6'>
             <div className='text-[#0A66C2] cursor-pointer'>
               <a
-                href='https://www.linkedin.com/in/juliana-carvalho-41b452142/'
+                href='https://www.linkedin.com/in/juliana-carvalhoss/'
                 target='_blank'
                 rel='noopener noreferrer'
               >
