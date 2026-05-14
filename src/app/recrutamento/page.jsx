@@ -5,9 +5,12 @@ import Image from 'next/image';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import juProfile from '../../assets/imgs/juProfile.webp';
+import testimonialsKomuh from '../../assets/imgs/testimonialsKomuh.png';
+import testimonialsRV from '../../assets/imgs/testimonialsRV.png';
 import Navbar from '../../components/client/Navbar.jsx';
 import { SiWhatsapp } from 'react-icons/si';
 import Clients from '../../components/client/Clients.jsx';
+import Footer from '../../components/client/Footer.jsx';
 
 function BtnWA({ children = 'Fale conosco no WhatsApp' }) {
   return (
@@ -133,12 +136,14 @@ const TESTIMONIALS = [
       'A Juliana realizou um trabalho excepcional na consultoria de recrutamento para a Komuh. Sua abordagem estratégica foi fundamental para otimizar todo nosso processo seletivo. Desde o início, esteve totalmente alinhada com a nossa cultura e necessidades, garantindo que cada pessoa candidata apresentada tivesse não só as habilidades técnicas, mas também o fit certo com o time.',
     author: 'Head of HR',
     company: 'Komuh (advertising)',
+    logo: testimonialsKomuh,
   },
   {
     quote:
       'Tive a oportunidade de trabalhar com a Juliana na Red Ventures Brasil e na OKTO Brasil, e sempre obtive excelentes resultados em seus recrutamentos. Sua habilidade em compreender os aspectos culturais das empresas permite que ela entregue profissionais não apenas alinhados tecnicamente, mas também aderentes à cultura organizacional.',
     author: 'Head of People',
     company: 'Red Ventures e OKTO Payments (tecnologia)',
+    logo: testimonialsRV,
   },
 ];
 
@@ -586,7 +591,15 @@ export default function RecrutamentoPage() {
                 className='w-[52px] h-[52px] rounded-full bg-[#111827] border border-[rgba(141,81,158,0.25)] text-white flex items-center justify-center transition-all duration-[250ms] p-0 disabled:opacity-30 disabled:cursor-not-allowed active:bg-[#8D519E] active:border-[#8D519E] active:scale-95'
                 aria-label='Etapa anterior'
               >
-                <svg viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='2.5' strokeLinecap='round' strokeLinejoin='round' className='w-[22px] h-[22px]'>
+                <svg
+                  viewBox='0 0 24 24'
+                  fill='none'
+                  stroke='currentColor'
+                  strokeWidth='2.5'
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
+                  className='w-[22px] h-[22px]'
+                >
                   <polyline points='15 18 9 12 15 6' />
                 </svg>
               </button>
@@ -606,7 +619,15 @@ export default function RecrutamentoPage() {
                 className='w-[52px] h-[52px] rounded-full bg-[#111827] border border-[rgba(141,81,158,0.25)] text-white flex items-center justify-center transition-all duration-[250ms] p-0 disabled:opacity-30 disabled:cursor-not-allowed active:bg-[#8D519E] active:border-[#8D519E] active:scale-95'
                 aria-label='Próxima etapa'
               >
-                <svg viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='2.5' strokeLinecap='round' strokeLinejoin='round' className='w-[22px] h-[22px]'>
+                <svg
+                  viewBox='0 0 24 24'
+                  fill='none'
+                  stroke='currentColor'
+                  strokeWidth='2.5'
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
+                  className='w-[22px] h-[22px]'
+                >
                   <polyline points='9 18 15 12 9 6' />
                 </svg>
               </button>
@@ -625,7 +646,7 @@ export default function RecrutamentoPage() {
             Quem contrata, volta e recomenda
           </h2>
           <div className='grid grid-cols-2 gap-6 max-[900px]:grid-cols-1'>
-            {TESTIMONIALS.map(({ quote, author, company }) => (
+            {TESTIMONIALS.map(({ quote, author, company, logo }) => (
               <div
                 key={author}
                 className='bg-[#F1F5F9] border border-[rgba(2,6,23,0.08)] p-9 max-sm:p-7 rounded-2xl flex flex-col gap-6'
@@ -637,7 +658,15 @@ export default function RecrutamentoPage() {
                   {quote}
                 </p>
                 <div className='flex items-center gap-4 pt-6 border-t border-[rgba(2,6,23,0.08)]'>
-                  <div className='w-12 h-12 rounded-full bg-gradient-to-br from-[#EBD9F7] to-[#8D519E] shrink-0' />
+                  <div className='w-12 h-12 rounded-full overflow-hidden shrink-0 bg-white border border-[rgba(2,6,23,0.08)]'>
+                    <Image
+                      src={logo}
+                      alt={company}
+                      width={48}
+                      height={48}
+                      className='w-full h-full object-cover'
+                    />
+                  </div>
                   <div>
                     <strong className='font-bold block text-[15px] text-[#020617]'>
                       {author}
@@ -717,81 +746,7 @@ export default function RecrutamentoPage() {
         </div>
       </section>
 
-      {/* FONTES */}
-      <div className='py-[14px] bg-black border-t border-white/[0.04]'>
-        <div className='max-w-[1200px] mx-auto px-8 max-[900px]:px-6'>
-          <p className='text-[11px] text-white/25'>
-            *{' '}
-            <a
-              href='https://tedrh.com.br/noticia/53-das-empresas-admitem-contratacoes-erradas-em-2025'
-              target='_blank'
-              rel='noopener'
-              className='text-white/30 underline underline-offset-[3px] transition-colors hover:text-white/60'
-            >
-              TedRH (2025)
-            </a>
-            &nbsp;&nbsp; **{' '}
-            <a
-              href='https://www.americanprogress.org/article/there-are-significant-business-costs-to-replacing-employees/'
-              target='_blank'
-              rel='noopener'
-              className='text-white/30 underline underline-offset-[3px] transition-colors hover:text-white/60'
-            >
-              Center for American Progress
-            </a>
-          </p>
-        </div>
-      </div>
-
-      {/* FOOTER */}
-      <footer className='pt-12 pb-7 bg-black text-white/60 border-t border-white/[0.05]'>
-        <div className='max-w-[1200px] mx-auto px-8 max-[900px]:px-6'>
-          <div className='flex justify-between items-center flex-wrap gap-6'>
-            <div className='text-white text-lg font-bold'>
-              Nevada Consulting
-            </div>
-            <div className='text-[13px] flex gap-6 flex-wrap'>
-              <a
-                href='mailto:contato@nevadaconsulting.com.br'
-                className='text-[inherit] no-underline hover:text-white transition-colors'
-              >
-                contato@nevadaconsulting.com.br
-              </a>
-              <a
-                href='https://wa.me/5511994607649'
-                className='text-[inherit] no-underline hover:text-white transition-colors'
-              >
-                (11) 9 9460-7649
-              </a>
-              <a
-                href='https://www.linkedin.com/in/juliana-carvalhoss/'
-                target='_blank'
-                rel='noopener'
-                className='text-[inherit] no-underline hover:text-white transition-colors'
-              >
-                LinkedIn da Juliana
-              </a>
-              <a
-                href='https://www.linkedin.com/in/juliana-carvalhoss/'
-                target='_blank'
-                rel='noopener'
-                className='text-[inherit] no-underline hover:text-white transition-colors'
-              >
-                LinkedIn da Nevada
-              </a>
-              <a
-                href='#'
-                className='text-[inherit] no-underline hover:text-white transition-colors'
-              >
-                Política de privacidade
-              </a>
-            </div>
-          </div>
-          <div className='mt-7 text-[12px] text-white/30 text-center border-t border-white/[0.05] pt-[22px]'>
-            © 2026 Nevada Consulting · Todos os direitos reservados
-          </div>
-        </div>
-      </footer>
+      <Footer />
 
       {/* FAB WHATSAPP */}
       <a
