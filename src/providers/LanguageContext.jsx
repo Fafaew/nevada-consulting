@@ -13,6 +13,14 @@ export const LanguageProvider = ({ children }) => {
   const pathname = usePathname();
 
   useEffect(() => {
+    const saved = localStorage.getItem('lang');
+    if (saved && ['pt', 'en'].includes(saved) && saved !== i18n.language) {
+      i18n.changeLanguage(saved);
+      setCurrentLanguage(saved);
+    }
+  }, [i18n]);
+
+  useEffect(() => {
     const pathParts = pathname.split('/').filter(Boolean);
     const urlLanguage = pathParts[0];
     if (['pt', 'en'].includes(urlLanguage)) {
