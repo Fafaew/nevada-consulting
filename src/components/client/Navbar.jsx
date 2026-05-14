@@ -8,6 +8,7 @@ import { useTranslation } from 'react-i18next';
 import { useLanguage } from '../../providers/LanguageContext.jsx';
 import { AnimatedHamburgerButton } from './HamburgerButton';
 import { useRouter, usePathname } from 'next/navigation';
+import NextLink from 'next/link';
 import { useScrollDirection } from '../../hooks/useScrollDirection.js';
 import LoginModal from './LoginModal.jsx';
 import { useSession, signOut } from 'next-auth/react';
@@ -94,12 +95,12 @@ const Navbar = ({ hideNav = false }) => {
             ),
           )}
         <li>
-          <a
+          <NextLink
             href='/recrutamento'
             className='p-4 hover:bg-purple-primary rounded-xl m-2 cursor-pointer duration-300 hover:text-black block'
           >
             {t('navbar.recrutamento')}
-          </a>
+          </NextLink>
         </li>
         <button
           onClick={() => handleLanguageChange('pt')}
