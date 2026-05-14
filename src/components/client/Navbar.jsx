@@ -38,21 +38,22 @@ const Navbar = ({ hideNav = false }) => {
     { id: 5, text: t('navbar.contact'), to: 'contact' },
   ];
 
-  const logoEl = hideNav ? (
-    <button onClick={() => router.push(`/${currentLanguage}`)}>
-      <Logo className='ml-4 lg:ml-12 w-10 mb-2 lg:mb-0 lg:w-14 cursor-pointer' />
-    </button>
-  ) : (
-    <Link
-      to='home'
-      smooth={true}
-      duration={800}
-      easing='easeInOutQuart'
-      onClick={() => setNav(false)}
-    >
-      <Logo className='ml-4 lg:ml-12 w-10 mb-2 lg:mb-0 lg:w-14 cursor-pointer' />
-    </Link>
-  );
+  const logoEl =
+    hideNav || !isHomePage ? (
+      <button onClick={() => router.push(`/${currentLanguage}`)}>
+        <Logo className='ml-4 lg:ml-12 w-10 mb-2 lg:mb-0 lg:w-14 cursor-pointer' />
+      </button>
+    ) : (
+      <Link
+        to='home'
+        smooth={true}
+        duration={800}
+        easing='easeInOutQuart'
+        onClick={() => setNav(false)}
+      >
+        <Logo className='ml-4 lg:ml-12 w-10 mb-2 lg:mb-0 lg:w-14 cursor-pointer' />
+      </Link>
+    );
 
   return (
     <div
