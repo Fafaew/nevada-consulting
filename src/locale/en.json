@@ -165,6 +165,154 @@
     "footer": {
       "tel": "+55 11 9 9460-7649",
       "copyright": "COPYRIGHT ©2026 Nevada Consulting All rights reserved"
+    },
+    "recrutamento": {
+      "hero": {
+        "h1_before": "Stop wasting",
+        "h1_bold1": "time",
+        "h1_middle": "on slow processes — and",
+        "h1_bold2": "money",
+        "h1_after": "on bad hires.",
+        "subtitle": "We help growing companies hire exceptional talent quickly, cost-effectively, and without risk.",
+        "btnWA": "Talk to us on WhatsApp"
+      },
+      "clients": {
+        "title": "Companies that have trusted Nevada"
+      },
+      "stats": {
+        "title": "Market data",
+        "stat1": "of companies made a bad hire in 2025",
+        "stat2": "of hiring mistakes are related to cultural fit",
+        "stat3prefix": "Up to",
+        "stat3": "of annual salary is the cost of a bad C-Level hire"
+      },
+      "numbers": {
+        "title": "Our numbers",
+        "card1unit": "retention rate",
+        "card1desc": "of hired candidates",
+        "card2unit": "business days",
+        "card2desc": "SLA",
+        "card3unit": "months",
+        "card3desc": "replacement guarantee"
+      },
+      "diferenciais": {
+        "title": "Why companies choose us?",
+        "negativeHeader": "What other solutions deliver",
+        "negative": [
+          "Processes that take months with no estimated timeline",
+          "Upfront fee regardless of results",
+          "No guarantee if the professional doesn't stay",
+          "Dozens of unfiltered résumés",
+          "Cultural fit ignored during the selection process",
+          "Junior analysts running the entire process from start to finish"
+        ],
+        "positiveHeader": "What we deliver",
+        "positive": [
+          "Approved candidates sent within 5 business days",
+          "Success fee model — you only pay after hiring",
+          "3-month replacement guarantee",
+          "Only 3 pre-validated finalists, with a report",
+          "Cultural fit as a decision criterion",
+          "Selection process with executive evaluation by Juliana"
+        ]
+      },
+      "especialidades": {
+        "title": "Areas we work in",
+        "areas": [
+          "Technology",
+          "Advertising",
+          "Marketing",
+          "Leadership",
+          "Healthcare",
+          "Fintechs",
+          "Corporate",
+          "Construction"
+        ]
+      },
+      "juliana": {
+        "sectionLabel": "WHO GUARANTEES PROCESS QUALITY",
+        "subtitle": "Psychologist, MBA USP, University of Akron (Ohio, USA), +10 years in senior recruitment",
+        "bio": "I led talent acquisition at reference companies before founding Nevada. Today I work with few clients by choice: the boutique model exists precisely so that each process is personally conducted, from the first briefing to the final interview.",
+        "credentials": [
+          "Psychology · UFMG",
+          "MBA · USP",
+          "College of Business Akron - USA",
+          "+10 years"
+        ],
+        "linkedinCta": "See my full journey on LinkedIn"
+      },
+      "metodo": {
+        "title": "Our process",
+        "steps": [
+          {
+            "name": "Awareness",
+            "desc": "Market mapping and talent identification"
+          },
+          {
+            "name": "Sourcing",
+            "desc": "Active outreach and candidate attraction"
+          },
+          {
+            "name": "Interview",
+            "desc": "Technical and behavioral interviews conducted personally"
+          },
+          {
+            "name": "Shortlist",
+            "desc": "Presentation of up to 3 finalists with fit report"
+          },
+          {
+            "name": "Closing",
+            "desc": "Support with offer, negotiation, and final decision"
+          },
+          {
+            "name": "Follow-up",
+            "desc": "Post-hire follow-up during the guarantee period"
+          }
+        ]
+      },
+      "prova": {
+        "title": "Clients who return and recommend",
+        "testimonials": [
+          {
+            "quote": "Juliana did an exceptional job in recruitment consulting for Komuh. Her strategic approach was fundamental to optimizing our entire selection process. From the start, she was fully aligned with our culture and needs, ensuring each candidate presented had not only the technical skills but also the right cultural fit for the team.",
+            "author": "Head of HR",
+            "company": "Komuh (advertising)"
+          },
+          {
+            "quote": "I had the opportunity to work with Juliana at Red Ventures Brasil and OKTO Brasil, and always achieved excellent recruitment results. Her ability to understand company culture allows her to deliver professionals who are not only technically aligned but also culturally adherent to the organization.",
+            "author": "Head of People",
+            "company": "Red Ventures & OKTO Payments (technology)"
+          }
+        ]
+      },
+      "faq": {
+        "title": "Frequently asked questions",
+        "items": [
+          {
+            "q": "How long does it take on average to fill a role?",
+            "a": "We send approved profiles within 5 business days. The average time-to-hire is 30 days — the detailed timeline is defined with you during the job briefing."
+          },
+          {
+            "q": "What if the hired professional doesn't work out in the first months?",
+            "a": "Nevada offers replacement: if the hired professional does not stay for the first 90 days for fit-related reasons, the role is reopened at no additional cost. Terms are defined in the contract before work begins."
+          },
+          {
+            "q": "How does payment work and what is the average fee?",
+            "a": "The model is success-based: payment happens only after the actual hire. There is no monthly fee or upfront retainer. The amount is proportional to the role's salary, within market range for boutiques specializing in senior recruitment, and is detailed in the initial briefing."
+          },
+          {
+            "q": "In which areas and seniority levels does Nevada operate?",
+            "a": "Engineering (back-end, front-end, full-stack, mobile, DevOps, data, machine learning), product and design (PM, GPM, CPO, UI/UX), technical leadership (CTO, VPs, Engineering Managers) and C-level positions in other areas (marketing, agencies, sales). Focus on mid-to-senior level: senior, staff, and leadership roles. Nevada does not work with junior positions or high-volume recruitment."
+          },
+          {
+            "q": "Which cities does Nevada serve?",
+            "a": "Operations are remote and serve companies throughout Brazil, with concentration in the Southeast (São Paulo, Rio de Janeiro, Belo Horizonte). Since most clients operate in remote or hybrid mode, the company's location matters less than the location of available candidates for the role."
+          }
+        ]
+      },
+      "cta": {
+        "title": "Ready to talk about your role?"
+      }
     }
   }
 }

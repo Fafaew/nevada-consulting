@@ -27,7 +27,9 @@ const Navbar = ({ hideNav = false }) => {
 
   const handleLanguageChange = (lang) => {
     changeLanguage(lang);
-    router.push(`/${lang}${hideNav ? '/account' : ''}`);
+    if (isHomePage || hideNav) {
+      router.push(`/${lang}${hideNav ? '/account' : ''}`);
+    }
   };
 
   const navItems = [

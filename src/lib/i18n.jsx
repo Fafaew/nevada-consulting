@@ -4,6 +4,9 @@ import { initReactI18next } from 'react-i18next';
 import ptTranslations from '../locale/pt.json';
 import enTranslations from '../locale/en.json';
 
+const savedLang =
+  typeof window !== 'undefined' ? localStorage.getItem('lang') : null;
+
 i18n.use(initReactI18next).init({
   resources: {
     pt: {
@@ -13,5 +16,5 @@ i18n.use(initReactI18next).init({
       ...enTranslations,
     },
   },
-  lng: 'pt',
+  lng: savedLang || 'pt',
 });

@@ -18,10 +18,7 @@ export const LanguageProvider = ({ children }) => {
     if (['pt', 'en'].includes(urlLanguage)) {
       i18n.changeLanguage(urlLanguage);
       setCurrentLanguage(urlLanguage);
-    } else {
-      const defaultLanguage = 'pt';
-      i18n.changeLanguage(defaultLanguage);
-      setCurrentLanguage(defaultLanguage);
+      localStorage.setItem('lang', urlLanguage);
     }
   }, [pathname, i18n]);
 
@@ -29,6 +26,7 @@ export const LanguageProvider = ({ children }) => {
     if (newLanguage !== currentLanguage) {
       i18n.changeLanguage(newLanguage);
       setCurrentLanguage(newLanguage);
+      localStorage.setItem('lang', newLanguage);
     }
   };
 

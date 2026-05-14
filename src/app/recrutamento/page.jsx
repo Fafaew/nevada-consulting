@@ -4,6 +4,7 @@ import { useState, useRef } from 'react';
 import Image from 'next/image';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
+import { useTranslation } from 'react-i18next';
 import juProfile from '../../assets/imgs/juProfile.webp';
 import testimonialsKomuh from '../../assets/imgs/testimonialsKomuh.png';
 import testimonialsRV from '../../assets/imgs/testimonialsRV.png';
@@ -12,7 +13,7 @@ import { SiWhatsapp } from 'react-icons/si';
 import Clients from '../../components/client/Clients.jsx';
 import Footer from '../../components/client/Footer.jsx';
 
-function BtnWA({ children = 'Fale conosco no WhatsApp' }) {
+function BtnWA({ children }) {
   return (
     <div className='group relative w-fit transition-transform duration-300 active:scale-95 mx-auto'>
       <a
@@ -109,71 +110,28 @@ const AREAS = [
   },
 ];
 
-const PROCESS_STEPS = [
-  {
-    name: 'Awareness',
-    desc: 'Mapeamento do mercado e identificação de talentos',
-  },
-  { name: 'Sourcing', desc: 'Abordagem ativa na rede e atração de candidatos' },
-  {
-    name: 'Interview',
-    desc: 'Entrevistas técnicas e comportamentais conduzidas pessoalmente',
-  },
-  {
-    name: 'Shortlist',
-    desc: 'Apresentação de até 3 finalistas com relatório de fit',
-  },
-  { name: 'Fechamento', desc: 'Suporte na oferta, negociação e decisão final' },
-  {
-    name: 'Acompanhamento',
-    desc: 'Follow-up pós-contratação durante o período de garantia',
-  },
-];
-
-const TESTIMONIALS = [
-  {
-    quote:
-      'A Juliana realizou um trabalho excepcional na consultoria de recrutamento para a Komuh. Sua abordagem estratégica foi fundamental para otimizar todo nosso processo seletivo. Desde o início, esteve totalmente alinhada com a nossa cultura e necessidades, garantindo que cada pessoa candidata apresentada tivesse não só as habilidades técnicas, mas também o fit certo com o time.',
-    author: 'Head of HR',
-    company: 'Komuh (advertising)',
-    logo: testimonialsKomuh,
-  },
-  {
-    quote:
-      'Tive a oportunidade de trabalhar com a Juliana na Red Ventures Brasil e na OKTO Brasil, e sempre obtive excelentes resultados em seus recrutamentos. Sua habilidade em compreender os aspectos culturais das empresas permite que ela entregue profissionais não apenas alinhados tecnicamente, mas também aderentes à cultura organizacional.',
-    author: 'Head of People',
-    company: 'Red Ventures e OKTO Payments (tecnologia)',
-    logo: testimonialsRV,
-  },
-];
-
-const FAQ_ITEMS = [
-  {
-    q: 'Quanto tempo leva em média para fechar uma vaga?',
-    a: 'Enviamos os perfis aprovados em até 5 dias úteis. O time to hire médio é de 30 dias — o cronograma detalhado é definido junto com você no briefing da vaga.',
-  },
-  {
-    q: 'E se o profissional contratado não vingar nos primeiros meses?',
-    a: 'A Nevada oferece reposição: caso o profissional contratado não permaneça nos primeiros 90 dias por razões relacionadas a fit, a vaga é reaberta sem custo adicional. Os termos são definidos em contrato antes do início do trabalho.',
-  },
-  {
-    q: 'Como funciona o pagamento e qual o ticket médio?',
-    a: 'O modelo é por sucesso: o pagamento acontece apenas após a contratação efetiva. Não há mensalidade nem fee inicial. O valor é proporcional ao salário da vaga, dentro da faixa de mercado para boutiques especializadas em recrutamento sênior, e é detalhado no briefing inicial.',
-  },
-  {
-    q: 'Em quais áreas e seniorities a Nevada atua?',
-    a: 'Engenharia (back-end, front-end, full-stack, mobile, DevOps, dados, machine learning), produto e design (PM, GPM, CPO, UI/UX), liderança técnica (CTO, VPs, Engineering Managers) e posições de C-level em outras áreas (marketing, agências, comercial). Foco em senioridade média e alta: pleno avançado, sênior, staff e lideranças. A Nevada não atua em vagas júnior nem em recrutamento de alto volume.',
-  },
-  {
-    q: 'Em que cidades a Nevada atende?',
-    a: 'A operação é remota e atende empresas em todo o Brasil, com concentração no eixo Sudeste (São Paulo, Rio de Janeiro, Belo Horizonte). Como a maioria dos clientes opera em modelo remoto ou híbrido, a localização da empresa pesa menos do que a localização dos candidatos disponíveis para a vaga.',
-  },
-];
+const LOGOS = [testimonialsKomuh, testimonialsRV];
 
 export default function RecrutamentoPage() {
+  const { t } = useTranslation();
   const [openFaq, setOpenFaq] = useState(null);
   const [slideIndex, setSlideIndex] = useState(0);
   const sliderRef = useRef(null);
+
+  const PROCESS_STEPS = t('recrutamento.metodo.steps', { returnObjects: true });
+  const TESTIMONIALS = t('recrutamento.prova.testimonials', { returnObjects: true }).map(
+    (item, i) => ({ ...item, logo: LOGOS[i] })
+  );
+  const FAQ_ITEMS = t('recrutamento.faq.items', { returnObjects: true });
+  const AREA_NAMES = t('recrutamento.especialidades.areas', { returnObjects: true });
+  const NEG_ITEMS = t('recrutamento.diferenciais.negative', { returnObjects: true });
+  const POS_ITEMS = t('recrutamento.diferenciais.positive', { returnObjects: true });
+  const JULIANA_CREDENTIALS = t('recrutamento.juliana.credentials', { returnObjects: true });
+  const NUMBERS = [
+    { valor: '98', pct: '%', unit: t('recrutamento.numbers.card1unit'), desc: t('recrutamento.numbers.card1desc') },
+    { valor: '5', unit: t('recrutamento.numbers.card2unit'), desc: t('recrutamento.numbers.card2desc') },
+    { valor: '3', unit: t('recrutamento.numbers.card3unit'), desc: t('recrutamento.numbers.card3desc') },
+  ];
 
   return (
     <div className='text-base font-normal leading-[1.55] text-white bg-[#020617] antialiased'>
@@ -190,23 +148,22 @@ export default function RecrutamentoPage() {
         <div className='max-w-[1200px] mx-auto px-8 max-[900px]:px-6'>
           <div className='text-center max-w-[760px] mx-auto'>
             <h1 className='text-[clamp(36px,4.8vw,56px)] font-semibold leading-[1.08] tracking-[-0.02em] mt-10 mb-6 text-white'>
-              Pare de perder{' '}
-              <strong className='text-[#8D519E] font-bold'>tempo</strong> em
-              processos lentos - e{' '}
-              <strong className='text-[#8D519E] font-bold'>dinheiro</strong> com
-              contratações erradas.
+              {t('recrutamento.hero.h1_before')}{' '}
+              <strong className='text-[#8D519E] font-bold'>{t('recrutamento.hero.h1_bold1')}</strong>{' '}
+              {t('recrutamento.hero.h1_middle')}{' '}
+              <strong className='text-[#8D519E] font-bold'>{t('recrutamento.hero.h1_bold2')}</strong>{' '}
+              {t('recrutamento.hero.h1_after')}
             </h1>
             <p className='text-lg leading-[1.55] text-white/70 mb-9 max-w-[600px] mx-auto max-[900px]:text-[11px] max-[900px]:tracking-[0.08em]'>
-              Ajudamos empresas em crescimento a contratar profissionais
-              excepcionais de forma rápida, menos custosa e sem risco.
+              {t('recrutamento.hero.subtitle')}
             </p>
-            <BtnWA />
+            <BtnWA>{t('recrutamento.hero.btnWA')}</BtnWA>
           </div>
         </div>
       </section>
 
       {/* LOGOS MARQUEE */}
-      <Clients title='Empresas que já confiaram na Nevada' />
+      <Clients title={t('recrutamento.clients.title')} />
 
       {/* STATS HIGHLIGHT */}
       <section
@@ -218,7 +175,7 @@ export default function RecrutamentoPage() {
       >
         <div className='max-w-[1200px] mx-auto px-8 max-[900px]:px-6'>
           <h2 className='text-[clamp(28px,3.5vw,40px)] font-bold text-[#FAEBD7] leading-[1.15] mb-16 text-center'>
-            Os dados do mercado
+            {t('recrutamento.stats.title')}
           </h2>
           <div className='flex items-center justify-center max-w-[1100px] mx-auto max-sm:flex-col max-sm:gap-12'>
             <div className='flex-1 text-center px-12 flex flex-col items-center gap-5 max-sm:px-6'>
@@ -229,7 +186,7 @@ export default function RecrutamentoPage() {
                 </span>
               </div>
               <p className='text-[15px] leading-[1.6] text-white/70 max-w-[280px] mx-auto'>
-                das empresas erraram uma contratação em 2025
+                {t('recrutamento.stats.stat1')}
                 <a
                   href='https://tedrh.com.br/noticia/53-das-empresas-admitem-contratacoes-erradas-em-2025'
                   target='_blank'
@@ -249,7 +206,7 @@ export default function RecrutamentoPage() {
                 </span>
               </div>
               <p className='text-[15px] leading-[1.6] text-white/70 max-w-[280px] mx-auto'>
-                dos erros de contratação estão relacionados ao fit cultural
+                {t('recrutamento.stats.stat2')}
                 <a
                   href='https://tedrh.com.br/noticia/53-das-empresas-admitem-contratacoes-erradas-em-2025'
                   target='_blank'
@@ -264,7 +221,7 @@ export default function RecrutamentoPage() {
             <div className='flex-1 text-center px-12 flex flex-col items-center gap-5 max-sm:px-6'>
               <div className='text-[clamp(44px,6vw,64px)] font-bold leading-none text-[#8D519E] tracking-[-0.03em] flex items-start justify-center'>
                 <span className='text-[15px] font-semibold tracking-normal pt-4 mr-0.5'>
-                  Até{' '}
+                  {t('recrutamento.stats.stat3prefix')}{' '}
                 </span>
                 213
                 <span className='text-[clamp(26px,3.5vw,38px)] font-bold'>
@@ -272,8 +229,7 @@ export default function RecrutamentoPage() {
                 </span>
               </div>
               <p className='text-[15px] leading-[1.6] text-white/70 max-w-[280px] mx-auto'>
-                do salário anual é o custo de uma contratação errada de um
-                C-Level
+                {t('recrutamento.stats.stat3')}
                 <a
                   href='https://www.americanprogress.org/article/there-are-significant-business-costs-to-replacing-employees/'
                   target='_blank'
@@ -298,19 +254,10 @@ export default function RecrutamentoPage() {
       >
         <div className='max-w-[1200px] mx-auto px-8 max-[900px]:px-6'>
           <h2 className='text-[clamp(36px,5vw,56px)] font-bold leading-[1.08] tracking-tight text-[#020617] mb-14 text-center'>
-            Nossos números
+            {t('recrutamento.numbers.title')}
           </h2>
           <div className='grid grid-cols-3 gap-6 max-[900px]:grid-cols-2 max-sm:grid-cols-1'>
-            {[
-              {
-                valor: '98',
-                pct: '%',
-                unit: 'de retenção',
-                desc: 'dos candidatos contratados',
-              },
-              { valor: '5', unit: 'dias úteis', desc: 'de SLA' },
-              { valor: '3', unit: 'meses', desc: 'de garantia de reposição' },
-            ].map(({ valor, pct, unit, desc }) => (
+            {NUMBERS.map(({ valor, pct, unit, desc }) => (
               <div
                 key={unit}
                 className='bg-[#1a1a1a] rounded-[20px] py-14 px-10 text-center relative overflow-hidden shadow-[0_12px_32px_rgba(141,81,158,0.22)] transition-[transform,box-shadow] duration-300 hover:-translate-y-1.5 hover:shadow-[0_24px_56px_rgba(141,81,158,0.4)] max-sm:py-8 max-sm:px-6'
@@ -335,7 +282,7 @@ export default function RecrutamentoPage() {
             ))}
           </div>
           <div className='mt-14 flex justify-center'>
-            <BtnWA />
+            <BtnWA>{t('recrutamento.hero.btnWA')}</BtnWA>
           </div>
         </div>
       </section>
@@ -350,7 +297,7 @@ export default function RecrutamentoPage() {
       >
         <div className='max-w-[1200px] mx-auto px-8 max-[900px]:px-6'>
           <h2 className='text-[clamp(30px,3.4vw,40px)] font-bold leading-[1.15] tracking-[-0.01em] text-white mb-12 text-center max-w-[800px] mx-auto'>
-            Por que as empresas nos escolhem?
+            {t('recrutamento.diferenciais.title')}
           </h2>
           <div className='grid grid-cols-2 gap-6 items-start max-md:grid-cols-1'>
             <div className='rounded-2xl overflow-hidden'>
@@ -358,17 +305,10 @@ export default function RecrutamentoPage() {
                 <span className='w-7 h-7 rounded-full flex items-center justify-center shrink-0 text-[13px] font-bold bg-red-500/20 text-red-400'>
                   ✕
                 </span>
-                O que as outras soluções entregam
+                {t('recrutamento.diferenciais.negativeHeader')}
               </div>
               <ul className='list-none flex flex-col bg-[#D1D5DB] border border-t-0 border-black/[0.08] rounded-b-2xl'>
-                {[
-                  'Processos que demoram meses sem previsão de prazo',
-                  'Fee antecipado independente do resultado',
-                  'Sem garantia se o profissional não ficar',
-                  'Dezenas de currículos sem curadoria real',
-                  'Fit cultural ignorado no processo seletivo',
-                  'Analistas júnior conduzindo a vaga do início ao fim',
-                ].map((item) => (
+                {NEG_ITEMS.map((item) => (
                   <li
                     key={item}
                     className='flex items-start gap-[14px] px-7 py-4 text-[15px] leading-[1.5] text-[#020617] border-t border-black/[0.08] font-medium'
@@ -386,17 +326,10 @@ export default function RecrutamentoPage() {
                 <span className='w-7 h-7 rounded-full flex items-center justify-center shrink-0 text-[13px] font-bold bg-white/20 text-white'>
                   ✓
                 </span>
-                O que entregamos
+                {t('recrutamento.diferenciais.positiveHeader')}
               </div>
               <ul className='list-none flex flex-col bg-white border border-t-0 border-[rgba(141,81,158,0.25)] rounded-b-2xl shadow-[0_24px_50px_rgba(2,6,23,0.2)]'>
-                {[
-                  'Candidatos aprovados enviados em até 5 dias úteis',
-                  'Modelo success fee — você só paga após contratar',
-                  'Garantia de reposição de 3 meses',
-                  'Apenas 3 finalistas pré-validados, com relatório',
-                  'Fit cultural como critério de decisão',
-                  'Processo seletivo com avaliação executiva da Juliana',
-                ].map((item) => (
+                {POS_ITEMS.map((item) => (
                   <li
                     key={item}
                     className='flex items-start gap-[14px] px-7 py-4 text-[15px] leading-[1.5] text-[#020617] border-t border-[rgba(141,81,158,0.25)] font-medium'
@@ -417,12 +350,12 @@ export default function RecrutamentoPage() {
       <section className='py-16 max-[900px]:py-[72px]' id='especialidades'>
         <div className='max-w-[1200px] mx-auto px-8 max-[900px]:px-6'>
           <h2 className='text-[clamp(30px,3.4vw,40px)] font-bold leading-[1.15] tracking-[-0.01em] text-[#FAEBD7] mb-12 text-center max-w-[800px] mx-auto'>
-            Áreas que atuamos
+            {t('recrutamento.especialidades.title')}
           </h2>
           <div className='grid grid-cols-4 gap-5 max-md:grid-cols-2 max-[900px]:gap-[10px]'>
-            {AREAS.map(({ name, icon }) => (
+            {AREAS.map(({ icon }, idx) => (
               <div
-                key={name}
+                key={idx}
                 className='group bg-gradient-to-[160deg] from-[#111827] to-[rgba(141,81,158,0.08)] border border-[rgba(141,81,158,0.25)] rounded-[18px] pt-8 px-5 pb-7 flex flex-col items-center justify-center gap-4 text-center transition-all duration-[250ms] ease-in-out relative overflow-hidden cursor-default hover:border-[#8D519E] hover:-translate-y-1 hover:shadow-[0_16px_36px_rgba(141,81,158,0.22)]'
               >
                 <span className='pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(141,81,158,0.18)_0%,transparent_60%)] opacity-0 transition-opacity duration-300 group-hover:opacity-100' />
@@ -440,7 +373,7 @@ export default function RecrutamentoPage() {
                   </svg>
                 </span>
                 <span className='text-[15px] font-bold text-white tracking-[0.04em] uppercase relative z-[1]'>
-                  {name}
+                  {AREA_NAMES[idx]}
                 </span>
               </div>
             ))}
@@ -476,28 +409,19 @@ export default function RecrutamentoPage() {
             </div>
             <div>
               <div className='text-xs uppercase tracking-[0.18em] text-[#D8B4FE] font-semibold mb-2'>
-                QUEM GARANTE A QUALIDADE DOS PROCESSOS
+                {t('recrutamento.juliana.sectionLabel')}
               </div>
               <h2 className='text-[clamp(28px,3vw,34px)] font-bold leading-[1.15] text-white mb-1.5'>
                 JULIANA CARVALHO
               </h2>
               <div className='text-[15px] text-white/[0.78] mb-6 font-medium'>
-                Psicóloga, MBA USP, University of Akron (Ohio, EUA), +10 anos em
-                recrutamento senior
+                {t('recrutamento.juliana.subtitle')}
               </div>
               <p className='text-base leading-[1.65] text-white/90 mb-3.5'>
-                Liderei aquisição de talentos em empresas de referência antes de
-                fundar a Nevada. Hoje atendo poucos clientes por escolha: o
-                modelo boutique existe justamente para que cada processo seja
-                conduzido pessoalmente, do primeiro briefing à entrevista final.
+                {t('recrutamento.juliana.bio')}
               </p>
               <div className='mt-6 flex flex-wrap gap-[10px] max-[900px]:justify-center'>
-                {[
-                  'Psicologia · UFMG',
-                  'MBA · USP',
-                  'College of Business Akron - EUA',
-                  '+10 anos',
-                ].map((c) => (
+                {JULIANA_CREDENTIALS.map((c) => (
                   <span
                     key={c}
                     className='text-[13px] text-white bg-white/[0.14] py-[7px] px-4 border border-white/35 rounded-full font-semibold backdrop-blur-sm'
@@ -512,7 +436,7 @@ export default function RecrutamentoPage() {
                 rel='noopener'
                 className='inline-flex items-center gap-2 mt-[22px] text-white no-underline text-sm font-semibold border-b border-white/50 pb-1 transition-opacity duration-200 hover:opacity-75'
               >
-                Conheça a trajetória completa no LinkedIn
+                {t('recrutamento.juliana.linkedinCta')}
                 <svg
                   width='14'
                   height='14'
@@ -533,7 +457,7 @@ export default function RecrutamentoPage() {
       <section className='py-16 max-[900px]:py-[72px]' id='metodo'>
         <div className='max-w-[1200px] mx-auto px-8 max-[900px]:px-6'>
           <h2 className='text-[clamp(30px,3.4vw,40px)] font-bold leading-[1.15] tracking-[-0.01em] text-[#FAEBD7] mb-12 text-center max-w-[800px] mx-auto'>
-            Nosso processo
+            {t('recrutamento.metodo.title')}
           </h2>
           {/* Desktop: static grid */}
           <div className='hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-6'>
@@ -589,7 +513,7 @@ export default function RecrutamentoPage() {
                 onClick={() => sliderRef.current?.slickPrev()}
                 disabled={slideIndex === 0}
                 className='w-[52px] h-[52px] rounded-full bg-[#111827] border border-[rgba(141,81,158,0.25)] text-white flex items-center justify-center transition-all duration-[250ms] p-0 disabled:opacity-30 disabled:cursor-not-allowed active:bg-[#8D519E] active:border-[#8D519E] active:scale-95'
-                aria-label='Etapa anterior'
+                aria-label='Previous step'
               >
                 <svg
                   viewBox='0 0 24 24'
@@ -617,7 +541,7 @@ export default function RecrutamentoPage() {
                 onClick={() => sliderRef.current?.slickNext()}
                 disabled={slideIndex === PROCESS_STEPS.length - 1}
                 className='w-[52px] h-[52px] rounded-full bg-[#111827] border border-[rgba(141,81,158,0.25)] text-white flex items-center justify-center transition-all duration-[250ms] p-0 disabled:opacity-30 disabled:cursor-not-allowed active:bg-[#8D519E] active:border-[#8D519E] active:scale-95'
-                aria-label='Próxima etapa'
+                aria-label='Next step'
               >
                 <svg
                   viewBox='0 0 24 24'
@@ -634,7 +558,7 @@ export default function RecrutamentoPage() {
             </div>
           </div>
           <div className='mt-14 flex justify-center'>
-            <BtnWA />
+            <BtnWA>{t('recrutamento.hero.btnWA')}</BtnWA>
           </div>
         </div>
       </section>
@@ -643,7 +567,7 @@ export default function RecrutamentoPage() {
       <section className='py-16 max-[900px]:py-[72px] bg-white' id='prova'>
         <div className='max-w-[1200px] mx-auto px-8 max-[900px]:px-6'>
           <h2 className='text-[clamp(30px,3.4vw,40px)] font-bold leading-[1.15] tracking-[-0.01em] text-[#020617] mb-12 text-center max-w-[800px] mx-auto'>
-            Quem contrata, volta e recomenda
+            {t('recrutamento.prova.title')}
           </h2>
           <div className='grid grid-cols-2 gap-6 max-[900px]:grid-cols-1'>
             {TESTIMONIALS.map(({ quote, author, company, logo }) => (
@@ -680,7 +604,7 @@ export default function RecrutamentoPage() {
             ))}
           </div>
           <div className='mt-14 flex justify-center'>
-            <BtnWA />
+            <BtnWA>{t('recrutamento.hero.btnWA')}</BtnWA>
           </div>
         </div>
       </section>
@@ -689,7 +613,7 @@ export default function RecrutamentoPage() {
       <section className='py-16 max-[900px]:py-[72px]' id='faq'>
         <div className='max-w-[1200px] mx-auto px-8 max-[900px]:px-6'>
           <h2 className='text-[clamp(30px,3.4vw,40px)] font-bold leading-[1.15] tracking-[-0.01em] text-[#FAEBD7] mb-4 text-center max-w-[800px] mx-auto'>
-            Perguntas frequentes
+            {t('recrutamento.faq.title')}
           </h2>
           <div className='mt-4 max-w-[880px] mx-auto'>
             {FAQ_ITEMS.map(({ q, a }, i) => {
@@ -740,9 +664,9 @@ export default function RecrutamentoPage() {
       >
         <div className='max-w-[1200px] mx-auto px-8 max-[900px]:px-6'>
           <h2 className='text-[clamp(32px,4vw,44px)] font-bold leading-[1.1] text-[#FAEBD7] mb-12 max-w-[720px] mx-auto'>
-            Vamos conversar sobre sua vaga?
+            {t('recrutamento.cta.title')}
           </h2>
-          <BtnWA />
+          <BtnWA>{t('recrutamento.hero.btnWA')}</BtnWA>
         </div>
       </section>
 
