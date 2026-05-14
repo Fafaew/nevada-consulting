@@ -179,13 +179,13 @@ const Navbar = ({ hideNav = false }) => {
             ),
           )}
         <li>
-          <a
+          <NextLink
             href='/recrutamento'
             className='block p-4 pl-8 border-b rounded-xl hover:bg-purple-primary duration-300 hover:text-black cursor-pointer border-gray-600'
             onClick={() => setNav(false)}
           >
             {t('navbar.recrutamento')}
-          </a>
+          </NextLink>
         </li>
         {session ? (
           <>
