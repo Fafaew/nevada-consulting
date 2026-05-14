@@ -4,12 +4,26 @@
 import { useEffect } from 'react';
 import Image from 'next/image';
 import { motion, useAnimationControls } from 'framer-motion';
-
-const MotionImage = motion.create(Image);
 import { useTranslation } from 'react-i18next';
 
-const Clients = ({ logos }) => {
+import blip from '../../assets/imgs/blip.webp';
+import komuh from '../../assets/imgs/komuh.webp';
+import okto from '../../assets/imgs/okto.webp';
+import quive from '../../assets/imgs/quive.webp';
+import rv from '../../assets/imgs/rv.webp';
+import edvisor from '../../assets/imgs/edvisor.webp';
+import moveo from '../../assets/imgs/moveo.webp';
+import skintec from '../../assets/imgs/skintec.webp';
+import trinio from '../../assets/imgs/trinio.webp';
+import caixa from '../../assets/imgs/caixa.webp';
+
+const MotionImage = motion.create(Image);
+
+const defaultLogos = [blip, komuh, okto, quive, rv, edvisor, moveo, skintec, trinio, caixa];
+
+const Clients = ({ logos = defaultLogos, title }) => {
   const { t } = useTranslation();
+  const heading = title ?? t('clients.title');
   const controls = useAnimationControls();
   const duplicatedLogos = [...logos, ...logos];
 
@@ -31,8 +45,8 @@ const Clients = ({ logos }) => {
   return (
     <section id='clients' className='py-16 bg-gray-100 overflow-hidden'>
       <div className='container mx-auto px-4'>
-        <h2 className='text-3xl font-bold text-center mb-12'>
-          {t('clients.title')}
+        <h2 className='text-3xl text-black font-bold text-center mb-12'>
+          {heading}
         </h2>
 
         <div className='relative h-32 overflow-x-hidden'>

@@ -5,6 +5,7 @@ import Image from 'next/image';
 import juProfile from '../../assets/imgs/juProfile.webp';
 import Navbar from '../../components/client/Navbar.jsx';
 import { SiWhatsapp } from 'react-icons/si';
+import Clients from '../../components/client/Clients.jsx';
 
 
 function BtnWA({ children = 'Fale conosco no WhatsApp' }) {
@@ -23,19 +24,6 @@ function BtnWA({ children = 'Fale conosco no WhatsApp' }) {
     </div>
   );
 }
-
-const LOGOS = [
-  'Red Ventures',
-  'OKTO',
-  'Blip',
-  'Komuh',
-  'Qive',
-  'Edvisor',
-  'Moveo.ai',
-  'Trinio',
-  'Skintec',
-  'Caixa Pré-pagos',
-];
 
 const AREAS = [
   {
@@ -276,27 +264,7 @@ export default function RecrutamentoPage() {
       </section>
 
       {/* LOGOS MARQUEE */}
-      <section
-        className='group relative bg-[#F1F5F9] text-[#020617] py-12 overflow-hidden'
-        aria-label='Empresas que confiaram na Nevada'
-      >
-        <div className='pointer-events-none absolute inset-y-0 left-0 w-[120px] z-[2] bg-gradient-to-r from-[#F1F5F9] to-transparent' />
-        <div className='pointer-events-none absolute inset-y-0 right-0 w-[120px] z-[2] bg-gradient-to-l from-[#F1F5F9] to-transparent' />
-        <div className='text-center text-xs uppercase tracking-[0.18em] font-semibold text-[rgb(75,85,99)] mb-7'>
-          Empresas que já confiaram na Nevada
-        </div>
-        <div className='flex gap-[72px] w-max items-center max-[900px]:gap-12 animate-scroll-logos group-hover:[animation-play-state:paused]'>
-          {[...LOGOS, ...LOGOS].map((name, i) => (
-            <div
-              key={i}
-              className='shrink-0 text-[rgb(75,85,99)] text-[22px] max-[900px]:text-lg font-bold tracking-[0.04em] uppercase whitespace-nowrap'
-              aria-hidden={i >= LOGOS.length ? 'true' : undefined}
-            >
-              {name}
-            </div>
-          ))}
-        </div>
-      </section>
+      <Clients title='Empresas que já confiaram na Nevada' />
 
       {/* STATS HIGHLIGHT */}
       <section
