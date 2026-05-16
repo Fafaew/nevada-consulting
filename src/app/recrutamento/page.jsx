@@ -212,14 +212,6 @@ export default function RecrutamentoPage() {
               </div>
               <p className='text-[15px] leading-[1.6] text-white/70 max-w-[280px] mx-auto'>
                 {t('recrutamento.stats.stat1')}
-                <a
-                  href='https://tedrh.com.br/noticia/53-das-empresas-admitem-contratacoes-erradas-em-2025'
-                  target='_blank'
-                  rel='noopener'
-                  className='text-[10px] font-semibold text-[#D8B4FE] no-underline align-super ml-px opacity-60 hover:opacity-100 transition-opacity duration-200'
-                >
-                  *
-                </a>
               </p>
             </div>
             <div className='w-px h-[120px] bg-white/[0.12] shrink-0 max-sm:w-[60px] max-sm:h-px' />
@@ -232,14 +224,6 @@ export default function RecrutamentoPage() {
               </div>
               <p className='text-[15px] leading-[1.6] text-white/70 max-w-[280px] mx-auto'>
                 {t('recrutamento.stats.stat2')}
-                <a
-                  href='https://tedrh.com.br/noticia/53-das-empresas-admitem-contratacoes-erradas-em-2025'
-                  target='_blank'
-                  rel='noopener'
-                  className='text-[10px] font-semibold text-[#D8B4FE] no-underline align-super ml-px opacity-60 hover:opacity-100 transition-opacity duration-200'
-                >
-                  *
-                </a>
               </p>
             </div>
             <div className='w-px h-[120px] bg-white/[0.12] shrink-0 max-sm:w-[60px] max-sm:h-px' />
@@ -255,14 +239,6 @@ export default function RecrutamentoPage() {
               </div>
               <p className='text-[15px] leading-[1.6] text-white/70 max-w-[280px] mx-auto'>
                 {t('recrutamento.stats.stat3')}
-                <a
-                  href='https://www.americanprogress.org/article/there-are-significant-business-costs-to-replacing-employees/'
-                  target='_blank'
-                  rel='noopener'
-                  className='text-[10px] font-semibold text-[#D8B4FE] no-underline align-super ml-px opacity-60 hover:opacity-100 transition-opacity duration-200'
-                >
-                  **
-                </a>
               </p>
             </div>
           </div>
@@ -373,7 +349,7 @@ export default function RecrutamentoPage() {
 
       {/* ESPECIALIDADES */}
       <section className='py-16 max-[900px]:py-[72px]' id='especialidades'>
-        <div className='max-w-[1200px] mx-auto px-8 max-[900px]:px-6'>
+        <div className='max-w-[1200px] lg:max-w-[1100px] mx-auto px-8 max-[900px]:px-6'>
           <h2 className='text-[clamp(30px,3.4vw,40px)] font-bold leading-[1.15] tracking-[-0.01em] text-[#FAEBD7] mb-12 text-center max-w-[800px] mx-auto'>
             {t('recrutamento.especialidades.title')}
           </h2>
@@ -489,7 +465,7 @@ export default function RecrutamentoPage() {
             {PROCESS_STEPS.map(({ name, desc }, i) => (
               <div
                 key={name}
-                className='bg-gradient-to-br from-[#111827] to-[rgba(141,81,158,0.08)] border border-[rgba(141,81,158,0.25)] rounded-[20px] pt-[104px] px-7 pb-10 text-center flex flex-col gap-3.5 relative min-h-[280px] transition-all duration-[250ms] hover:border-[#8D519E] hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(141,81,158,0.22)]'
+                className='bg-gradient-to-br from-[#111827] to-[rgba(141,81,158,0.08)] border border-[rgba(141,81,158,0.25)] rounded-[20px] pt-[104px] px-7 pb-10 text-center flex flex-col gap-3.5 relative min-h-[280px] lg:min-h-[230px] transition-all duration-[250ms] hover:border-[#8D519E] hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(141,81,158,0.22)]'
               >
                 <div className='absolute top-7 left-1/2 -translate-x-1/2 w-16 h-16 rounded-full bg-gradient-to-br from-[#8D519E] to-[#6e3f7c] border-4 border-[#020617] text-white text-2xl font-extrabold flex items-center justify-center shadow-[0_8px_24px_rgba(141,81,158,0.5)]'>
                   {i + 1}
