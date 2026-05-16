@@ -212,14 +212,6 @@ export default function RecrutamentoPage() {
               </div>
               <p className='text-[15px] leading-[1.6] text-white/70 max-w-[280px] mx-auto'>
                 {t('recrutamento.stats.stat1')}
-                <a
-                  href='https://tedrh.com.br/noticia/53-das-empresas-admitem-contratacoes-erradas-em-2025'
-                  target='_blank'
-                  rel='noopener'
-                  className='text-[10px] font-semibold text-[#D8B4FE] no-underline align-super ml-px opacity-60 hover:opacity-100 transition-opacity duration-200'
-                >
-                  *
-                </a>
               </p>
             </div>
             <div className='w-px h-[120px] bg-white/[0.12] shrink-0 max-sm:w-[60px] max-sm:h-px' />
@@ -232,14 +224,6 @@ export default function RecrutamentoPage() {
               </div>
               <p className='text-[15px] leading-[1.6] text-white/70 max-w-[280px] mx-auto'>
                 {t('recrutamento.stats.stat2')}
-                <a
-                  href='https://tedrh.com.br/noticia/53-das-empresas-admitem-contratacoes-erradas-em-2025'
-                  target='_blank'
-                  rel='noopener'
-                  className='text-[10px] font-semibold text-[#D8B4FE] no-underline align-super ml-px opacity-60 hover:opacity-100 transition-opacity duration-200'
-                >
-                  *
-                </a>
               </p>
             </div>
             <div className='w-px h-[120px] bg-white/[0.12] shrink-0 max-sm:w-[60px] max-sm:h-px' />
@@ -255,14 +239,6 @@ export default function RecrutamentoPage() {
               </div>
               <p className='text-[15px] leading-[1.6] text-white/70 max-w-[280px] mx-auto'>
                 {t('recrutamento.stats.stat3')}
-                <a
-                  href='https://www.americanprogress.org/article/there-are-significant-business-costs-to-replacing-employees/'
-                  target='_blank'
-                  rel='noopener'
-                  className='text-[10px] font-semibold text-[#D8B4FE] no-underline align-super ml-px opacity-60 hover:opacity-100 transition-opacity duration-200'
-                >
-                  **
-                </a>
               </p>
             </div>
           </div>
