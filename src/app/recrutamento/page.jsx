@@ -12,12 +12,22 @@ import Navbar from '../../components/client/Navbar.jsx';
 import { SiWhatsapp } from 'react-icons/si';
 import Clients from '../../components/client/Clients.jsx';
 import Footer from '../../components/client/Footer.jsx';
+import { trackEvent } from '../../lib/gtm.js';
 
-function BtnWA({ children }) {
+const WHATSAPP_URL = 'https://wa.me/5511994607649';
+
+function BtnWA({ children, location }) {
   return (
     <div className='group relative w-fit transition-transform duration-300 active:scale-95 mx-auto'>
       <a
-        href='https://wa.me/5511994607649'
+        href={WHATSAPP_URL}
+        onClick={() =>
+          trackEvent('whatsapp_click', {
+            location,
+            page: 'recrutamento',
+            destination: WHATSAPP_URL,
+          })
+        }
         className='relative z-10 flex rounded-lg bg-gradient-to-br from-indigo-500 to-fuchsia-500 p-0.5 duration-300 group-hover:scale-110'
       >
         <span className='flex items-center justify-center gap-3 rounded-md bg-slate-950 px-4 py-2 font-semibold text-slate-100 duration-300 h-12 whitespace-nowrap'>
@@ -182,7 +192,7 @@ export default function RecrutamentoPage() {
             <p className='text-lg leading-[1.55] text-white/70 mb-9 max-w-[600px] mx-auto max-[900px]:text-[11px] max-[900px]:tracking-[0.08em]'>
               {t('recrutamento.hero.subtitle')}
             </p>
-            <BtnWA>{t('recrutamento.hero.btnWA')}</BtnWA>
+            <BtnWA location='hero'>{t('recrutamento.hero.btnWA')}</BtnWA>
           </div>
         </div>
       </section>
@@ -283,7 +293,7 @@ export default function RecrutamentoPage() {
             ))}
           </div>
           <div className='mt-14 flex justify-center'>
-            <BtnWA>{t('recrutamento.hero.btnWA')}</BtnWA>
+            <BtnWA location='numbers'>{t('recrutamento.hero.btnWA')}</BtnWA>
           </div>
         </div>
       </section>
@@ -559,7 +569,7 @@ export default function RecrutamentoPage() {
             </div>
           </div>
           <div className='mt-14 flex justify-center'>
-            <BtnWA>{t('recrutamento.hero.btnWA')}</BtnWA>
+            <BtnWA location='metodo'>{t('recrutamento.hero.btnWA')}</BtnWA>
           </div>
         </div>
       </section>
@@ -605,7 +615,9 @@ export default function RecrutamentoPage() {
             ))}
           </div>
           <div className='mt-14 flex justify-center'>
-            <BtnWA>{t('recrutamento.hero.btnWA')}</BtnWA>
+            <BtnWA location='prova_social'>
+              {t('recrutamento.hero.btnWA')}
+            </BtnWA>
           </div>
         </div>
       </section>
@@ -667,7 +679,7 @@ export default function RecrutamentoPage() {
           <h2 className='text-[clamp(32px,4vw,44px)] font-bold leading-[1.1] text-[#FAEBD7] mb-12 max-w-[720px] mx-auto'>
             {t('recrutamento.cta.title')}
           </h2>
-          <BtnWA>{t('recrutamento.hero.btnWA')}</BtnWA>
+          <BtnWA location='cta_final'>{t('recrutamento.hero.btnWA')}</BtnWA>
         </div>
       </section>
 
@@ -675,7 +687,14 @@ export default function RecrutamentoPage() {
 
       {/* FAB WHATSAPP */}
       <a
-        href='https://wa.me/5511994607649'
+        href={WHATSAPP_URL}
+        onClick={() =>
+          trackEvent('whatsapp_click', {
+            location: 'fab',
+            page: 'recrutamento',
+            destination: WHATSAPP_URL,
+          })
+        }
         className='fixed bottom-6 right-6 bg-[#25D366] text-white w-[60px] h-[60px] rounded-full flex items-center justify-center shadow-[0_8px_24px_rgba(37,211,102,0.4)] no-underline z-[100] transition-transform duration-200 hover:scale-[1.08]'
         aria-label='Falar no WhatsApp'
       >
