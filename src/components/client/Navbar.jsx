@@ -12,6 +12,7 @@ import NextLink from 'next/link';
 import { useScrollDirection } from '../../hooks/useScrollDirection.js';
 import LoginModal from './LoginModal.jsx';
 import { useSession, signOut } from 'next-auth/react';
+import { trackEvent } from '../../lib/gtm.js';
 
 const Navbar = ({ hideNav = false }) => {
   const { t } = useTranslation();
@@ -28,10 +29,23 @@ const Navbar = ({ hideNav = false }) => {
     pathname === '/pt' || pathname === '/en' || pathname === '/';
 
   const handleLanguageChange = (lang) => {
+    trackEvent('language_change', {
+      language: lang,
+      previous_language: currentLanguage,
+      location: pathname,
+    });
     changeLanguage(lang);
     if (isHomePage || hideNav) {
       router.push(`/${lang}${hideNav ? '/account' : ''}`);
     }
+  };
+
+  const handleNavClick = (label, target) => {
+    trackEvent('nav_click', {
+      nav_label: label,
+      nav_target: target,
+      location: pathname,
+    });
   };
 
   const navItems = [
@@ -78,6 +92,7 @@ const Navbar = ({ hideNav = false }) => {
                   smooth={true}
                   duration={800}
                   easing='easeInOutQuart'
+                  onClick={() => handleNavClick(item.text, item.to)}
                   className='p-4 hover:bg-purple-primary rounded-xl m-2 cursor-pointer duration-300 hover:text-black'
                 >
                   {item.text}
@@ -87,6 +102,7 @@ const Navbar = ({ hideNav = false }) => {
               <li key={item.id}>
                 <a
                   href={`/${currentLanguage}`}
+                  onClick={() => handleNavClick(item.text, item.to)}
                   className='p-4 hover:bg-purple-primary rounded-xl m-2 cursor-pointer duration-300 hover:text-black block'
                 >
                   {item.text}
@@ -97,6 +113,9 @@ const Navbar = ({ hideNav = false }) => {
         <li>
           <NextLink
             href='/recrutamento'
+            onClick={() =>
+              handleNavClick(t('navbar.recrutamento'), '/recrutamento')
+            }
             className='p-4 hover:bg-purple-primary rounded-xl m-2 cursor-pointer duration-300 hover:text-black block'
           >
             {t('navbar.recrutamento')}
@@ -161,7 +180,10 @@ const Navbar = ({ hideNav = false }) => {
                   duration={800}
                   easing='easeInOutQuart'
                   className='block p-4 pl-8 border-b rounded-xl hover:bg-purple-primary duration-300 hover:text-black cursor-pointer border-gray-600'
-                  onClick={() => setNav(false)}
+                  onClick={() => {
+                    handleNavClick(item.text, item.to);
+                    setNav(false);
+                  }}
                 >
                   {item.text}
                 </Link>
@@ -171,7 +193,10 @@ const Navbar = ({ hideNav = false }) => {
                 <a
                   href={`/${currentLanguage}`}
                   className='block p-4 pl-8 border-b rounded-xl hover:bg-purple-primary duration-300 hover:text-black cursor-pointer border-gray-600'
-                  onClick={() => setNav(false)}
+                  onClick={() => {
+                    handleNavClick(item.text, item.to);
+                    setNav(false);
+                  }}
                 >
                   {item.text}
                 </a>
@@ -182,7 +207,10 @@ const Navbar = ({ hideNav = false }) => {
           <NextLink
             href='/recrutamento'
             className='block p-4 pl-8 border-b rounded-xl hover:bg-purple-primary duration-300 hover:text-black cursor-pointer border-gray-600'
-            onClick={() => setNav(false)}
+            onClick={() => {
+              handleNavClick(t('navbar.recrutamento'), '/recrutamento');
+              setNav(false);
+            }}
           >
             {t('navbar.recrutamento')}
           </NextLink>
