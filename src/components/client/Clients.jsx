@@ -41,9 +41,9 @@ const Clients = ({ logos = defaultLogos, title }) => {
   useEffect(() => {
     const animateCarousel = async () => {
       await controls.start({
-        x: '-100%',
+        x: '-50%',
         transition: {
-          duration: duplicatedLogos.length * 2,
+          duration: logos.length * 2,
           ease: 'linear',
           repeat: Infinity,
         },
@@ -51,7 +51,7 @@ const Clients = ({ logos = defaultLogos, title }) => {
     };
 
     animateCarousel();
-  }, [controls, duplicatedLogos.length]);
+  }, [controls, logos.length]);
 
   return (
     <section id='clients' className='py-16 bg-gray-100 overflow-hidden'>
