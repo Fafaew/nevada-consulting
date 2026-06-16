@@ -9,8 +9,8 @@ import { useTranslation } from 'react-i18next';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-import redVentures from '../../assets/imgs/testimonialsRV.png';
-import Komuh from '../../assets/imgs/testimonialsKomuh.png';
+import redVentures from '../../assets/imgs/testimonialsRV.webp';
+import Komuh from '../../assets/imgs/testimonialsKomuh.webp';
 import woman_talking from '../../assets/imgs/woman_talking_table.webp';
 
 const CustomArrow = ({ direction, onClick }) => {

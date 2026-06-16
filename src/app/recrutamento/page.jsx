@@ -1,18 +1,18 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import { useTranslation } from 'react-i18next';
 import juProfile from '../../assets/imgs/juProfile.webp';
-import testimonialsKomuh from '../../assets/imgs/testimonialsKomuh.png';
-import testimonialsRV from '../../assets/imgs/testimonialsRV.png';
+import testimonialsKomuh from '../../assets/imgs/testimonialsKomuh.webp';
+import testimonialsRV from '../../assets/imgs/testimonialsRV.webp';
 import Navbar from '../../components/client/Navbar.jsx';
 import { SiWhatsapp } from 'react-icons/si';
 import Clients from '../../components/client/Clients.jsx';
 import Footer from '../../components/client/Footer.jsx';
-import { trackEvent } from '../../lib/gtm.js';
+import { trackEvent, initEngagementTracking } from '../../lib/gtm.js';
 
 const WHATSAPP_URL = 'https://wa.me/5511994607649';
 
@@ -21,13 +21,18 @@ function BtnWA({ children, location }) {
     <div className='group relative w-fit transition-transform duration-300 active:scale-95 mx-auto'>
       <a
         href={WHATSAPP_URL}
-        onClick={() =>
+        onClick={() => {
           trackEvent('whatsapp_click', {
             location,
             page: 'recrutamento',
             destination: WHATSAPP_URL,
-          })
-        }
+          });
+          trackEvent('generate_lead', {
+            method: 'whatsapp',
+            location,
+            page: 'recrutamento',
+          });
+        }}
         className='relative z-10 flex rounded-lg bg-gradient-to-br from-indigo-500 to-fuchsia-500 p-0.5 duration-300 group-hover:scale-110'
       >
         <span className='flex items-center justify-center gap-3 rounded-md bg-slate-950 px-4 py-2 font-semibold text-slate-100 duration-300 h-12 whitespace-nowrap'>
@@ -128,6 +133,8 @@ export default function RecrutamentoPage() {
   const [slideIndex, setSlideIndex] = useState(0);
   const sliderRef = useRef(null);
 
+  useEffect(() => initEngagementTracking('recrutamento'), []);
+
   const PROCESS_STEPS = t('recrutamento.metodo.steps', { returnObjects: true });
   const TESTIMONIALS = t('recrutamento.prova.testimonials', {
     returnObjects: true,
@@ -189,7 +196,7 @@ export default function RecrutamentoPage() {
               </strong>{' '}
               {t('recrutamento.hero.h1_after')}
             </h1>
-            <p className='text-lg leading-[1.55] text-white/70 mb-9 max-w-[600px] mx-auto max-[900px]:text-[11px] max-[900px]:tracking-[0.08em]'>
+            <p className='text-lg leading-[1.55] text-white/70 mb-9 max-w-[600px] mx-auto'>
               {t('recrutamento.hero.subtitle')}
             </p>
             <BtnWA location='hero'>{t('recrutamento.hero.btnWA')}</BtnWA>
@@ -599,6 +606,8 @@ export default function RecrutamentoPage() {
                       alt={company}
                       width={48}
                       height={48}
+                      sizes='48px'
+                      loading='lazy'
                       className='w-full h-full object-cover'
                     />
                   </div>
@@ -688,13 +697,18 @@ export default function RecrutamentoPage() {
       {/* FAB WHATSAPP */}
       <a
         href={WHATSAPP_URL}
-        onClick={() =>
+        onClick={() => {
           trackEvent('whatsapp_click', {
             location: 'fab',
             page: 'recrutamento',
             destination: WHATSAPP_URL,
-          })
-        }
+          });
+          trackEvent('generate_lead', {
+            method: 'whatsapp',
+            location: 'fab',
+            page: 'recrutamento',
+          });
+        }}
         className='fixed bottom-6 right-6 bg-[#25D366] text-white w-[60px] h-[60px] rounded-full flex items-center justify-center shadow-[0_8px_24px_rgba(37,211,102,0.4)] no-underline z-[100] transition-transform duration-200 hover:scale-[1.08]'
         aria-label='Falar no WhatsApp'
       >
