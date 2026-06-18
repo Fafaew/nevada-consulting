@@ -256,22 +256,6 @@ export default async function ServicePage({ params }) {
   const backLabel = t.services.backToServices;
   const serviceConfig = serviceItems.find((s) => s.slug === slug);
 
-  const showWhatsAppCta = slug === 'behavioral-assessment';
-
-  const bookingVariants =
-    translationKey === 'fifth'
-      ? [
-          {
-            slug: 'resume-linkedin-portfolio',
-            label: t.services.ctaResumeOnly,
-          },
-          {
-            slug: 'resume-linkedin-assessment',
-            label: t.services.ctaResumeWithAssessment,
-          },
-        ]
-      : null;
-
   const fullText = service.fullDescription ?? service.description;
   const hasSteps = translationKey === 'fifth';
   const parsed = hasSteps
@@ -384,10 +368,8 @@ export default async function ServicePage({ params }) {
                 slug={slug}
                 serviceName={service.subtitle}
                 b2b={serviceConfig?.b2b ?? false}
-                variants={bookingVariants}
                 ctaLabel={service.ctaLabel}
                 alwaysShowLabel
-                whatsappCta={showWhatsAppCta}
               />
             </div>
           ) : (
@@ -395,9 +377,7 @@ export default async function ServicePage({ params }) {
               slug={slug}
               serviceName={service.subtitle}
               b2b={serviceConfig?.b2b ?? false}
-              variants={bookingVariants}
               ctaLabel={service.ctaLabel}
-              whatsappCta={showWhatsAppCta}
             />
           )}
         </div>

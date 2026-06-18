@@ -12,7 +12,6 @@ import {
   PiStrategy,
 } from 'react-icons/pi';
 import { FaChartLine } from 'react-icons/fa';
-import { RiTeamLine } from 'react-icons/ri';
 import { WHATSAPP_NUMBER } from '../../lib/servicesConfig.js';
 
 const Services = () => {
@@ -34,13 +33,6 @@ const Services = () => {
       icon: <FaChartLine />,
       subtitle: t('services.third.subtitle'),
       description: t('services.third.description'),
-    },
-    {
-      id: 4,
-      slug: 'behavioral-assessment',
-      icon: <RiTeamLine />,
-      subtitle: t('services.fourth.subtitle'),
-      description: t('services.fourth.description'),
     },
     {
       id: 5,
@@ -131,7 +123,7 @@ const Services = () => {
               <h3 className='text-xl font-semibold text-purple-300 mb-6'>
                 {t('services.b2cLabel')}
               </h3>
-              <div className='grid grid-cols-1 sm:grid-cols-3 gap-8'>
+              <div className='grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-3xl mx-auto'>
                 {items
                   .slice(2)
                   .map(({ id, slug, icon, subtitle, description }) => (
