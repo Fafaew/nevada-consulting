@@ -1,7 +1,6 @@
 export const slugToKey = {
   'high-performance-team': 'first',
   'recruitment-training': 'third',
-  'behavioral-assessment': 'fourth',
   'resume-linkedin-portfolio': 'fifth',
   'interview-preparation': 'sixth',
 };
@@ -26,14 +25,6 @@ export const serviceItems = [
     name: { pt: 'Treinamento de Recrutamento', en: 'Recruitment Training' },
   },
   {
-    id: 4,
-    slug: 'behavioral-assessment',
-    translationKey: 'fourth',
-    duration: 60,
-    b2b: false,
-    name: { pt: 'Assessment Comportamental', en: 'Behavioral Assessment' },
-  },
-  {
     id: 5,
     slug: 'resume-linkedin-portfolio',
     translationKey: 'fifth',
@@ -42,17 +33,6 @@ export const serviceItems = [
     name: {
       pt: 'Currículo, LinkedIn e Portfólio',
       en: 'Resume, LinkedIn & Portfolio',
-    },
-  },
-  {
-    id: 8,
-    slug: 'resume-linkedin-assessment',
-    translationKey: 'fifth',
-    duration: 45,
-    b2b: false,
-    name: {
-      pt: 'Currículo, LinkedIn + Assessment PDA',
-      en: 'Resume, LinkedIn + PDA Assessment',
     },
   },
   {

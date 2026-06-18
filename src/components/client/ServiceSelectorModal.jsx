@@ -9,14 +9,9 @@ import {
   PiStrategy,
 } from 'react-icons/pi';
 import { FaChartLine } from 'react-icons/fa';
-import { RiTeamLine } from 'react-icons/ri';
 import React from 'react';
 
-const B2C_SLUGS = [
-  'behavioral-assessment',
-  'resume-linkedin-portfolio',
-  'interview-preparation',
-];
+const B2C_SLUGS = ['resume-linkedin-portfolio', 'interview-preparation'];
 const B2B_SLUGS = ['high-performance-team', 'recruitment-training'];
 
 export default function ServiceSelectorModal({ isOpen, onClose, filter }) {
@@ -34,11 +29,6 @@ export default function ServiceSelectorModal({ isOpen, onClose, filter }) {
       slug: 'recruitment-training',
       icon: <FaChartLine />,
       label: t('services.third.subtitle'),
-    },
-    {
-      slug: 'behavioral-assessment',
-      icon: <RiTeamLine />,
-      label: t('services.fourth.subtitle'),
     },
     {
       slug: 'resume-linkedin-portfolio',

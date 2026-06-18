@@ -19,7 +19,6 @@
     "revealText": {
       "recruitment": "Recrutamento & Seleção",
       "training": "Formação de hiring managers",
-      "assessment": "Assessment & perfil comportamental (PDA)",
       "analisys": "Revisão LinkedIn & CV",
       "mentoring": "Mentoria e preparação para entrevistas"
     },
@@ -43,29 +42,19 @@
         "description": "Gestores excepcionais não improvisam nas entrevistas — eles conduzem. A qualidade de quem você contrata começa com a qualidade de quem conduz a seleção",
         "fullDescription": "Treinamos líderes para estruturar processos, identificar vieses ocultos e tomar decisões de contratação com metodologia e confiança.\n\n<b>O que ensinamos:</b> \n<b>As 4 etapas do método</b>\n\n<b>1- Scorecard: a bússola do gestor</b>\nAntes de iniciar qualquer busca, o gestor aprende a definir com clareza a missão do cargo, os resultados esperados e as competências inegociáveis. O scorecard descreve exatamente o que a posição precisa entregar e quais características se alinham à cultura da empresa. Sem isso, qualquer entrevista vira um chute no escuro.\n\n<b>2- Source: onde os A players estão</b>\nTreinamos gestores a construir um fluxo contínuo de talentos, em vez de buscar candidatos apenas quando surge uma urgência. Contratar com pressa quase sempre leva a decisões ruins.\n\n<b>3- Select: a arte de entrevistar com profundidade</b>\nA entrevista baseada em topgrading analisa o histórico real do candidato: responsabilidades, conquistas, desafios, erros e motivos de saída de cada empresa. Assim, gestores deixam de contratar por impressão e passam a contratar com base em evidências.\n\n<b>4- Sell: fechar com o talento certo</b>\nAtrair um grande talento exige mais do que salário. Apresentamos os 5 fatores que fazem um A player aceitar uma proposta: alinhamento com missão e cultura, respeito à vida pessoal, autonomia, estabilidade e compensação, além de um ambiente onde vale a pena trabalhar.\n\nO orçamento varia de acordo com modelo de treinamento e número de pessoas."
       },
-      "fourth": {
-        "subtitle": "Assessment & perfil comportamental (PDA)",
-        "description": "Relatório de 23 páginas sobre tendências comportamentais e gestão",
-        "ctaLabel": "Agende aqui",
-        "fullDescription": "Currículos revelam o passado. O PDA revela o potencial.\n\nAplicamos o instrumento PDA com relatório executivo de 23 páginas que decodifica motivações, estilo de liderança, gestão de pressão e fit cultural com precisão científica.\n\nDecisões sobre pessoas merecem mais do que intuição — merecem dados.\nTome decisões mais assertivas com análises comportamentais profundas de habilidades, potencial de desenvolvimento e com melhor fit para sua empresa.\n\nInvestimento: R$400"
-      },
       "fifth": {
         "subtitle": "Revisão Linkedin & CV",
         "description": "Seu linkedin & CV feitos por uma recrutadora global",
-        "fullDescription": "Você é mais do que seu currículo — mas o mercado julga pelo que vê primeiro.\n\nO mercado está competitivo e as melhores oportunidades já não estão publicadas no LinkedIn, elas circulam diretamente entre recrutadores que utilizam ferramentas robustas para identificar talentos.\nReestruturamos sua marca pessoal para passar por filtros de ATS, ranquear nas buscas do LinkedIn e comunicar valor antes mesmo da primeira conversa. Sua próxima oportunidade começa com a impressão que você causa antes de ser convocado.\n\nComo funciona:\n\nPasso 1: Conversa estratégica (1 hora)\nRealizaremos uma conversa aprofundada sobre seu momento profissional, trajetória, objetivos de carreira e próximos passos desejados.\nNesta etapa, você também pode optar por incluir um assessment comportamental (relatório de 23 páginas), que ajuda a compreender suas tendências de comportamento no ambiente de trabalho e apoia a construção de um plano de desenvolvimento individual mais estratégico.\nCaso queira conhecer mais sobre o assessment, o link está disponível {{assessmentLink}}.\n\nPasso 2: Revisão estratégica de LinkedIn e Currículo\nSeu LinkedIn e currículo serão revisados por uma recrutadora sênior, com foco em posicionamento estratégico no mercado.\n\n- Definimos a estratégia de posicionamento profissional\n- Otimizamos seu perfil no LinkedIn para ranqueamento em buscas de recrutadores\n- Estruturamos e reescrevemos seu currículo de forma estratégica\n\n<b>Você receberá todos os materiais prontos.</b>\n<i>Prazo de entrega: até 10 dias úteis.</i>\n\nPasso 3: Devolutiva final (30 minutos)\nRealizamos uma reunião de devolução para apresentar os materiais finalizados e orientar como utilizá-los estrategicamente.\nCaso tenha optado pelo assessment, também faremos a devolutiva do relatório comportamental (PDA) com interpretação e recomendações de d  esenvolvimento.\n\nSou a {{linkedinLabel}}, atuei em empresas referências e liderei times de aquisição de talentos  nacional e global, posso te ajudar?",
+        "fullDescription": "Você é mais do que seu currículo — mas o mercado julga pelo que vê primeiro.\n\nO mercado está competitivo e as melhores oportunidades já não estão publicadas no LinkedIn, elas circulam diretamente entre recrutadores que utilizam ferramentas robustas para identificar talentos.\nReestruturamos sua marca pessoal para passar por filtros de ATS, ranquear nas buscas do LinkedIn e comunicar valor antes mesmo da primeira conversa. Sua próxima oportunidade começa com a impressão que você causa antes de ser convocado.\n\nComo funciona:\n\nPasso 1: Conversa estratégica (1 hora)\nRealizaremos uma conversa aprofundada sobre seu momento profissional, trajetória, objetivos de carreira e próximos passos desejados.\n\nPasso 2: Revisão estratégica de LinkedIn e Currículo\nSeu LinkedIn e currículo serão revisados por uma recrutadora sênior, com foco em posicionamento estratégico no mercado.\n\n- Definimos a estratégia de posicionamento profissional\n- Otimizamos seu perfil no LinkedIn para ranqueamento em buscas de recrutadores\n- Estruturamos e reescrevemos seu currículo de forma estratégica\n\n<b>Você receberá todos os materiais prontos.</b>\n<i>Prazo de entrega: até 10 dias úteis.</i>\n\nPasso 3: Devolutiva final (30 minutos)\nRealizamos uma reunião de devolução para apresentar os materiais finalizados e orientar como utilizá-los estrategicamente.\n\nSou a {{linkedinLabel}}, atuei em empresas referências e liderei times de aquisição de talentos  nacional e global, posso te ajudar?",
         "callout": "Agende diretamente um horário direto comigo",
         "links": {
           "linkedinLabel": {
             "label": "Juliana",
             "href": "https://www.linkedin.com/in/juliana-carvalhoss/",
             "external": true
-          },
-          "assessmentLink": {
-            "label": "aqui",
-            "slug": "behavioral-assessment"
           }
         },
-        "_fullDescription_investimento": "\n\nInvestimento:\n\n- Revisão de LinkedIn + Currículo: R$ 1.200 (dividido em até 3x)\n- Assessment comportamental PDA (opcional): R$ 400 adicionais"
+        "_fullDescription_investimento": "\n\nInvestimento:\n\n- Revisão de LinkedIn + Currículo: R$ 1.200 (dividido em até 3x)"
       },
       "sixth": {
         "subtitle": "Mentoria e preparação para entrevistas",
@@ -80,8 +69,6 @@
           }
         }
       },
-      "ctaResumeOnly": "Revisão de LinkedIn + Currículo",
-      "ctaResumeWithAssessment": "Revisão de LinkedIn + Currículo + Assessment PDA",
       "hire": "Contratar",
       "bookSession": "Agendar horário",
       "loginToBook": "Faça login para agendar",
